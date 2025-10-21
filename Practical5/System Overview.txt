@@ -1,0 +1,68 @@
+Strategy
+
+Currently implements a watering strategy based on the biome the plant originates from
+
+
+State
+
+Models the general lifecycle of the plant, certain conditions triggered will advance state, wilting is backwards compatible with mature
+
+
+Command
+
+Invoker - Staff
+Recievers - Plant (WaterCommand | FertilizerCommand), Inventory Service (Restock Command), Sales Service (Purchase Command)
+
+
+Abstract Factory
+
+Creation of Pot and SoilMix families
+Creates certain Pot and SoilMix subtypes based on the biome related to the factory
+createPlant() combines factory methods and injects state, strategy and flyweight into the Plant
+
+
+Builder
+
+Uses the abstract factory to create variable parts of the Product (CustomPlantPackage)
+The facade asks the builder to create a package with the factory when the customer wants to customize a plant
+
+
+Iterator
+
+Used to iterate through Plant Beds or Plant Greenhouses
+
+
+Flyweight
+
+Avoids duplication the species/environment preset across plants by having them in a preset pool
+SpeciesKey is a small class used to identify presets in the map and is not a participant of Flyweight Design Pattern
+CarePresets is a small class used to set preset values for varying Fleighweights and is not a participant of Flyweight Design Pattern
+
+
+Facade
+
+Acts as the single entry point for the UI
+Communicates through various subsystems
+Defines the interactions of the user
+
+
+Observer
+
+Plant, InventoryService, Sales Service are the Concrete Subjects to be observed
+Plant is being observed for lifecycle and health changes
+Inventory Service is being observed for restocking and availability
+Sales Service is being observed for order status changes to notify customers
+
+NurseryHub and StaffDashboard are the Concrete Observers 
+The events (PlantEvent, StockEvent, OrderEvent) are used by the subjects to signal to the observers when action needs to take place
+For example: If a Plant mutates from the onTick() method a PlantEvent is fired by Plant, if the Plant has fully matured then the observer can then call markReady to mark said plant as ready for sale
+
+
+Mediator
+
+NurseryHub acts as the concrete mediator
+SalesService and StaffService are concrete colleagues (InventoryService will probably get added too)
+The mediator has a list of StaffDashboards to notify about order assignments
+
+The current issue with the mediator is that mediators typically hold lists of concretesubjects, this mediator simply has singular pointers/references to each concrete colleague for communication
+
