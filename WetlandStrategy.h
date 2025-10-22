@@ -1,6 +1,6 @@
 #ifndef WETLANDSTRATEGY_H
 #define WETLANDSTRATEGY_H
-
+#include "Plant.h"
 class WetlandStrategy {
 
 

@@ -1,5 +1,6 @@
 #ifndef DESERTSTRATEGY_H
 #define DESERTSTRATEGY_H
+#include "Plant.h"
 
 class DesertStrategy {
 

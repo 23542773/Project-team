@@ -1,5 +1,6 @@
 #ifndef MEDITERRANEANSTRATEGY_H
 #define MEDITERRANEANSTRATEGY_H
+#include "Plant.h"
 
 class MediterraneanStrategy {
 
