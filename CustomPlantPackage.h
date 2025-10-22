@@ -1,21 +1,24 @@
-#ifndef CUSTOMRPLANTPACKAGE_H
-#define CUSTOMRPLANTPACKAGE_H
+#ifndef CUSTOMPLANTPACKAGE_H
+#define CUSTOMPLANTPACKAGE_H
 
-/*
-#include "Plant"
-#inlcude "Pot"
-#include "SoilMix"
-Just add the include so long
-before having the files
-*/
-//this is the product. Save the 
-//informationn gotten from the 
-//factory here
+
+#include "Plant.h"
+#include "Pot.h"
+#include "SoilMix.h"
+
 class CustomPlantPackage{
     private:
-    Plant* plant;
-    Pot* pot;
-    SoilMix* soil;
+        Plant* plant;
+        Pot* pot;
+        SoilMix* soil;
+    public:
+        void setPlant(Plant* p);
+        void setPot(Pot* p);
+        void setSoilMix(SoilMix* s);
+        Plant* getPlant() const;
+        Pot* getPot() const;
+        SoilMix* getSoilMix() const;
+
 };
 
-#endif // CUSTOMRPLANTPACKAGE_H
+#endif 

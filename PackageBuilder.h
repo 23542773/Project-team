@@ -2,21 +2,21 @@
 #define PACKAGEBUILDER_H
 
 #include "CustomPlantPackage.h"
-//#include "PlantFactory.h"
+#include "PlantKitFactory.h"
 
 #include <iostream>
 
 class PackageBuilder{
     public: 
-    virtual void reset();
+    virtual void reset() = 0;
 
-    virtual void BuildPlant(PlantFactory& f, std::string id ) = 0;
+    virtual void BuildPlant(PlantKitFactory& f, std::string id ) = 0;
 
-    virtual void buildPot(PlantFactory& f) = 0;
+    virtual void buildPot(PlantKitFactory& f) = 0;
 
-    virtual void buildSoil(PlantFactory& f) = 0;
+    virtual void buildSoil(PlantKitFactory& f) = 0;
 
-    virtual CustomPlantPackage getResult() = 0;
+    virtual CustomPlantPackage* getResult() = 0;
 };
 
-#endif // PACKAGEBUILDER_H
+#endif 

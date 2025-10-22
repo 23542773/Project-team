@@ -5,20 +5,20 @@
 
 #include <iostream>
 
-class DefualtBuilder: public PackageBuilder{
+class DefaultBuilder: public PackageBuilder{
 private:
 CustomPlantPackage pkg;
 public: 
-DefualtBuilder();
+DefaultBuilder();
 void reset();
 
-void BuildPlant(PlantFactory& f, std::string id );
+void BuildPlant(PlantKitFactory& f, std::string id );
 
-void buildPot(PlantFactory& f);
+void buildPot(PlantKitFactory& f);
 
-void buildSoil(PlantFactory& f);
+void buildSoil(PlantKitFactory& f);
 
-CustomPlantPackage getResult();
+CustomPlantPackage* getResult();
 };
 
 #endif // DEFAULTBUILDER_H

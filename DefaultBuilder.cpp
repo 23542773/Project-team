@@ -2,30 +2,36 @@
 //concreteBuilder
 //maybe have a constructor and get the Plantfactory instead of passing in the whole time
 
-DefualtBuilder::DefualtBuilder(){
+DefaultBuilder::DefaultBuilder(){
     
 }
 
-void DefualtBuilder::reset(){
+void DefaultBuilder::reset(){
     //paass in elements of nullptr to CustomPackage
     //add checks in getResult
 }
 
-void DefualtBuilder::BuildPlant(PlantFactory& f, std::string id ){
-//    Plant* p =  f->createPlant(id, ); call factory createPlant method
-//    pkg->setPlant(p); call CustomPackage setter
+void DefaultBuilder::BuildPlant(PlantKitFactory& f, std::string id ){
+    PlantFlyweight* species = /* obtain or create appropriate Flyweight */;
+    Plant* p = f.createPlant(id, species);
+    pkg.setPlant(p);
 }
 
-void DefualtBuilder::buildPot(PlantFactory& f){
-    Pot* p = f->createPot();
-    // pkg->setPot(p); call CustomPackage pot setter
+void DefaultBuilder::buildPot(PlantKitFactory& f){
+    Pot* p = f.createPot();
+    pkg.setPot(p);
 }
 
-void DefualtBuilder::buildSoil(PlantFactory& f){
-    SoilMix* s = f->createSoilMix();
-    //call CustomPackage Soil Setter
+void DefaultBuilder::buildSoil(PlantKitFactory& f){
+    SoilMix* s = f.createSoilMix();
+    pkg.setSoilMix(s);
 }
 
-CustomPlantPackage DefualtBuilder::getResult(){
-    //call the CustomPackage getResult method
+CustomPlantPackage DefaultBuilder::getResult(){
+    return &pkg;
 }
+
+void DefaultBuilder::reset() {
+    pkg = CustomPlantPackage(); 
+}
+
