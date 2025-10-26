@@ -1,0 +1,49 @@
+FACADE PATTERN IMPLEMENTATION
+TODO
+
+1. Overview
+
+Double facade
+
+The system uses TWO concrete facades inheriting from an abstract base:
+NurseryFacade has CustomerNurseryFacade and StaffNurseryFacade as derivatives.
+
+NurseryFacade:
+# catalog           
+# inv               
+# sales             
++ isValid()
+//and deconstructors
+
+CustomerNurseryFacade:
+# factory               
+# director                 
++ browseAvailable()        
++ getPlantDetails()        
++ buildDefaultPackage()   
++ orderReceipt()          
++ placeOrder()            
++ isValid()  
+//and deconstructors
+
+StaffNurseryFacade:
++ restock()                  
++ getReadyForSale()          
++ isAvailableForPurchase()   
++ validateStock()            
++ getInventorySummary()      
++ isValid()                  
+
+Decided to do a common interface because seperate facades for both Customer and Staff seemed to be a better decision for us
+-helps us reduce duplicates from having 2 seperate facades.
+
+Decided 2 seperate facades because customers wouldnt need all the staff operations
+
+Base class holds some shared vars: 
+catalog, inv, sales (protected for now)
+
+Todo implementation:
+-all methods need implementation
+-nursery base validations
+-nursery base constuctor
+-error handling
