@@ -1,15 +1,16 @@
-#include "PlantBedIterator.h"
+#include "GreenhouseIterator.h"
+#include "Greenhouse.h"
 #include "Bed.h"
-#include "Plant.h"
 
-PlantBedIterator::PlantBedIterator(Bed& b) : bed(b), currentIndex(0) { }
+GreenhouseIterator::GreenhouseIterator(Greenhouse& greenhouse)
+    : gh(greenhouse), currentIndex(0) {}
 
-PlantBedIterator::~PlantBedIterator() { }
+GreenhouseIterator::~GreenhouseIterator() {}
 
-Plant*& PlantBedIterator::next() {
-    return bed.getPlants()[currentIndex++];
+Bed*& GreenhouseIterator::next() {
+    return gh.getBeds()[currentIndex++];
 }
 
-bool PlantBedIterator::hasNext() {
-    return currentIndex < bed.getPlants().size();
+bool GreenhouseIterator::hasNext() {
+    return currentIndex < gh.getBeds().size();
 }

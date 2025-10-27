@@ -2,7 +2,8 @@
 #define GREENHOUSE_H
 
 #include "PlantContainer.h"
-#include "PlantIterator.h"
+#include "GreenhouseIterator.h"
+#include "Bed.h"
 #include <vector>
 
 class Bed;
@@ -24,33 +25,39 @@ public:
     /**
      * @brief Constructor
      */
-    Greenhouse();
+    Greenhouse() = default;
     
     /**
      * @brief Destructor
      */
-    ~Greenhouse();
+    ~Greenhouse() override = default;
 
     /**
      * @brief Create an iterator for this greenhouse
      * @return Pointer to PlantIterator for Bed*
      */
-    PlantIterator<Bed*>* createIterator() override;
+    PlantIterator<Bed*>* createIterator() override{
+
+        return new GreenhouseIterator(*this);
+    };
 
     /**
      * @brief Get the vector of beds
      * @return Reference to the beds vector
      */
-    std::vector<Bed*>& getBeds();
+    std::vector<Bed*>& getBeds(){
+        return beds;
+    };
+
+    const std::vector<Bed*>& getBeds() const{
+        return beds;
+    }
+
+
+    void addBed(Bed* bed){
+        beds.push_back(bed);
+    };
     
-    /**
-     * @brief Get the vector of beds (const version)
-     * @return Const reference to the beds vector
-     */
-    const std::vector<Bed*>& getBeds() const;
-    
-    // Friend class for iterator access
-    friend class GreenhouseIterator;
 };
 
 #endif // GREENHOUSE_H
