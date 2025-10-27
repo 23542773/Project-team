@@ -1,12 +1,19 @@
 # Makefile for Plant Nursery Facade Testing
 # Author: Damian Moustakis - COS 214 Project
 # Author: Locutus-0201
-# Date: 2025-10-27 22:14:05 UTC
+# Date: 2025-10-27 22:48:09 UTC
 # Project: Plant Nursery Simulator - Facade Pattern Implementation
 
-# Compiler and flags
+# ============================================================================
+#                           COMPILER CONFIGURATION
+# ============================================================================
+
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra -g
+CXXFLAGS = -std=c++14 -Wall -Wextra -g
+
+# ============================================================================
+#                           SOURCE FILES
+# ============================================================================
 
 # Facade source files
 FACADE_SRC = NurseryFacade.cpp \
@@ -23,11 +30,16 @@ DUMMY_SRC = DummySpeciesCatalog.cpp \
             DummyPlantKitFactory.cpp \
             DummyPackageDirector.cpp
 
-# Test file
+# Test files
 TEST_SRC = test_facade.cpp
+UNIT_TEST_SRC = test_facade_unit.cpp
 
 # All source files
 ALL_SRC = $(FACADE_SRC) $(DUMMY_SRC) $(TEST_SRC)
+
+# ============================================================================
+#                           OBJECT FILES
+# ============================================================================
 
 # Object files (replace .cpp with .o)
 FACADE_OBJ = $(FACADE_SRC:.cpp=.o)
@@ -35,15 +47,32 @@ DUMMY_OBJ = $(DUMMY_SRC:.cpp=.o)
 TEST_OBJ = $(TEST_SRC:.cpp=.o)
 ALL_OBJ = $(ALL_SRC:.cpp=.o)
 
-# Output executable
+# ============================================================================
+#                           OUTPUT TARGETS
+# ============================================================================
+
+# Output executables
 TARGET = test_facade
+UNIT_TEST_TARGET = test_facade_unit
+
+# Google Test flags
+GTEST_FLAGS = -lgtest -lgtest_main -pthread
+
+# ============================================================================
+#                           DEFAULT TARGET
+# ============================================================================
 
 # Default target - build everything
 all: $(TARGET)
 	@echo "========================================="
 	@echo "  Build Complete!"
 	@echo "  Run with: ./$(TARGET)"
+	@echo "  Or run: make test"
 	@echo "========================================="
+
+# ============================================================================
+#                        INTEGRATION TEST TARGETS
+# ============================================================================
 
 # Link all object files into executable
 $(TARGET): $(ALL_OBJ)
@@ -56,17 +85,11 @@ $(TARGET): $(ALL_OBJ)
 	@echo "Compiling $<..."
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Clean build artifacts
-clean:
-	@echo "Cleaning build artifacts..."
-	rm -f $(ALL_OBJ) $(TARGET)
-	@echo "✓ Clean complete"
-
-# Build and run tests
+# Build and run integration tests
 test: $(TARGET)
 	@echo ""
 	@echo "========================================="
-	@echo "  Running Tests..."
+	@echo "  Running Integration Tests..."
 	@echo "========================================="
 	@./$(TARGET)
 
@@ -74,12 +97,60 @@ test: $(TARGET)
 run: $(TARGET)
 	@./$(TARGET)
 
+# ============================================================================
+#                           UNIT TEST TARGETS
+# ============================================================================
+
+# Build unit tests
+unit: $(FACADE_OBJ) $(DUMMY_OBJ)
+	@echo "Building unit tests..."
+	$(CXX) $(CXXFLAGS) -o $(UNIT_TEST_TARGET) $(UNIT_TEST_SRC) $(FACADE_OBJ) $(DUMMY_OBJ) $(GTEST_FLAGS)
+	@echo "✓ Unit test executable created: $(UNIT_TEST_TARGET)"
+
+# Run unit tests
+unit-test: unit
+	@echo ""
+	@echo "========================================="
+	@echo "  Running Unit Tests (Google Test)"
+	@echo "========================================="
+	@./$(UNIT_TEST_TARGET)
+
+# Run unit tests with verbose output
+unit-verbose: unit
+	@echo ""
+	@echo "========================================="
+	@echo "  Running Unit Tests (Verbose Mode)"
+	@echo "========================================="
+	@./$(UNIT_TEST_TARGET) --gtest_print_time=1 --gtest_color=yes
+
+# Run specific unit test
+unit-filter: unit
+	@echo "Running filtered tests..."
+	@./$(UNIT_TEST_TARGET) --gtest_filter=$(FILTER)
+
+# ============================================================================
+#                           UTILITY TARGETS
+# ============================================================================
+
+# Clean build artifacts
+clean:
+	@echo "Cleaning build artifacts..."
+	rm -f $(ALL_OBJ) $(TARGET) $(UNIT_TEST_TARGET)
+	@echo "✓ Clean complete"
+
 # Rebuild everything from scratch
 rebuild: clean all
+
+# Rebuild unit tests from scratch
+rebuild-unit: clean unit
 
 # Show compilation commands (verbose mode)
 verbose: CXXFLAGS += -v
 verbose: all
+
+# ============================================================================
+#                        VALIDATION TARGETS
+# ============================================================================
 
 # Check file structure
 check:
@@ -92,37 +163,130 @@ check:
 	@ls -1 $(DUMMY_SRC) 2>/dev/null || echo "  ✗ Missing dummy files"
 	@echo ""
 	@echo "=== Test Files ==="
-	@ls -1 $(TEST_SRC) 2>/dev/null || echo "  ✗ Missing test files"
+	@ls -1 $(TEST_SRC) 2>/dev/null || echo "  ✗ Missing integration test files"
+	@ls -1 $(UNIT_TEST_SRC) 2>/dev/null || echo "  ✗ Missing unit test files"
 	@echo ""
+
+# Verify Google Test installation
+check-gtest:
+	@echo "Checking Google Test installation..."
+	@which g++ > /dev/null && echo "✓ g++ compiler found" || echo "✗ g++ not found"
+	@ldconfig -p | grep libgtest > /dev/null && echo "✓ Google Test libraries found" || echo "✗ Google Test not installed"
+	@echo ""
+	@echo "To install Google Test, run:"
+	@echo "  sudo apt-get update"
+	@echo "  sudo apt-get install -y libgtest-dev cmake"
+	@echo "  cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp lib/*.a /usr/lib"
+
+# ============================================================================
+#                           TESTING TARGETS
+# ============================================================================
+
+# Run all tests (integration + unit)
+test-all: test unit-test
+	@echo ""
+	@echo "========================================="
+	@echo "  All Tests Complete!"
+	@echo "========================================="
+
+# Run tests with coverage (requires gcov)
+coverage: CXXFLAGS += -fprofile-arcs -ftest-coverage
+coverage: clean test-all
+	@echo "Generating coverage report..."
+	@gcov $(FACADE_SRC) $(DUMMY_SRC)
+	@echo "✓ Coverage files generated (.gcov)"
+
+# ============================================================================
+#                           HELP TARGET
+# ============================================================================
 
 # Show help
 help:
 	@echo "========================================="
 	@echo "  Makefile Commands"
 	@echo "========================================="
-	@echo "  make          - Build the project"
-	@echo "  make test     - Build and run tests"
-	@echo "  make run      - Run tests (without rebuilding)"
-	@echo "  make clean    - Remove build artifacts"
-	@echo "  make rebuild  - Clean and rebuild"
-	@echo "  make check    - Verify file structure"
-	@echo "  make help     - Show this help message"
+	@echo ""
+	@echo "BUILD COMMANDS:"
+	@echo "  make              - Build integration tests"
+	@echo "  make unit         - Build unit tests"
+	@echo "  make all          - Build all targets"
+	@echo ""
+	@echo "TEST COMMANDS:"
+	@echo "  make test         - Run integration tests"
+	@echo "  make unit-test    - Run unit tests"
+	@echo "  make test-all     - Run all tests"
+	@echo "  make unit-verbose - Run unit tests (verbose)"
+	@echo "  make run          - Run integration tests (no rebuild)"
+	@echo ""
+	@echo "UTILITY COMMANDS:"
+	@echo "  make clean        - Remove build artifacts"
+	@echo "  make rebuild      - Clean and rebuild all"
+	@echo "  make rebuild-unit - Clean and rebuild unit tests"
+	@echo "  make check        - Verify file structure"
+	@echo "  make check-gtest  - Verify Google Test installation"
+	@echo ""
+	@echo "ADVANCED COMMANDS:"
+	@echo "  make verbose      - Build with verbose output"
+	@echo "  make coverage     - Generate code coverage report"
+	@echo "  make unit-filter FILTER='*TestName*' - Run specific tests"
+	@echo ""
+	@echo "EXAMPLES:"
+	@echo "  make test                              - Run integration tests"
+	@echo "  make unit-test                         - Run unit tests"
+	@echo "  make unit-filter FILTER='*Restock*'    - Run restock tests only"
 	@echo "========================================="
 
-# Declare phony targets (targets that don't create files)
-.PHONY: all clean test run rebuild verbose check help
+# ============================================================================
+#                        PHONY TARGETS
+# ============================================================================
 
-# Dependency tracking (optional but good practice)
+# Declare phony targets (targets that don't create files)
+.PHONY: all clean test run rebuild verbose check help \
+        unit unit-test unit-verbose unit-filter test-all \
+        coverage check-gtest rebuild-unit
+
+# ============================================================================
+#                        DEPENDENCY TRACKING
+# ============================================================================
+
 # Recompile if header files change
-NurseryFacade.o: NurseryFacade.cpp NurseryFacade.h
-CustomerNurseryFacade.o: CustomerNurseryFacade.cpp CustomerNurseryFacade.h NurseryFacade.h
-StaffNurseryFacade.o: StaffNurseryFacade.cpp StaffNurseryFacade.h NurseryFacade.h
-DummySpeciesCatalog.o: DummySpeciesCatalog.cpp DummySpeciesCatalog.h SpeciesCatalog.h
-DummyInventoryService.o: DummyInventoryService.cpp DummyInventoryService.h InventoryService.h
-DummySalesService.o: DummySalesService.cpp DummySalesService.h SalesService.h
+NurseryFacade.o: NurseryFacade.cpp NurseryFacade.h \
+                 SpeciesCatalog.h InventoryService.h SalesService.h
+
+CustomerNurseryFacade.o: CustomerNurseryFacade.cpp CustomerNurseryFacade.h \
+                         NurseryFacade.h PlantKitFactory.h PackageDirector.h \
+                         CustomPlantPackage.h OrderItem.h
+
+StaffNurseryFacade.o: StaffNurseryFacade.cpp StaffNurseryFacade.h \
+                      NurseryFacade.h
+
+DummySpeciesCatalog.o: DummySpeciesCatalog.cpp DummySpeciesCatalog.h \
+                       SpeciesCatalog.h DummyPlantFlyweight.h
+
+DummyInventoryService.o: DummyInventoryService.cpp DummyInventoryService.h \
+                         InventoryService.h DummyPlant.h
+
+DummySalesService.o: DummySalesService.cpp DummySalesService.h \
+                     SalesService.h OrderItem.h
+
 DummyPlantFlyweight.o: DummyPlantFlyweight.cpp DummyPlantFlyweight.h
-DummyPlant.o: DummyPlant.cpp DummyPlant.h
-DummyPlantState.o: DummyPlantState.cpp DummyPlantState.h
-DummyPlantKitFactory.o: DummyPlantKitFactory.cpp DummyPlantKitFactory.h PlantKitFactory.h
-DummyPackageDirector.o: DummyPackageDirector.cpp DummyPackageDirector.h PackageDirector.h
-test_facade.o: test_facade.cpp CustomerNurseryFacade.h StaffNurseryFacade.h
+
+DummyPlant.o: DummyPlant.cpp DummyPlant.h \
+              DummyPlantFlyweight.h DummyPlantState.h
+
+DummyPlantState.o: DummyPlantState.cpp DummyPlantState.h DummyPlant.h
+
+DummyPlantKitFactory.o: DummyPlantKitFactory.cpp DummyPlantKitFactory.h \
+                        PlantKitFactory.h DummyPlant.h DummyPlantFlyweight.h
+
+DummyPackageDirector.o: DummyPackageDirector.cpp DummyPackageDirector.h \
+                        PackageDirector.h
+
+test_facade.o: test_facade.cpp CustomerNurseryFacade.h StaffNurseryFacade.h \
+               DummySpeciesCatalog.h DummyInventoryService.h DummySalesService.h \
+               DummyPlantKitFactory.h DummyPackageDirector.h DummyOrderItem.h \
+               DummyPlant.h DummyPlantState.h DummyPlantFlyweight.h
+
+# ============================================================================
+#                           END OF MAKEFILE
+# ============================================================================

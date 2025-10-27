@@ -353,25 +353,25 @@ void CustomerNurseryFacade::placeOrder(const std::string& custId, const std::vec
     for (const auto& item : items) 
     {
         DummyOrderItem* dummyItem = dynamic_cast<DummyOrderItem*>(item);
-        
+    
         if (!dummyItem) 
         {
             throw std::runtime_error("Invalid order item");
         }
         
-        // Check stock level
+        // FIX: Check SKU validity FIRST (before checking stock)
+        if (!dummyCatalog->hasSKU(dummyItem->id)) 
+        {
+            throw std::invalid_argument("Invalid SKU: " + dummyItem->id);
+        }
+        
+        // THEN check stock level
         int stock = dummyInv->available(dummyItem->id);
         std::cout << "  Checking " << dummyItem->id << ": stock=" << stock << "\n";
         
         if (stock <= 0) 
         {
             throw std::runtime_error("Insufficient stock for item: " + dummyItem->id);
-        }
-        
-        // Validate SKU exists in catalog
-        if (!dummyCatalog->hasSKU(dummyItem->id)) 
-        {
-            throw std::invalid_argument("Invalid SKU: " + dummyItem->id);
         }
         
         // Check if plant is in sellable state

@@ -55,9 +55,7 @@ int main()
     
     try 
     {
-        // ====================================================================
-        // SETUP: Create dummy subsystems
-        // ====================================================================
+        //creating dummy substystems
         printSeparator("SETUP: Creating Subsystems");
         
         std::cout << "Creating DummySpeciesCatalog...\n";
@@ -96,9 +94,7 @@ int main()
         inv->addPlant("ORCH-001", plant3);
         std::cout << "  Added ORCH-001 (Orchid) - MATURE state\n";
 
-        // ====================================================================
-        // CREATE FACADES
-        // ====================================================================
+        //creating the facades
         printSeparator("Creating Facades");
         
         std::cout << "Creating CustomerNurseryFacade...\n";
@@ -107,9 +103,7 @@ int main()
         std::cout << "Creating StaffNurseryFacade...\n";
         StaffNurseryFacade staffFacade(catalog, inv, sales);
 
-        // ====================================================================
-        // TEST 1: Facade Validation
-        // ====================================================================
+        //validation
         printSeparator("TEST 1: Facade Validation");
         totalTests++;
         
@@ -123,9 +117,7 @@ int main()
         printTestResult("Facade Validation", test1Passed);
         if (test1Passed) testsPassed++;
 
-        // ====================================================================
-        // TEST 2: Browse Available Plants
-        // ====================================================================
+        //browsing
         printSeparator("TEST 2: Browse Available Plants");
         totalTests++;
         
@@ -150,9 +142,7 @@ int main()
         printTestResult("Browse Available Plants", test2Passed);
         if (test2Passed) testsPassed++;
 
-        // ====================================================================
-        // TEST 3: Get Plant Details
-        // ====================================================================
+        //details
         printSeparator("TEST 3: Get Plant Details");
         totalTests++;
         
@@ -172,9 +162,7 @@ int main()
             printTestResult("Get Plant Details", false);
         }
 
-        // ====================================================================
-        // TEST 4: Staff - Check Available for Purchase
-        // ====================================================================
+        //availability
         printSeparator("TEST 4: Check Available for Purchase");
         totalTests++;
         
@@ -189,9 +177,7 @@ int main()
         printTestResult("Available for Purchase (State Check)", test4Passed);
         if (test4Passed) testsPassed++;
 
-        // ====================================================================
-        // TEST 5: Staff - Restock Operation
-        // ====================================================================
+        //restock
         printSeparator("TEST 5: Staff Restock Operation");
         totalTests++;
         
@@ -215,9 +201,7 @@ int main()
             printTestResult("Staff Restock Operation", false);
         }
 
-        // ====================================================================
-        // TEST 6: Staff - Get Ready for Sale
-        // ====================================================================
+        //sale ready
         printSeparator("TEST 6: Get Plants Ready for Sale");
         totalTests++;
         
@@ -234,9 +218,7 @@ int main()
         printTestResult("Get Ready for Sale", test6Passed);
         if (test6Passed) testsPassed++;
 
-        // ====================================================================
-        // TEST 7: Staff - Validate Stock
-        // ====================================================================
+        //stock check
         printSeparator("TEST 7: Validate Stock");
         totalTests++;
         
@@ -253,9 +235,7 @@ int main()
         printTestResult("Validate Stock", test7Passed);
         if (test7Passed) testsPassed++;
 
-        // ====================================================================
-        // TEST 8: Staff - Inventory Summary
-        // ====================================================================
+        //summary
         printSeparator("TEST 8: Inventory Summary");
         totalTests++;
         
@@ -268,9 +248,7 @@ int main()
         printTestResult("Inventory Summary", test8Passed);
         if (test8Passed) testsPassed++;
 
-        // ====================================================================
-        // TEST 9: Customer - Generate Receipt
-        // ====================================================================
+        //receipt
         printSeparator("TEST 9: Generate Order Receipt");
         totalTests++;
         
@@ -294,9 +272,7 @@ int main()
         }
         receiptItems.clear();
 
-        // ====================================================================
-        // TEST 10: Customer - Place Order (SHOWCASE METHOD)
-        // ====================================================================
+        //order placing
         printSeparator("TEST 10: Place Order (SHOWCASE)");
         totalTests++;
         
@@ -330,9 +306,7 @@ int main()
             delete item;
         }
 
-        // ====================================================================
-        // TEST 11: Error Handling - Invalid SKU
-        // ====================================================================
+        //invalid handling (SKU)
         printSeparator("TEST 11: Error Handling");
         totalTests++;
         
@@ -350,9 +324,7 @@ int main()
         printTestResult("Error Handling (Invalid SKU)", exceptionThrown);
         if (exceptionThrown) testsPassed++;
 
-        // ====================================================================
-        // TEST 12: Error Handling - Insufficient Stock
-        // ====================================================================
+        //invalid handling (stock)
         printSeparator("TEST 12: Insufficient Stock Handling");
         totalTests++;
         
@@ -387,9 +359,7 @@ int main()
         printTestResult("Insufficient Stock Handling", insufficientStockHandled);
         if (insufficientStockHandled) testsPassed++;
 
-        // ====================================================================
-        // CLEANUP
-        // ====================================================================
+        //destruction
         printSeparator("CLEANUP: Destroying Subsystems");
         
         std::cout << "Deleting facades...\n";
@@ -404,9 +374,7 @@ int main()
         
         std::cout << "Cleanup complete\n";
 
-        // ====================================================================
-        // FINAL RESULTS
-        // ====================================================================
+        //results
         printSeparator("TEST RESULTS SUMMARY");
         
         std::cout << "\n";
