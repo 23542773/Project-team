@@ -16,7 +16,7 @@ class Bed;
 class GreenhouseIterator : public PlantIterator<Bed*> {
 private:
     Greenhouse& gh;
-    size_t currentIndex;
+    size_t Index;
 
 public:
     /**
@@ -41,6 +41,10 @@ public:
      * @return True if has next, false otherwise
      */
     bool hasNext() override;
+
+    void goTo(size_t index) override;
+    void reset() override;
+    size_t currentIndex() const override;
 };
 
 #endif // GREENHOUSEITERATOR_H

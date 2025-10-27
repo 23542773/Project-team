@@ -27,6 +27,10 @@ public:
      * @return True if there is a next element, false otherwise
      */
     virtual bool hasNext() = 0;
+
+    virtual void goTo(size_t index) = 0;
+    virtual void reset() = 0;
+    virtual size_t currentIndex() const = 0;
 };
 
 #endif // PLANTITERATOR_H

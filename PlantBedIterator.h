@@ -16,7 +16,9 @@ class Plant;
 class PlantBedIterator : public PlantIterator<Plant*> {
 private:
     Bed& bed;
-    size_t currentIndex;
+    PlantBedMemento* memento;
+    std::vector<Plant*> snapshot;
+    size_t Index;
 
 public:
     /**
@@ -41,6 +43,11 @@ public:
      * @return True if has next, false otherwise
      */
     bool hasNext() override;
+
+    void goTo(size_t index) override;
+    size_t currentIndexValue() const; // alternate name if you prefer
+    void reset() override;
+
 };
 
 #endif // PLANTBEDITERATOR_H

@@ -4,6 +4,7 @@
 #include "PlantContainer.h"
 #include "PlantIterator.h"
 #include <vector>
+#include "PlantBedMemento.h"
 
 class Plant;
 class PlantBedIterator;
@@ -51,6 +52,14 @@ public:
     
     // Friend class for iterator access
     friend class PlantBedIterator;
+
+     PlantBedMemento* createMemento() const {
+        return new PlantBedMemento(plants);
+    }
+
+    void restoreFromMemento(PlantBedMemento* m) {
+        plants = m->getSnapshot();
+    }
 };
 
 #endif // BED_H
