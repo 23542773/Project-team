@@ -2,6 +2,7 @@
 #define DUMMY_ORDERITEM_H
 
 #include <string>
+#include "OrderItem.h"
 
 /**
  * @file dummy/DummyOrderItem.h
@@ -12,7 +13,7 @@
  * TESTING PURPOSE ONLY - Completely standalone
  * This is NOT a stub - it's a complete simple data structure
  */
-struct DummyOrderItem {
+struct DummyOrderItem : public OrderItem {
     std::string id;
     double price;
     std::string type;

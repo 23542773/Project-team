@@ -1,6 +1,7 @@
 #ifndef DUMMY_INVENTORYSERVICE_H
 #define DUMMY_INVENTORYSERVICE_H
 
+#include "InventoryService.h"
 #include <map>
 #include <string>
 #include <vector>
@@ -24,7 +25,7 @@ class DummyPlant;
  * 
  * When real InventoryService is ready, change this to inherit from InventoryService.
  */
-class DummyInventoryService {
+class DummyInventoryService:public InventoryService {
 private:
     std::map<std::string, int> stock;
     std::map<std::string, DummyPlant*> plants;

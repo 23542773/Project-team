@@ -1,6 +1,7 @@
 #ifndef DUMMY_SALESSERVICE_H
 #define DUMMY_SALESSERVICE_H
 
+#include "SalesService.h"
 #include <map>
 #include <string>
 #include <vector>
@@ -24,7 +25,7 @@ struct DummyOrderItem;
  * 
  * When real SalesService is ready, change this to inherit from SalesService.
  */
-class DummySalesService {
+class DummySalesService:public SalesService {
 private:
     std::map<std::string, std::string> customers;
     std::map<std::string, std::vector<std::string>> customerOrders;

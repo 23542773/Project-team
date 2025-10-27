@@ -1,6 +1,7 @@
 #ifndef DUMMY_SPECIESCATALOG_H
 #define DUMMY_SPECIESCATALOG_H
 
+#include "SpeciesCatalog.h"
 #include <map>
 #include <string>
 #include <vector>
@@ -23,7 +24,7 @@ class DummyPlantFlyweight;
  * 
  * We will change this later.
  */
-class DummySpeciesCatalog {
+class DummySpeciesCatalog:public SpeciesCatalog {
 private:
     std::map<std::string, DummyPlantFlyweight*> speciesPool;
 

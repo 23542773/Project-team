@@ -2,6 +2,7 @@
 #define DUMMY_PLANTKITFACTORY_H
 
 #include <string>
+#include "PlantKitFactory.h"
 
 /**
  * @file dummy/DummyPlantKitFactory.h
@@ -47,7 +48,7 @@ public:
  * 
  * When real PlantKitFactory is ready, change this to inherit from PlantKitFactory.
  */
-class DummyPlantKitFactory {
+class DummyPlantKitFactory : public PlantKitFactory {
 private:
     std::string envType;
 

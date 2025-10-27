@@ -1,6 +1,7 @@
 #ifndef DUMMY_PACKAGEDIRECTOR_H
 #define DUMMY_PACKAGEDIRECTOR_H
 
+#include "PackageDirector.h"
 /**
  * @file dummy/DummyPackageDirector.h
  * @brief Standalone dummy PackageDirector for testing
@@ -20,7 +21,7 @@ class DummyPackageBuilder;
  * 
  * When real PackageDirector is ready, change this to inherit from PackageDirector.
  */
-class DummyPackageDirector {
+class DummyPackageDirector : public PackageDirector {
 private:
     DummyPackageBuilder* builder;
 
