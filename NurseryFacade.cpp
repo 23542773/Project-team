@@ -1,8 +1,8 @@
 #include "NurseryFacade.h"
 
-#include "dummy/DummySpeciesCatalog.h"
-#include "dummy/DummyInventoryService.h"
-#include "dummy/DummySalesService.h"
+#include "DummySpeciesCatalog.h"
+#include "DummyInventoryService.h"
+#include "DummySalesService.h"
 
 #include <stdexcept>
 

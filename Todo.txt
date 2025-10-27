@@ -43,7 +43,4 @@ Base class holds some shared vars:
 catalog, inv, sales (protected for now)
 
 Todo implementation:
--all methods need implementation
--nursery base validations
--nursery base constuctor
--error handling
+merge with arytonns work to get facade working on the gui

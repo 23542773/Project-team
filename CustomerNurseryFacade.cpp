@@ -2,15 +2,15 @@
 
 // TEMPORARY: Include dummy subsystems for testing
 // When real classes ready, replace these includes with real class headers
-#include "dummy/DummySpeciesCatalog.h"
-#include "dummy/DummyPlantKitFactory.h"
-#include "dummy/DummyPackageDirector.h"
-#include "dummy/DummyInventoryService.h"
-#include "dummy/DummySalesService.h"
-#include "dummy/DummyOrderItem.h"
-#include "dummy/DummyPlantFlyweight.h"
-#include "dummy/DummyPlant.h"
-#include "dummy/DummyPlantState.h"
+#include "DummySpeciesCatalog.h"
+#include "DummyPlantKitFactory.h"
+#include "DummyPackageDirector.h"
+#include "DummyInventoryService.h"
+#include "DummySalesService.h"
+#include "DummyOrderItem.h"
+#include "DummyPlantFlyweight.h"
+#include "DummyPlant.h"
+#include "DummyPlantState.h"
 
 #include <sstream>
 #include <stdexcept>
@@ -399,15 +399,27 @@ void CustomerNurseryFacade::placeOrder(const std::string& custId, const std::vec
     std::cout << "\n--- STEP 2: CREATE ORDER ---\n";
     
     // DELEGATION: SalesService handles order creation
-    std::vector<DummyOrderItem*> dummyItems;
-    for (auto item : items) 
+    // convert generic OrderItem* vector to DummyOrderItem* vector expected by dummySales
+    std::string orderId;
     {
-        dummyItems.push_back(dynamic_cast<DummyOrderItem*>(item));
+        std::vector<OrderItem*> dummyItems;
+        dummyItems.reserve(items.size());
+        for (const auto& it : items)
+        {
+            OrderItem* di = dynamic_cast<OrderItem*>(it);
+            if (!di)
+            {
+                throw std::runtime_error("Invalid order item encountered when preparing order for SalesService");
+            }
+            dummyItems.push_back(di);
+        }
+
+        orderId = dummySales->createOrder(custId, dummyItems);
+        std::cout << "  ✓ Order created: " << orderId << "\n";
+
+        // orderId is intentionally declared in the outer scope so it can be referenced later
     }
-    
-    std::string orderId = dummySales->createOrder(custId, dummyItems);
-    std::cout << "  ✓ Order created: " << orderId << "\n";
-    
+
     // Order now exists with status "PENDING"
     // SalesService will automatically notify observers (Observer pattern)
     

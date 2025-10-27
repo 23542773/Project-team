@@ -2,6 +2,7 @@
 #define DUMMY_SALESSERVICE_H
 
 #include "SalesService.h"
+#include "OrderItem.h"
 #include <map>
 #include <string>
 #include <vector>
@@ -57,7 +58,7 @@ public:
      * @param custId Customer ID
      * @return true if customer exists
      */
-    bool customerExists(const std::string& custId) const;
+    bool customerExists(const std::string& custId) const override;
 
     /**
      * @brief Create a new order
@@ -66,7 +67,7 @@ public:
      * @return Order ID
      */
     std::string createOrder(const std::string& custId,
-                           const std::vector<DummyOrderItem*>& items);
+                           const std::vector<OrderItem*>& items) override;
 
     /**
      * @brief Update order status

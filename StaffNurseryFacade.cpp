@@ -2,12 +2,12 @@
 
 // TEMPORARY: Include dummy subsystems for testing
 // When real classes ready, replace these includes with real class headers
-#include "dummy/DummySpeciesCatalog.h"
-#include "dummy/DummyInventoryService.h"
-#include "dummy/DummySalesService.h"
-#include "dummy/DummyPlant.h"
-#include "dummy/DummyPlantState.h"
-#include "dummy/DummyPlantFlyweight.h"
+#include "DummySpeciesCatalog.h"
+#include "DummyInventoryService.h"
+#include "DummySalesService.h"
+#include "DummyPlant.h"
+#include "DummyPlantState.h"
+#include "DummyPlantFlyweight.h"
 
 #include <sstream>
 #include <stdexcept>

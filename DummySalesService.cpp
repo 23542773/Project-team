@@ -33,7 +33,7 @@ bool DummySalesService::customerExists(const std::string& custId) const {
 }
 
 std::string DummySalesService::createOrder(const std::string& custId,
-                                          const std::vector<DummyOrderItem*>& items) {
+                                          const std::vector<OrderItem*>& items) {
     std::string orderId = "ORD-" + std::to_string(nextOrderId++);
     
     std::cout << "[DummySalesService] Creating order " << orderId 
