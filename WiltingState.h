@@ -1,14 +1,23 @@
-#ifndef WITINGSTATE_H
-#define WITINGSTATE_H
-
+#ifndef WILTINGSTATE_H
+#define WILTINGSTATE_H
 #include "PlantState.h"
 
-class WiltingState : public PlantState {
+class WiltingState : public PlantState
+{
 
-    public:
-        void onTick(Plant& p) override;
-        void onWater(Plant& p) override;
+public:
 
+    static WiltingState& getInstance();
+    void onTick(Plant& plant) override;
+    void checkChange(Plant& plant) override;
+    std::string name() override;
+
+protected:
+
+	~WiltingState() override {}
+    WiltingState();
+    WiltingState(const WiltingState&) {}
+    WiltingState& operator=(const WiltingState&) = delete;
 };
 
-#endif//WITINGSTATE_H
+#endif
