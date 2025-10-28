@@ -1,14 +1,23 @@
 #ifndef DEADSTATE_H
 #define DEADSTATE_H
-
 #include "PlantState.h"
 
-class DeadState : public PlantState {
+class DeadState : public PlantState
+{
 
-    public:
-        void onTick(Plant& p) override;
-        void onWater(Plant& p) override;
+public:
 
+    static DeadState& getInstance();
+    void onTick(Plant& plant) override;
+    void checkChange(Plant& plant) override;
+    std::string name() override;
+
+protected:
+
+	virtual ~DeadState() override {}
+    DeadState();
+    DeadState(const DeadState&) {}
+    DeadState& operator=(const DeadState&) = delete;
 };
 
-#endif//DEADSTATE_H
+#endif

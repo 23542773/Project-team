@@ -1,15 +1,23 @@
 #ifndef MATURESTATE_H
 #define MATURESTATE_H
-
 #include "PlantState.h"
 
-class MatureState : public PlantState {
+class MatureState : public PlantState
+{
 
-    public:
-        void onTick(Plant& p) override;
-        void onWater(Plant& p) override;
-        bool canSell() override;
+public:
 
+    static MatureState& getInstance();
+    void onTick(Plant& plant) override;
+    void checkChange(Plant& plant) override;
+    std::string name() override;
+
+protected:
+
+	virtual ~MatureState() override {}
+    MatureState();
+    MatureState(const MatureState&) {}
+    MatureState& operator=(const MatureState&) = delete;
 };
 
-#endif//MATURESTATE_H
+#endif
