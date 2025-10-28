@@ -11,9 +11,9 @@
 
 struct Biome {
     std::string name;
-    double temperature;   // °C
+    double temp;   // °C
     double humidity;      // %
-    float waterperDay;     // How often to water (in days)
+    float waterPerDay;     // How often to water (in days)
 };
 
 class PlantState;
