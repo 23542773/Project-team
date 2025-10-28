@@ -1,13 +1,17 @@
-#include "PlantKitFactory.h"
+#include "IndoorFactory.h"
+IndoorStrategy IndoorFactory::s;
 
-Plant* IndoorFactory::createPlant(const std::string& id, PlantFlyweight* sf) {
-    return new Plant(id, sf,createPot(), createSoilMix());
+Pot* IndoorFactory::createPot() 
+{
+	return new CeramicPot();
 }
 
-Pot* IndoorFactory::createPot() {
-    return new CeramicPot();
+SoilMix* IndoorFactory::createSoilMix() 
+{
+	return new LightAirySoilMix();
 }
 
-SoilMix* IndoorFactory::createSoilMix() {
-    return new LightAirySoilMix();
+CareStrategy* IndoorFactory::careStrategy()
+{
+	return &s;
 }

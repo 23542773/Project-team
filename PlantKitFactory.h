@@ -1,56 +1,28 @@
 #ifndef PLANTKITFACTORY_H
 #define PLANTKITFACTORY_H
-
 #include <string>
-#include "Plant.h"
-#include "SoilMix.h"
 #include "Pot.h"
+#include "SoilMix.h"
+#include "Plant.h"
+#include "PlantState.h"
+#include "SeedlingState.h"
 #include "PlantFlyweight.h"
+#include "CareStrategy.h"
 
-class PlantKitFactory{
+class PlantKitFactory 
+{
 
-    public:
-        virtual ~PlantKitFactory() = default;
-        virtual Plant* createPlant(const std::string& id, PlantFlyweight* sf) =0;
-        virtual Pot* createPot()=0;
-        virtual SoilMix* createSoilMix() = 0;
-
-};
-
-class DesertFactory : public PlantKitFactory{
-
-    public:
-    Plant* createPlant(const std::string& id, PlantFlyweight* sf) override;
-    Pot* createPot() override;
-    SoilMix* createSoilMix() override;
-};
-
-class TropicalFactory : public PlantKitFactory {
 public:
-    Plant* createPlant(const std::string& id, PlantFlyweight* sf) override;
-    Pot* createPot() override;
-    SoilMix* createSoilMix() override;
-};
 
-class IndoorFactory : public PlantKitFactory {
-public:
-    Plant* createPlant(const std::string& id, PlantFlyweight* sf) override;
-    Pot* createPot() override;
-    SoilMix* createSoilMix() override;
-};
+	Plant* createPlant(std::string id, std::string colour, PlantFlyweight* sf);
+	//Public for now but if we want to enforce no more than one concrete strategy each, singleton should be used
+	virtual CareStrategy* careStrategy() = 0;
 
-class MediterraneanFactory : public PlantKitFactory {
-public:
-    Plant* createPlant(const std::string& id, PlantFlyweight* sf) override;
-    Pot* createPot() override;
-    SoilMix* createSoilMix() override;
-};
+protected:
 
-class WetlandFactory : public PlantKitFactory {
-public:
-    Plant* createPlant(const std::string& id, PlantFlyweight* sf) override;
-    Pot* createPot() override;
-    SoilMix* createSoilMix() override;
+	virtual Pot* createPot() = 0;
+
+	virtual SoilMix* createSoilMix() = 0;
 };
 
 #endif
