@@ -36,48 +36,35 @@ public:
      * @brief Create an iterator for this greenhouse
      * @return Pointer to PlantIterator for Bed*
      */
-    PlantIterator<Bed*>* createIterator() override{
-
-        return new GreenhouseIterator(*this);
-    };
+    PlantIterator<Bed*>* createIterator() override;
 
     /**
      * @brief Get the vector of beds
      * @return Reference to the beds vector
      */
-    std::vector<Bed*>& getBeds(){
-        return beds;
-    };
+    std::vector<Bed*>& getBeds();
+    const std::vector<Bed*>& getBeds() const;
 
-    const std::vector<Bed*>& getBeds() const{
-        return beds;
-    }
+    void addBed(Bed* bed);
 
+    /**
+     * @brief Remove a bed from the greenhouse
+     * @param bed Pointer to bed to remove
+     * @return True if bed was found and removed, false otherwise
+     */
+    bool removeBed(Bed* bed);
 
-    void addBed(Bed* bed){
-        beds.push_back(bed);
-    };
+    /**
+     * @brief Remove bed by index
+     * @param index Index of bed to remove
+     * @return True if index was valid, false otherwise
+     */
+    bool removeBed(size_t index);
     
+    size_t size() const;
+    bool empty() const;
+    void clear();
+    Bed* getBed(size_t index) const;
 };
 
 #endif // GREENHOUSE_H
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

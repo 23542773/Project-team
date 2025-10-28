@@ -1,6 +1,8 @@
 #ifndef PLANTITERATOR_H
 #define PLANTITERATOR_H
 
+#include <cstddef> 
+
 /**
  * @class PlantIterator
  * @brief Abstract template iterator interface (Iterator Pattern)

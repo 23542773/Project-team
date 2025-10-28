@@ -2,6 +2,8 @@
 #define PLANTBEDITERATOR_H
 
 #include "PlantIterator.h"
+#include "PlantBedMemento.h"
+#include <vector>
 #include <cstddef>
 
 class Bed;
@@ -44,9 +46,11 @@ public:
      */
     bool hasNext() override;
 
-    void goTo(size_t index) override;
-    size_t currentIndexValue() const; // alternate name if you prefer
+    void goTo(size_t index) override;//override
     void reset() override;
+    
+    size_t currentIndex() const override;
+    size_t currentIndexValue() const; 
 
 };
 

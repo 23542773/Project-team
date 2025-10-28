@@ -3,6 +3,7 @@
 
 #include "PlantIterator.h"
 #include <cstddef>
+#include <vector>
 
 class Greenhouse;
 class Bed;
@@ -42,9 +43,11 @@ public:
      */
     bool hasNext() override;
 
-    void goTo(size_t index) override;
+    void goTo(size_t index) override;//override?
     void reset() override;
+
     size_t currentIndex() const override;
+    size_t currentIndexValue() const; 
 };
 
 #endif // GREENHOUSEITERATOR_H
