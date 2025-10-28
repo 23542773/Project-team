@@ -1,14 +1,21 @@
 #ifndef SEEDLINGSTATE_H
 #define SEEDLINGSTATE_H
-
 #include "PlantState.h"
 
-class SeedlingState : public PlantState {
+class SeedlingState : public PlantState 
+{
+public:
 
-    public:
-        void onTick(Plant& p) override;
-        void onWater(Plant& p) override;
+    static SeedlingState& getInstance();
+    void onTick(Plant& plant) override;
+    void checkChange(Plant& plant) override;
+    std::string name() override;
 
+protected:
+
+	virtual ~SeedlingState() override {}
+    SeedlingState();
+    SeedlingState(const SeedlingState&) {}
+    SeedlingState& operator=(const SeedlingState&) = delete;
 };
-
-#endif//SEEDLINGSTATE_H
+#endif

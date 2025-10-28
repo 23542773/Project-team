@@ -1,4 +1,28 @@
 #include "SeedlingState.h"
+#include "GrowingState.h"
 
-    void SeedlingState::onTick(Plant& p) {};
-    void SeedlingState::onWater(Plant& p) {};
+SeedlingState& SeedlingState::getInstance() 
+{
+    static SeedlingState instance;  
+    return instance;
+}
+
+SeedlingState::SeedlingState() {}
+
+void SeedlingState::onTick(Plant& p) 
+{
+	p.addHealth(2);
+}
+
+void SeedlingState::checkChange(Plant& plant)
+{
+	if (plant.getAgeDays() > 5) 
+	{
+        plant.setState(&GrowingState::getInstance());
+    }
+}
+
+std::string SeedlingState::name()
+{ 
+	return "Seedling";
+}
