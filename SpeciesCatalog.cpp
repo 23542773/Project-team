@@ -1,16 +1,13 @@
 #include "SpeciesCatalog.h"
 
-PlantFlyweight* SpeciesCatalog::get(SpeciesKey& s) {
-	// TODO - implement SpeciesCatalog::get
-	throw "Not yet implemented";
+void SpeciesCatalog::add(std::shared_ptr<PlantFlyweight> fw) { if (fw) bySku[fw->getSku()] = std::move(fw); }
+
+std::shared_ptr<PlantFlyweight> SpeciesCatalog::get(std::string sku)  
+{
+    auto it = bySku.find(sku);
+    return (it == bySku.end()) ? nullptr : it->second;
 }
 
-PlantFlyweight* SpeciesCatalog::createUnshared(std::string n, std::string env, CarePresets cc) {
-	// TODO - implement SpeciesCatalog::createUnshared
-	throw "Not yet implemented";
-}
+bool SpeciesCatalog::has(std::string sku) { return bySku.find(sku) != bySku.end(); }
 
-void SpeciesCatalog::registerSpecies(SpeciesKey& s, std::string env, CarePresets cc) {
-	// TODO - implement SpeciesCatalog::registerSpecies
-	throw "Not yet implemented";
-}
+void SpeciesCatalog::remove(std::string sku) { bySku.erase(sku); }

@@ -1,25 +1,26 @@
 #ifndef SPECIESCATALOG_H
 #define SPECIESCATALOG_H
+#include <memory>
+#include <unordered_map>
+#include <string>
+#include "PlantFlyweight.h"
 
-#include <iostream>
-#include <map>
-
-#include "SpeciesKey.h"
-#include "CarePresets.h"
-
-class PlantFlyweight;
-
-class SpeciesCatalog {
-
-private:
-	std::map<SpeciesKey, PlantFlyweight*> pool;
+/**
+ * @class SpeciesCatalog
+ * @brief Flyweight factory for managing shared plant species
+ */
+class SpeciesCatalog 
+{
 
 public:
-	PlantFlyweight* get(SpeciesKey& s);
 
-	PlantFlyweight* createUnshared(std::string n, std::string env, CarePresets cc);
+    void add(std::shared_ptr<PlantFlyweight> fw);
+    std::shared_ptr<PlantFlyweight> get(std::string sku);
+    bool has(std::string sku);
+    void remove(std::string sku);
 
-	void registerSpecies(SpeciesKey& s, std::string env, CarePresets cc);
+private:
+    std::unordered_map<std::string, std::shared_ptr<PlantFlyweight>> bySku;
 };
 
 #endif

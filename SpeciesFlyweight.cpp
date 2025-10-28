@@ -1,16 +1,24 @@
 #include "SpeciesFlyweight.h"
 
-std::string SpeciesFlyweight::speciesName() {
-	// TODO - implement SpeciesFlyweight::speciesName
-	throw "Not yet implemented";
+SpeciesFlyweight::SpeciesFlyweight(std::string sku, std::string name, std::string biome, int basePrice)
+: sku(sku), name(name), biome(biome), basePrice(basePrice) {}
+
+std::string SpeciesFlyweight::getSku()  
+{ 
+	return sku; 
 }
 
-std::string SpeciesFlyweight::envType() {
-	// TODO - implement SpeciesFlyweight::envType
-	throw "Not yet implemented";
+std::string SpeciesFlyweight::getName()  
+{
+	return name; 
 }
 
-CarePresets SpeciesFlyweight::careDefaults() {
-	// TODO - implement SpeciesFlyweight::careDefaults
-	throw "Not yet implemented";
+std::string SpeciesFlyweight::getBiome() 
+{ 
+	return biome; 
+}
+
+int SpeciesFlyweight::getCost()  
+{ 
+	return basePrice; 
 }

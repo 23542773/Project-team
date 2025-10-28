@@ -1,19 +1,23 @@
-#ifndef PLANTFLYWEIGHT_H
-#define PLANTFLYWEIGHT_H
+#ifndef PLANT_FLYWEIGHT_H
+#define PLANT_FLYWEIGHT_H
 
-#include <iostream>
+#include <string>
 
-#include "CarePresets.h"
 
-class PlantFlyweight {
-
+/**
+ * @class PlantFlyweight
+ * @brief Abstract flyweight interface for shared plant data (Flyweight Pattern)
+ */
+class PlantFlyweight 
+{
 
 public:
-	virtual std::string speciesName() = 0;
 
-	virtual std::string envType() = 0;
-
-	virtual CarePresets careDefaults() = 0;
+    virtual ~PlantFlyweight() {};
+    virtual std::string getSku() = 0;  
+    virtual std::string getName()  = 0;
+    virtual std::string getBiome() = 0;
+    virtual int getCost()  = 0;
 };
 
 #endif

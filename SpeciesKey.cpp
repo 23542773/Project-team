@@ -1,6 +1,3 @@
 #include "SpeciesKey.h"
 
-bool SpeciesKey::operator==(SpeciesKey& s) {
-	// TODO - implement SpeciesKey::operator==
-	throw "Not yet implemented";
-}
+bool SpeciesKey::operator==(const SpeciesKey& other) const { return (species==other.species) && (variant==other.variant); }

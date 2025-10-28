@@ -1,16 +1,24 @@
 #include "UnsharedSpeciesFlyweight.h"
 
-std::string UnsharedSpeciesFlyweight::speciesName() {
-	// TODO - implement UnsharedSpeciesFlyweight::speciesName
-	throw "Not yet implemented";
+UnsharedSpeciesFlyweight::UnsharedSpeciesFlyweight(std::string sku, std::string name, std::string biome, int basePrice)
+: sku(sku), name(name), biome(biome), basePrice(basePrice) {}
+
+std::string UnsharedSpeciesFlyweight::getSku()  
+{ 
+	return sku; 
 }
 
-std::string UnsharedSpeciesFlyweight::envType() {
-	// TODO - implement UnsharedSpeciesFlyweight::envType
-	throw "Not yet implemented";
+std::string UnsharedSpeciesFlyweight::getName()  
+{ 
+	return name; 
 }
 
-CarePresets UnsharedSpeciesFlyweight::careDefaults() {
-	// TODO - implement UnsharedSpeciesFlyweight::careDefaults
-	throw "Not yet implemented";
+std::string UnsharedSpeciesFlyweight::getBiome()  
+{ 
+	return biome; 
+}
+
+int UnsharedSpeciesFlyweight::getCost()  
+{ 
+	return basePrice; 
 }

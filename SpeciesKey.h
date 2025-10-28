@@ -3,6 +3,10 @@
 
 #include <iostream>
 
+/**
+ * @class SpeciesKey
+ * @brief Key for identifying plant species variants
+ */
 class SpeciesKey {
 
 private:
@@ -10,7 +14,7 @@ private:
 	std::string variant;
 
 public:
-	bool operator==(SpeciesKey& s);
+	 bool operator==(const SpeciesKey& other) const;
 };
 
 #endif
