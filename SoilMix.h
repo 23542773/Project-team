@@ -12,9 +12,9 @@ public:
 
 	SoilMix(int c = 0) : cost(c) {}
     virtual ~SoilMix() = default;
-    virtual std::string name() = 0;
-    int getCost() { return cost; }
-	virtual SoilMix* clone() = 0;
+    virtual std::string name() const = 0;
+    int getCost() const { return cost; }
+	virtual SoilMix* clone() const = 0;
 };
 
 #endif

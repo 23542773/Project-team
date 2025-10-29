@@ -22,7 +22,7 @@ void SeedlingState::checkChange(Plant& plant)
     }
 }
 
-std::string SeedlingState::name()
+std::string SeedlingState::name() const
 { 
 	return "Seedling";
 }

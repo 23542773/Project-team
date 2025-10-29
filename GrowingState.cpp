@@ -23,7 +23,7 @@ void GrowingState::checkChange(Plant& plant)
     }
 }
 
-std::string GrowingState::name() 
+std::string GrowingState::name() const
 {
     return "Growing";
 }

@@ -13,10 +13,10 @@ class PlantFlyweight
 
 public:
 
-    virtual ~PlantFlyweight() {};
-    virtual std::string getSku() = 0;  
-    virtual std::string getName()  = 0;
-    virtual std::string getBiome() = 0;
+    virtual ~PlantFlyweight() = default;
+    virtual std::string getSku() const = 0;  
+    virtual std::string getName() const = 0;
+    virtual std::string getBiome() const = 0;
     virtual int getCost()  = 0;
 };
 

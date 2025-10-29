@@ -49,67 +49,67 @@ void Plant::setState(PlantState* s)
 	state = s;
 }
 
-std::string Plant::id() 
+std::string Plant::id() const 
 { 
 	return plantId; 
 }
 
-std::string Plant::sku() 
+std::string Plant::sku() const
 {
 	 return species->getSku(); 
 }
 
-std::string Plant::name() 
+std::string Plant::name() const
 { 
 	return species->getName(); 
 }
 
-std::string Plant::biome() 
+std::string Plant::biome() const
 { 
 	return species->getBiome(); 
 }
 
-std::string Plant::getColour() 
+std::string Plant::getColour() const
 { 
 	return colour;
 }
 
-int Plant::getAgeDays()  
+int Plant::getAgeDays()  const
 { 
 	return ageInDays; 
 }
 
-int Plant::getMoisture()  
+int Plant::getMoisture()  const
 { 
 	return moistureLevel; 
 }
 
-int Plant::getHealth() 
+int Plant::getHealth() const
 { 
 	return health; 
 }
 
-PlantFlyweight* Plant::getSpeciesFly() 
+PlantFlyweight* Plant::getSpeciesFly() const
 { 
 	return species; 
 }
 
-SoilMix* Plant::getSoilMix()  
+SoilMix* Plant::getSoilMix()  const
 { 
 	return soil; 
 }
 
-Pot* Plant::getPot() 
+Pot* Plant::getPot() const
 { 
 	return pot; 
 }
 
-CareStrategy* Plant::getCareStrategy()  
+CareStrategy* Plant::getCareStrategy()  const
 { 
 	return care; 
 }
 
-PlantState*  Plant::getPlantState()    
+PlantState*  Plant::getPlantState()  const  
 { 
 	return state; 
 }

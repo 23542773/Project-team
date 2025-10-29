@@ -41,19 +41,19 @@ public:
 	int cost();
 	void setState(PlantState* s);
 
-	std::string id();
-  	std::string sku();
-  	std::string name();
-  	std::string biome();
-  	std::string getColour();
-  	int getAgeDays();
-  	int getMoisture();
-	int getHealth();
-  	PlantFlyweight* getSpeciesFly();
-  	SoilMix* getSoilMix();
-  	Pot* getPot();
-  	CareStrategy* getCareStrategy();
-  	PlantState* getPlantState();
+	std::string id() const;
+  	std::string sku() const;
+  	std::string name()const;
+  	std::string biome()const;
+  	std::string getColour()const;
+  	int getAgeDays() const;
+  	int getMoisture()const;
+	int getHealth()const;
+  	PlantFlyweight* getSpeciesFly() const;
+  	SoilMix* getSoilMix() const;
+  	Pot* getPot() const;
+  	CareStrategy* getCareStrategy() const;
+  	PlantState* getPlantState() const;
 
 
 	//Prototype (missing an abstract class)

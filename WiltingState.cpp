@@ -28,7 +28,7 @@ void WiltingState::checkChange(Plant& plant)
     }
 }
 
-std::string WiltingState::name() 
+std::string WiltingState::name() const
 {
     return "Wilting";
 }

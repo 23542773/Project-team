@@ -24,7 +24,7 @@ void MatureState::checkChange(Plant& plant)
 	
 }
 
-std::string MatureState::name() 
+std::string MatureState::name() const
 {
     return "Matured";
 }

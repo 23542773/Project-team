@@ -12,8 +12,8 @@ public:
 
 	Pot(int c) : cost(c) {}
 	virtual ~Pot() = default;
-	virtual std::string name() = 0;
-	int getCost() { return cost; }
+	virtual std::string name() const = 0;
+	int getCost() const { return cost; }
 	virtual Pot* clone() = 0;
 };
 
