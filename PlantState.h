@@ -1,16 +1,20 @@
 #ifndef PLANTSTATE_H
 #define PLANTSTATE_H
+#include <string>
+#include "Plant.h"
 
 class Plant;
 
-class PlantState {
+class PlantState 
+{
 
-    public:
+public:
 
-
-        virtual void onTick(Plant& p) = 0;
-        virtual void onWater(Plant& p) = 0;
-        virtual bool canSell();
+	virtual ~PlantState() = default;
+    virtual void onTick(Plant& plant) = 0;
+    virtual void checkChange(Plant& plant) = 0;
+    virtual std::string name() = 0;
+    virtual bool isMature() { return false; }
 };
 
-#endif//PLANTSTATE_H
+#endif

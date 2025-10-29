@@ -1,80 +1,65 @@
 #ifndef PLANT_H
 #define PLANT_H
-
-#include <iostream>
-
-// #include "SoilMix.h"
-// #include "Pot.h"
-// #include "CareStrategy.h"
+#include "SoilMix.h"
+#include "Pot.h"
+#include "CareStrategy.h"
 #include "PlantState.h"
-// #include "PlantFlyweight.h"
-
-struct Biome {
-    std::string name;
-    double temp;   // °C
-    double humidity;      // %
-    float waterPerDay;     // How often to water (in days)
-};
-
+#include "PlantFlyweight.h"
 class PlantState;
+class CareStrategy;
+class PlantFlyweight;
 
-class Plant {
+class Plant 
+{
 
-    std::string id;
-    std::string colour;
-    std::string name;
-    Biome biome;
-    // PlantFlyweight species;
-    //CareStrategy care;
-    PlantState* state;
-    // SoilMix* soil;
-	// Pot* pot;
+private:
 
-    int health = 100;
+	std::string plantId;
+	std::string colour;
 
-    float ageInDays=0;
-    float moistureLevel=0;
-    float humidity = 0;
-    float temp = 0;
-    float height = 0.0;
-    float rootDepth = 0.0;
-    float lightExp = 0.0;//?
+	PlantFlyweight* species;
+	CareStrategy* care;
+	PlantState* state;
+	SoilMix* soil;
+	Pot* pot;
 
-    float soilPh = 0.0;
-    float costPerDay = 0.0;//R -??currencies
-    
+	int ageInDays = 0;
+	int moistureLevel = 0;
+	int health = 100;
+	
+	int check(int change, int low, int high);
 
-    public:
-        Plant();
-        virtual ~Plant();
-        Plant(const Plant& other);
-        Plant* clone(std::string plantId, std::string colour);
-    
-        void water();
-        void fertilize();
-        void tickDay();
-        void addWater(int amount);
-        void addHealth(int amount);
-        void setState(PlantState* s);
+public:
 
-        Biome getBiome();
+	Plant(std::string id, std::string colour, PlantFlyweight* species, CareStrategy* care, PlantState* state, SoilMix* soil, Pot* pot);
+	~Plant();
+	void water();
+	void fertilize();
+	void tickDay();
+	void addWater(int amount);
+	void addHealth(int amount);
+	int cost();
+	void setState(PlantState* s);
 
-        int getHealth();
+	std::string id();
+  	std::string sku();
+  	std::string name();
+  	std::string biome();
+  	std::string getColour();
+  	int getAgeDays();
+  	int getMoisture();
+	int getHealth();
+  	PlantFlyweight* getSpeciesFly();
+  	SoilMix* getSoilMix();
+  	Pot* getPot();
+  	CareStrategy* getCareStrategy();
+  	PlantState* getPlantState();
 
-        float getCost();
-        float getAgeDays();
-        float getMoisture();
 
-        std::string getID();
-        // std::string sku();//?
-        std::string getName();
-        std::string getColour();
+	//Prototype (missing an abstract class)
 
-        // PlantFlyweight* getSpeciesFly();
-        // SoilMix* getSoilMix();
-        // Pot* getPot();
-        // CareStrategy* getCareStrategy();
-        // PlantState* getPlantState();
+	Plant(const Plant& other);                  
+	Plant* clone(std::string plantId, std::string colour);
 };
 
-#endif//PLANT_H
+#endif
