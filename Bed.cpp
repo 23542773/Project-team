@@ -31,10 +31,6 @@ PlantIterator<Plant*>* Bed::createIterator() {
     return nullptr;
 }
 
-std::vector<Plant*>& Bed::getPlants() {
-    return plants;
-}
+std::vector<Plant*>& Bed::getPlants() { return plants; }
 
-const std::vector<Plant*>& Bed::getPlants() const {
-    return plants;
-}
+const std::vector<Plant*>& Bed::getPlants() const { return plants; }
