@@ -1,8 +1,8 @@
 # Makefile for Plant Nursery Facade Testing
 # Author: Damian Moustakis - COS 214 Project
 # Author: Locutus-0201
-# Date: 2025-10-27 22:48:09 UTC
-# Project: Plant Nursery Simulator - Facade Pattern Implementation
+# Date: 2025-10-30 11:31:27 UTC
+# Project: Plant Nursery Simulator - Unified Facade Pattern Implementation
 
 # ============================================================================
 #                           COMPILER CONFIGURATION
@@ -15,10 +15,8 @@ CXXFLAGS = -std=c++14 -Wall -Wextra -g
 #                           SOURCE FILES
 # ============================================================================
 
-# Facade source files
-FACADE_SRC = NurseryFacade.cpp \
-             CustomerNurseryFacade.cpp \
-             StaffNurseryFacade.cpp
+# Unified facade source file (single facade now!)
+FACADE_SRC = NurseryFacade.cpp
 
 # Dummy implementation files (in root directory)
 DUMMY_SRC = DummySpeciesCatalog.cpp \
@@ -251,23 +249,17 @@ help:
 
 # Recompile if header files change
 NurseryFacade.o: NurseryFacade.cpp NurseryFacade.h \
-                 SpeciesCatalog.h InventoryService.h SalesService.h
-
-CustomerNurseryFacade.o: CustomerNurseryFacade.cpp CustomerNurseryFacade.h \
-                         NurseryFacade.h PlantKitFactory.h PackageDirector.h \
-                         CustomPlantPackage.h OrderItem.h
-
-StaffNurseryFacade.o: StaffNurseryFacade.cpp StaffNurseryFacade.h \
-                      NurseryFacade.h
+                 SpeciesCatalog.h InventoryService.h SalesService.h \
+                 PlantKitFactory.h PackageDirector.h CustomPlantPackage.h OrderItem.h
 
 DummySpeciesCatalog.o: DummySpeciesCatalog.cpp DummySpeciesCatalog.h \
-                       SpeciesCatalog.h DummyPlantFlyweight.h
+                       DummyPlantFlyweight.h
 
 DummyInventoryService.o: DummyInventoryService.cpp DummyInventoryService.h \
-                         InventoryService.h DummyPlant.h
+                         DummyPlant.h
 
 DummySalesService.o: DummySalesService.cpp DummySalesService.h \
-                     SalesService.h OrderItem.h
+                     DummyOrderItem.h
 
 DummyPlantFlyweight.o: DummyPlantFlyweight.cpp DummyPlantFlyweight.h
 
@@ -277,12 +269,11 @@ DummyPlant.o: DummyPlant.cpp DummyPlant.h \
 DummyPlantState.o: DummyPlantState.cpp DummyPlantState.h DummyPlant.h
 
 DummyPlantKitFactory.o: DummyPlantKitFactory.cpp DummyPlantKitFactory.h \
-                        PlantKitFactory.h DummyPlant.h DummyPlantFlyweight.h
+                        DummyPlant.h DummyPlantFlyweight.h
 
-DummyPackageDirector.o: DummyPackageDirector.cpp DummyPackageDirector.h \
-                        PackageDirector.h
+DummyPackageDirector.o: DummyPackageDirector.cpp DummyPackageDirector.h
 
-test_facade.o: test_facade.cpp CustomerNurseryFacade.h StaffNurseryFacade.h \
+test_facade.o: test_facade.cpp NurseryFacade.h \
                DummySpeciesCatalog.h DummyInventoryService.h DummySalesService.h \
                DummyPlantKitFactory.h DummyPackageDirector.h DummyOrderItem.h \
                DummyPlant.h DummyPlantState.h DummyPlantFlyweight.h

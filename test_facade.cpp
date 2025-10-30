@@ -2,9 +2,8 @@
 #include <vector>
 #include <exception>
 
-// Include facades
-#include "CustomerNurseryFacade.h"
-#include "StaffNurseryFacade.h"
+// Include unified facade
+#include "NurseryFacade.h"
 
 // Include dummy subsystems
 #include "DummySpeciesCatalog.h"
@@ -19,10 +18,10 @@
 
 /**
  * @file test_facade.cpp
- * @brief Comprehensive test program for Facade pattern
+ * @brief Comprehensive integration test for unified Facade pattern
  * @author Damian Moustakis - COS 214 Project
  * @author Locutus-0201
- * @date 2025-10-27 21:43:06 UTC
+ * @date 2025-10-30 11:31:27 UTC
  */
 
 void printSeparator(const std::string& title) 
@@ -48,14 +47,16 @@ void printTestResult(const std::string& testName, bool passed)
 
 int main() 
 {
-    printSeparator("PLANT NURSERY FACADE TESTING");
+    printSeparator("UNIFIED FACADE TESTING");
     
     int testsPassed = 0;
     int totalTests = 0;
     
     try 
     {
-        //creating dummy substystems
+        // ====================================================================
+        // SETUP: Create dummy subsystems
+        // ====================================================================
         printSeparator("SETUP: Creating Subsystems");
         
         std::cout << "Creating DummySpeciesCatalog...\n";
@@ -94,30 +95,31 @@ int main()
         inv->addPlant("ORCH-001", plant3);
         std::cout << "  Added ORCH-001 (Orchid) - MATURE state\n";
 
-        //creating the facades
-        printSeparator("Creating Facades");
+        // ====================================================================
+        // CREATE UNIFIED FACADE
+        // ====================================================================
+        printSeparator("Creating Unified Facade");
         
-        std::cout << "Creating CustomerNurseryFacade...\n";
-        CustomerNurseryFacade customerFacade(catalog, factory, director, inv, sales);
-        
-        std::cout << "Creating StaffNurseryFacade...\n";
-        StaffNurseryFacade staffFacade(catalog, inv, sales);
+        std::cout << "Creating NurseryFacade...\n";
+        NurseryFacade facade(catalog, factory, director, inv, sales);
 
-        //validation
+        // ====================================================================
+        // TEST 1: Facade Validation
+        // ====================================================================
         printSeparator("TEST 1: Facade Validation");
         totalTests++;
         
-        bool customerValid = customerFacade.isValid();
-        bool staffValid = staffFacade.isValid();
+        bool facadeValid = facade.isValid();
         
-        std::cout << "Customer facade valid: " << (customerValid ? "YES" : "NO") << "\n";
-        std::cout << "Staff facade valid: " << (staffValid ? "YES" : "NO") << "\n";
+        std::cout << "Facade valid: " << (facadeValid ? "YES" : "NO") << "\n";
         
-        bool test1Passed = customerValid && staffValid;
+        bool test1Passed = facadeValid;
         printTestResult("Facade Validation", test1Passed);
         if (test1Passed) testsPassed++;
 
-        //browsing
+        // ====================================================================
+        // TEST 2: Browse Available Plants (Customer Operation)
+        // ====================================================================
         printSeparator("TEST 2: Browse Available Plants");
         totalTests++;
         
@@ -129,7 +131,7 @@ int main()
         }
         std::cout << "\n";
         
-        auto available = customerFacade.browseAvailable(skus);
+        auto available = facade.browseAvailable(skus);
         
         std::cout << "\n--- RESULTS ---\n";
         std::cout << "Available plants found: " << available.size() << "\n";
@@ -142,13 +144,15 @@ int main()
         printTestResult("Browse Available Plants", test2Passed);
         if (test2Passed) testsPassed++;
 
-        //details
+        // ====================================================================
+        // TEST 3: Get Plant Details (Customer Operation)
+        // ====================================================================
         printSeparator("TEST 3: Get Plant Details");
         totalTests++;
         
         try 
         {
-            std::string details = customerFacade.getPlantDetails("SUCC-001");
+            std::string details = facade.getPlantDetails("SUCC-001");
             std::cout << "\n--- PLANT DETAILS ---\n";
             std::cout << details << "\n";
             
@@ -162,12 +166,14 @@ int main()
             printTestResult("Get Plant Details", false);
         }
 
-        //availability
+        // ====================================================================
+        // TEST 4: Check Available for Purchase (Staff Operation)
+        // ====================================================================
         printSeparator("TEST 4: Check Available for Purchase");
         totalTests++;
         
-        bool canBuyAloe = staffFacade.isAvailableForPurchase("SUCC-001");
-        bool canBuyCactus = staffFacade.isAvailableForPurchase("CACT-001");
+        bool canBuyAloe = facade.isAvailableForPurchase("SUCC-001");
+        bool canBuyCactus = facade.isAvailableForPurchase("CACT-001");
         
         std::cout << "\n--- RESULTS ---\n";
         std::cout << "SUCC-001 (Aloe - MATURE): " << (canBuyAloe ? "✓ CAN BUY" : "✗ CANNOT BUY") << "\n";
@@ -177,7 +183,9 @@ int main()
         printTestResult("Available for Purchase (State Check)", test4Passed);
         if (test4Passed) testsPassed++;
 
-        //restock
+        // ====================================================================
+        // TEST 5: Restock Operation (Staff Operation)
+        // ====================================================================
         printSeparator("TEST 5: Staff Restock Operation");
         totalTests++;
         
@@ -186,7 +194,7 @@ int main()
             int beforeStock = inv->available("ORCH-001");
             std::cout << "Before restock: ORCH-001 = " << beforeStock << " units\n";
             
-            staffFacade.restock("ORCH-001", 10);
+            facade.restock("ORCH-001", 10);
             
             int afterStock = inv->available("ORCH-001");
             std::cout << "After restock: ORCH-001 = " << afterStock << " units\n";
@@ -201,11 +209,13 @@ int main()
             printTestResult("Staff Restock Operation", false);
         }
 
-        //sale ready
+        // ====================================================================
+        // TEST 6: Get Ready for Sale (Staff Operation)
+        // ====================================================================
         printSeparator("TEST 6: Get Plants Ready for Sale");
         totalTests++;
         
-        auto readyPlants = staffFacade.getReadyForSale();
+        auto readyPlants = facade.getReadyForSale();
         
         std::cout << "\n--- RESULTS ---\n";
         std::cout << "Plants ready for sale: " << readyPlants.size() << "\n";
@@ -218,13 +228,15 @@ int main()
         printTestResult("Get Ready for Sale", test6Passed);
         if (test6Passed) testsPassed++;
 
-        //stock check
+        // ====================================================================
+        // TEST 7: Validate Stock (Staff Operation)
+        // ====================================================================
         printSeparator("TEST 7: Validate Stock");
         totalTests++;
         
-        std::string status1 = staffFacade.validateStock("SUCC-001", 20);
-        std::string status2 = staffFacade.validateStock("SUCC-001", 10);
-        std::string status3 = staffFacade.validateStock("INVALID", 5);
+        std::string status1 = facade.validateStock("SUCC-001", 20);
+        std::string status2 = facade.validateStock("SUCC-001", 10);
+        std::string status3 = facade.validateStock("INVALID", 5);
         
         std::cout << "\n--- RESULTS ---\n";
         std::cout << "SUCC-001 (need 20): " << status1 << "\n";
@@ -235,11 +247,13 @@ int main()
         printTestResult("Validate Stock", test7Passed);
         if (test7Passed) testsPassed++;
 
-        //summary
+        // ====================================================================
+        // TEST 8: Inventory Summary (Staff Operation)
+        // ====================================================================
         printSeparator("TEST 8: Inventory Summary");
         totalTests++;
         
-        std::string summary = staffFacade.getInventorySummary();
+        std::string summary = facade.getInventorySummary();
         
         std::cout << "\n--- INVENTORY SUMMARY ---\n";
         std::cout << summary << "\n";
@@ -248,7 +262,9 @@ int main()
         printTestResult("Inventory Summary", test8Passed);
         if (test8Passed) testsPassed++;
 
-        //receipt
+        // ====================================================================
+        // TEST 9: Generate Receipt (Customer Operation)
+        // ====================================================================
         printSeparator("TEST 9: Generate Order Receipt");
         totalTests++;
         
@@ -256,7 +272,7 @@ int main()
         receiptItems.push_back(new DummyOrderItem("SUCC-001", 150.00, "plant", 1));
         receiptItems.push_back(new DummyOrderItem("HERB-023", 85.00, "plant", 1));
         
-        std::string receipt = customerFacade.orderReceipt("CUST-001", receiptItems);
+        std::string receipt = facade.generateReceipt("CUST-001", receiptItems);
         
         std::cout << "\n--- RECEIPT ---\n";
         std::cout << receipt << "\n";
@@ -272,7 +288,9 @@ int main()
         }
         receiptItems.clear();
 
-        //order placing
+        // ====================================================================
+        // TEST 10: Place Order (Customer Operation - SHOWCASE)
+        // ====================================================================
         printSeparator("TEST 10: Place Order (SHOWCASE)");
         totalTests++;
         
@@ -285,7 +303,7 @@ int main()
             int beforeStock = inv->available("SUCC-001");
             std::cout << "Before order: SUCC-001 stock = " << beforeStock << "\n\n";
             
-            customerFacade.placeOrder("CUST-001", orderItems);
+            facade.placeOrder("CUST-001", orderItems);
             
             int afterStock = inv->available("SUCC-001");
             std::cout << "\nAfter order: SUCC-001 stock = " << afterStock << "\n";
@@ -306,14 +324,16 @@ int main()
             delete item;
         }
 
-        //invalid handling (SKU)
+        // ====================================================================
+        // TEST 11: Error Handling - Invalid SKU
+        // ====================================================================
         printSeparator("TEST 11: Error Handling");
         totalTests++;
         
         bool exceptionThrown = false;
         try 
         {
-            customerFacade.getPlantDetails("NONEXISTENT-SKU");
+            facade.getPlantDetails("NONEXISTENT-SKU");
         } 
         catch (const std::invalid_argument& e) 
         {
@@ -324,7 +344,9 @@ int main()
         printTestResult("Error Handling (Invalid SKU)", exceptionThrown);
         if (exceptionThrown) testsPassed++;
 
-        //invalid handling (stock)
+        // ====================================================================
+        // TEST 12: Error Handling - Insufficient Stock
+        // ====================================================================
         printSeparator("TEST 12: Insufficient Stock Handling");
         totalTests++;
         
@@ -342,7 +364,7 @@ int main()
         
         try 
         {
-            customerFacade.placeOrder("CUST-001", badOrder);
+            facade.placeOrder("CUST-001", badOrder);
         } 
         catch (const std::runtime_error& e) 
         {
@@ -359,11 +381,29 @@ int main()
         printTestResult("Insufficient Stock Handling", insufficientStockHandled);
         if (insufficientStockHandled) testsPassed++;
 
-        //destruction
-        printSeparator("CLEANUP: Destroying Subsystems");
+        // ====================================================================
+        // TEST 13: Get All SKUs (Shared Operation)
+        // ====================================================================
+        printSeparator("TEST 13: Get All SKUs");
+        totalTests++;
         
-        std::cout << "Deleting facades...\n";
-        // Facades are stack-allocated, will be destroyed automatically
+        auto allSKUs = facade.getAllSKUs();
+        
+        std::cout << "\n--- ALL SKUs ---\n";
+        std::cout << "Total SKUs: " << allSKUs.size() << "\n";
+        for (const auto& sku : allSKUs) 
+        {
+            std::cout << "  • " << sku << "\n";
+        }
+        
+        bool test13Passed = (allSKUs.size() > 0);
+        printTestResult("Get All SKUs", test13Passed);
+        if (test13Passed) testsPassed++;
+
+        // ====================================================================
+        // CLEANUP
+        // ====================================================================
+        printSeparator("CLEANUP: Destroying Subsystems");
         
         std::cout << "Deleting subsystems...\n";
         delete catalog;
@@ -374,7 +414,9 @@ int main()
         
         std::cout << "Cleanup complete\n";
 
-        //results
+        // ====================================================================
+        // FINAL RESULTS
+        // ====================================================================
         printSeparator("TEST RESULTS SUMMARY");
         
         std::cout << "\n";
@@ -384,8 +426,8 @@ int main()
         if (testsPassed == totalTests) 
         {
             std::cout << "\n✓✓✓ ALL TESTS PASSED! ✓✓✓\n";
-            std::cout << "\nFacade implementation is working correctly!\n";
-            std::cout << "Ready to swap in real pattern implementations.\n";
+            std::cout << "\nUnified facade implementation is working correctly!\n";
+            std::cout << "Ready to integrate real pattern implementations.\n";
         } 
         else 
         {
