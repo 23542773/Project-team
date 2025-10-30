@@ -32,7 +32,7 @@ public:
     /**
      * @brief Destructor
      */
-    ~PlantBedIterator();
+    ~PlantBedIterator() override;
     
     /**
      * @brief Get next plant
@@ -46,11 +46,10 @@ public:
      */
     bool hasNext() override;
 
-    void goTo(size_t index) override;//override
+    void goTo(size_t index) override;
     void reset() override;
     
     size_t currentIndex() const override;
-    size_t currentIndexValue() const; 
 
 };
 

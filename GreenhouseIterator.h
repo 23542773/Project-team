@@ -29,7 +29,7 @@ public:
     /**
      * @brief Destructor
      */
-    ~GreenhouseIterator();
+    ~GreenhouseIterator() override = default;
     
     /**
      * @brief Get next bed
@@ -47,7 +47,6 @@ public:
     void reset() override;
 
     size_t currentIndex() const override;
-    size_t currentIndexValue() const; 
 };
 
 #endif // GREENHOUSEITERATOR_H

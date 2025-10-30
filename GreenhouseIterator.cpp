@@ -5,16 +5,16 @@
 
 GreenhouseIterator::GreenhouseIterator(Greenhouse& greenhouse) : gh(greenhouse), Index(0) { }
 
-GreenhouseIterator::~GreenhouseIterator() { }
-
 Bed*& GreenhouseIterator::next() { return gh.getBeds()[Index++]; }
 
 bool GreenhouseIterator::hasNext() { return Index < gh.getBeds().size(); }
 
-void GreenhouseIterator::goTo(size_t index) { if (index<gh.getBeds().size()) Index = index;}
+void GreenhouseIterator::goTo(size_t index) { 
+
+    if (index<gh.getBeds().size()) Index = index;
+    else throw std::out_of_range("Invalid bed index");
+}
 
 void GreenhouseIterator::reset() { Index = 0; }
 
 size_t GreenhouseIterator::currentIndex() const { return Index; }
-
-size_t GreenhouseIterator::currentIndexValue() const { return Index; }
