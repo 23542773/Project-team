@@ -7,9 +7,10 @@
 #include <vector>
 #include "PlantBedMemento.h"
 #include "Plant.h"
+#include "PlantBedIterator.h"
 
 class Plant;
-class PlantBedIterator;
+
 
 /**
  * @class Bed

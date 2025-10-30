@@ -6,9 +6,11 @@
 #include "PlantStateIterator.h"
 #include "Bed.h"
 #include <vector>
+#include "Plant.h"
+#include "PlantBedIterator.h"
 
 class Bed;
-class GreenhouseIterator;
+
 
 /**
  * @class Greenhouse

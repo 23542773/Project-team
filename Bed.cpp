@@ -28,7 +28,7 @@ bool Bed::removePlant(size_t index) {
 }
 
 PlantIterator<Plant*>* Bed::createIterator() {
-    return nullptr;
+    return new PlantBedIterator(*this);
 }
 
 std::vector<Plant*>& Bed::getPlants() {

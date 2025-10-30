@@ -1,24 +1,21 @@
-#ifndef PLANTSTATEITERATOR_H
-#define PLANTSTATEITERATOR_H
+#ifndef PLANTBEDITERATOR_H
+#define PLANTBEDITERATOR_H
 
 #include "PlantIterator.h"
-#include "Greenhouse.h"
+#include "Bed.h"
 #include "Plant.h"
 #include <vector>
 #include <stdexcept>
-#include <algorithm>
 
-class Greenhouse;
+class Bed;
 
-
-class PlantStateIterator : public PlantIterator<Plant*> {
+class PlantBedIterator : public PlantIterator<Plant*> {
 private:
-    std::vector<Plant*> allPlants;
+    std::vector<Plant*>& plants;
     size_t current;
 
 public:
-    explicit PlantStateIterator(const Greenhouse& gh);
-        
+    explicit PlantBedIterator(Bed& bed);
 
     bool hasNext() const override;
     Plant*& next() override;

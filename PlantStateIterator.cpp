@@ -1,4 +1,5 @@
 #include "PlantStateIterator.h"
+#include "Greenhouse.h"
 
 PlantStateIterator::PlantStateIterator(const Greenhouse& gh) : current(0) {
     // Flatten all plants from all beds
