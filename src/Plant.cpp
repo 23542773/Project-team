@@ -1,5 +1,8 @@
 #include "Plant.h"
 
+Plant::Plant() 
+: plantId(0), colour("dfltColour"), species(NULL), care(NULL), state(NULL), soil(NULL), pot(NULL) {}
+
 Plant::Plant(std::string id, std::string colour, PlantFlyweight* species, CareStrategy* care, PlantState* state, SoilMix* soil, Pot* pot)
 : plantId(id), colour(colour), species(species), care(care), state(state), soil(soil), pot(pot) {}
 

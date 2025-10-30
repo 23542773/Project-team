@@ -35,13 +35,21 @@ FLYWEIGHT_SRC = \
 # Combine all source files
 SRC_FILES = $(CORE_SRC) $(STATE_SRC) $(STRATEGY_SRC) $(FLYWEIGHT_SRC)
 
+# Iterator tests
 test_main: IteratorTest.cpp $(SRC_FILES)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-run: test_main
+runIt: test_main
 	./test_main
 
-clean:
-	rm -f test_main
+# Flyweight tests - only need flyweight-related files
+flyweight_test: FlyWeightTest.cpp $(FLYWEIGHT_SRC)
+	$(CXX) $(CXXFLAGS) $^ -o flyweight_test
 
-.PHONY: run clean
+runFly: flyweight_test
+	./flyweight_test
+
+clean:
+	rm -f test_main flyweight_test
+
+.PHONY: runIt runFly clean

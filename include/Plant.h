@@ -31,6 +31,7 @@ private:
 
 public:
 
+	Plant();//Default constructor
 	Plant(std::string id, std::string colour, PlantFlyweight* species, CareStrategy* care, PlantState* state, SoilMix* soil, Pot* pot);
 	~Plant();
 	void water();

@@ -20,7 +20,7 @@ class PlantBedIterator;
 class Bed : public PlantContainer<Plant*> {
 private:
     std::vector<Plant*> plants;
-
+    
 public:
     /**
      * @brief Constructor
