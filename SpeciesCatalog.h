@@ -5,12 +5,16 @@
 #include <string>
 #include "PlantFlyweight.h"
 
+class FlyweightSKUIterator;
+
 /**
  * @class SpeciesCatalog
  * @brief Flyweight factory for managing shared plant species
  */
 class SpeciesCatalog 
 {
+
+    friend class FlyweightSKUIterator;
 
 public:
 

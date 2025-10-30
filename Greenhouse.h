@@ -2,7 +2,8 @@
 #define GREENHOUSE_H
 
 #include "PlantContainer.h"
-#include "GreenhouseIterator.h"
+#include "PlantIterator.h"
+#include "PlantStateIterator.h"
 #include "Bed.h"
 #include <vector>
 
@@ -17,7 +18,7 @@ class GreenhouseIterator;
  * Provides an iterator (GreenhouseIterator) to traverse beds without exposing
  * the internal structure.
  */
-class Greenhouse : public PlantContainer<Bed*> {
+class Greenhouse : public PlantContainer<Plant*> {
 private:
     std::vector<Bed*> beds;
 
@@ -36,7 +37,7 @@ public:
      * @brief Create an iterator for this greenhouse
      * @return Pointer to PlantIterator for Bed*
      */
-    PlantIterator<Bed*>* createIterator() override;
+    PlantIterator<Plant*>* createIterator() override;
 
     /**
      * @brief Get the vector of beds
@@ -60,11 +61,14 @@ public:
      * @return True if index was valid, false otherwise
      */
     bool removeBed(size_t index);
+
     
     size_t size() const;
     bool empty() const;
     void clear();
     Bed* getBed(size_t index) const;
+
+    std::vector<Plant*> getAllPlants() const;
 };
 
 #endif // GREENHOUSE_H

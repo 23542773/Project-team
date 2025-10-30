@@ -3,8 +3,10 @@
 
 #include "PlantContainer.h"
 #include "PlantIterator.h"
+#include "PlantStateIterator.h"
 #include <vector>
 #include "PlantBedMemento.h"
+#include "Plant.h"
 
 class Plant;
 class PlantBedIterator;
@@ -31,6 +33,10 @@ public:
      * @brief Destructor
      */
     ~Bed();
+
+    void addPlant(Plant* p);
+    bool removePlant(Plant* p);
+    bool removePlant(size_t index);
 
     /**
      * @brief Create an iterator for this bed

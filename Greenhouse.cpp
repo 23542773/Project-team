@@ -1,6 +1,8 @@
 #include "Greenhouse.h"
 
-PlantIterator<Bed*>* Greenhouse::createIterator() { return new GreenhouseIterator(*this); }
+PlantIterator<Plant*>* Greenhouse::createIterator() {
+    return new PlantStateIterator(*this);
+}
 
 std::vector<Bed*>& Greenhouse::getBeds() { return beds; }
 
@@ -40,3 +42,13 @@ bool Greenhouse::empty() const { return beds.empty(); }
 void Greenhouse::clear() { beds.clear(); }
 
 Bed* Greenhouse::getBed(size_t index) const { return (index<beds.size())? beds[index] : nullptr; }
+
+std::vector<Plant*> Greenhouse::getAllPlants() const {
+    std::vector<Plant*> all;
+    for (auto* bed : beds) {
+        for (auto* p : bed->getPlants()) {
+            all.push_back(p);
+        }
+    }
+    return all;
+}

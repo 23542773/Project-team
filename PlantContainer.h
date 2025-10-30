@@ -1,6 +1,8 @@
 #ifndef PLANTCONTAINER_H
 #define PLANTCONTAINER_H
 
+#include "PlantIterator.h"
+
 // Forward declaration
 template <typename T>
 class PlantIterator;
@@ -18,7 +20,7 @@ public:
     /**
      * @brief Virtual destructor
      */
-    virtual ~PlantContainer() {}
+    virtual ~PlantContainer() = default;
     
     /**
      * @brief Create an iterator for this container

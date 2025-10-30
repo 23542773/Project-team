@@ -16,7 +16,7 @@ public:
     /**
      * @brief Virtual destructor
      */
-    virtual ~PlantIterator() {}
+    virtual ~PlantIterator() = default;
     
     /**
      * @brief Get the next element in the collection
@@ -28,7 +28,7 @@ public:
      * @brief Check if there are more elements
      * @return True if there is a next element, false otherwise
      */
-    virtual bool hasNext() = 0;
+    virtual bool hasNext() const = 0;
 
     virtual void goTo(size_t index) = 0;
     virtual void reset() = 0;
