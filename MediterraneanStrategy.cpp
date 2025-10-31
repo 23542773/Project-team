@@ -1,37 +1,47 @@
-/**
- * @file MediterraneanStrategy.cpp
- * @brief Implementation of the MediterraneanStrategy class
- * @date 2025-10-28
- * @author Project Teams
- */
-
 #include "MediterraneanStrategy.h"
 #include "Plant.h"
+#include "PlantFlyweight.h"
 
-/**
- * @brief Applies moderate watering suitable for Mediterranean plants
- *
- * Mediterranean plants are adapted to seasonal rainfall patterns with
- * dry summers. Adds moderate water (+20) if moisture falls below 50,
- * maintaining balanced moisture levels.
- *
- * @param plant Reference to the Mediterranean plant to be watered
- */
-void MediterraneanStrategy::water(Plant& plant)
+void MediterraneanStrategy::water(Plant& plant) 
 {
-    if (plant.getMoisture() < 50) plant.addWater(20);
+    PlantFlyweight* species = plant.getSpeciesFly();
+    if (!species) return;
+    
+    double waterAmount = 15 + (species->getWaterSensitivity() * 8);
+    plant.addWater(static_cast<int>(waterAmount));
+    
+    if (plant.getMoisture() > 100) 
+    {
+        plant.addHealth(-5);
+    }
 }
 
-/**
- * @brief Applies balanced fertilization suitable for Mediterranean plants
- *
- * Mediterranean plants benefit from moderate fertilization to support
- * steady growth. Adds health (+8) if health is below 85, providing
- * balanced nutrition without excess.
- *
- * @param plant Reference to the Mediterranean plant to be fertilized
- */
-void MediterraneanStrategy::fertilize(Plant& plant)
+void MediterraneanStrategy::fertilize(Plant& plant) 
 {
-    if (plant.getHealth() < 85) plant.addHealth(8);
+    PlantFlyweight* species = plant.getSpeciesFly();
+    if (!species) return;
+    
+    int healthBoost = 6 + static_cast<int>(species->getGrowthRate() * 4);
+    if (plant.getHealth() < 60) 
+    {
+        plant.addHealth(healthBoost);
+    }
+}
+
+void MediterraneanStrategy::sprayInsecticide(Plant& plant) 
+{
+    PlantFlyweight* species = plant.getSpeciesFly();
+    if (!species) return;
+    
+    int insecticideAmount = 16 + static_cast<int>(species->getInsecticideTolerance() * 8);
+    plant.addInsecticide(insecticideAmount); 
+    
+    if (plant.getInsecticide() > 100) 
+    {
+        plant.addHealth(-4);
+    } 
+    else 
+    {
+        plant.addHealth(2);
+    }
 }

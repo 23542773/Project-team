@@ -1,37 +1,47 @@
-/**
- * @file IndoorStrategy.cpp
- * @brief Implementation of the IndoorStrategy class
- * @date 2025-10-28
- * @author Project Teams
- */
-
 #include "IndoorStrategy.h"
 #include "Plant.h"
+#include "PlantFlyweight.h"
 
-/**
- * @brief Applies moderate watering suitable for indoor plants
- *
- * Indoor plants are in controlled environments with limited evaporation
- * and require consistent, moderate watering. Adds water (+20) if moisture
- * falls below 60, maintaining steady moisture levels typical of indoor conditions.
- *
- * @param plant Reference to the indoor plant to be watered
- */
-void IndoorStrategy::water(Plant& plant)
+void IndoorStrategy::water(Plant& plant) 
 {
-    if (plant.getMoisture() < 60) plant.addWater(20);
+    PlantFlyweight* species = plant.getSpeciesFly();
+    if (!species) return;
+    
+    double waterAmount = 18 + (species->getWaterSensitivity() * 7);
+    plant.addWater(static_cast<int>(waterAmount)); 
+    
+    if (plant.getMoisture() > 100) 
+    {
+        plant.addHealth(-5);
+    }
 }
 
-/**
- * @brief Applies light fertilization suitable for indoor plants
- *
- * Indoor plants have slower growth rates in controlled environments and
- * require lighter fertilization than outdoor plants. Adds health (+7) if
- * health is below 85, providing gentle nutrition.
- *
- * @param plant Reference to the indoor plant to be fertilized
- */
-void IndoorStrategy::fertilize(Plant& plant)
+void IndoorStrategy::fertilize(Plant& plant) 
 {
-    if (plant.getHealth() < 85) plant.addHealth(7);
+    PlantFlyweight* species = plant.getSpeciesFly();
+    if (!species) return;
+    
+    int healthBoost = 5 + static_cast<int>(species->getGrowthRate() * 4);
+    if (plant.getHealth() < 60) 
+    {
+        plant.addHealth(healthBoost);
+    }
+}
+
+void IndoorStrategy::sprayInsecticide(Plant& plant) 
+{
+    PlantFlyweight* species = plant.getSpeciesFly();
+    if (!species) return;    
+
+    int insecticideAmount = 12 + static_cast<int>(species->getInsecticideTolerance() * 6);
+    plant.addInsecticide(insecticideAmount);   
+    
+    if (plant.getInsecticide() > 100) 
+    {
+        plant.addHealth(-4);
+    } 
+    else
+    {
+        plant.addHealth(3);
+    }
 }
