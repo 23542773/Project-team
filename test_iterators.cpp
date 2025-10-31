@@ -118,6 +118,6 @@ int main() {
     for (auto* p : many) delete p;
     delete bigIter;
 
-    std::cout << "\n ALL TESTS PASSED SUCCESSFULLY 🎉\n";
+    std::cout << "\n ALL TESTS PASSED SUCCESSFULLY \n";
     return 0;
 }
