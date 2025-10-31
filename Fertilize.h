@@ -1,5 +1,5 @@
-#ifndef WATER_H
-#define WATER_H
+#ifndef FERTILIZE_H
+#define FERTILIZE_H
 
 #include "Command.h"
 #include <vector>
@@ -7,17 +7,17 @@
 
 class Plant;
 
-class Water : public Command 
+class Fertilize : public Command 
 {
 
 private:
 
 	std::vector<Plant*> plants;
-	std::vector<int> previousMoisture; 
+	std::vector<int> previousHealth;
 
 public:
 
-	Water(const std::vector<Plant*>& p);
+	Fertilize(const std::vector<Plant*>& p);	
 	void execute() override;
 	void undo() override;
 	std::string getDescription() const override;
