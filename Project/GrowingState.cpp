@@ -1,3 +1,7 @@
+/**
+ * @file GrowingState.cpp
+ * @brief Implementation of the GrowingState class
+ */
 #include "GrowingState.h"
 #include "MatureState.h"
 #include "WiltingState.h"
@@ -6,14 +10,24 @@
 #include "SpeciesFlyweight.h"
 #include <iostream>
 
-GrowingState& GrowingState::getInstance()
-{
-    static GrowingState s;
-    return s;
-}
-
-GrowingState::GrowingState() {}
-
+/**
+ * @brief Implements state transition logic for growing plants
+ *
+ * Resource consumption: -2 water, -1 insecticide per check
+ *
+ * Health adjustments:
+ * - Gains +3 health if moisture >= 40 and insecticide >= 40
+ * - Loses -4 health if moisture < 25
+ * - Loses -3 health if insecticide < 25
+ *
+ * State transitions:
+ * - To DeadState: if health <= 0
+ * - To WiltingState: if health <= 20
+ * - To MatureState: if age > adjusted threshold and health > 50
+ * (threshold = 12.0 * growth rate * season factor)
+ * (season factor = 0.8 in thriving season, 1.2 otherwise)
+ * @param plant Reference to the Plant object whose state is being checked
+ */
 void GrowingState::checkChange(Plant& plant)
 {
     plant.addWater(-2);
@@ -50,6 +64,10 @@ void GrowingState::checkChange(Plant& plant)
     }
 }
 
+/**
+ * @brief Returns the name identifier for this state
+ * @return The string "Growing"
+ */
 std::string GrowingState::name() 
 {
     return "Growing";
