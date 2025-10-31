@@ -8,7 +8,6 @@ class DeadState : public PlantState
 public:
 
     static DeadState& getInstance();
-    void onTick(Plant& plant) override;
     void checkChange(Plant& plant) override;
     std::string name() override;
 

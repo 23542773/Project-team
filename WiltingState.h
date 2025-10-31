@@ -8,7 +8,6 @@ class WiltingState : public PlantState
 public:
 
     static WiltingState& getInstance();
-    void onTick(Plant& plant) override;
     void checkChange(Plant& plant) override;
     std::string name() override;
 

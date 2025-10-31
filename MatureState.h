@@ -8,9 +8,9 @@ class MatureState : public PlantState
 public:
 
     static MatureState& getInstance();
-    void onTick(Plant& plant) override;
     void checkChange(Plant& plant) override;
     std::string name() override;
+    bool isMature() override;
 
 protected:
 

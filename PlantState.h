@@ -11,7 +11,6 @@ class PlantState
 public:
 
 	virtual ~PlantState() = default;
-    virtual void onTick(Plant& plant) = 0;
     virtual void checkChange(Plant& plant) = 0;
     virtual std::string name() = 0;
     virtual bool isMature() { return false; }

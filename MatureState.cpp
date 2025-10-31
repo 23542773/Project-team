@@ -1,5 +1,9 @@
 #include "MatureState.h"
 #include "WiltingState.h"
+#include "DeadState.h"
+#include "Plant.h"
+#include "SpeciesFlyweight.h"
+#include <iostream>
 
 MatureState& MatureState::getInstance()
 {
@@ -9,22 +13,37 @@ MatureState& MatureState::getInstance()
 
 MatureState::MatureState() {}
 
-void MatureState::onTick(Plant& plant) 
+void MatureState::checkChange(Plant& plant)
 {
-    plant.addWater(-15);
-    if (plant.getMoisture() < 30) plant.addHealth(-3);
+    plant.addWater(-5);
+    plant.addInsecticide(-5);
+
+    if (plant.getMoisture() >= 55 && plant.getInsecticide() >= 55)
+    {
+        plant.addHealth(4);
+    }
+    else if (plant.getMoisture() < 50 || plant.getInsecticide() < 50)
+    {
+        if (plant.getMoisture() < 30) plant.addHealth(-5);
+        if (plant.getInsecticide() < 30) plant.addHealth(-4);
+    }
+
+    if (plant.getHealth() <= 0)
+    {
+        plant.setState(&DeadState::getInstance());
+    }
+    else if (plant.getHealth() <= 50)
+    {
+        plant.setState(&WiltingState::getInstance());
+    }
 }
 
-void MatureState::checkChange(Plant& plant) 
+bool MatureState::isMature()
 {
-    if (plant.getHealth() < 40 || plant.getMoisture() < 20) 
-	{
-		plant.setState(&WiltingState::getInstance());
-	}
-	
+    return true;
 }
 
-std::string MatureState::name() 
+std::string MatureState::name()
 {
     return "Matured";
 }

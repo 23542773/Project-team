@@ -19,24 +19,26 @@ void Plant::fertilize()
 	if(care) care->fertilize(*this);
 	if(state) state->checkChange(*this);
 }
-void Plant::tickDay()
-{
-	ageInDays++;
-	if(state) 
-	{
-		state->onTick(*this);
-		state->checkChange(*this);
-	}
 
+void Plant::sprayInsecticide() 
+{
+	if(care) care->sprayInsecticide(*this);
+	if(state) state->checkChange(*this);
 }
 
 void Plant::addWater(int amount)
 {
 	moistureLevel = check(moistureLevel + amount, 0, 100);
 }
+
 void Plant::addHealth(int amount)
 {
 	health = check(health + amount, 0, 100);
+}
+
+void Plant::addInsecticide(int amount) 
+{
+    insecticideLevel = check(insecticideLevel + amount, 0, 100);
 }
 
 int Plant::cost()
@@ -75,8 +77,11 @@ std::string Plant::getColour()
 }
 
 int Plant::getAgeDays()  
-{ 
-	return ageInDays; 
+{  
+	auto now = std::chrono::system_clock::now();
+    auto diff = std::chrono::duration_cast<std::chrono::seconds>(now - createdAt).count();
+	const double secondsPerSimDay = 10.0;
+    return static_cast<int>(diff / (secondsPerSimDay));
 }
 
 int Plant::getMoisture()  
@@ -87,6 +92,11 @@ int Plant::getMoisture()
 int Plant::getHealth() 
 { 
 	return health; 
+}
+
+int Plant::getInsecticide()  
+{ 
+	return insecticideLevel; 
 }
 
 PlantFlyweight* Plant::getSpeciesFly() 
@@ -122,7 +132,8 @@ int Plant::check(int change, int low, int high)
 //Prototype (missing an abstract class)
 
 Plant::Plant(const Plant& o) : plantId(o.plantId), colour(o.colour), species(o.species), care(o.care), state(o.state),
-soil(o.soil->clone()), pot (o.pot->clone()), ageInDays(o.ageInDays), moistureLevel(o.moistureLevel), health(o.health) {}
+soil(o.soil->clone()), pot (o.pot->clone()), ageInDays(o.ageInDays), moistureLevel(o.moistureLevel), health(o.health), createdAt(o.createdAt), insecticideLevel(o.insecticideLevel)
+{}
 
 Plant* Plant::clone(std::string newId, std::string col)  
 {
@@ -132,5 +143,26 @@ Plant* Plant::clone(std::string newId, std::string col)
     p->ageInDays = 0; 
     p->moistureLevel = 0;
     p->health = 100;
+	p->insecticideLevel = 100;
+	p->createdAt = std::chrono::system_clock::now();
     return p;
+}
+
+Season Plant::currentSeason() 
+{
+    using namespace std::chrono;
+    auto now = system_clock::now();
+    time_t t = system_clock::to_time_t(now);
+    tm localTime;
+#ifdef _WIN32
+    localtime_s(&localTime, &t);
+#else
+    localtime_r(&t, &localTime);
+#endif
+
+    int month = localTime.tm_mon + 1; 
+    if (month >= 3 && month <= 5)  return Season::Autumn;
+    if (month >= 6 && month <= 8)  return Season::Winter;
+    if (month >= 9 && month <= 11) return Season::Spring;
+    return Season::Winter;
 }
