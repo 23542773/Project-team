@@ -1,0 +1,108 @@
+[2025-10-31 08:16:11] User: STF004 | Action: RESTOCK | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:16:11] User: STF004 | Action: RESTOCK | Status: SUCCESS | Description: Restocked 7 x WATERL
+[2025-10-31 08:16:14] User: SYSTEM | Action: UNDO_RESTOCK | Status: SUCCESS | Description: Restocked 7 x WATERL | Extra: Restock undone
+[2025-10-31 08:19:53] User: STF003 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:19:54] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:19:56] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:19:58] User: STF003 | Action: WATER | Status: SUCCESS | Description: Watered 10 plant(s) [LOTUS#M21, ...]
+[2025-10-31 08:19:59] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Fertilized 10 plant(s) [LOTUS#M21, ...]
+[2025-10-31 08:20:00] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Sprayed insecticide on 10 plant(s) [LOTUS#M21, ...]
+[2025-10-31 08:42:35] User: STF003 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:36] User: STF003 | Action: WATER | Status: SUCCESS | Description: Watered 1 plant(s) [JASMIN#M14]
+[2025-10-31 08:42:49] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:49] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:53] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:53] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:53] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:53] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:53] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:53] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING_ROUTINE [4 commands]
+[2025-10-31 08:42:55] User: STF003 | Action: URGENT_CARE | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 08:42:55] User: STF003 | Action: URGENT_CARE | Status: SUCCESS | Description: Macro: URGENT_CARE [7 commands]
+[2025-10-31 11:09:54] User: STF003 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:10:26] User: STF003 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:10:28] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:10:29] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:10:30] User: STF003 | Action: WATER | Status: SUCCESS | Description: Watered 1 plant(s) [PAPYR#S23]
+[2025-10-31 11:10:31] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Fertilized 10 plant(s) [POTHOS#M16, ...]
+[2025-10-31 11:10:31] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Sprayed insecticide on 10 plant(s) [POTHOS#M16, ...]
+[2025-10-31 11:14:05] User: STF003 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:14:06] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:14:07] User: STF003 | Action: WATER | Status: SUCCESS | Description: Watered 4 plant(s) [POTHOS#M16, ...]
+[2025-10-31 11:14:08] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Fertilized 4 plant(s) [POTHOS#M16, ...]
+[2025-10-31 11:16:32] User: STF004 | Action: RESTOCK | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:32] User: STF004 | Action: RESTOCK | Status: SUCCESS | Description: Restocked 33 x CACTUS
+[2025-10-31 11:16:34] User: SYSTEM | Action: UNDO RESTOCK | Status: SUCCESS | Description: Restocked 33 x CACTUS | Extra: Restock undone
+[2025-10-31 11:16:45] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:45] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 11:16:46] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:46] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:16:47] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:47] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:16:48] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:48] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:16:48] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:48] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:16:48] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:48] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:16:49] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:49] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 11:16:49] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:49] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 11:16:49] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:49] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 11:16:49] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:49] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 11:16:53] User: STF003 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:54] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:55] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:55] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:55] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:16:56] User: STF003 | Action: WATER | Status: SUCCESS | Description: Watered 11 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:16:56] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Fertilized 11 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:16:57] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Sprayed insecticide on 11 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:16:57] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Sprayed insecticide on 11 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:16:57] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Sprayed insecticide on 11 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:42:49] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:49] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:50] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 11:42:52] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:52] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 11:42:52] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:52] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 11:42:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 11:42:54] User: STF003 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:54] User: STF003 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:55] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:55] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:56] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:56] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:42:57] User: STF003 | Action: WATER | Status: SUCCESS | Description: Watered 8 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:42:57] User: STF003 | Action: WATER | Status: SUCCESS | Description: Watered 8 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:42:58] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Fertilized 8 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:42:58] User: STF003 | Action: FERTILIZE | Status: SUCCESS | Description: Fertilized 8 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:42:58] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Sprayed insecticide on 8 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:42:58] User: STF003 | Action: SPRAY | Status: SUCCESS | Description: Sprayed insecticide on 8 plant(s) [LOTUS#M21, ...]
+[2025-10-31 11:43:17] User: STF004 | Action: RESTOCK | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 11:43:17] User: STF004 | Action: RESTOCK | Status: SUCCESS | Description: Restocked 6 x OLIVE
+[2025-10-31 11:43:19] User: SYSTEM | Action: UNDO RESTOCK | Status: SUCCESS | Description: Restocked 6 x OLIVE | Extra: Restock undone
