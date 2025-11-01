@@ -33,3 +33,18 @@ std::string Customer::getId() const
 { 
     return userId; 
 }
+
+std::string Customer::getName() const 
+{ 
+    return name; 
+}
+
+const std::vector<std::string>& Customer::getActiveOrders() const 
+{ 
+    return activeOrders; 
+}
+
+void Customer::addActiveOrder(const std::string& orderId) 
+{
+    activeOrders.push_back(orderId);
+}

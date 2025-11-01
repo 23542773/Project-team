@@ -40,3 +40,33 @@ StaffRole Staff::getRole() const
 { 
     return role; 
 }
+
+std::string Staff::getName() const 
+{ 
+    return name; 
+}
+
+const std::vector<std::string>& Staff::getAssignedOrders() const 
+{ 
+    return assignedOrders; 
+}
+bool Staff::isAvailable() const 
+{ 
+    return available; 
+}
+
+void Staff::addAssignedOrder(const std::string& orderId) 
+{ 
+    assignedOrders.push_back(orderId); 
+}
+
+void Staff::removeAssignedOrder(const std::string& orderId) 
+{
+    auto it = std::find(assignedOrders.begin(), assignedOrders.end(), orderId);
+    if (it != assignedOrders.end()) assignedOrders.erase(it);
+}
+
+void Staff::setAvailable(bool avail) 
+{ 
+    available = avail; 
+}

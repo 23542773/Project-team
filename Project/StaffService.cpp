@@ -34,8 +34,8 @@ std::string StaffService::leastLoaded()
     {
         if (s->getRole() != StaffRole::Sales) continue;
         
-        int load = static_cast<int>(s->assignedOrders.size());
-        if (!s->available && load > 0) continue; 
+        int load = static_cast<int>(s->getAssignedOrders().size());
+        if (!s->isAvailable() && load > 0) continue; 
 
         if (load < minLoad)
         {
@@ -51,20 +51,21 @@ void StaffService::assignOrder(std::string staffId, std::string orderId)
     auto it = staffMap.find(staffId);
     if (it == staffMap.end()) return;
 
-    it->second->assignedOrders.push_back(orderId);
+    it->second->addAssignedOrder(orderId);
     const int maxOrdersPerStaff = 5; 
-    if (it->second->assignedOrders.size() >= maxOrdersPerStaff) it->second->available = false;
+    if (it->second->getAssignedOrders().size() >= maxOrdersPerStaff) it->second->setAvailable(false);
 }
 
 void StaffService::completeOrder(std::string orderId)
 {
     for (auto& [id, s] : staffMap)
     {
-        auto it = std::find(s->assignedOrders.begin(), s->assignedOrders.end(), orderId);
+        auto orders = s->getAssignedOrders();
+        auto it = std::find(orders.begin(), orders.end(), orderId);
 
-        if (it != s->assignedOrders.end())
+        if (it != orders.end())
         {
-            s->assignedOrders.erase(it);
+            s->removeAssignedOrder(orderId);
             return;
         }
     }
@@ -73,7 +74,7 @@ void StaffService::completeOrder(std::string orderId)
 bool StaffService::isAvailable(std::string staffId)
 {
     auto it = staffMap.find(staffId);
-    return it != staffMap.end() && it->second->available;
+    return it != staffMap.end() && it->second->isAvailable();
 }
 
 Staff* StaffService::getStaff(std::string staffId)
@@ -87,7 +88,7 @@ std::vector<std::string> StaffService::getOrdersForStaff(std::string staffId)
 {
 	auto it = staffMap.find(staffId);
     if (it == staffMap.end()) return {};
-    return it->second->assignedOrders;
+    return it->second->getAssignedOrders();
 }
 
 std::vector<Staff> StaffService::listStaff()

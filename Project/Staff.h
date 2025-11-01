@@ -6,6 +6,7 @@
 #include "Message.h"
 #include <vector>
 #include <string>
+#include <algorithm>
 
 
 enum class StaffRole 
@@ -19,15 +20,15 @@ enum class StaffRole
 class Staff : public Colleague 
 {
 
-public:
+private:
 
+    std::vector<Message> receivedMessages;
     std::string name;
-
     std::vector<std::string> assignedOrders;
-
     bool available = true;
-
     StaffRole role;
+
+public:
 
     Staff(MessagingMediator* med, const std::string& staffId, const std::string& staffName, StaffRole staffRole = StaffRole::Sales);
 
@@ -41,9 +42,17 @@ public:
 
     StaffRole getRole() const;
 
-private:
+    std::string getName() const;
 
-    std::vector<Message> receivedMessages;
+    const std::vector<std::string>& getAssignedOrders() const;
+
+    bool isAvailable() const;
+
+    void addAssignedOrder(const std::string& orderId);
+
+    void removeAssignedOrder(const std::string& orderId);
+    
+    void setAvailable(bool avail);
 };
 
 #endif

@@ -10,12 +10,12 @@
 class Customer : public Colleague 
 {
 private:
+
     std::vector<Message> receivedMessages;
-
-public:
-
     std::string name;
     std::vector<std::string> activeOrders;
+
+public:
 
     Customer(MessagingMediator* med, const std::string& customerId, const std::string& customerName);
 
@@ -26,6 +26,12 @@ public:
     std::vector<Message> getConversation(const std::string& otherUserId) const;
 
     std::string getId() const;
+
+    std::string getName() const;
+
+    const std::vector<std::string>& getActiveOrders() const;
+
+    void addActiveOrder(const std::string& orderId);
 };
 
 #endif
