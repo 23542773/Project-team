@@ -50,14 +50,20 @@ DECORATOR_SOURCES = $(PATTERN_DIR)/PlantItem.cpp \
                     $(PATTERN_DIR)/Pot.cpp \
                     $(PATTERN_DIR)/CeramicPot.cpp
 
+# Mediator Pattern Files
+MEDIATOR_SOURCES = $(PATTERN_DIR)/ChatMediator.cpp \
+                   $(PATTERN_DIR)/Customer.cpp \
+                   $(PATTERN_DIR)/Staff.cpp
+
 # Test executables
 TEST_STATE = test_state.exe
 TEST_STRATEGY = test_strategy.exe
 TEST_FLYWEIGHT = test_flyweight.exe
 TEST_DECORATOR = test_decorator.exe
+TEST_MEDIATOR = test_mediator.exe
 
 # Default target
-all: $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR)
+all: $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR) $(TEST_MEDIATOR)
 
 # Compile State Pattern tests
 $(TEST_STATE): test_state.cpp
@@ -126,6 +132,13 @@ $(TEST_DECORATOR): test_decorator.cpp
 		-o $(TEST_DECORATOR)
 	@echo "Decorator tests compiled successfully!"
 
+# Compile Mediator Pattern tests
+$(TEST_MEDIATOR): test_mediator.cpp
+	@echo "Compiling Mediator Pattern tests..."
+	$(CXX) $(CXXFLAGS) $(INCLUDES) test_mediator.cpp \
+		-o $(TEST_MEDIATOR)
+	@echo "Mediator tests compiled successfully!"
+
 # Run all tests
 run: all
 	@echo ""
@@ -149,12 +162,17 @@ run: all
 	@echo "=========================================="
 	./$(TEST_DECORATOR)
 	@echo ""
+	@echo "=========================================="
+	@echo "Running Mediator Pattern Tests..."
+	@echo "=========================================="
+	./$(TEST_MEDIATOR)
+	@echo ""
 	@echo "All tests completed!"
 
 # Clean executables
 clean:
 	@echo "Cleaning test executables..."
-	rm -f $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR)
+	rm -f $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR) $(TEST_MEDIATOR)
 	@echo "Clean complete!"
 
 # Run only state tests
@@ -177,4 +195,9 @@ test-decorator: $(TEST_DECORATOR)
 	@echo "Running Decorator Pattern Tests..."
 	./$(TEST_DECORATOR)
 
-.PHONY: all run clean test-state test-strategy test-flyweight test-decorator
+# Run only mediator tests
+test-mediator: $(TEST_MEDIATOR)
+	@echo "Running Mediator Pattern Tests..."
+	./$(TEST_MEDIATOR)
+
+.PHONY: all run clean test-state test-strategy test-flyweight test-decorator test-mediator
