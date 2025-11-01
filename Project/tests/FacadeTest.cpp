@@ -695,7 +695,7 @@ TEST_F(FacadeTestFixture, GetConversation_AfterMessage)
     Customer* customer = facade->getCustomer("cust001");
     
     if (staff && customer) {
-        staff->sendMessage(customer, "Hello customer!");
+        staff->sendMessage("cust001", "Hello customer!");
         auto conversation = facade->getConversation("staff001", "cust001");
         EXPECT_GE(conversation.size(), 1) << "Should have at least 1 message";
     }
@@ -709,7 +709,7 @@ TEST_F(FacadeTestFixture, GetConversation_CustomerToStaff_AfterMessage)
     ASSERT_NE(staff, nullptr);
     ASSERT_NE(customer, nullptr);
     
-    customer->sendMessage(staff, "Hi Sales!");
+    customer->sendMessage("staff001", "Hi Sales!");
     auto conversation = facade->getConversation("cust001", "staff001");
     EXPECT_FALSE(conversation.empty());
 }
@@ -722,11 +722,11 @@ TEST_F(FacadeTestFixture, GetConversation_DisallowedRole_InventoryToCustomer_Ret
     ASSERT_NE(inventoryStaff, nullptr);
     ASSERT_NE(customer, nullptr);
 
-    inventoryStaff->sendMessage(customer, "Inventory ping");
+    inventoryStaff->sendMessage("cust001", "Inventory ping");
     auto convoFromInventory = facade->getConversation("staff002", "cust001");
     EXPECT_TRUE(convoFromInventory.empty());
 
-    customer->sendMessage(inventoryStaff, "Customer ping");
+    customer->sendMessage("staff002", "Customer ping");
     auto convoFromCustomer = facade->getConversation("cust001", "staff002");
     EXPECT_TRUE(convoFromCustomer.empty());
 }
