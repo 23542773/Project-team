@@ -4,7 +4,7 @@
 #        make clean (remove executables)
 
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++17 -Wall
 INCLUDES = -I"../Prototype" -I"../Flyweight" -I"../Strategy" -I"../State (with Singleton)" -I..
 
 # Directories (no quotes in variable definitions)
@@ -32,13 +32,20 @@ FLYWEIGHT_SOURCES = $(PATTERN_DIR)/SpeciesCatalog.cpp \
                     $(PATTERN_DIR)/SpeciesFlyweight.cpp \
                     $(PATTERN_DIR)/UnsharedSpeciesFlyweight.cpp
 
+# Observer unit test sources (new)
+# Add ServiceSubject, StaffDash, CustomerDash - the unit test calls notify through a small TestSubject
+OBSERVER_SOURCES = $(PATTERN_DIR)/ServiceSubject.cpp \
+                   $(PATTERN_DIR)/StaffDash.cpp \
+                   $(PATTERN_DIR)/CustomerDash.cpp
+
 # Test executables
 TEST_STATE = test_state.exe
 TEST_STRATEGY = test_strategy.exe
 TEST_FLYWEIGHT = test_flyweight.exe
+TEST_OBSERVER = test_observer_unit.exe
 
 # Default target
-all: $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT)
+all: $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_OBSERVER)
 
 # Compile State Pattern tests
 $(TEST_STATE): test_state.cpp
@@ -84,6 +91,16 @@ $(TEST_FLYWEIGHT): test_flyweight.cpp
 		-o $(TEST_FLYWEIGHT)
 	@echo "Flyweight tests compiled successfully!"
 
+# Compile Observer unit tests (new)
+$(TEST_OBSERVER): test_observer_unit.cpp
+	@echo "Compiling Observer Unit tests..."
+	$(CXX) $(CXXFLAGS) $(INCLUDES) test_observer_unit.cpp \
+		"$(PATTERN_DIR)/ServiceSubject.cpp" \
+		"$(PATTERN_DIR)/StaffDash.cpp" \
+		"$(PATTERN_DIR)/CustomerDash.cpp" \
+		-o $(TEST_OBSERVER)
+	@echo "Observer unit tests compiled successfully!"
+
 # Run all tests
 run: all
 	@echo ""
@@ -102,12 +119,17 @@ run: all
 	@echo "=========================================="
 	./$(TEST_FLYWEIGHT)
 	@echo ""
+	@echo "=========================================="
+	@echo "Running Observer Unit Tests..."
+	@echo "=========================================="
+	./$(TEST_OBSERVER)
+	@echo ""
 	@echo "All tests completed!"
 
 # Clean executables
 clean:
 	@echo "Cleaning test executables..."
-	rm -f $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT)
+	rm -f $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_OBSERVER)
 	@echo "Clean complete!"
 
 # Run only state tests
@@ -125,4 +147,9 @@ test-flyweight: $(TEST_FLYWEIGHT)
 	@echo "Running Flyweight Pattern Tests..."
 	./$(TEST_FLYWEIGHT)
 
-.PHONY: all run clean test-state test-strategy test-flyweight
+# Run only observer unit tests
+test-observer-unit: $(TEST_OBSERVER)
+	@echo "Running Observer Unit Tests..."
+	./$(TEST_OBSERVER)	
+
+.PHONY: all run clean test-state test-strategy test-flyweight test-observer-unit

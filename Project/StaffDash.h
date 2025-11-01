@@ -43,16 +43,16 @@ public:
      * @returns void
      */
     void onEvent(events::Order& o) override;
-    std::vector<std::string>& getAlerts();
-    void clear();
-
-private:
-
+    
     /**
      * @brief Get the current alerts for the staff dashboard
-     * @returns A vector of alert messages
+     * @returns A vector of alert messages (non-const reference for test/read/write)
      */
     std::vector<std::string>& getAlerts();
+
+    /**
+     * @brief Clear all alerts from the staff dashboard
+     */
     void clear();
 
 private:
