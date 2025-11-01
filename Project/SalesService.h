@@ -17,7 +17,7 @@ struct Receipt
 	std::string message;
 };
 
-class SalesService
+class SalesService : public ServiceSubject
 {
 public:
 

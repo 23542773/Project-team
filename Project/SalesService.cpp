@@ -25,6 +25,7 @@ std::string SalesService::createOrder(std::string customerId, std::vector<OrderL
     o.type = OrderType::Created; 
 
     orders.emplace(o.orderId, o);
+    notify(o);
     return o.orderId;
 }
 

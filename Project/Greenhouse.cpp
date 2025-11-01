@@ -25,6 +25,9 @@ void Greenhouse::receiveShipment(std::string speciesSku, int batch)
           plantToSku.emplace(id, speciesSku);
       }
     }
+
+    events::Stock s{ speciesSku, events::StockType::Added };
+    notify(s);
 }
 
 std::string Greenhouse::pickColour(int index) 
