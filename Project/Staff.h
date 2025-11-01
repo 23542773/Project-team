@@ -31,7 +31,7 @@ public:
 
     Staff(MessagingMediator* med, const std::string& staffId, const std::string& staffName, StaffRole staffRole = StaffRole::Sales);
 
-    void sendMessage(Colleague* to, const std::string& text);
+    void sendMessage(const std::string& toUserId, const std::string& text) override;
 
     void receiveMessage(const Message& msg) override;
 

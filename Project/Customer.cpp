@@ -2,11 +2,11 @@
 
 Customer::Customer(MessagingMediator* med, const std::string& custId, const std::string& custName) : Colleague(med, custId), name(custName) {}
 
-void Customer::sendMessage(Colleague* to, const std::string& text) 
+void Customer::sendMessage(const std::string& toUserId, const std::string& text) 
 {
-    if (mediator && to) 
+    if (mediator) 
     {
-        mediator->sendMessage(this, to, text);
+        mediator->sendMessageToId(this, toUserId, text);
     }
 }
 

@@ -5,11 +5,11 @@
 Staff::Staff(MessagingMediator* med, const std::string& staffId, const std::string& staffName, StaffRole staffRole)
     : Colleague(med, staffId), name(staffName), role(staffRole) {}
 
-void Staff::sendMessage(Colleague* to, const std::string& text)  
+void Staff::sendMessage(const std::string& toUserId, const std::string& text)  
 {
-    if (mediator && to) 
+    if (mediator) 
     {
-        mediator->sendMessage(this, to, text);
+        mediator->sendMessageToId(this, toUserId, text);
     }
 }
 

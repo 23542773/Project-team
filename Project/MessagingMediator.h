@@ -12,7 +12,7 @@ public:
 
     virtual ~MessagingMediator() = default;
 
-    virtual void sendMessage(Colleague* from, Colleague* to, const std::string& text) = 0;
+    virtual void sendMessageToId(Colleague* from, const std::string& toUserId, const std::string& text) = 0;
 
 };
 

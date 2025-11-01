@@ -19,7 +19,7 @@ public:
 
     Customer(MessagingMediator* med, const std::string& customerId, const std::string& customerName);
 
-    void sendMessage(Colleague* to, const std::string& text) override;
+    void sendMessage(const std::string& toUserId, const std::string& text) override;
 
     void receiveMessage(const Message& msg) override;
 

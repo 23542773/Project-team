@@ -18,7 +18,7 @@ public:
     
     virtual ~Colleague() = default;
 
-    virtual void sendMessage(Colleague* to, const std::string& text) = 0;
+    virtual void sendMessage(const std::string& toUserId, const std::string& text) = 0;
 
     virtual void receiveMessage(const Message& msg) = 0;
 
