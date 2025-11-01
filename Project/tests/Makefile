@@ -4,7 +4,7 @@
 #        make clean (remove executables)
 
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall
+CXXFLAGS = -std=c++11 -Wall
 INCLUDES = -I"../Prototype" -I"../Flyweight" -I"../Strategy" -I"../State (with Singleton)" -I..
 
 # Directories (no quotes in variable definitions)
@@ -32,20 +32,32 @@ FLYWEIGHT_SOURCES = $(PATTERN_DIR)/SpeciesCatalog.cpp \
                     $(PATTERN_DIR)/SpeciesFlyweight.cpp \
                     $(PATTERN_DIR)/UnsharedSpeciesFlyweight.cpp
 
-# Observer unit test sources (new)
-# Add ServiceSubject, StaffDash, CustomerDash - the unit test calls notify through a small TestSubject
-OBSERVER_SOURCES = $(PATTERN_DIR)/ServiceSubject.cpp \
-                   $(PATTERN_DIR)/StaffDash.cpp \
-                   $(PATTERN_DIR)/CustomerDash.cpp
+# Decorator Pattern Files
+DECORATOR_SOURCES = $(PATTERN_DIR)/PlantItem.cpp \
+                    $(PATTERN_DIR)/ReinforcedPot.cpp \
+                    $(PATTERN_DIR)/GiftWrap.cpp \
+                    $(PATTERN_DIR)/MessageCard.cpp \
+                    $(PATTERN_DIR)/Plant.cpp \
+                    $(PATTERN_DIR)/SpeciesFlyweight.cpp \
+                    $(PATTERN_DIR)/UnsharedSpeciesFlyweight.cpp \
+                    $(PATTERN_DIR)/SeedlingState.cpp \
+                    $(PATTERN_DIR)/GrowingState.cpp \
+                    $(PATTERN_DIR)/MatureState.cpp \
+                    $(PATTERN_DIR)/WiltingState.cpp \
+                    $(PATTERN_DIR)/DeadState.cpp \
+                    $(PATTERN_DIR)/SoilMix.cpp \
+                    $(PATTERN_DIR)/SandySoilMix.cpp \
+                    $(PATTERN_DIR)/Pot.cpp \
+                    $(PATTERN_DIR)/CeramicPot.cpp
 
 # Test executables
 TEST_STATE = test_state.exe
 TEST_STRATEGY = test_strategy.exe
 TEST_FLYWEIGHT = test_flyweight.exe
-TEST_OBSERVER = test_observer_unit.exe
+TEST_DECORATOR = test_decorator.exe
 
 # Default target
-all: $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_OBSERVER)
+all: $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR)
 
 # Compile State Pattern tests
 $(TEST_STATE): test_state.cpp
@@ -91,15 +103,28 @@ $(TEST_FLYWEIGHT): test_flyweight.cpp
 		-o $(TEST_FLYWEIGHT)
 	@echo "Flyweight tests compiled successfully!"
 
-# Compile Observer unit tests (new)
-$(TEST_OBSERVER): test_observer_unit.cpp
-	@echo "Compiling Observer Unit tests..."
-	$(CXX) $(CXXFLAGS) $(INCLUDES) test_observer_unit.cpp \
-		"$(PATTERN_DIR)/ServiceSubject.cpp" \
-		"$(PATTERN_DIR)/StaffDash.cpp" \
-		"$(PATTERN_DIR)/CustomerDash.cpp" \
-		-o $(TEST_OBSERVER)
-	@echo "Observer unit tests compiled successfully!"
+# Compile Decorator Pattern tests
+$(TEST_DECORATOR): test_decorator.cpp
+	@echo "Compiling Decorator Pattern tests..."
+	$(CXX) $(CXXFLAGS) $(INCLUDES) test_decorator.cpp \
+		"$(PATTERN_DIR)/PlantItem.cpp" \
+		"$(PATTERN_DIR)/ReinforcedPot.cpp" \
+		"$(PATTERN_DIR)/GiftWrap.cpp" \
+		"$(PATTERN_DIR)/MessageCard.cpp" \
+		"$(PATTERN_DIR)/Plant.cpp" \
+		"$(PATTERN_DIR)/SpeciesFlyweight.cpp" \
+		"$(PATTERN_DIR)/UnsharedSpeciesFlyweight.cpp" \
+		"$(PATTERN_DIR)/SeedlingState.cpp" \
+		"$(PATTERN_DIR)/GrowingState.cpp" \
+		"$(PATTERN_DIR)/MatureState.cpp" \
+		"$(PATTERN_DIR)/WiltingState.cpp" \
+		"$(PATTERN_DIR)/DeadState.cpp" \
+		"$(PATTERN_DIR)/SoilMix.cpp" \
+		"$(PATTERN_DIR)/SandySoilMix.cpp" \
+		"$(PATTERN_DIR)/Pot.cpp" \
+		"$(PATTERN_DIR)/CeramicPot.cpp" \
+		-o $(TEST_DECORATOR)
+	@echo "Decorator tests compiled successfully!"
 
 # Run all tests
 run: all
@@ -120,16 +145,16 @@ run: all
 	./$(TEST_FLYWEIGHT)
 	@echo ""
 	@echo "=========================================="
-	@echo "Running Observer Unit Tests..."
+	@echo "Running Decorator Pattern Tests..."
 	@echo "=========================================="
-	./$(TEST_OBSERVER)
+	./$(TEST_DECORATOR)
 	@echo ""
 	@echo "All tests completed!"
 
 # Clean executables
 clean:
 	@echo "Cleaning test executables..."
-	rm -f $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_OBSERVER)
+	rm -f $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR)
 	@echo "Clean complete!"
 
 # Run only state tests
@@ -147,9 +172,9 @@ test-flyweight: $(TEST_FLYWEIGHT)
 	@echo "Running Flyweight Pattern Tests..."
 	./$(TEST_FLYWEIGHT)
 
-# Run only observer unit tests
-test-observer-unit: $(TEST_OBSERVER)
-	@echo "Running Observer Unit Tests..."
-	./$(TEST_OBSERVER)	
+# Run only decorator tests
+test-decorator: $(TEST_DECORATOR)
+	@echo "Running Decorator Pattern Tests..."
+	./$(TEST_DECORATOR)
 
-.PHONY: all run clean test-state test-strategy test-flyweight test-observer-unit
+.PHONY: all run clean test-state test-strategy test-flyweight test-decorator
