@@ -1,10 +1,31 @@
+/**
+ * @file InventoryService.cpp
+ * @brief Implementation of InventoryService Observer methods
+ * @author Damian Moustakis (Doxygen comments)
+ * @date 2025-11-01
+ * @details
+ * Implements the InventoryService class methods to handle inventory
+ * updates in response to plant lifecycle events.
+ */
 #include "InventoryService.h"
 #include <stdexcept>
 #include <optional>
 #include <iostream>
 
+/**
+ * @brief Constructor for InventoryService
+ * @param store Reference to the Inventory to manage
+ * @param gh Reference to the Greenhouse instance
+ * @returns InventoryService instance
+ */
 InventoryService::InventoryService(Inventory& store, Greenhouse& gh) : inv(store), gh(gh) {}
 
+/**
+ * @brief Adds a new plant to the inventory
+ * @param plantId The unique ID of the plant
+ * @param speciesSku The species SKU of the plant
+ * @returns true if the plant was added successfully, false otherwise
+ */
 bool InventoryService::addPlant(std::string plantId, std::string speciesSku) 
 {
 	if (inv.byId.count(plantId)) return false;
@@ -15,6 +36,11 @@ bool InventoryService::addPlant(std::string plantId, std::string speciesSku)
   	return true;
 }
 
+/**
+ * @brief Releases a plant from an order back to available inventory
+ * @param plantId The unique ID of the plant
+ * @returns void
+ */
 void InventoryService::releasePlantFromOrder(std::string plantId) 
 {
 	auto it = inv.byId.find(plantId);
@@ -28,6 +54,11 @@ void InventoryService::releasePlantFromOrder(std::string plantId)
   	inv.availBySku[rec.speciesSku].insert(plantId);
 }
 
+/**
+ * @brief Effectively Sells a plant from the inventory
+ * @param plantId The unique ID of the plant
+ * @returns true if the plant was sold successfully, false otherwise
+ */
 bool InventoryService::markSold(std::string plantId) 
 {
   	auto it = inv.byId.find(plantId);
@@ -51,12 +82,21 @@ bool InventoryService::markSold(std::string plantId)
   	return true;
 }
 
+/**
+ * @brief Finds the amount of available for purchase plants of a certain species
+ * @param speciesSku The species SKU to check
+ * @returns The count of available plants for the specified species
+ */
 int InventoryService::availableCount(std::string speciesSku)  
 {
 	auto it = inv.availBySku.find(speciesSku);
 	return (it == inv.availBySku.end()) ? 0 : static_cast<int>(it->second.size());
 }
 
+/**
+ * @brief Lists all available plants in the inventory
+ * @returns A vector of plant IDs that are available for purchase
+ */
 std::vector<std::string> InventoryService::listAvailablePlants()
 {
 	std::vector<std::string> out;
@@ -68,18 +108,33 @@ std::vector<std::string> InventoryService::listAvailablePlants()
 	return out;
 }
 
+/**
+ * @brief Finds the amount of available plants of a certain species that are reserved
+ * @param speciesSku The species SKU to check
+ * @returns The count of reserved plants for the specified species
+ */
 int InventoryService::reservedCount(std::string speciesSku)  
 {
 	auto it = inv.reservedBySku.find(speciesSku);
 	return (it == inv.reservedBySku.end()) ? 0 : static_cast<int>(it->second.size());
 }
 
+/**
+ * @brief Finds the amount of sold plants of a certain species
+ * @param speciesSku The species SKU to check
+ * @returns The count of sold plants for the specified species
+ */
 int InventoryService::soldCount(std::string speciesSku)  
 {
 	auto it = inv.soldBySku.find(speciesSku);
 	return (it == inv.soldBySku.end()) ? 0 : static_cast<int>(it->second.size());
 }
 
+/**
+ * @brief Reserves a plant in the inventory
+ * @param plantId The unique ID of the plant
+ * @returns true if the plant was reserved successfully, false otherwise
+ */
 bool InventoryService::reservePlant(std::string plantId)
 {
     auto it = inv.byId.find(plantId);
@@ -98,6 +153,13 @@ bool InventoryService::reservePlant(std::string plantId)
     return true;
 }
 
+/**
+ * @brief Reaction to a Plant Event
+ * @param event The Plant event to react to
+ * @details
+ * Handles plant lifecycle events to update inventory status.
+ * @returns void
+ */
 void InventoryService::onEvent(events::Plant e)
 {
     switch (e.type)
@@ -150,5 +212,3 @@ void InventoryService::onEvent(events::Plant e)
             break;
     }
 }
-
-

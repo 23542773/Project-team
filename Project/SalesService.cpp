@@ -1,3 +1,12 @@
+/**
+ * @file SalesService.cpp
+ * @brief Implementation of SalesService Observer methods
+ * @author Damian Moustakis (Doxygen comments)
+ * @date 2025-11-01
+ * @details
+ * Implements the SalesService class methods to handle sales-related
+ * events and data.
+ */
 #include "SalesService.h"
 #include <sstream>
 #include <iomanip>
@@ -6,6 +15,10 @@ using events::OrderLine;
 using events::OrderType;
 using events::OrderStatus;
 
+/**
+ * @brief Generates the next unique order ID
+ * @returns The next order ID as a string
+ */
 std::string SalesService::nextOrderId() 
 {
     std::ostringstream os;
@@ -13,6 +26,12 @@ std::string SalesService::nextOrderId()
     return os.str();
 }
 
+/**
+ * @brief Creates a new Order
+ * @param customerId The ID of the customer placing the order
+ * @param lines The line items in the order
+ * @returns The unique ID of the created order
+ */
 std::string SalesService::createOrder(std::string customerId, std::vector<OrderLine>& lines) 
 {
     Order o;
@@ -29,6 +48,12 @@ std::string SalesService::createOrder(std::string customerId, std::vector<OrderL
     return o.orderId;
 }
 
+/**
+ * @brief Assigns an Order to a staff member
+ * @param orderId The unique ID of the order
+ * @param staffId The ID of the staff member to assign
+ * @returns true if the assignment was successful, false otherwise
+ */
 bool SalesService::assign(std::string orderId, std::string staffId) 
 {
     auto it = orders.find(orderId);
@@ -46,6 +71,12 @@ bool SalesService::assign(std::string orderId, std::string staffId)
     return true;
 }
 
+/**
+ * @brief Updates the status of an Order
+ * @param orderId The unique ID of the order
+ * @param newStatus The new status to set for the order
+ * @returns true if the status update was successful, false otherwise
+ */
 bool SalesService::updateStatus(std::string orderId, OrderStatus newStatus) 
 {
     auto it = orders.find(orderId);
@@ -66,6 +97,11 @@ bool SalesService::updateStatus(std::string orderId, OrderStatus newStatus)
     return true;
 }
 
+/**
+ * @brief Gets an Order by its ID
+ * @param orderId The unique ID of the order
+ * @return optional<Order> if Order is found, null otherwise
+ */
 std::optional<Order> SalesService::get(std::string orderId) 
 {
     auto it = orders.find(orderId);
@@ -74,6 +110,11 @@ std::optional<Order> SalesService::get(std::string orderId)
     return it->second;
 }
 
+/**
+ * @brief Gets the Orders of a staff member
+ * @param staffId The ID of the staff member
+ * @returns A vector of Orders assigned to the specified staff member
+ */
 std::vector<Order> SalesService::listByStaff(std::string staffId)  
 {
     std::vector<Order> out;
@@ -88,6 +129,11 @@ std::vector<Order> SalesService::listByStaff(std::string staffId)
     return out;
 }
 
+/**
+ * @brief Gets the Orders of a customer
+ * @param customerId The ID of the customer
+ * @returns A vector of Orders associated with the specified customer
+ */
 std::vector<events::Order> SalesService::getOrdersByCustomer(std::string customerId)
 {
     std::vector<events::Order> result;
@@ -98,6 +144,11 @@ std::vector<events::Order> SalesService::getOrdersByCustomer(std::string custome
     return result;
 }
 
+/**
+ * @brief Gets the Orders assigned to a staff member
+ * @param staffId The ID of the staff member
+ * @returns A vector of Orders assigned to the specified staff member
+ */
 std::vector<events::Order> SalesService::getOrdersByStaff(std::string staffId)
 {
     std::vector<events::Order> result;
@@ -108,6 +159,14 @@ std::vector<events::Order> SalesService::getOrdersByStaff(std::string staffId)
     return result;
 }
 
+/**
+ * @brief Processes checkout for an order
+ * @param customerId The ID of the customer
+ * @param lines The line items in the order
+ * @param amountPaid The amount paid by the customer
+ * @details Calculates total cost, verifies payment, creates order, and generates receipt.
+ * @returns A Receipt containing details of the transaction
+ */
 Receipt SalesService::checkout(std::string customerId, std::vector<events::OrderLine>& lines, double amountPaid)
 {
     Receipt receipt;
@@ -154,6 +213,11 @@ Receipt SalesService::checkout(std::string customerId, std::vector<events::Order
       return receipt;
 }
 
+/**
+ * @brief Retrieves a receipt by order ID
+ * @param orderId The unique ID of the order
+ * @returns An optional Receipt if found, empty otherwise
+ */
 std::optional<Receipt> SalesService::getReceipt(std::string orderId)
 {
     auto it = receipts.find(orderId);
@@ -161,6 +225,11 @@ std::optional<Receipt> SalesService::getReceipt(std::string orderId)
     return it->second;
 }
 
+/**
+ * @brief Retrieves all receipts for a customer
+ * @param customerId The ID of the customer
+ * @returns A vector of Receipts associated with the specified customer
+ */
 std::vector<Receipt> SalesService::getCustomerReceipts(std::string customerId)
 {
     std::vector<Receipt> result;
