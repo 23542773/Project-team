@@ -1,7 +1,10 @@
 /**
  * @file MessagingMediator.h
- * @brief Defines the abstract base class for the Mediator in the messaging system.
+ * @brief Defines the abstract Mediator interface for the Mediator pattern
+ * @date 2025-10-31
+ * @author Project Teams
  */
+
 #ifndef MESSAGING_MEDIATOR_H
 #define MESSAGING_MEDIATOR_H
 #include <string>
@@ -13,34 +16,34 @@ class Colleague;
 
 /**
  * @class MessagingMediator
- * @brief The abstract interface for a Mediator object, responsible for defining the communication
- * protocol between Colleague objects.
+ * @brief Abstract Mediator class in the Mediator pattern for inter-colleague communication
  *
- * Concrete mediators (like ChatMediator) will implement this interface to manage and
- * control the interactions between participants without the participants knowing each other.
+ * This class defines the interface for mediating communication between Colleague objects
+ * in the nursery system. It implements the Mediator pattern by providing a centralized
+ * point of communication that decouples colleagues from each other.
+ *
+ * The mediator encapsulates how colleagues interact, allowing communication logic and
+ * business rules to be centralized rather than distributed across colleague objects.
  */
 class MessagingMediator 
 {
 public:
 
-/**
- * @brief Virtual destructor to ensure proper cleanup of derived concrete mediator classes.
- */
-
+    /**
+     * @brief Virtual destructor for proper cleanup of derived classes
+     */
     virtual ~MessagingMediator() = default;
 
     /**
-     * @brief Sends a message from one Colleague to another.
+     * @brief Sends a message from one colleague to another identified by user ID
+     * @param from Pointer to the Colleague sending the message
+     * @param toUserId String ID of the recipient colleague
+     * @param text The message content to send
      *
-     * This is a pure virtual function, which concrete mediators must implement to define
-     * the specific logic for routing and handling the message.
-     *
-     * @param from A pointer to the Colleague sending the message.
-     * @param to A pointer to the intended recipient Colleague.
-     * @param text The content of the message to be sent.
+     * This method routes messages between colleagues without requiring them to
+     * know about each other directly, maintaining loose coupling in the system.
      */
-
-    virtual void sendMessage(Colleague* from, Colleague* to, const std::string& text) = 0;
+    virtual void sendMessageToId(Colleague* from, const std::string& toUserId, const std::string& text) = 0;
 
 };
 

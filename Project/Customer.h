@@ -1,6 +1,8 @@
 /**
  * @file Customer.h
- * @brief Defines the Customer class, a concrete Colleague in the Mediator pattern.
+ * @brief Defines the Customer concrete colleague class
+ * @date 2025-10-31
+ * @author Project Teams
  */
 
 #ifndef CUSTOMER_H
@@ -14,66 +16,73 @@
 
 /**
  * @class Customer
- * @brief Represents a customer entity that can communicate with other colleagues
- * (such as staff) through a MessagingMediator.
+ * @brief Concrete Colleague representing a nursery customer
  *
- * This class inherits communication capabilities from Colleague and adds
- * specific properties like name and order history.
+ * This class represents customers in the nursery system who can communicate
+ * with staff members through the mediator. Customers can only send messages
+ * to Sales Staff due to business rules enforced by the ChatMediator.
+ *
+ * Customers maintain their own message history and track their active orders.
+ * All communication is routed through the mediator to maintain loose coupling
+ * and enforce organizational communication policies.
  */
-class Customer : public Colleague
+class Customer : public Colleague 
 {
 private:
-    /**
-     * @brief A log of all messages received by this customer.
-     */
+    /// Collection of all messages received by this customer
     std::vector<Message> receivedMessages;
 
 public:
 
-    /**
-     * @brief The full name of the customer.
-     */
+    /// Customer's display name
     std::string name;
 
-    /**
-     * @brief A list of identifiers for orders currently active for this customer.
-     */
+    /// List of active order IDs associated with this customer
     std::vector<std::string> activeOrders;
 
     /**
-     * @brief Constructor for the Customer class.
-     * @param med A pointer to the central MessagingMediator.
-     * @param customerId The unique identifier for this customer (used as the Colleague's userId).
-     * @param customerName The full name of the customer.
+     * @brief Constructs a Customer colleague
+     * @param med Pointer to the MessagingMediator for communication
+     * @param customerId Unique identifier for this customer
+     * @param customerName Display name for this customer
+     *
+     * Creates a customer who can communicate through the mediator and
+     * maintains their own message history and order list.
      */
     Customer(MessagingMediator* med, const std::string& customerId, const std::string& customerName);
 
     /**
-     * @brief Sends a message to another Colleague via the stored mediator.
-     * @param to A pointer to the target Colleague (e.g., a Staff member).
-     * @param text The content of the message to send.
+     * @brief Sends a message to a colleague
+     * @param to Pointer to the recipient Colleague
+     * @param text The message content to send
+     *
+     * Routes the message through the mediator. The mediator will enforce
+     * rules restricting customers to only message Sales Staff.
      */
     void sendMessage(Colleague* to, const std::string& text) override;
 
     /**
-     * @brief Processes and stores an incoming message delivered by the mediator.
-     * @param msg The received message structure.
+     * @brief Receives a message from the mediator
+     * @param msg The Message object to receive
+     *
+     * Stores the received message in the customer's message history for
+     * later retrieval and display in conversations.
      */
     void receiveMessage(const Message& msg) override;
 
     /**
-     * @brief Retrieves a conversation history between this customer and a specified user.
+     * @brief Retrieves conversation history with another user
+     * @param otherUserId User ID of the other party in the conversation
+     * @return Vector of Message objects representing the conversation
      *
-     * This method filters the `receivedMessages` based on the sender's ID.
-     *
-     * @param otherUserId The user ID of the other party in the conversation.
-     * @return A vector of messages constituting the conversation.
+     * Filters the customer's message history to return only messages
+     * sent to or received from the specified user.
      */
     std::vector<Message> getConversation(const std::string& otherUserId) const;
 
     /**
-     * @brief Gets the unique identifier for this customer (inherited from Colleague's userId).
-     * @return The customer's ID string.
+     * @brief Gets the customer's unique ID
+     * @return String containing the customer ID
      */
     std::string getId() const;
 };

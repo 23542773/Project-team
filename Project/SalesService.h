@@ -1,9 +1,11 @@
 /**
  * @file SalesService.h
- * @brief Defines the SalesService class, responsible for order management, status updates,
- * and processing sales transactions, acting as an event Subject.
+ * @brief Sales Service Observer implementation
+ * @author Damian Moustakis (Doxygen comments)
+ * @date 2025-11-01
+ * @details
+ * The SalesService class implements the ServiceSubject to manage sales-related events and data.
  */
-
 #ifndef SALESSERVICE_H
 #define SALESSERVICE_H
 #include "ServiceSubject.h"
@@ -15,9 +17,11 @@
 
 /**
  * @struct Receipt
- * @brief A data structure encapsulating the result of a checkout transaction.
+ * @brief Represents a sales receipt
+ * @details
+ * Contains details about the transaction including success status,
+ * order ID, total cost, amount paid, change, and a message.
  */
-
 struct Receipt 
 {
 /** @brief Indicates whether the transaction was successful. */
@@ -36,75 +40,63 @@ struct Receipt
 
 /**
  * @class SalesService
- * @brief Manages the lifecycle of customer orders and acts as the **ServiceSubject**
- * to notify observers of Order events.
- *
- * It provides methods for creating, assigning, and updating orders, as well as handling the
- * final checkout process.
+ * @brief Concrete Subject implementation for sales management
+ * @details
+ * Manages orders and notifies observers of order-related events.
  */
-
 class SalesService : public ServiceSubject
 {
 public:
 
-/**
- * @brief Creates a new Order, registers it in the system, and notifies all observers of the `Created` event.
- * @param customerId The ID of the customer placing the order.
- * @param lines A vector of OrderLine structures detailing the items ordered.
- * @return The unique ID of the newly created order.
- */
-
+	/**
+	 * @brief Creates a new Order
+	 * @param customerId The ID of the customer placing the order
+	 * @param lines The line items in the order
+	 * @returns The unique ID of the created order
+	 */
 	std::string createOrder(std::string customerId, std::vector<events::OrderLine>& lines);
 
 	/**
-     * @brief Assigns a staff member to an existing order and notifies observers of the `Assigned` event.
-     * @param orderId The unique ID of the order to assign.
-     * @param staffId The ID of the staff member being assigned.
-     * @return true if the assignment was successful, false if the order does not exist.
-     */
-
+	 * @brief Assigns an Order to a staff member
+	 * @param orderId The unique ID of the order
+	 * @param staffId The ID of the staff member to assign
+	 * @returns true if the assignment was successful, false otherwise
+	 */
   	bool assign(std::string orderId, std::string staffId);
 
 	/**
-     * @brief Updates the status of an existing order and notifies observers of the status change event.
-     * @param orderId The unique ID of the order to update.
-     * @param newStatus The new status to set (e.g., InProgress, Completed, Cancelled).
-     * @return true if the status update was successful, false if the order does not exist.
-     */
-
+	 * @brief Updates the status of an Order
+	 * @param orderId The unique ID of the order
+	 * @param newStatus The new status to set for the order
+	 * @returns true if the status update was successful, false otherwise
+	 */
   	bool updateStatus(std::string orderId, events::OrderStatus newStatus);
 
 	/**
-     * @brief Retrieves an Order object by its ID.
-     * @param orderId The unique ID of the order.
-     * @return An `std::optional` containing the Order structure if found, or an empty optional otherwise.
-     */
-
+	 * @brief Gets an Order by its ID
+	 * @param orderId The unique ID of the order
+	 */
   	std::optional<events::Order> get(std::string orderId);
 
 	/**
-     * @brief Retrieves a list of all orders currently assigned to a specific staff member.
-     * @param staffId The ID of the staff member.
-     * @return A vector of Order structures assigned to the staff member.
-     * @deprecated Use `getOrdersByStaff` instead for clarity.
-     */
-
+	 * @brief Gets the Orders of a staff member
+	 * @param staffId The ID of the staff member
+	 * @returns A vector of Orders assigned to the specified staff member
+	 */
   	std::vector<events::Order> listByStaff(std::string staffId);
 
 	/**
-     * @brief Retrieves a list of all orders placed by a specific customer.
-     * @param customerId The ID of the customer.
-     * @return A vector of Order structures associated with the customer.
-     */
-
+	 * @brief Gets the Orders of a customer
+	 * @param customerId The ID of the customer
+	 * @returns A vector of Orders associated with the specified customer
+	 */
 	std::vector<events::Order> getOrdersByCustomer(std::string customerId);
 
 	/**
-     * @brief Retrieves a list of all orders currently assigned to a specific staff member.
-     * @param staffId The ID of the staff member.
-     * @return A vector of Order structures assigned to the staff member.
-     */
-
+	 * @brief Gets the Orders assigned to a staff member
+	 * @param staffId The ID of the staff member
+	 * @returns A vector of Orders assigned to the specified staff member
+	 */
 	std::vector<events::Order> getOrdersByStaff(std::string staffId);
 
 	/**
@@ -119,14 +111,21 @@ public:
      * @return A Receipt structure detailing the outcome of the transaction.
      */
 	
+	/**
+	 * @brief Processes checkout for an order
+	 * @param customerId The ID of the customer
+	 * @param lines The line items in the order
+	 * @param amountPaid The amount paid by the customer
+	 * @returns A Receipt containing details of the transaction
+	 */
 	Receipt checkout(std::string customerId, std::vector<events::OrderLine>& lines, double amountPaid);
 	
+	// Receipt managment
 	/**
-     * @brief Retrieves a stored receipt by its associated order ID.
-     * @param orderId The unique ID of the order.
-     * @return An `std::optional` containing the Receipt structure if found, or an empty optional otherwise.
-     */
-
+	 * @brief Retrieves a receipt by order ID
+	 * @param orderId The unique ID of the order
+	 * @returns An optional Receipt if found, empty otherwise
+	 */
 	std::optional<Receipt> getReceipt(std::string orderId);
 
 	/**
@@ -135,33 +134,38 @@ public:
      * @return A vector of Receipt structures associated with the customer.
      */
 	
+	/**
+	 * @brief Retrieves all receipts for a customer
+	 * @param customerId The ID of the customer
+	 * @returns A vector of Receipts associated with the specified customer
+	 */
 	std::vector<Receipt> getCustomerReceipts(std::string customerId);
 
 private:
 
-/**
- * @brief Generates the next sequential unique order ID string.
- * @return The next available order ID.
- */
-
+	/**
+	 * @brief Generates the next unique order ID
+	 * @returns The next order ID as a string
+	 */
 	std::string nextOrderId();
 
 	/**
-     * @brief A map storing all active and historical orders, keyed by the unique order ID.
-     */
-
+	 * @brief Stored orders (orderId -> Order)
+	 * @details
+	 * This unordered map holds all orders created in the system,
+	 * indexed by their unique order IDs.
+	 */
  	std::unordered_map<std::string, events::Order> orders;
 
 	/**
-     * @brief A sequence counter used to generate unique order IDs.
+	 * @brief Sequence number for generating unique order IDs
      */
-
   	unsigned long seq = 1;
-  	
+
   	/**
-     * @brief A map storing transaction receipts, keyed by the associated order ID.
-     */
+	 * @brief Stored receipts (orderId -> Receipt)
+	 */
   	std::unordered_map<std::string, Receipt> receipts;
 };
 
-#endif
+#endif // SALESSERVICE_H

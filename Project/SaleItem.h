@@ -1,6 +1,8 @@
 /**
  * @file SaleItem.h
- * @brief Defines the abstract base component interface for the Decorator design pattern.
+ * @brief Defines the abstract base Component interface for the Decorator pattern
+ * @date 2025-10-31
+ * @author Project Teams
  */
 
 #ifndef SALEITEM_H
@@ -11,13 +13,15 @@
 
 /**
  * @class SaleItem
- * @brief The abstract Component interface for objects that can be sold, defining core operations.
+ * @brief Abstract Component class in the Decorator pattern representing items for sale
  *
- * Both simple sale items (like a single Plant) and decorated items must implement this interface.
- * It is the basis for the Decorator pattern, allowing costs and descriptions to be
- * dynamically added and chained.
+ * This class defines the interface for all sale items in the nursery system.
+ * It serves as the base component that can be decorated with additional features
+ * such as reinforced pots, gift wrapping, and message cards.
+ *
+ * The Decorator pattern allows dynamic addition of responsibilities to sale items
+ * without modifying the core SaleItem interface or its concrete implementations.
  */
-
 class SaleItem 
 {
 public:
@@ -25,26 +29,27 @@ public:
  * @brief Virtual destructor to ensure proper cleanup of derived concrete SaleItem and Decorator classes.
  */
 
+    /**
+     * @brief Virtual destructor for proper cleanup of derived classes
+     */
     virtual ~SaleItem() = default;
 
     /**
-     * @brief Calculates the total cost of the sale item, including any decorations.
+     * @brief Calculates the total cost of the sale item
+     * @return The cost as a double value
      *
-     * This is a pure virtual function and must be implemented by all concrete components and decorators.
-     *
-     * @return The total cost as a double.
+     * This method returns the base cost for concrete components or the
+     * decorated cost for decorator classes that add additional charges.
      */
-
     virtual double cost() = 0;
 
     /**
-     * @brief Provides a detailed description of the sale item, including any added decorations.
+     * @brief Generates a description of the sale item
+     * @return String describing the item and any decorations applied
      *
-     * This is a pure virtual function and must be implemented by all concrete components and decorators.
-     *
-     * @return A string containing the descriptive text.
+     * This method returns a textual description that includes the base item
+     * and any additional features added through decorators.
      */
-    
     virtual std::string description() = 0;
 };
 #endif

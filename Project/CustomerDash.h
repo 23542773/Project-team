@@ -1,8 +1,12 @@
 /**
  * @file CustomerDash.h
- * @brief Defines the CustomerDash class, a concrete Observer that tracks plant maturation events.
+ * @brief Customer Dashboard Observer implementation
+ * @author Damian Moustakis (Doxygen comments)
+ * @date 2025-11-01
+ * @details
+ * The CustomerDash class implements the NurseryObserver interface to handle
+ * plant growth events and update the customer dashboard.
  */
-
 #ifndef CUSTOMERDASH_H
 #define CUSTOMERDASH_H
 
@@ -12,44 +16,42 @@
 
 /**
  * @class CustomerDash
- * @brief Represents a customer dashboard or interface component that subscribes to
- * notifications from a "Nursery" Subject.
- *
- * It specifically monitors for plant-related events and logs the IDs of plants
- * that have matured. This is a concrete implementation of the NurseryObserver.
+ * @brief Concrete Observer implementation for customer dashboard updates
+ * @details
+ * Handles Plant events to notify customers of matured plants.
  */
-class CustomerDash : public NurseryObserver
+class CustomerDash : public NurseryObserver 
 {
 public:
 
     /**
-     * @brief The update method called by the Subject (Nursery) when an event occurs.
-     *
-     * This method processes the event, typically logging the plant's ID if it
-     * meets a specific criteria (e.g., reaching maturity).
-     *
-     * @param e The Plant event data structure.
+     * @brief Handle Plant lifecycle events
+     * @param e The Plant event data
+     * @returns void
      */
     void onEvent(events::Plant e) override;
 
     /**
-     * @brief Retrieves the list of plant IDs that have been recorded as matured.
-     * @return A reference to the vector containing the IDs of matured plants.
+     * @brief Get the list of matured plant IDs for the customer dashboard
+     * @returns A vector of matured plant IDs
      */
     std::vector<std::string>& getMatured();
 
     /**
-     * @brief Clears the internal list of matured plant IDs.
+     * @brief Clear the list of matured plant IDs
+     * @returns void
      */
     void clear();
 
 private:
-
+    
     /**
-     * @brief Stores the unique identifiers (IDs) of plants that have been reported
-     * as having matured via the onEvent method.
+     * @brief List of matured plant IDs for the customer dashboard
+     * @details
+     * This vector stores the IDs of plants that have matured.
      */
     std::vector<std::string> maturedIds;
 };
+#endif // CUSTOMERDASH_H
 
-#endif
+

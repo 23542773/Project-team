@@ -1,6 +1,8 @@
 /**
  * @file Message.h
- * @brief Defines the Message structure used for communication between Colleague objects via the Mediator.
+ * @brief Defines the Message data structure for inter-colleague communication
+ * @date 2025-10-31
+ * @author Project Teams
  */
 
 #ifndef MESSAGE_H
@@ -10,32 +12,30 @@
 
 /**
  * @struct Message
- * @brief A simple data structure encapsulating the necessary information for a chat or system message.
+ * @brief Data structure representing a message between colleagues
  *
- * This structure serves as the payload passed to the receiveMessage method of Colleague objects.
+ * This structure encapsulates all information about a message sent through
+ * the mediator system. Messages are created by the ChatMediator and delivered
+ * to both sender and recipient for conversation history tracking.
+ *
+ * Each message has a unique ID, sender and recipient identifiers, the message
+ * content, and a timestamp for chronological ordering.
  */
-
 struct Message 
 {
-    /**
-     * @brief A unique identifier for this message instance.
-     */
+    /// Unique identifier for this message (sequence number)
     std::string id;
-    /**
-     * @brief The unique ID of the user who sent the message.
-     */       
+
+    /// User ID of the message sender
     std::string fromUser;
-    /**
-     * @brief The unique ID of the user who is the intended recipient of the message.
-     */
-    std::string toUser; 
-    /**
-     * @brief The actual content of the message.
-     */
+
+    /// User ID of the message recipient
+    std::string toUser;
+
+    /// The text content of the message
     std::string text;
-    /**
-     * @brief The timestamp indicating when the message was created or sent.
-     */
+
+    /// Timestamp when the message was sent (Unix time)
     std::time_t timestamp; 
 };
 

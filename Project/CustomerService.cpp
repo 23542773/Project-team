@@ -29,7 +29,7 @@ void CustomerService::assignOrderToCustomer(std::string orderId, std::string cus
 {
     orderToCustomer[orderId] = customerId;
     auto it = customers.find(customerId);
-    if (it != customers.end()) it->second->activeOrders.push_back(orderId);
+    if (it != customers.end()) it->second->addActiveOrder(orderId);
 }
 
 std::string CustomerService::getCustomerIdByOrder(std::string orderId) 

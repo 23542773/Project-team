@@ -12,12 +12,19 @@ void ChatMediator::registerColleague(Colleague* colleague)
     if (colleague) 
     {
         colleagues.push_back(colleague);
+        indexById[colleague->getUserId()] = colleague;
     }
 }
 
 void ChatMediator::unregisterColleague(Colleague* colleague) 
 {
     colleagues.erase(std::remove(colleagues.begin(), colleagues.end(), colleague), colleagues.end());
+    if (colleague) {
+        auto it = indexById.find(colleague->getUserId());
+        if (it != indexById.end() && it->second == colleague) {
+            indexById.erase(it);
+        }
+    }
 }
 
 bool ChatMediator::isCustomer(Colleague* colleague) const 
@@ -101,7 +108,15 @@ void ChatMediator::sendMessage(Colleague* from, Colleague* to, const std::string
     m.text = text;
     m.timestamp = std::time(nullptr);
     
-    //Push to both sender and receiver
     from->receiveMessage(m);
     to->receiveMessage(m);
+}
+
+void ChatMediator::sendMessageToId(Colleague* from, const std::string& toUserId, const std::string& text)
+{
+    if (!from) return;
+    auto it = indexById.find(toUserId);
+    if (it == indexById.end()) return;
+    Colleague* to = it->second;
+    sendMessage(from, to, text);
 }

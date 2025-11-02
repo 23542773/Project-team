@@ -1,9 +1,15 @@
 /**
- * @file Events.h
- * @brief Defines the data structures and enumerations used to represent various events
- * (Order, Stock, Plant) that occur within the system.
- */
-
+* @file Events.h
+* @brief Event data structures for Observer
+* @author Damian Moustakis (Doxygen comments)
+* @date 2025-11-01
+* 
+* @details
+* The system supports three main event categories:
+* - Plant Events: Lifecycle changes in individual plants (wilted, matured, died)
+* - Stock Events: Inventory level changes (reserved, released, sold, low)
+* - Order Events: Order lifecycle changes (created, assigned, completed, cancelled)
+*/
 #ifndef EVENTS_H
 #define EVENTS_H
 
@@ -12,74 +18,35 @@
 #include <optional>
 
 /**
- * @namespace events
- * @brief Contains all event-related enumerations and data structures (payloads).
- */
-namespace events
+* @namespace events
+* @brief Contains all event types and data structures for the Observer pattern 
+*/
+namespace events 
 {
     /**
      * @enum OrderType
-     * @brief Represents the high-level action type related to an Order event.
-     */
-    enum class OrderType {
-        /** @brief A new order has been created. */
-        Created,
-        /** @brief An order has been assigned to a staff member. */
-        Assigned,
-        /** @brief An order has been completed (fulfilled/shipped). */
-        Completed,
-        /** @brief An order has been cancelled. */
-        Cancelled
-    };
-
+     * @brief Represents the type of order event that occurred
+    */
+    enum class OrderType { Created, Assigned, Completed, Cancelled };
     /**
      * @enum StockType
-     * @brief Represents the high-level action type related to a Stock event.
+     * @brief Represents a type of stock event that occured
      */
-    enum class StockType {
-        /** @brief Stock quantity has been reserved for an order. */
-        Reserved,
-        /** @brief Reserved stock has been released (e.g., due to cancellation). */
-        Released,
-        /** @brief Stock has been permanently sold and removed from inventory. */
-        Sold,
-        /** @brief Stock quantity for a species is running low. */
-        Low
-    };
-
+    enum class StockType { Reserved, Released, Sold, Low };
     /**
      * @enum PlantType
-     * @brief Represents the high-level action type related to a Plant event.
+     * @brief Represents a type of plant lifecycle event
      */
-    enum class PlantType {
-        /** @brief A plant has wilted or is in poor condition. */
-        Wilted,
-        /** @brief A plant has reached maturity. */
-        Matured,
-        /** @brief A plant has died and needs to be removed from the nursery. */
-        Died
-    };
-
+    enum class PlantType { Wilted, Matured, Died};
     /**
      * @enum OrderStatus
-     * @brief Represents the current processing state of an Order.
+     * @brief Current status of an order in the system
      */
-    enum class OrderStatus {
-        /** @brief Order just entered the system. */
-        New,
-        /** @brief Order is assigned to a staff member. */
-        Assigned,
-        /** @brief Order is being processed/picked. */
-        InProgress,
-        /** @brief Order has been fully processed. */
-        Completed,
-        /** @brief Order has been formally cancelled. */
-        Cancelled
-    };
+    enum class OrderStatus { New, Assigned, InProgress, Completed, Cancelled };
 
     /**
      * @struct OrderLine
-     * @brief Represents a single line item within a customer's order.
+     * @brief Represents a single line item in an order
      */
     struct OrderLine
     {
@@ -95,13 +62,11 @@ namespace events
 
     /**
      * @struct Order
-     * @brief Data structure containing all information about an order event.
+     * @brief Contains all info related to Order events
      */
-    struct Order
-    {
-        /** @brief The unique identifier for the order. */
-        std::string orderId;
-        /** @brief The unique identifier for the customer who placed the order. */
+    struct Order 
+    { 
+        std::string orderId; 
         std::string customerId;
         /** @brief A list of all line items included in the order. */
         std::vector<OrderLine> lines;
@@ -115,30 +80,25 @@ namespace events
 
     /**
      * @struct Stock
-     * @brief Data structure containing information related to a stock event.
+     * @brief Contains all info related to Stock events
      */
-    struct Stock
-    {
-        /** @brief The identifier for the stock item (e.g., SKU or unique stock ID). */
-        std::string key;
-        /** @brief The type of stock action/event being reported. */
-        StockType type;
-    };
+    struct Stock 
+    { 
+        std::string key; 
+        StockType type; 
+    }; 
 
     /**
      * @struct Plant
-     * @brief Data structure containing information related to a specific plant event.
-     * @note This struct represents the event payload, not a persistent Plant object.
+     * @brief Plant lifecycle info for Plant events
      */
-    struct Plant
-    {
-        /** @brief The unique ID of the individual plant. */
-        std::string plantId;
-        /** @brief The SKU of the plant's species. */
+    struct Plant 
+    { 
+        std::string plantId; 
         std::string sku;
         /** @brief The type of plant status change/event being reported. */
         PlantType type;
     };
 }
 
-#endif
+#endif // EVENTS_H

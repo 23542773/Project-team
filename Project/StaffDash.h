@@ -1,9 +1,12 @@
 /**
  * @file StaffDash.h
- * @brief Defines the StaffDash class, a concrete Observer that monitors and logs various
- * Plant, Stock, and Order events as actionable alerts for staff.
+ * @brief Staff Dashboard Observer implementation
+ * @author Damian Moustakis (Doxygen comments)
+ * @date 2025-11-01
+ * @details
+ * The StaffDash class implements the NurseryObserver interface to handle
+ * various nursery events and update the staff dashboard accordingly.
  */
-
 #ifndef STAFFDASH_H
 #define STAFFDASH_H
 #include <vector>
@@ -12,14 +15,10 @@
 
 /**
  * @class StaffDash
- * @brief Represents a staff dashboard component that subscribes to all types of events
- * from the Nursery Subject(s).
- *
- * It overrides all three `onEvent` methods defined in `NurseryObserver`, collecting
- * relevant information into a list of alerts for staff action or review.
+ * @brief Concrete Observer implementation for staff dashboard updates
+ * @details
+ * Handles Plant, Stock, and Order events to generate alerts for staff.
  */
-
-
 class StaffDash : public NurseryObserver 
 {
 public:
@@ -31,39 +30,36 @@ public:
      * @param e The Plant event data structure.
      */
 
-    void onEvent(events::Plant e) override;
     /**
-     * @brief Reaction method for Stock events (e.g., Low Stock).
-     *
-     * Processes the event and generates a restocking or inventory-related alert for staff.
-     *
-     * @param s The Stock event data structure.
+     * @brief Handle Plant lifecycle events
+     * @param e The Plant event data
+     * @returns void
      */
+    void onEvent(events::Plant e) override;
 
+    /**
+     * @brief Handle Stock events
+     * @param s The Stock event data
+     * @returns void
+     */
     void onEvent(events::Stock s) override;
 
     /**
-     * @brief Reaction method for Order events (e.g., New Order Created, Order Cancelled).
-     *
-     * Processes the event and generates an order fulfillment or status alert for staff.
-     *
-     * @param o A reference to the Order event data structure.
+     * @brief Handle Order events/alerts currently assigned to staff
+     * @param o The Order event data
+     * @returns void
      */
-
     void onEvent(events::Order& o) override;
-
+    
     /**
-     * @brief Retrieves the list of all collected staff alerts.
-     * @return A reference to the vector containing the generated alert messages.
+     * @brief Get the current alerts for the staff dashboard
+     * @returns A vector of alert messages (non-const reference for test/read/write)
      */
-
-
     std::vector<std::string>& getAlerts();
 
     /**
-     * @brief Clears the internal list of collected staff alerts.
+     * @brief Clear all alerts from the staff dashboard
      */
-
     void clear();
 
 private:
@@ -71,6 +67,11 @@ private:
      * @brief Stores a collection of human-readable alert messages generated from processed events.
      */
 
+    /**
+     * @brief List of alerts for the staff dashboard
+     * @details
+     * This vector stores alert messages generated from various events.
+     */
     std::vector<std::string> alerts;
 };
-#endif
+#endif // STAFFDASH_H

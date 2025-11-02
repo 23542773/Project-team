@@ -5,11 +5,11 @@
 Staff::Staff(MessagingMediator* med, const std::string& staffId, const std::string& staffName, StaffRole staffRole)
     : Colleague(med, staffId), name(staffName), role(staffRole) {}
 
-void Staff::sendMessage(Colleague* to, const std::string& text)  
+void Staff::sendMessage(const std::string& toUserId, const std::string& text)  
 {
-    if (mediator && to) 
+    if (mediator) 
     {
-        mediator->sendMessage(this, to, text);
+        mediator->sendMessageToId(this, toUserId, text);
     }
 }
 
@@ -39,4 +39,34 @@ std::string Staff::getId() const
 StaffRole Staff::getRole() const 
 { 
     return role; 
+}
+
+std::string Staff::getName() const 
+{ 
+    return name; 
+}
+
+const std::vector<std::string>& Staff::getAssignedOrders() const 
+{ 
+    return assignedOrders; 
+}
+bool Staff::isAvailable() const 
+{ 
+    return available; 
+}
+
+void Staff::addAssignedOrder(const std::string& orderId) 
+{ 
+    assignedOrders.push_back(orderId); 
+}
+
+void Staff::removeAssignedOrder(const std::string& orderId) 
+{
+    auto it = std::find(assignedOrders.begin(), assignedOrders.end(), orderId);
+    if (it != assignedOrders.end()) assignedOrders.erase(it);
+}
+
+void Staff::setAvailable(bool avail) 
+{ 
+    available = avail; 
 }

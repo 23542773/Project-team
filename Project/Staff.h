@@ -1,6 +1,8 @@
 /**
  * @file Staff.h
- * @brief Defines the Staff class, a concrete Colleague representing a staff member in the Mediator pattern.
+ * @brief Defines the Staff concrete colleague class and StaffRole enumeration
+ * @date 2025-10-31
+ * @author Project Teams
  */
 
 #ifndef STAFF_H
@@ -14,31 +16,32 @@
 
 /**
  * @enum StaffRole
- * @brief Enumeration of the different functional roles a staff member can have.
+ * @brief Enumeration defining different roles for staff members
+ *
+ * Staff roles determine communication permissions enforced by the ChatMediator:
+ * - PlantCare: Can communicate with Inventory staff
+ * - Inventory: Can communicate with PlantCare and Sales staff
+ * - Sales: Can communicate with Customers, other Sales staff, and Inventory staff
  */
-
-
-
 enum class StaffRole 
 {
-/** @brief Role focused on the maintenance and care of plants (e.g., in the Greenhouse). */
-    PlantCare,
-    /** @brief Role focused on managing stock levels and plant disposition (e.g., in the InventoryService). */
-    Inventory,
-    /** @brief Role focused on order fulfillment and customer transactions (e.g., in the SalesService). */
-    Sales        
+    PlantCare,   ///< Staff responsible for plant maintenance and care
+    Inventory,   ///< Staff managing stock and inventory operations
+    Sales        ///< Staff handling customer interactions and sales
 };
-
 
 /**
  * @class Staff
- * @brief Represents a staff entity that can communicate with other colleagues (customers, other staff)
- * through a central MessagingMediator.
+ * @brief Concrete Colleague representing a nursery staff member
  *
- * This class extends the basic Colleague functionality with specific staff properties like role,
- * availability, and assigned orders.
+ * This class represents staff members in the nursery system who can communicate
+ * with customers and other staff through the mediator. Staff members have assigned
+ * roles that determine their communication permissions as enforced by ChatMediator.
+ *
+ * Staff members maintain their message history, track assigned orders, and have
+ * an availability status. All communication is mediated to enforce business rules
+ * about inter-departmental and customer communication.
  */
-
 class Staff : public Colleague 
 {
 
@@ -47,82 +50,74 @@ public:
      * @brief The full name of the staff member.
      */
 
+    /// Staff member's display name
     std::string name;
 
-    /**
-     * @brief A list of identifiers for orders currently assigned to this staff member.
-     */
-
+    /// List of order IDs currently assigned to this staff member
     std::vector<std::string> assignedOrders;
 
-    /**
-     * @brief Flag indicating if the staff member is currently available to take on new tasks or chats. Defaults to true.
-     */
-
+    /// Availability status for order assignment
     bool available = true;
 
-    /**
-     * @brief The functional role of the staff member within the system.
-     */
-
+    /// Role determining communication permissions and responsibilities
     StaffRole role;
 
     /**
-     * @brief Constructor for the Staff class.
-     * @param med A pointer to the central MessagingMediator.
-     * @param staffId The unique identifier for this staff member (used as the Colleague's userId).
-     * @param staffName The full name of the staff member.
-     * @param staffRole The specific role of the staff member. Defaults to StaffRole::Sales.
+     * @brief Constructs a Staff colleague with a specific role
+     * @param med Pointer to the MessagingMediator for communication
+     * @param staffId Unique identifier for this staff member
+     * @param staffName Display name for this staff member
+     * @param staffRole The role assigned to this staff member (default: Sales)
+     *
+     * Creates a staff member who can communicate through the mediator based on
+     * their role permissions and manages their assigned orders.
      */
-
     Staff(MessagingMediator* med, const std::string& staffId, const std::string& staffName, StaffRole staffRole = StaffRole::Sales);
 
     /**
-     * @brief Sends a message to another Colleague via the stored mediator.
-     * @param to A pointer to the target Colleague (e.g., a Customer or another Staff member).
-     * @param text The content of the message to send.
+     * @brief Sends a message to a colleague
+     * @param to Pointer to the recipient Colleague
+     * @param text The message content to send
+     *
+     * Routes the message through the mediator. The mediator will enforce
+     * role-based communication rules (e.g., PlantCare cannot message Customers).
      */
-
     void sendMessage(Colleague* to, const std::string& text);
 
     /**
-     * @brief Processes and stores an incoming message delivered by the mediator.
-     * @param msg The received message structure.
+     * @brief Receives a message from the mediator
+     * @param msg The Message object to receive
+     *
+     * Stores the received message in the staff member's message history for
+     * later retrieval and display in conversations.
      */
-
     void receiveMessage(const Message& msg) override;
 
     /**
-     * @brief Retrieves a conversation history between this staff member and a specified user.
+     * @brief Retrieves conversation history with another user
+     * @param otherUserId User ID of the other party in the conversation
+     * @return Vector of Message objects representing the conversation
      *
-     * Filters received messages based on the sender's ID.
-     *
-     * @param otherUserId The user ID of the other party in the conversation.
-     * @return A vector of messages constituting the conversation.
+     * Filters the staff member's message history to return only messages
+     * sent to or received from the specified user.
      */
-
     std::vector<Message> getConversation(const std::string& otherUserId) const;
 
     /**
-     * @brief Gets the unique identifier for this staff member (inherited from Colleague's userId).
-     * @return The staff member's ID string.
+     * @brief Gets the staff member's unique ID
+     * @return String containing the staff ID
      */
-
     std::string getId() const;
 
     /**
-     * @brief Gets the functional role of the staff member.
-     * @return The StaffRole enumeration value.
+     * @brief Gets the staff member's role
+     * @return StaffRole enumeration value
      */
-
     StaffRole getRole() const;
 
 private:
 
-/**
- * @brief A log of all messages received by this staff member.
- */
-
+    /// Collection of all messages received by this staff member
     std::vector<Message> receivedMessages;
 };
 

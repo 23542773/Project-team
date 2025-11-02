@@ -1,8 +1,15 @@
 /**
  * @file ServiceSubject.h
- * @brief Defines the abstract Subject base class for event emitters in the Nursery system (Observer Pattern).
+ * @brief Base class for Subjects in the Observer pattern
+ * @author Damian Moustakis (Doxygen comments)
+ * @date 2025-11-01
+ * @details
+ * Defines the ServiceSubject class which manages a list of NurseryObservers
+ * and notifies them of various events:
+ * - Plant Events: Lifecycle changes in plants
+ * - Stock Events: Inventory level changes
+ * - Order Events: Order lifecycle changes
  */
-
 #ifndef SERVICESUBJECT_H
 #define SERVICESUBJECT_H
 #include <vector>
@@ -11,73 +18,60 @@
 
 /**
  * @class ServiceSubject
- * @brief An abstract Subject that maintains a list of interested NurseryObserver objects and notifies them of events.
- *
- * Concrete service classes (like Greenhouse or SalesService) inherit from this class to gain
- * event-emitting capabilities, implementing the 'one-to-many' dependency defined by the Observer pattern.
+ * @brief Base class for all Subjects in the Observer pattern
  */
-
 class ServiceSubject 
 {
 
 protected:
 
     /**
-     * @brief A collection of raw pointers to the currently registered NurseryObserver objects.
+     * @brief List of observers "listening" to this subject
+     * @details
+     * This vector holds pointers to all registered NurseryObservers
+     * that will be notified of events.
      */
-
     std::vector<NurseryObserver*> observers;
 
     /**
-     * @brief Notifies all registered observers of a Plant event.
-     *
-     * Iterates through the observers and calls their `onEvent(events::Plant)` method.
-     *
-     * @param e The Plant event data structure to send.
+     * @brief Notify all observers of a Plant event
+     * @param e The Plant event data
+     * @returns void
      */
-
     void notify(events::Plant e);
-
     /**
-     * @brief Notifies all registered observers of a Stock event.
-     *
-     * Iterates through the observers and calls their `onEvent(events::Stock)` method.
-     *
-     * @param s The Stock event data structure to send.
+     * @brief Notify all observers of a Stock event
+     * @param s The Stock event data
+     * @returns void
      */
-
     void notify(events::Stock s);
-
     /**
-     * @brief Notifies all registered observers of an Order event.
-     *
-     * Iterates through the observers and calls their `onEvent(events::Order&)` method.
-     *
-     * @param o A reference to the Order event data structure to send.
+     * @brief Notify all observers of an Order event
+     * @param o The Order event data
+     * @returns void
      */
-
     void notify(events::Order& o);
 
 public:
 
-/**
- * @brief Virtual destructor to ensure proper cleanup of derived concrete subject classes.
- */
-
+    /**
+     * @brief Virtual destructor
+     * @details
+     */
     virtual ~ServiceSubject();
 
     /**
-     * @brief Registers a new observer to receive future event notifications.
-     * @param obs A pointer to the NurseryObserver object to be added.
+     * @brief Add an observer
+     * @param obs Pointer to the observer to add
+     * @returns void
      */
-
     void addObserver(NurseryObserver* obs);
-    
-    /**
-     * @brief Sets the list of observers to contain only a single, specific observer.
-     * @param inv A pointer to the single NurseryObserver to be set.
-     */
 
+    /**
+     * @brief Alternate to registering Observer roles
+     * @param inv Pointer to the observer to set
+     * @returns void
+     */
     void setObservers(NurseryObserver* inv);
 };
-#endif
+#endif // SERVICESUBJECT_H

@@ -1,6 +1,8 @@
 /**
  * @file Colleague.h
- * @brief Defines the abstract base class Colleague, a participant in the Mediator pattern.
+ * @brief Defines the abstract Colleague base class for the Mediator pattern
+ * @date 2025-10-31
+ * @author Project Teams
  */
 
 #ifndef COLLEAGUE_H
@@ -14,64 +16,64 @@ struct Message;
 
 /**
  * @class Colleague
- * @brief An abstract base class representing a component that interacts with other
- * components through a central MessagingMediator.
+ * @brief Abstract Colleague class in the Mediator pattern representing communicating entities
  *
- * Colleague classes decouple communication logic by delegating interactions to the
- * mediator instead of communicating directly with each other.
+ * This class defines the interface for all colleagues that communicate through a mediator
+ * in the nursery system. Colleagues do not communicate directly with each other; instead,
+ * they send messages through the MessagingMediator.
+ *
+ * This design promotes loose coupling by preventing colleagues from referencing each other
+ * explicitly, making it easier to modify communication rules and add new colleague types.
  */
-class Colleague
+class Colleague 
 {
 protected:
 
-    /**
-     * @brief A pointer to the central mediator object.
-     * All communication from this Colleague goes through the mediator.
-     */
+    /// Pointer to the mediator that handles message routing
     MessagingMediator* mediator;
 
-    /**
-     * @brief A unique identifier for this colleague.
-     */
+    /// Unique identifier for this colleague
     std::string userId;
 
 public:
-    /**
-     * @brief Constructor for the Colleague class.
-     * @param med A pointer to the MessagingMediator that will manage this colleague's communications.
-     * @param id A unique string identifier for this colleague.
-     */
-    Colleague(MessagingMediator* med, const std::string& id) : mediator(med), userId(id) {}
 
     /**
-     * @brief Virtual destructor to ensure proper cleanup of derived classes.
+     * @brief Constructs a Colleague with a mediator and user ID
+     * @param med Pointer to the MessagingMediator for communication
+     * @param id Unique identifier for this colleague
+     *
+     * Initializes the colleague with access to the mediator through which
+     * all communication will be routed.
+     */
+    Colleague(MessagingMediator* med, const std::string& id) : mediator(med), userId(id) {}
+    
+    /**
+     * @brief Virtual destructor for proper cleanup of derived classes
      */
     virtual ~Colleague() = default;
 
     /**
-     * @brief Sends a message to a specific Colleague via the mediator.
+     * @brief Sends a message to another colleague by user ID
+     * @param toUserId String ID of the recipient colleague
+     * @param text The message content to send
      *
-     * This is a pure virtual function and must be implemented by concrete subclasses.
-     * The implementation will typically call a method on the stored 'mediator'.
-     *
-     * @param to A pointer to the target Colleague.
-     * @param text The content of the message.
+     * Delegates to the mediator to route the message, allowing the mediator
+     * to enforce communication rules and business logic.
      */
-    virtual void sendMessage(Colleague* to, const std::string& text) = 0;
+    virtual void sendMessage(const std::string& toUserId, const std::string& text) = 0;
 
     /**
-     * @brief Receives a message that was delivered by the mediator.
+     * @brief Receives a message from the mediator
+     * @param msg The Message object containing message details
      *
-     * This is a pure virtual function and must be implemented by concrete subclasses
-     * to define how the colleague reacts to incoming messages.
-     *
-     * @param msg The received message structure.
+     * Called by the mediator when a message is being delivered to this colleague.
+     * Concrete colleagues implement this to store or process received messages.
      */
     virtual void receiveMessage(const Message& msg) = 0;
 
     /**
-     * @brief Getter for the colleague's user ID.
-     * @return The unique string identifier of this colleague.
+     * @brief Gets the unique user ID of this colleague
+     * @return String containing the user ID
      */
     std::string getUserId() const { return userId; }
 };
