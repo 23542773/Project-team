@@ -7,6 +7,10 @@
 #include "PlantBedIterator.h"
 
 // Dummy Flyweight Implementation
+/**
+ * @class DummyFlyweight
+ * @brief Test implementation of PlantFlyweight for testing purposes.
+ */
 class DummyFlyweight : public PlantFlyweight {
 public:
     std::string getSku() override { return "SKU1"; }
@@ -16,10 +20,18 @@ public:
 };
 
 // Utility test helpers
+/**
+ * @brief Prints a separator with title for test output.
+ * @param title The title to display in the separator.
+ */
 void separator(const std::string& title) {
     std::cout << "\n=== " << title << " ===\n";
 }
 
+/**
+ * @brief Main test function for iterator implementations.
+ * @return 0 on success, non-zero on failure.
+ */
 int main() {
     DummyFlyweight fly;
 
