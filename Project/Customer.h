@@ -52,14 +52,14 @@ public:
     Customer(MessagingMediator* med, const std::string& customerId, const std::string& customerName);
 
     /**
-     * @brief Sends a message to a colleague
-     * @param to Pointer to the recipient Colleague
+     * @brief Sends a message to a colleague by user ID
+     * @param toUserId The recipient colleague's user ID
      * @param text The message content to send
      *
      * Routes the message through the mediator. The mediator will enforce
      * rules restricting customers to only message Sales Staff.
      */
-    void sendMessage(Colleague* to, const std::string& text) override;
+    void sendMessage(const std::string& toUserId, const std::string& text) override;
 
     /**
      * @brief Receives a message from the mediator
@@ -85,6 +85,21 @@ public:
      * @return String containing the customer ID
      */
     std::string getId() const;
+
+    /**
+     * @brief Gets the customer's display name
+     */
+    std::string getName() const;
+
+    /**
+     * @brief Get active orders for this customer
+     */
+    const std::vector<std::string>& getActiveOrders() const;
+
+    /**
+     * @brief Add an active order ID
+     */
+    void addActiveOrder(const std::string& orderId);
 };
 
 #endif
