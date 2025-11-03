@@ -81,6 +81,8 @@ set(BACKEND_SOURCES
     ${CMAKE_SOURCE_DIR}/CeramicPot.cpp
     ${CMAKE_SOURCE_DIR}/UnglazedClayPot.cpp
     ${CMAKE_SOURCE_DIR}/AquaticBasketPot.cpp
+    ${CMAKE_SOURCE_DIR}/CustomerDash.cpp
+    ${CMAKE_SOURCE_DIR}/StaffDash.cpp
 )
 
 # === Build target ===
