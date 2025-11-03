@@ -139,8 +139,8 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
     tabStaff = new QWidget(this);
     auto* staffLayout = new QVBoxLayout(tabStaff);
     
-    staffModel = new QStandardItemModel(0, 4, this);
-    staffModel->setHorizontalHeaderLabels({"Staff ID", "Name", "Assigned Orders", "Available"});
+    staffModel = new QStandardItemModel(0, 5, this);
+    staffModel->setHorizontalHeaderLabels({"Staff ID", "Name", "Role", "Assigned Orders", "Available"});
     
     staffTable = new QTableView(this);
     staffTable->setModel(staffModel);
@@ -277,6 +277,13 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
             tabs->removeTab(tabs->indexOf(tabGreenhouse));
             tabs->removeTab(tabs->indexOf(tabStock));
         }
+
+        if (role == StaffRole::Sales && btnRefreshStaff) {
+            btnRefreshStaff->hide();
+            btnRefreshStaff->setParent(nullptr);
+            btnRefreshStaff->deleteLater();
+            btnRefreshStaff = nullptr;
+        }
     }
     
     setCentralWidget(container);
@@ -294,6 +301,7 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
     refreshStock();
     refreshStaff();
     refreshMyOrders();
+    refreshCommandLog();
 
     if (cmbRecipient && cmbRecipient->count() > 0) 
     {
@@ -380,7 +388,23 @@ void SimpleStaffWindow::loadConversation(const QString& peerId)
     for (const auto& m : conv) 
     {
         QString ts = QDateTime::fromSecsSinceEpoch(m.timestamp).toString("[hh:mm:ss] ");
-        QString who = (QString::fromStdString(m.fromUser) == userId) ? "You" : QString::fromStdString(m.fromUser);
+        QString who;
+        if (QString::fromStdString(m.fromUser) == userId) {
+            who = "You";
+        } else {
+            std::string fromUserId = m.fromUser;
+            Staff* staff = facade->getStaff(fromUserId);
+            if (staff) {
+                who = QString::fromStdString(staff->getName());
+            } else {
+                Customer* customer = facade->getCustomer(fromUserId);
+                if (customer) {
+                    who = QString::fromStdString(customer->getName());
+                } else {
+                    who = QString::fromStdString(fromUserId);
+                }
+            }
+        }
         messagesList->addItem(ts + who + ": " + QString::fromStdString(m.text));
     }
 }
@@ -489,10 +513,17 @@ void SimpleStaffWindow::refreshStaff()
         QString orders = ordersList.join(", ");
         
         QString available = s.isAvailable() ? "Yes" : "No";
+        QString roleStr;
+        switch (s.getRole()) {
+            case StaffRole::Sales:      roleStr = "Sales"; break;
+            case StaffRole::Inventory:  roleStr = "Inventory"; break;
+            case StaffRole::PlantCare:  roleStr = "PlantCare"; break;
+        }
         
         QList<QStandardItem*> row;
         row << new QStandardItem(id)
             << new QStandardItem(name)
+            << new QStandardItem(roleStr)
             << new QStandardItem(orders.trimmed())
             << new QStandardItem(available);
         staffModel->appendRow(row);
@@ -691,11 +722,10 @@ void SimpleStaffWindow::onRestock()
     QModelIndexList sel = stockTable->selectionModel()->selectedRows();
     if (sel.isEmpty()) 
     {
-        QMessageBox::information(this, "No Selection", "Please select a species to restock.");
+        QMessageBox::information(this, "No Selection", "Please select species to restock.");
         return;
     }
     
-    QString sku = stockModel->item(sel.first().row(), 0)->text();
     bool ok = false;
     int qty = txtQty->text().toInt(&ok);
     if (!ok || qty <= 0 || qty >= 50) 
@@ -704,15 +734,22 @@ void SimpleStaffWindow::onRestock()
         return;
     }
     
-    facade->enqueueRestock(sku.toStdString(), qty, userId.toStdString());
+    std::vector<std::string> skus;
+    for (const auto& idx : sel)
+    {
+        QString sku = stockModel->item(idx.row(), 0)->text();
+        skus.push_back(sku.toStdString());
+    }
+    
+    facade->enqueueRestock(skus, qty, userId.toStdString());
     
     if (facade->processNextCommand()) 
     {
         refreshGreenhouse();
         refreshStock();
         QMessageBox::information(this, "Success", 
-            QString("Restocked %1 units of %2.\nQueue size: %3 | Undo history: %4")
-            .arg(qty).arg(sku)
+            QString("Restocked %1 units of %2 species.\nQueue size: %3 | Undo history: %4")
+            .arg(qty).arg(skus.size())
             .arg(facade->getQueueSize())
             .arg(facade->getRestockHistorySize()));
     } 

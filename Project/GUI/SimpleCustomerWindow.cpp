@@ -275,7 +275,7 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
         auto* alertsLayout = new QVBoxLayout(tabAlerts);
         alertsList = new QListWidget(this);
         alertsList->setAlternatingRowColors(true);
-        alertsLayout->addWidget(new QLabel("Newly Matured Plants", this));
+        alertsLayout->addWidget(new QLabel("Newly In Stock Plants", this));
         alertsLayout->addWidget(alertsList, 1);
     }
     tabs->addTab(tabAlerts, tr("Alerts"));
@@ -495,20 +495,19 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
             return;
         }
 
-        // Configure customizations once and apply to all selected items
         QDialog dialog(this);
         dialog.setWindowTitle("Customize Your Plant(s)");
         QVBoxLayout layout(&dialog);
         QLabel label("Select customizations to apply to all selected items:");
         layout.addWidget(&label);
         QCheckBox cbPot("Reinforced Pot (+80)");
-        QCheckBox cbCard("Message Card (+15)");
         QCheckBox cbWrap("Gift Wrap (+25)");
+        QCheckBox cbCard("Message Card (+15)");
         layout.addWidget(&cbPot);
-        layout.addWidget(&cbCard);
         layout.addWidget(&cbWrap);
+        layout.addWidget(&cbCard);
         QLineEdit messageEdit;
-        messageEdit.setPlaceholderText("Enter card message (applies if Message Card is selected)...");
+        messageEdit.setPlaceholderText("Enter card message...");
         layout.addWidget(&messageEdit);
         QDialogButtonBox buttons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         layout.addWidget(&buttons);
@@ -774,7 +773,23 @@ void SimpleCustomerWindow::loadConversation(const QString& peerId)
     for (const auto& m : conv) 
     {
         QString ts = QDateTime::fromSecsSinceEpoch(m.timestamp).toString("[hh:mm:ss] ");
-        QString who = (QString::fromStdString(m.fromUser) == userId) ? "You" : QString::fromStdString(m.fromUser);
+        QString who;
+        if (QString::fromStdString(m.fromUser) == userId) {
+            who = "You";
+        } else {
+            std::string fromUserId = m.fromUser;
+            Staff* staff = facade->getStaff(fromUserId);
+            if (staff) {
+                who = QString::fromStdString(staff->getName());
+            } else {
+                Customer* customer = facade->getCustomer(fromUserId);
+                if (customer) {
+                    who = QString::fromStdString(customer->getName());
+                } else {
+                    who = QString::fromStdString(fromUserId);
+                }
+            }
+        }
         messagesList->addItem(ts + who + ": " + QString::fromStdString(m.text));
     }
 }
