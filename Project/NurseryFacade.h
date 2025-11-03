@@ -287,11 +287,11 @@ public:
 
     /**
      * @brief Enqueue a restock command (undoable) for deferred execution
-     * @param sku Species SKU to restock
-     * @param qty Quantity to add
+     * @param skus Vector of species SKUs to restock
+     * @param qty Quantity to add for each species
      * @param userId Identifier of the user issuing the command
      */
-    void enqueueRestock(const std::string& sku, int qty, const std::string& userId);
+    void enqueueRestock(const std::vector<std::string>& skus, int qty, const std::string& userId);
     
 private:
 

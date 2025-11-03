@@ -247,8 +247,6 @@ void NurseryFacade::runMorningRoutine(std::vector<Plant*>& plants)
         macro->setUndoable(false);
 
         macro->addCommand(std::make_unique<Water>(plants));
-        macro->addCommand(std::make_unique<Water>(plants));
-        macro->addCommand(std::make_unique<Water>(plants));
         macro->addCommand(std::make_unique<Fertilize>(plants));
 
         invoker->enqueue(std::move(macro));
@@ -269,7 +267,6 @@ void NurseryFacade::runNightRoutine(std::vector<Plant*>& plants)
         macro->setUndoable(false);
 
         macro->addCommand(std::make_unique<Water>(plants));
-        macro->addCommand(std::make_unique<Spray>(plants));
         macro->addCommand(std::make_unique<Spray>(plants));
 
         invoker->enqueue(std::move(macro));
@@ -307,8 +304,6 @@ void NurseryFacade::runUrgentCare()
     macro->addCommand(std::make_unique<Fertilize>(wiltingPlants));
     macro->addCommand(std::make_unique<Fertilize>(wiltingPlants));
     macro->addCommand(std::make_unique<Water>(wiltingPlants));
-    macro->addCommand(std::make_unique<Water>(wiltingPlants));
-    macro->addCommand(std::make_unique<Spray>(wiltingPlants));
     macro->addCommand(std::make_unique<Spray>(wiltingPlants));
 
     invoker->enqueue(std::move(macro));
@@ -677,12 +672,34 @@ void NurseryFacade::enqueueSpray(std::vector<Plant*>& plants, const std::string&
     invoker->enqueue(std::move(cmd));
 }
 
-void NurseryFacade::enqueueRestock(const std::string& sku, int qty, const std::string& userId)
+void NurseryFacade::enqueueRestock(const std::vector<std::string>& skus, int qty, const std::string& userId)
 {
-    if (!invoker || !greenhouse) return;
-    auto cmd = std::make_unique<Restock>(*greenhouse, sku, qty);
-    cmd->setUserId(userId);
-    cmd->setAction("RESTOCK");
-    cmd->setUndoable(true);
-    invoker->enqueue(std::move(cmd));
+    if (!invoker || !greenhouse || skus.empty()) return;
+    
+    if (skus.size() == 1)
+    {
+        auto cmd = std::make_unique<Restock>(*greenhouse, skus[0], qty);
+        cmd->setUserId(userId);
+        cmd->setAction("RESTOCK");
+        cmd->setUndoable(true);
+        invoker->enqueue(std::move(cmd));
+    }
+    else
+    {
+        auto macro = std::make_unique<MacroCommand>("Batch Restock");
+        macro->setUserId(userId);
+        macro->setAction("RESTOCK");
+        macro->setUndoable(true);
+        
+        for (const auto& sku : skus)
+        {
+            auto cmd = std::make_unique<Restock>(*greenhouse, sku, qty);
+            cmd->setUserId(userId);
+            cmd->setAction("RESTOCK");
+            cmd->setUndoable(true);
+            macro->addCommand(std::move(cmd));
+        }
+        
+        invoker->enqueue(std::move(macro));
+    }
 }
