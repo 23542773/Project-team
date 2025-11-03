@@ -5,13 +5,14 @@
 #include <QStandardItemModel>
 #include <QTabWidget>
 #include "../NurseryFacade.h"
+#include "../StaffDash.h"
 #include <memory>
 
 class SimpleStaffWindow : public QMainWindow 
 {
     Q_OBJECT
 public:
-    explicit SimpleStaffWindow(NurseryFacade* facade, QString userId, QWidget* parent = nullptr);
+    explicit SimpleStaffWindow(NurseryFacade* facade, QString userId, QWidget* parent = nullptr, StaffDash* dashObserver = nullptr);
     void refreshGreenhouse();
     void refreshStock();
     void refreshStaff();
@@ -44,6 +45,7 @@ private:
     QWidget* tabOrders = nullptr;
     QWidget* tabMessages = nullptr;
     QWidget* tabCommandLog = nullptr;
+    QWidget* tabAlerts = nullptr;
 
     QTableView* plantTable;
     QStandardItemModel* plantModel;
@@ -80,4 +82,8 @@ private:
     
     class QTextEdit* txtCommandLog = nullptr;
     QPushButton* btnRefreshLog = nullptr;
+
+    StaffDash* staffDash = nullptr;
+    class QListWidget* alertsList = nullptr;
+    void refreshAlerts();
 };

@@ -36,7 +36,7 @@
 #include "../GiftWrap.h"
 #include "../MessageCard.h"
 
-SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidget* parent)  : QMainWindow(parent), facade(f), userId(uid)
+SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidget* parent, CustomerDash* dash)  : QMainWindow(parent), facade(f), userId(uid), customerDash(dash)
 {
     setWindowTitle(QString("Customer View - %1").arg(userId));
     
@@ -49,6 +49,9 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
     searchBox = new QLineEdit(this);
     searchBox->setPlaceholderText("Search plants...");
     searchBox->setClearButtonEnabled(true);
+    connect(searchBox, &QLineEdit::textChanged, this, [this](const QString& text){
+        this->filterCatalog(text);
+    });
     
     btnStartOrder = new QPushButton("Checkout", this);
     btnAddToCart = new QPushButton("Add To Cart", this);
@@ -209,12 +212,7 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
             Customer* customer = facade->getCustomer(userId.toStdString());
             if (customer) 
             {
-                Colleague* recipient = facade->getStaff(peerId.toStdString());
-                
-                if (recipient) 
-                {
-                    customer->sendMessage(recipient, text.toStdString());
-                }
+                customer->sendMessage(peerId.toStdString(), text.toStdString());
             }
             
             messageInput->clear();
@@ -271,6 +269,16 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
     tabs->addTab(tabEncyclopedia, tr("Encyclopedia"));
     tabs->addTab(tabOrders, tr("My Orders"));
     tabs->addTab(tabMessages, tr("Messages"));
+
+    tabAlerts = new QWidget(this);
+    {
+        auto* alertsLayout = new QVBoxLayout(tabAlerts);
+        alertsList = new QListWidget(this);
+        alertsList->setAlternatingRowColors(true);
+        alertsLayout->addWidget(new QLabel("Newly Matured Plants", this));
+        alertsLayout->addWidget(alertsList, 1);
+    }
+    tabs->addTab(tabAlerts, tr("Alerts"));
     setCentralWidget(tabs);
 
     auto* catalogRefreshTimer = new QTimer(this);
@@ -279,6 +287,12 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
     catalogRefreshTimer->start();
     
     populateCatalog();
+    filterCatalog(searchBox->text());
+    
+    auto* alertsTimer = new QTimer(this);
+    alertsTimer->setInterval(3000);
+    connect(alertsTimer, &QTimer::timeout, this, &SimpleCustomerWindow::refreshAlerts);
+    alertsTimer->start();
     
     showPersonalizedRecommendations();
 
@@ -544,6 +558,16 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
     });
 }
 
+void SimpleCustomerWindow::refreshAlerts()
+{
+    if (!alertsList) return;
+    alertsList->clear();
+    if (!customerDash) return;
+    for (const auto& id : customerDash->getMatured()) {
+        alertsList->addItem(QString::fromStdString(id));
+    }
+}
+
 void SimpleCustomerWindow::populateCatalog()
 {
     if (!facade) return;
@@ -631,6 +655,23 @@ int SimpleCustomerWindow::findCartRow(const QString& plantId) const
     return -1;
 }
 
+void SimpleCustomerWindow::filterCatalog(const QString& term)
+{
+    const QString t = term.trimmed();
+    const bool hasTerm = !t.isEmpty();
+    const int nameCol = 3;
+    for (int r = 0; r < mCatalog->rowCount(); ++r)
+    {
+        bool show = true;
+        if (hasTerm)
+        {
+            const QString name = mCatalog->item(r, nameCol)->text();
+            show = name.contains(t, Qt::CaseInsensitive);
+        }
+        tblCatalog->setRowHidden(r, !show);
+    }
+}
+
 void SimpleCustomerWindow::recalcTotal()
 {
     double subtotal = 0.0;
@@ -699,7 +740,7 @@ void SimpleCustomerWindow::refreshRecipients()
         Staff* staffObj = facade->getStaff(s.getId());
         if (staffObj && staffObj->getRole() == StaffRole::Sales) 
         {
-            QString display = QString::fromStdString(s.getId() + " - " + s.name);
+            QString display = QString::fromStdString(s.getId() + " - " + s.getName());
             cmbRecipient->addItem(display, QString::fromStdString(s.getId()));
         }
     }

@@ -21,6 +21,8 @@
 #include "../SpeciesFlyweight.h"
 #include "../ChatMediator.h"
 #include "../ActionLog.h"
+#include "../CustomerDash.h"
+#include "../StaffDash.h"
 #include <QTimer>
 
 
@@ -33,8 +35,17 @@ int main(int argc, char** argv)
     Greenhouse greenhouse(&protos);
     Inventory store;
     InventoryService inv(store, greenhouse);
-    greenhouse.setObservers(&inv);
+    
+    CustomerDash customerDash;
+    StaffDash staffDash;
+    
+    greenhouse.addObserver(&inv);       
+    greenhouse.addObserver(&customerDash);
+    greenhouse.addObserver(&staffDash);   
+    
     SalesService sales;
+    sales.addObserver(&staffDash);        
+    
     ActionLog invoker;
     
     StaffService staff(nullptr);  
@@ -193,7 +204,7 @@ int main(int argc, char** argv)
         QMainWindow* mainWin = nullptr;
         if (roleStr == "Customer") 
         {
-            auto* customerWin = new SimpleCustomerWindow(&facade, userId);
+            auto* customerWin = new SimpleCustomerWindow(&facade, userId, nullptr, &customerDash);
             mainWin = customerWin;
             
             QObject::connect(customerWin, &SimpleCustomerWindow::logoutRequested, &app, [&running]() 
@@ -203,7 +214,7 @@ int main(int argc, char** argv)
         } 
         else 
         {
-            auto* staffWin = new SimpleStaffWindow(&facade, userId);
+            auto* staffWin = new SimpleStaffWindow(&facade, userId, nullptr, &staffDash);
             mainWin = staffWin;
             
             QObject::connect(staffWin, &SimpleStaffWindow::logoutRequested, &app, [&running]() 

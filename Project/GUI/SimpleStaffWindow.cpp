@@ -31,7 +31,7 @@
 #include <QFile>
 #include <QTextStream>
 
-SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* parent): QMainWindow(parent), facade(f), userId(uid)
+SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* parent, StaffDash* dash): QMainWindow(parent), facade(f), userId(uid), staffDash(dash)
 {
     setWindowTitle(QString("Staff View - %1").arg(userId));
     
@@ -206,16 +206,7 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
         Staff* staff = facade->getStaff(userId.toStdString());
         if (staff) 
         {
-            Colleague* recipient = facade->getStaff(peerId.toStdString());
-            if (!recipient) 
-            {
-                recipient = facade->getCustomer(peerId.toStdString());
-            }
-            
-            if (recipient) 
-            {
-                staff->sendMessage(recipient, text.toStdString());
-            }
+            staff->sendMessage(peerId.toStdString(), text.toStdString());
         }
         
         messageInput->clear();
@@ -243,6 +234,16 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
     tabs->addTab(tabOrders, tr("My Orders"));
     tabs->addTab(tabMessages, tr("Messages"));
     tabs->addTab(tabCommandLog, tr("Command Log"));
+
+    tabAlerts = new QWidget(this);
+    {
+        auto* alertsLayout = new QVBoxLayout(tabAlerts);
+        alertsList = new QListWidget(this);
+        alertsList->setAlternatingRowColors(true);
+        alertsLayout->addWidget(new QLabel("Alerts", this));
+        alertsLayout->addWidget(alertsList, 1);
+    }
+    tabs->addTab(tabAlerts, tr("Alerts"));
     
     Staff* currentStaff = facade->getStaff(userId.toStdString());
     if (currentStaff) 
@@ -276,6 +277,11 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
     connect(greenhouseRefreshTimer, &QTimer::timeout, this, &SimpleStaffWindow::refreshGreenhouse);
     greenhouseRefreshTimer->start();
     
+    auto* alertsTimer = new QTimer(this);
+    alertsTimer->setInterval(2000);
+    connect(alertsTimer, &QTimer::timeout, this, &SimpleStaffWindow::refreshAlerts);
+    alertsTimer->start();
+    
     refreshGreenhouse();
     refreshStock();
     refreshStaff();
@@ -285,6 +291,16 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
     {
         QString peerId = cmbRecipient->currentData().toString();
         if (!peerId.isEmpty()) loadConversation(peerId);
+    }
+}
+
+void SimpleStaffWindow::refreshAlerts()
+{
+    if (!alertsList) return;
+    alertsList->clear();
+    if (!staffDash) return;
+    for (const auto& msg : staffDash->getAlerts()) {
+        alertsList->addItem(QString::fromStdString(msg));
     }
 }
 
@@ -312,7 +328,7 @@ void SimpleStaffWindow::refreshRecipients()
         {
             if (otherRole == StaffRole::Sales || otherRole == StaffRole::Inventory) 
             {
-                QString display = QString::fromStdString("Staff ") + QString::fromStdString(s.getId() + " - " + s.name);
+                QString display = QString::fromStdString("Staff ") + QString::fromStdString(s.getId() + " - " + s.getName());
                 cmbRecipient->addItem(display, QString::fromStdString(s.getId()));
             }
         }
@@ -321,7 +337,7 @@ void SimpleStaffWindow::refreshRecipients()
         {
             if (otherRole == StaffRole::PlantCare || otherRole == StaffRole::Inventory) 
             {
-                QString display = QString::fromStdString("Staff ") + QString::fromStdString(s.getId() + " - " + s.name);
+                QString display = QString::fromStdString("Staff ") + QString::fromStdString(s.getId() + " - " + s.getName());
                 cmbRecipient->addItem(display, QString::fromStdString(s.getId()));
             }
         }
@@ -330,7 +346,7 @@ void SimpleStaffWindow::refreshRecipients()
         {
             if (otherRole == StaffRole::Inventory || otherRole == StaffRole::PlantCare || otherRole == StaffRole::Sales) 
             {
-                QString display = QString::fromStdString("Staff ") + QString::fromStdString(s.getId() + " - " + s.name);
+                QString display = QString::fromStdString("Staff ") + QString::fromStdString(s.getId() + " - " + s.getName());
                 cmbRecipient->addItem(display, QString::fromStdString(s.getId()));
             }
         }
@@ -341,7 +357,7 @@ void SimpleStaffWindow::refreshRecipients()
         auto customers = facade->listAllCustomers();
         for (const auto& c : customers) 
         {
-            QString display = QString::fromStdString("Customer ") + QString::fromStdString(c.getId() + " - " + c.name);
+            QString display = QString::fromStdString("Customer ") + QString::fromStdString(c.getId() + " - " + c.getName());
             cmbRecipient->addItem(display, QString::fromStdString(c.getId()));
         }
     }
@@ -457,14 +473,14 @@ void SimpleStaffWindow::refreshStaff()
     for (const auto& s : staffList) 
     {
         QString id = QString::fromStdString(s.getId());
-        QString name = QString::fromStdString(s.name);
+        QString name = QString::fromStdString(s.getName());
         
         QStringList ordersList;
-        for (const auto& order : s.assignedOrders)
+        for (const auto& order : s.getAssignedOrders())
             ordersList << QString::fromStdString(order);
         QString orders = ordersList.join(", ");
         
-        QString available = s.available ? "Yes" : "No";
+        QString available = s.isAvailable() ? "Yes" : "No";
         
         QList<QStandardItem*> row;
         row << new QStandardItem(id)

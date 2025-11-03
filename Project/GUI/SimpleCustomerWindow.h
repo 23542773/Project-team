@@ -6,6 +6,7 @@
 #include <QStandardItemModel>
 #include <QLabel>
 #include <set>
+#include "../CustomerDash.h"
 #include "../NurseryFacade.h"
 
 class SimpleCustomerWindow : public QMainWindow 
@@ -13,11 +14,12 @@ class SimpleCustomerWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit SimpleCustomerWindow(NurseryFacade* facade, QString userId, QWidget* parent = nullptr);
+    explicit SimpleCustomerWindow(NurseryFacade* facade, QString userId, QWidget* parent = nullptr, CustomerDash* dashObserver = nullptr);
     void populateCatalog();
     int findCartRow(const QString& plantId) const;
     void recalcTotal();
     void refreshMyOrders();
+    void filterCatalog(const QString& term);
 
 signals:
     void logoutRequested();
@@ -31,6 +33,7 @@ private:
     QWidget* tabEncyclopedia = nullptr; 
     QWidget* tabOrders = nullptr;
     QWidget* tabMessages = nullptr;
+    QWidget* tabAlerts = nullptr;
     
     QLineEdit* searchBox;
     QTableView* tblCatalog;
@@ -64,4 +67,8 @@ private:
     class QComboBox* cmbRecipient = nullptr;
     void refreshRecipients();
     void loadConversation(const QString& peerId);
+
+    CustomerDash* customerDash = nullptr;
+    class QListWidget* alertsList = nullptr;
+    void refreshAlerts();
 };

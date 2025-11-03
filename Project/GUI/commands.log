@@ -106,3 +106,588 @@
 [2025-10-31 11:43:17] User: STF004 | Action: RESTOCK | Status: SUCCESS | Description: Command enqueued
 [2025-10-31 11:43:17] User: STF004 | Action: RESTOCK | Status: SUCCESS | Description: Restocked 6 x OLIVE
 [2025-10-31 11:43:19] User: SYSTEM | Action: UNDO RESTOCK | Status: SUCCESS | Description: Restocked 6 x OLIVE | Extra: Restock undone
+[2025-10-31 17:38:30] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:34] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 13 plant(s) [CATTAIL#M24, ...]
+[2025-10-31 17:38:36] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:36] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 17:38:36] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:36] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:37] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 17:38:38] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:38] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 17:38:38] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:38] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 17:38:38] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:38] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-10-31 17:38:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-10-31 17:38:40] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:40] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-10-31 17:38:40] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-10-31 17:38:40] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 09:23:41] User: STF3 | Action: RESTOCK | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 09:23:41] User: STF3 | Action: RESTOCK | Status: SUCCESS | Description: Restocked 5 x LAV
+[2025-11-01 09:24:28] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 09:24:28] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 09:24:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 09:24:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 09:24:50] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 09:24:50] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 09:24:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 09:24:51] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 11:10:04] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 11:10:06] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 14 plant(s) [OLIVE#S13, ...]
+[2025-11-01 11:10:07] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 11:10:07] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 11:10:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 11:10:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 11:10:08] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 11:10:08] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 11:10:08] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 11:10:08] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 11:10:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 11:10:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 11:10:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 11:10:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:15:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:15:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:15:56] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:15:56] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:15:58] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:15:58] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:16:05] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:16:05] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:16:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:16:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:16:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:16:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:16:30] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:16:30] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:16:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:16:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:16:35] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:16:35] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:52] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:52] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:52] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:52] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:53] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:54] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:55] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:55] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:55] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:55] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:55] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:55] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:58] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:21:59] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:00] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:00] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:00] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:00] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:00] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:00] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:01] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:01] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:02] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:02] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:02] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:02] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:02] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:02] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:02] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:02] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:03] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:03] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:03] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:03] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:03] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:03] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:04] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:04] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:04] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:04] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:04] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:04] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:04] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:04] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:05] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:05] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:05] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:05] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:05] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:05] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:05] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:05] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:06] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:06] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:06] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:06] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:07] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:08] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:08] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:08] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:08] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:09] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:10] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:10] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:10] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:10] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:10] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:10] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:11] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:11] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:11] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:11] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:22:11] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:22:11] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:24:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:35] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:35] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:24:36] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:36] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:24:38] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:38] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:39] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:39] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:24:40] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:40] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:24:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:24:45] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:45] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:24:46] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:24:46] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:26:20] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:26:20] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:26:24] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:26:24] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 14:44:35] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:35] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:38] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:38] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:38] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:38] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:38] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:38] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:38] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:38] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:39] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:40] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:40] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:40] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:40] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:40] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:40] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:40] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:40] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:41] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:42] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:42] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:42] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:42] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:42] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:42] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:43] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:43] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:43] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:43] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:45] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:45] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:45] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:45] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:46] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:46] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:44:46] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:44:46] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 14:48:37] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:48:37] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:48:39] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:48:39] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:48:42] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:48:42] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:48:43] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:48:43] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:48:43] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:48:43] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:48:56] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:48:56] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:52] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:52] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:55] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:56] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:56] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 1 plant(s) [CACTUS#G6]
+[2025-11-01 14:55:58] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:58] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:58] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:58] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:58] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:58] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:58] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:58] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 14:55:59] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-01 15:09:21] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:21] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:21] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:21] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:22] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:22] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:22] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:22] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:22] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:22] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:22] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:22] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:23] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:24] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:24] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:25] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:26] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:27] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:27] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:27] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:27] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:28] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:29] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:29] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:29] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:29] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:29] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:29] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:29] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:35] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:35] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:35] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:35] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:35] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:35] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:36] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:36] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:09:36] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:09:36] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:11:09] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:11:09] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 15:11:11] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:11:11] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 15:11:11] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:11:11] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:11:13] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:11:13] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 15:14:43] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:14:43] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 15:14:44] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:14:44] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:14:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:14:44] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-01 15:14:45] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:14:45] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-01 15:15:17] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-01 15:15:17] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:26] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:26] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:27] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:28] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:28] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:28] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:28] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:29] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:29] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:29] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:29] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:29] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:29] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:29] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:29] User: STAFF | Action: NIGHT | Status: SUCCESS | Description: Macro: NIGHT ROUTINE [3 commands]
+[2025-11-03 13:40:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:30] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:31] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:32] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:33] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:34] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:35] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:35] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:36] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:36] User: STAFF | Action: MORNING | Status: SUCCESS | Description: Macro: MORNING ROUTINE [4 commands]
+[2025-11-03 13:40:41] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:41] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:41] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:42] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:43] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:43] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:44] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:44] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:45] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:46] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:46] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:46] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:47] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:47] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:47] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:47] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:48] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:48] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:49] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:49] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:50] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:50] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:50] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:50] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:51] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:51] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:51] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:52] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:52] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:52] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:52] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:52] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:53] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:53] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:53] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:54] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:54] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:54] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:55] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:55] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:55] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:55] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:55] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:56] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:56] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:56] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:57] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:57] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:58] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:58] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:40:58] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:59] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:59] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:40:59] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:41:00] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:41:00] User: STF2 | Action: WATER | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 13:41:01] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 13:41:01] User: STF2 | Action: WATER | Status: SUCCESS | Description: Watered 71 plant(s) [SNAKE#M17, ...]
+[2025-11-03 14:05:22] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 14:05:22] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-03 14:05:25] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 14:05:25] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-03 14:05:27] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 14:05:27] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
+[2025-11-03 14:05:29] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Command enqueued
+[2025-11-03 14:05:29] User: STAFF | Action: URGENT | Status: SUCCESS | Description: Macro: URGENT CARE [7 commands]
