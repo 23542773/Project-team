@@ -1,4 +1,4 @@
-#include "grittyLimeSoilMix.h"
+#include "GrittyLimeSoilMix.h"
 
 GrittyLimeSoilMix::GrittyLimeSoilMix() : SoilMix(120) {}
 
