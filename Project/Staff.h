@@ -13,6 +13,8 @@
 #include "Message.h"
 #include <vector>
 #include <string>
+#include <algorithm>
+
 
 /**
  * @enum StaffRole
@@ -23,11 +25,12 @@
  * - Inventory: Can communicate with PlantCare and Sales staff
  * - Sales: Can communicate with Customers, other Sales staff, and Inventory staff
  */
+
 enum class StaffRole 
 {
-    PlantCare,   ///< Staff responsible for plant maintenance and care
-    Inventory,   ///< Staff managing stock and inventory operations
-    Sales        ///< Staff handling customer interactions and sales
+    PlantCare,       ///< Staff responsible for plant maintenance and care
+    Inventory,       ///< Staff managing stock and inventory operations
+    Sales            ///< Staff handling customer interactions and sales
 };
 
 /**
@@ -42,15 +45,16 @@ enum class StaffRole
  * an availability status. All communication is mediated to enforce business rules
  * about inter-departmental and customer communication.
  */
+
 class Staff : public Colleague 
 {
 
-public:
-    /**
-     * @brief The full name of the staff member.
-     */
+private:
 
-    /// Staff member's display name
+    /// Messages the Staff member receives
+    std::vector<Message> receivedMessages;
+
+     /// Staff member's display name
     std::string name;
 
     /// List of order IDs currently assigned to this staff member
@@ -61,6 +65,8 @@ public:
 
     /// Role determining communication permissions and responsibilities
     StaffRole role;
+
+public:
 
     /**
      * @brief Constructs a Staff colleague with a specific role
@@ -76,13 +82,13 @@ public:
 
     /**
      * @brief Sends a message to a colleague
-     * @param to Pointer to the recipient Colleague
+     * @param toUserId String of the other colleague
      * @param text The message content to send
      *
      * Routes the message through the mediator. The mediator will enforce
      * role-based communication rules (e.g., PlantCare cannot message Customers).
      */
-    void sendMessage(Colleague* to, const std::string& text);
+    void sendMessage(const std::string& toUserId, const std::string& text) override;
 
     /**
      * @brief Receives a message from the mediator
@@ -109,16 +115,55 @@ public:
      */
     std::string getId() const;
 
+
     /**
      * @brief Gets the staff member's role
      * @return StaffRole enumeration value
      */
     StaffRole getRole() const;
+    /**
+     * @brief Gets the staff member's display name
+     * @return std::string containing the staff member's name
+     */
+    std::string getName() const;
 
-private:
+    /**
+     * @brief Returns the list of order IDs currently assigned to this staff member
+     * @return Const reference to a vector of order ID strings
+     *
+     * The returned reference is to an internal container and should not be
+     * modified by the caller. Use addAssignedOrder/removeAssignedOrder to
+     * update assignments.
+     */
+    const std::vector<std::string>& getAssignedOrders() const;
 
-    /// Collection of all messages received by this staff member
-    std::vector<Message> receivedMessages;
+    /**
+     * @brief Checks whether the staff member is available for new assignments
+     * @return true if the staff member is available, false otherwise
+     */
+    bool isAvailable() const;
+
+    /**
+     * @brief Adds an order ID to the staff member's assigned orders
+     * @param orderId The ID of the order to assign
+     *
+     * If the order ID is already present in the list this function does nothing.
+     */
+    void addAssignedOrder(const std::string& orderId);
+
+    /**
+     * @brief Removes an order ID from the staff member's assigned orders
+     * @param orderId The ID of the order to remove
+     *
+     * If the order ID is not found this function does nothing.
+     */
+    void removeAssignedOrder(const std::string& orderId);
+    
+    /**
+     * @brief Sets the availability status for the staff member
+     * @param avail True to mark as available, false to mark as unavailable
+     */
+    void setAvailable(bool avail);
 };
 
 #endif
