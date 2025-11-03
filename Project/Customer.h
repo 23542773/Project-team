@@ -8,7 +8,7 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-#include "Colleague.h" // Inherits from the abstract Colleague base class
+#include "Colleague.h"
 #include "MessagingMediator.h"
 #include "Message.h"
 #include <vector>
@@ -26,19 +26,21 @@
  * All communication is routed through the mediator to maintain loose coupling
  * and enforce organizational communication policies.
  */
+
 class Customer : public Colleague 
 {
 private:
+
     /// Collection of all messages received by this customer
     std::vector<Message> receivedMessages;
-
-public:
 
     /// Customer's display name
     std::string name;
 
-    /// List of active order IDs associated with this customer
+    /// List of active order IDs for this customer
     std::vector<std::string> activeOrders;
+
+public:
 
     /**
      * @brief Constructs a Customer colleague
