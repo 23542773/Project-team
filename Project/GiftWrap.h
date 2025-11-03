@@ -7,6 +7,8 @@
 
 #ifndef GIFTWRAP_H
 #define GIFTWRAP_H
+#include "SaleDecorator.h"
+#include <string>
 
 /**
  * @class GiftWrap
