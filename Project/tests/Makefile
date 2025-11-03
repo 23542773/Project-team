@@ -4,7 +4,7 @@
 #        make clean (remove executables)
 
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++17 -Wall
 INCLUDES = -I"../Prototype" -I"../Flyweight" -I"../Strategy" -I"../State (with Singleton)" -I..
 
 # Directories (no quotes in variable definitions)
@@ -55,15 +55,22 @@ MEDIATOR_SOURCES = $(PATTERN_DIR)/ChatMediator.cpp \
                    $(PATTERN_DIR)/Customer.cpp \
                    $(PATTERN_DIR)/Staff.cpp
 
+# Observer (unit) test sources
+OBSERVER_TEST_SRC = test_observer_unit.cpp
+OBSERVER_IMPL = $(PATTERN_DIR)/ServiceSubject.cpp \
+                $(PATTERN_DIR)/StaffDash.cpp \
+                $(PATTERN_DIR)/CustomerDash.cpp
+
 # Test executables
 TEST_STATE = test_state.exe
 TEST_STRATEGY = test_strategy.exe
 TEST_FLYWEIGHT = test_flyweight.exe
 TEST_DECORATOR = test_decorator.exe
 TEST_MEDIATOR = test_mediator.exe
+TEST_OBSERVER = test_observer.exe
 
 # Default target
-all: $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR) $(TEST_MEDIATOR)
+all: $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR) $(TEST_MEDIATOR) $(TEST_OBSERVER)
 
 # Compile State Pattern tests
 $(TEST_STATE): test_state.cpp
@@ -139,6 +146,16 @@ $(TEST_MEDIATOR): test_mediator.cpp
 		-o $(TEST_MEDIATOR)
 	@echo "Mediator tests compiled successfully!"
 
+# Compile Observer Unit test
+$(TEST_OBSERVER): test_observer_unit.cpp
+	@echo "Compiling Observer Unit tests..."
+	$(CXX) $(CXXFLAGS) $(INCLUDES) test_observer_unit.cpp \
+		"$(PATTERN_DIR)/ServiceSubject.cpp" \
+		"$(PATTERN_DIR)/StaffDash.cpp" \
+		"$(PATTERN_DIR)/CustomerDash.cpp" \
+		-o $(TEST_OBSERVER)
+	@echo "Observer unit tests compiled successfully!"	
+
 # Run all tests
 run: all
 	@echo ""
@@ -167,12 +184,17 @@ run: all
 	@echo "=========================================="
 	./$(TEST_MEDIATOR)
 	@echo ""
+	@echo "=========================================="
+	@echo "Running Observer Unit Tests..."
+	@echo "=========================================="
+	./$(TEST_OBSERVER)
+	@echo ""
 	@echo "All tests completed!"
 
 # Clean executables
 clean:
 	@echo "Cleaning test executables..."
-	rm -f $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR) $(TEST_MEDIATOR)
+	rm -f $(TEST_STATE) $(TEST_STRATEGY) $(TEST_FLYWEIGHT) $(TEST_DECORATOR) $(TEST_MEDIATOR) $(TEST_OBSERVER)
 	@echo "Clean complete!"
 
 # Run only state tests
@@ -200,4 +222,9 @@ test-mediator: $(TEST_MEDIATOR)
 	@echo "Running Mediator Pattern Tests..."
 	./$(TEST_MEDIATOR)
 
-.PHONY: all run clean test-state test-strategy test-flyweight test-decorator test-mediator
+# Run only observer test
+test-observer-unit: $(TEST_OBSERVER)
+	@echo "Running Observer Unit Tests..."
+	./$(TEST_OBSERVER)	
+
+.PHONY: all run clean test-state test-strategy test-flyweight test-decorator test-mediator test-observer
