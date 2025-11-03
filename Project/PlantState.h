@@ -3,10 +3,10 @@
  * @brief Defines the abstract base State interface for the State pattern
  */
 
+
 #ifndef PLANTSTATE_H
 #define PLANTSTATE_H
 #include <string>
-#include "Plant.h"
 
 class Plant;
 
@@ -18,17 +18,18 @@ class Plant;
  * the behavior associated with a particular stage of a plant's lifecycle and determines
  * transitions to other states based on plant health, moisture, insecticide levels, and age.
  */
-class PlantState
+
+class PlantState 
 {
 
 public:
 
-	/**
+    /**
 	 * @brief Virtual destructor for proper cleanup of derived state classes
 	 */
 	virtual ~PlantState() = default;
 
-	/**
+    /**
 	 * @brief Checks and potentially changes the plant's state based on current conditions
 	 * @param plant Reference to the Plant object whose state is being managed
 	 *
@@ -37,13 +38,13 @@ public:
 	 */
     virtual void checkChange(Plant& plant) = 0;
 
-	/**
+    /**
 	 * @brief Gets the name of the current state
 	 * @return String representing the state name
 	 */
     virtual std::string name() = 0;
 
-	/**
+    /**
 	 * @brief Checks if the plant is in a mature state
 	 * @return True if the state represents maturity, false otherwise (default)
 	 */

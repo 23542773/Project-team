@@ -111,13 +111,12 @@ void Greenhouse::tickAll()
                 events::Plant e{ plant->id(), plant->sku(), events::PlantType::Wilted };
                 notify(e);
             }
-
-            else if (after == &DeadState::getInstance()) 
-            {
-                events::Plant e{ plant->id(), plant->sku(), events::PlantType::Died };
-                notify(e);
-                toRemove.push_back(plant->id());
-            }
+        }
+        if(after == &DeadState::getInstance())
+        {
+            events::Plant e{ plant->id(), plant->sku(), events::PlantType::Died };
+            notify(e);
+            toRemove.push_back(plant->id());
         }
     }
     delete it;
