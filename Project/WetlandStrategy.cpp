@@ -30,13 +30,14 @@ void WetlandStrategy::water(Plant& plant)
     PlantFlyweight* species = plant.getSpeciesFly();
     if (!species) return;
     
-    double waterAmount = 25 + (species->getWaterSensitivity() * 12);
-    plant.addWater(static_cast<int>(waterAmount)); 
-    
-    if (plant.getMoisture() > 100) 
+    int add = static_cast<int>(25 + (species->getWaterSensitivity() * 12));
+    const int before = plant.getMoisture();
+    const int projected = before + add;
+    if (projected > 100) 
     {
         plant.addHealth(-5);
     }
+    plant.addWater(add); 
 }
 
 /**
@@ -77,15 +78,12 @@ void WetlandStrategy::sprayInsecticide(Plant& plant)
     PlantFlyweight* species = plant.getSpeciesFly();
     if (!species) return;
     
-    int insecticideAmount = 25 + static_cast<int>(species->getInsecticideTolerance() * 10);
-    plant.addInsecticide(insecticideAmount);  
-    
-    if (plant.getInsecticide() > 100) 
+    int add = 25 + static_cast<int>(species->getInsecticideTolerance() * 10);
+    const int before = plant.getInsecticide();
+    const int projected = before + add;
+    if (projected > 100) 
     {
         plant.addHealth(-4);
     } 
-    else 
-    {
-        plant.addHealth(1);
-    }
+    plant.addInsecticide(add);  
 }

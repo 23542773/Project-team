@@ -30,13 +30,14 @@ void IndoorStrategy::water(Plant& plant)
     PlantFlyweight* species = plant.getSpeciesFly();
     if (!species) return;
     
-    double waterAmount = 18 + (species->getWaterSensitivity() * 7);
-    plant.addWater(static_cast<int>(waterAmount)); 
-    
-    if (plant.getMoisture() > 100) 
+    int add = static_cast<int>(18 + (species->getWaterSensitivity() * 7));
+    const int before = plant.getMoisture();
+    const int projected = before + add;
+    if (projected > 100)
     {
         plant.addHealth(-5);
     }
+    plant.addWater(add);
 }
 
 /**
@@ -76,15 +77,12 @@ void IndoorStrategy::sprayInsecticide(Plant& plant)
     PlantFlyweight* species = plant.getSpeciesFly();
     if (!species) return;    
 
-    int insecticideAmount = 12 + static_cast<int>(species->getInsecticideTolerance() * 6);
-    plant.addInsecticide(insecticideAmount);   
-    
-    if (plant.getInsecticide() > 100) 
+    int add = 12 + static_cast<int>(species->getInsecticideTolerance() * 6);
+    const int before = plant.getInsecticide();
+    const int projected = before + add;
+    if (projected > 100) 
     {
         plant.addHealth(-4);
     } 
-    else
-    {
-        plant.addHealth(3);
-    }
+    plant.addInsecticide(add);
 }

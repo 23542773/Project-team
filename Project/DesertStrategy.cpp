@@ -30,12 +30,14 @@ void DesertStrategy::water(Plant& plant)
     PlantFlyweight* species = plant.getSpeciesFly();
     if (!species) return;
     
-    double waterAmount = 10 + ((1.0 - species->getWaterSensitivity()) * 10);
-    plant.addWater(static_cast<int>(waterAmount));
-    if (plant.getMoisture() > 100) 
+    int add = static_cast<int>(10 + ((1.0 - species->getWaterSensitivity()) * 10));
+    const int before = plant.getMoisture();
+    const int projected = before + add;
+    if (projected > 100)
     {
         plant.addHealth(-5);
     }
+    plant.addWater(add);
 }
 
 /**
@@ -75,11 +77,12 @@ void DesertStrategy::sprayInsecticide(Plant& plant)
     PlantFlyweight* species = plant.getSpeciesFly();
     if (!species) return;
     
-    int insecticideAmount = 12 + static_cast<int>(species->getInsecticideTolerance() * 8);
-    plant.addInsecticide(insecticideAmount);
-    
-    if (plant.getInsecticide() > 100) 
+    int add = 12 + static_cast<int>(species->getInsecticideTolerance() * 8);
+    const int before = plant.getInsecticide();
+    const int projected = before + add;
+    if (projected > 100)
     {
         plant.addHealth(-4);
     }
+    plant.addInsecticide(add);
 }
