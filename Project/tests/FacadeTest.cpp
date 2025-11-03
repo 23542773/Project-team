@@ -340,7 +340,7 @@ TEST_F(FacadeTestFixture, GetStaff_Valid)
 {
     Staff* staff = facade->getStaff("staff001");
     ASSERT_NE(staff, nullptr);
-    EXPECT_EQ(staff->name, "Alice");
+    EXPECT_EQ(staff->getName(), "Alice");
 }
 
 // Looks up a staff member with invalid ID and expects null.
@@ -370,7 +370,7 @@ TEST_F(FacadeTestFixture, GetCustomer_Valid)
 {
     Customer* customer = facade->getCustomer("cust001");
     ASSERT_NE(customer, nullptr);
-    EXPECT_EQ(customer->name, "Charlie");
+    EXPECT_EQ(customer->getName(), "Charlie");
 }
 
 // Looks up a customer with invalid ID and expects null.
@@ -759,7 +759,7 @@ TEST_F(FacadeTestFixture, GetQueueSize_MultipleEnqueues_Accumulates)
     facade->enqueueWater(plants, "staff001");
     facade->enqueueFertilize(plants, "staff001");
     facade->enqueueSpray(plants, "staff002");
-    facade->enqueueRestock("ROSE001", 2, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 2, "staff002");
     EXPECT_EQ(facade->getQueueSize(), 4);
 }
 
@@ -973,7 +973,7 @@ TEST_F(FacadeTestFixture, EnqueueSpray_Error_NullServices_NoEnqueue)
 // Enqueues a restock command.
 TEST_F(FacadeTestFixture, EnqueueRestock)
 {
-    facade->enqueueRestock("ROSE001", 5, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 5, "staff002");
     EXPECT_EQ(facade->getQueueSize(), 1);
 }
 
@@ -981,7 +981,7 @@ TEST_F(FacadeTestFixture, EnqueueRestock)
 TEST_F(FacadeTestFixture, EnqueueRestock_Positive_ProcessesSuccessfully) 
 {
     int before = facade->getSpeciesQuantity("ROSE001");
-    facade->enqueueRestock("ROSE001", 2, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 2, "staff002");
     ASSERT_EQ(facade->getQueueSize(), 1);
     EXPECT_TRUE(facade->processNextCommand());
     int after = facade->getSpeciesQuantity("ROSE001");
@@ -993,7 +993,7 @@ TEST_F(FacadeTestFixture, EnqueueRestock_Positive_ProcessesSuccessfully)
 TEST_F(FacadeTestFixture, EnqueueRestock_Negative_EmptyUserId_StillEnqueues) 
 {
     size_t qBefore = facade->getQueueSize();
-    facade->enqueueRestock("ROSE001", 1, "");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 1, "");
     EXPECT_EQ(facade->getQueueSize(), qBefore + 1);
 }
 
@@ -1006,7 +1006,7 @@ TEST_F(FacadeTestFixture, GetRestockHistorySize_InitiallyZero)
 // History increases after a restock is processed.
 TEST_F(FacadeTestFixture, GetRestockHistorySize_AfterRestock) 
 {
-    facade->enqueueRestock("ROSE001", 3, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 3, "staff002");
     facade->processNextCommand();
     EXPECT_EQ(facade->getRestockHistorySize(), 1) << "Should have 1 restock in history";
 }
@@ -1014,8 +1014,8 @@ TEST_F(FacadeTestFixture, GetRestockHistorySize_AfterRestock)
 // History grows with multiple restocks.
 TEST_F(FacadeTestFixture, GetRestockHistorySize_AfterMultipleRestocks) 
 {
-    facade->enqueueRestock("ROSE001", 1, "staff002");
-    facade->enqueueRestock("ROSE001", 2, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 1, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 2, "staff002");
     EXPECT_EQ(facade->processAllCommands(), 2);
     EXPECT_EQ(facade->getRestockHistorySize(), 2);
 }
@@ -1030,7 +1030,7 @@ TEST_F(FacadeTestFixture, UndoLastRestock_NoRestocks)
 // Undo after a restock removes added plants and clears history entry.
 TEST_F(FacadeTestFixture, UndoLastRestock_AfterRestock) 
 {
-    facade->enqueueRestock("ROSE001", 3, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 3, "staff002");
     facade->processNextCommand();
     int historySize = facade->getRestockHistorySize();
     EXPECT_GT(historySize, 0) << "Should have restock in history";
@@ -1042,7 +1042,7 @@ TEST_F(FacadeTestFixture, UndoLastRestock_AfterRestock)
 TEST_F(FacadeTestFixture, GetRestockHistorySize_AfterUndo_DecrementsAndQuantityReverts) 
 {
     int beforeQty = facade->getSpeciesQuantity("ROSE001");
-    facade->enqueueRestock("ROSE001", 2, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 2, "staff002");
     facade->processNextCommand();
     int histAfter = facade->getRestockHistorySize();
     ASSERT_GE(facade->getSpeciesQuantity("ROSE001"), beforeQty);
@@ -1064,7 +1064,7 @@ TEST_F(FacadeTestFixture, GetRestockHistorySize_NullServices_ReturnsZero)
 TEST_F(FacadeTestFixture, EnqueueRestock_Error_NullServices_NoEnqueue) 
 {
     NurseryFacade nullFacade(nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
-    nullFacade.enqueueRestock("ROSE001", 2, "staff002");
+    nullFacade.enqueueRestock(std::vector<std::string>{"ROSE001"}, 2, "staff002");
     EXPECT_EQ(nullFacade.getQueueSize(), 0);
 }
 
@@ -1094,7 +1094,7 @@ TEST_F(FacadeTestFixture, ProcessAllCommands)
 TEST_F(FacadeTestFixture, ProcessNextCommand_AfterRestock_AddsToHistory) 
 {
     int beforeHist = facade->getRestockHistorySize();
-    facade->enqueueRestock("ROSE001", 1, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 1, "staff002");
     ASSERT_EQ(facade->getQueueSize(), 1);
     EXPECT_TRUE(facade->processNextCommand());
     EXPECT_EQ(facade->getRestockHistorySize(), beforeHist + 1);
@@ -1108,7 +1108,7 @@ TEST_F(FacadeTestFixture, ProcessAllCommands_Mixed_UndoableHistoryOnlyCountsRest
     int h0 = facade->getRestockHistorySize();
     facade->enqueueWater(plants, "staff001");     
     facade->enqueueFertilize(plants, "staff001"); 
-    facade->enqueueRestock("ROSE001", 2, "staff002"); 
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 2, "staff002"); 
     facade->enqueueSpray(plants, "staff002");     
     ASSERT_EQ(facade->getQueueSize(), q0 + 4);
     EXPECT_EQ(facade->processAllCommands(), 4);
@@ -1618,7 +1618,7 @@ TEST_F(FacadeTestFixture, ProcessAllCommands_EmptyQueue_ReturnsZero)
 TEST_F(FacadeTestFixture, EnqueueRestock_ZeroQty_NoChangeAfterProcess) 
 {
     int before = facade->getSpeciesQuantity("ROSE001");
-    facade->enqueueRestock("ROSE001", 0, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"ROSE001"}, 0, "staff002");
     facade->processAllCommands();
     int after = facade->getSpeciesQuantity("ROSE001");
     EXPECT_EQ(after, before);
@@ -1628,7 +1628,7 @@ TEST_F(FacadeTestFixture, EnqueueRestock_ZeroQty_NoChangeAfterProcess)
 TEST_F(FacadeTestFixture, EnqueueRestock_InvalidSku_NoPlantsAdded) 
 {
     int before = facade->getSpeciesQuantity("UNKNOWN");
-    facade->enqueueRestock("UNKNOWN", 3, "staff002");
+    facade->enqueueRestock(std::vector<std::string>{"UNKNOWN"}, 3, "staff002");
     facade->processAllCommands();
     int after = facade->getSpeciesQuantity("UNKNOWN");
     EXPECT_EQ(after, before);
@@ -1723,7 +1723,7 @@ TEST_F(FacadeTestFixture, EnqueueRestock_NegativeQty_NoChangeAfterProcessAndUndo
     int before = facade->getSpeciesQuantity(sku);
 
     size_t histBefore = facade->getRestockHistorySize();
-    facade->enqueueRestock(sku, -7, "staff001");
+    facade->enqueueRestock(std::vector<std::string>{sku}, -7, "staff001");
     EXPECT_TRUE(facade->processNextCommand());
 
     int after = facade->getSpeciesQuantity(sku);
