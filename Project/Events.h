@@ -1,104 +1,52 @@
-/**
-* @file Events.h
-* @brief Event data structures for Observer
-* @author Damian Moustakis (Doxygen comments)
-* @date 2025-11-01
-* 
-* @details
-* The system supports three main event categories:
-* - Plant Events: Lifecycle changes in individual plants (wilted, matured, died)
-* - Stock Events: Inventory level changes (reserved, released, sold, low)
-* - Order Events: Order lifecycle changes (created, assigned, completed, cancelled)
-*/
 #ifndef EVENTS_H
 #define EVENTS_H
-
 #include <string>
 #include <vector>
 #include <optional>
 
-/**
-* @namespace events
-* @brief Contains all event types and data structures for the Observer pattern 
-*/
 namespace events 
 {
-    /**
-     * @enum OrderType
-     * @brief Represents the type of order event that occurred
-    */
+    /// \brief Enum classes representing various "states" pertaining to the necessary Order/Stock/Plant events
     enum class OrderType { Created, Assigned, Completed, Cancelled };
-    /**
-     * @enum StockType
-     * @brief Represents a type of stock event that occured
-     */
-    enum class StockType { Reserved, Released, Sold, Low };
-    /**
-     * @enum PlantType
-     * @brief Represents a type of plant lifecycle event
-     */
+    enum class StockType { Reserved, Released, Sold, Low, Added };
     enum class PlantType { Wilted, Matured, Died};
-    /**
-     * @enum OrderStatus
-     * @brief Current status of an order in the system
-     */
     enum class OrderStatus { New, Assigned, InProgress, Completed, Cancelled };
 
-    /**
-     * @struct OrderLine
-     * @brief Represents a single line item in an order
-     */
+    /// \brief Represents a single line in an Order
     struct OrderLine
     {
-        /** @brief The unique ID of the specific plant being ordered (if applicable). */
         std::string plantId;
-        /** @brief The Stock Keeping Unit (SKU) for the species. */
         std::string speciesSku;
-        /** @brief A short description of the line item. */
         std::string description;
-        /** @brief The final cost for this specific line item. */
         double finalCost = 0.0;
     };
 
-    /**
-     * @struct Order
-     * @brief Contains all info related to Order events
-     */
+    /// \brief Order Struct contains all info related to an Order and is used to trigger Order Events within the system
     struct Order 
     { 
         std::string orderId; 
         std::string customerId;
-        /** @brief A list of all line items included in the order. */
         std::vector<OrderLine> lines;
-        /** @brief Optional ID of the staff member currently assigned to the order. */
         std::optional<std::string> staffId;
-        /** @brief The type of order action/event being reported. */
-        OrderType type;
-        /** @brief The current status of the order. Defaults to New. */
-        OrderStatus status = OrderStatus::New;
+        OrderType type; 
+        OrderStatus status = OrderStatus::New;   
     };
 
-    /**
-     * @struct Stock
-     * @brief Contains all info related to Stock events
-     */
+    /// \brief Stock Struct contains all info related to Stock and is used to trigger Stock Events within the system
     struct Stock 
     { 
         std::string key; 
         StockType type; 
     }; 
 
-    /**
-     * @struct Plant
-     * @brief Plant lifecycle info for Plant events
-     */
+    /// \brief Plant Struct contains all info related to a Plant and is used to trigger Plant Events within the system
+    /// \note Plant here represent a Plant Event and not a Plant object
     struct Plant 
     { 
         std::string plantId; 
         std::string sku;
-        /** @brief The type of plant status change/event being reported. */
-        PlantType type;
+        PlantType type; 
     };
 }
 
-#endif // EVENTS_H
+#endif
