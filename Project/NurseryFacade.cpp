@@ -335,6 +335,15 @@ bool NurseryFacade::completeOrder(std::string orderId)
     
     for (const auto& line : order.lines) 
     {
+        Plant* p = greenhouse->getPlant(line.plantId);
+        if (!p) 
+        {
+            return false;
+        }
+    }
+    
+    for (const auto& line : order.lines) 
+    {
         inv->markSold(line.plantId);
         greenhouse->removePlant(line.plantId);
     }
