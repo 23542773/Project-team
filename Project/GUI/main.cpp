@@ -182,12 +182,12 @@ int main(int argc, char** argv)
 
     // Continuous lifecycle ticking: call facade.tickAllPlants() periodically.
     // This simulates time passing for all plants via state checkChange transitions.
-    QTimer* lifecycleTimer = new QTimer(&app);
-    lifecycleTimer->setInterval(10000); // 10 seconds per tick 
-    QObject::connect(lifecycleTimer, &QTimer::timeout, &app, [&facade]() {
+    QTimer lifecycleTimer(&app);
+    lifecycleTimer.setInterval(10000);
+    QObject::connect(&lifecycleTimer, &QTimer::timeout, &app, [&facade]() {
         facade.tickAllPlants();
     });
-    lifecycleTimer->start();
+    lifecycleTimer.start();
 
     bool running = true;
     while (running) 
