@@ -491,31 +491,15 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
 
         if (!tblCart->selectionModel() || tblCart->selectionModel()->selectedRows().isEmpty()) 
         {
-            QMessageBox::information(this, "No Selection", "Please select an item in your cart to customize.");
+            QMessageBox::information(this, "No Selection", "Please select one or more items in your cart to customize.");
             return;
         }
 
-        const int row = tblCart->selectionModel()->selectedRows().first().row();
-        QString plantId = mCart->item(row, 0)->data(Qt::UserRole).toString();
-        if (plantId.isEmpty()) 
-        {
-            QMessageBox::warning(this, "Invalid Selection", "Cannot customize this item.");
-            return;
-        }
-
-        Plant* plant = facade->getPlant(plantId.toStdString());
-        if (!plant) 
-        {
-            QMessageBox::warning(this, "Error", "Plant not found in greenhouse.");
-            return;
-        }
-
-        std::unique_ptr<SaleItem> item = std::make_unique<PlantItem>(plant);
-
+        // Configure customizations once and apply to all selected items
         QDialog dialog(this);
-        dialog.setWindowTitle("Customize Your Plant");
+        dialog.setWindowTitle("Customize Your Plant(s)");
         QVBoxLayout layout(&dialog);
-        QLabel label("Select customizations:");
+        QLabel label("Select customizations to apply to all selected items:");
         layout.addWidget(&label);
         QCheckBox cbPot("Reinforced Pot (+80)");
         QCheckBox cbCard("Message Card (+15)");
@@ -524,7 +508,7 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
         layout.addWidget(&cbCard);
         layout.addWidget(&cbWrap);
         QLineEdit messageEdit;
-        messageEdit.setPlaceholderText("Enter card message...");
+        messageEdit.setPlaceholderText("Enter card message (applies if Message Card is selected)...");
         layout.addWidget(&messageEdit);
         QDialogButtonBox buttons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         layout.addWidget(&buttons);
@@ -533,28 +517,64 @@ SimpleCustomerWindow::SimpleCustomerWindow(NurseryFacade* f, QString uid, QWidge
         if (dialog.exec() != QDialog::Accepted)
             return;
 
-        if (cbPot.isChecked())
-            item = std::make_unique<ReinforcedPot>(std::move(item));
+        const QModelIndexList rows = tblCart->selectionModel()->selectedRows();
+        int customized = 0;
+        int skipped = 0;
 
-        if (cbCard.isChecked()) 
+        for (const auto& idx : rows)
         {
-            std::string msg = messageEdit.text().toStdString();
-            if (msg.empty()) msg = "Best Wishes!";
-            item = std::make_unique<MessageCard>(std::move(item), msg);
+            const int row = idx.row();
+            QString plantId = mCart->item(row, 0)->data(Qt::UserRole).toString();
+            if (plantId.isEmpty()) 
+            {
+                skipped++;
+                continue;
+            }
+
+            Plant* plant = facade->getPlant(plantId.toStdString());
+            if (!plant) 
+            {
+                skipped++;
+                continue;
+            }
+
+            std::unique_ptr<SaleItem> item = std::make_unique<PlantItem>(plant);
+
+            if (cbPot.isChecked())
+                item = std::make_unique<ReinforcedPot>(std::move(item));
+
+            if (cbCard.isChecked()) 
+            {
+                std::string msg = messageEdit.text().toStdString();
+                if (msg.empty()) msg = "Best Wishes!";
+                item = std::make_unique<MessageCard>(std::move(item), msg);
+            }
+
+            if (cbWrap.isChecked())
+                item = std::make_unique<GiftWrap>(std::move(item));
+
+            QString desc = QString::fromStdString(item->description());
+            double cost = item->cost();
+            QString tooltip = QString("Customizations: %1\nTotal Cost: R%2").arg(desc).arg(cost, 0, 'f', 2);
+            if (mCart->item(row, 0)) {
+                mCart->item(row, 0)->setText(desc);
+                mCart->item(row, 0)->setToolTip(tooltip);
+            }
+            if (mCart->item(row, 2)) {
+                mCart->item(row, 2)->setText(QString::number(cost, 'f', 2));
+                mCart->item(row, 2)->setData(cost, Qt::UserRole + 1);
+            }
+            customized++;
         }
 
-        if (cbWrap.isChecked())
-            item = std::make_unique<GiftWrap>(std::move(item));
-
-        QString desc = QString::fromStdString(item->description());
-        double cost = item->cost();
-        QString tooltip = QString("Customizations: %1\nTotal Cost: R%2").arg(desc).arg(cost, 0, 'f', 2);
-        mCart->item(row, 0)->setText(desc);
-        mCart->item(row, 0)->setToolTip(tooltip);
-        mCart->item(row, 2)->setText(QString::number(cost, 'f', 2));
-        mCart->item(row, 2)->setData(cost, Qt::UserRole + 1);
         recalcTotal();
-        QMessageBox::information(this, "Customized", "Your plant has been customized!");
+
+        if (customized > 0 && skipped == 0)
+            QMessageBox::information(this, "Customized", QString("Customized %1 item(s).").arg(customized));
+        else if (customized > 0 && skipped > 0)
+            QMessageBox::information(this, "Customized", QString("Customized %1 item(s). Skipped %2 item(s) not found.").arg(customized).arg(skipped));
+        else
+            QMessageBox::warning(this, "Customize", "No selected items could be customized.");
     });
 }
 

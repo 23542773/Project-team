@@ -64,6 +64,7 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
     btnQueueFertilize = new QPushButton("Queue Fertilize", this);
     btnQueueSpray = new QPushButton("Queue Insecticide", this);
     btnRunNextCare = new QPushButton("Run Next", this);
+    auto* btnTickDay = new QPushButton("Emulate Tick", this);
 
     ctrl->addWidget(btnMorningRoutine);
     ctrl->addWidget(btnNightRoutine);
@@ -73,6 +74,7 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
     ctrl->addWidget(btnQueueFertilize);
     ctrl->addWidget(btnQueueSpray);
     ctrl->addWidget(btnRunNextCare);
+    ctrl->addWidget(btnTickDay);
     ctrl->addStretch();
 
     connect(btnMorningRoutine, &QPushButton::clicked, this, &SimpleStaffWindow::onMorningRoutine);
@@ -82,6 +84,12 @@ SimpleStaffWindow::SimpleStaffWindow(NurseryFacade* f, QString uid, QWidget* par
     connect(btnQueueFertilize, &QPushButton::clicked, this, &SimpleStaffWindow::onQueueFertilize);
     connect(btnQueueSpray, &QPushButton::clicked, this, &SimpleStaffWindow::onQueueSpray);
     connect(btnRunNextCare, &QPushButton::clicked, this, &SimpleStaffWindow::onRunNextGreenhouse);
+    connect(btnTickDay, &QPushButton::clicked, this, [this]() {
+        if (!facade) return;
+        facade->tickAllPlants();
+        refreshGreenhouse();
+        refreshStock();
+    });
     
     root->addLayout(ctrl);
     
