@@ -24,6 +24,7 @@
 #include "CareStrategy.h"
 #include "PlantState.h"
 #include "PlantFlyweight.h"
+#include "DeadState.h"
 #include <chrono>
 class PlantState;
 class CareStrategy;
@@ -40,7 +41,7 @@ class PlantFlyweight;
  * or replication.
  */
 
-class Plant 
+class Plant
 {
 
 private:

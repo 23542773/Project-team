@@ -11,6 +11,7 @@
  */
 
 #include "Plant.h"
+#include "DeadState.h"
 
 
 /// Constructor: initializes all plant components and links shared data.
@@ -28,21 +29,18 @@ Plant::~Plant()
 void Plant::water()
 {
 	if(care) care->water(*this);
-	if(state) state->checkChange(*this);
 }
 
 /// Fertilizes the plant using its CareStrategy and checks for state transitions.
 void Plant::fertilize()
 {
 	if(care) care->fertilize(*this);
-	if(state) state->checkChange(*this);
 }
 
 /// Applies insecticide using the CareStrategy and checks for state transitions.
 void Plant::sprayInsecticide() 
 {
 	if(care) care->sprayInsecticide(*this);
-	if(state) state->checkChange(*this);
 }
 
 /// Adds water to the plant, keeping moisture within valid bounds.
@@ -55,6 +53,10 @@ void Plant::addWater(int amount)
 void Plant::addHealth(int amount)
 {
 	health = check(health + amount, 0, 100);
+	if(health == 0)
+	{
+		this->setState(&DeadState::getInstance());
+	}
 }
 
 /// Modifies the insecticide level, keeping insecticide within valid bounds.
