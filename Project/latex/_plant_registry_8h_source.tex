@@ -1,0 +1,34 @@
+\doxysection{Plant\+Registry.\+h}
+\hypertarget{_plant_registry_8h_source}{}\label{_plant_registry_8h_source}\mbox{\hyperlink{_plant_registry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PLANTREGISTRY\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PLANTREGISTRY\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_8h}{Plant.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant_registry}{PlantRegistry}}\ }
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plant_registry_a7a7bc35264a74ca34e44334a401fd5e5}{registerSeedling}}(std::string\ sku,\ std::unique\_ptr<Plant>\ p);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_plant}{Plant}}*\ \mbox{\hyperlink{class_plant_registry_aad891a9eb4d52e69993f29fa50a9273f}{clone}}(std::string\ sku,\ std::string\ newId,\ std::string\ colour);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_plant_registry_a9788e8dbeaad66d2de75591dcc6d878b}{has}}(std::string\ sku);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ std::unordered\_map<std::string,\ std::unique\_ptr<Plant>>\ bySku;}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

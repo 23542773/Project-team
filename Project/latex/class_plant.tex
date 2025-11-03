@@ -1,0 +1,395 @@
+\doxysection{Plant Class Reference}
+\hypertarget{class_plant}{}\label{class_plant}\index{Plant@{Plant}}
+
+
+Represents a single plant entity in the greenhouse system.  
+
+
+
+
+{\ttfamily \#include $<$Plant.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plant_a1f78e8fb9d7204346ce84c6c5571746e}{Plant}} (std\+::string \mbox{\hyperlink{class_plant_a7677bdb64ae4bd0c4224a7e7d46dcc67}{id}}, std\+::string colour, \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} \texorpdfstring{$\ast$}{*}species, \mbox{\hyperlink{class_care_strategy}{Care\+Strategy}} \texorpdfstring{$\ast$}{*}care, \mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*}state, \mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*}soil, \mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*}pot)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_plant}{Plant} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant_ab0effb2b143e6da7b65ebd13a3b1fc29}{\texorpdfstring{$\sim$}{\string~}\+Plant}} ()
+\begin{DoxyCompactList}\small\item\em Destructor\+: cleans up owned resources (soil, pot). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plant_af4552dd9ec01741c38eefd2f15ce2431}{water}} ()
+\begin{DoxyCompactList}\small\item\em Performs watering according to the active \doxylink{class_care_strategy}{Care\+Strategy}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plant_afe24eeadc576f5e361a3f2de3ea144c9}{fertilize}} ()
+\begin{DoxyCompactList}\small\item\em Performs fertilization according to the active \doxylink{class_care_strategy}{Care\+Strategy}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plant_af821fb4a55080df7977e7309c9b4f29d}{spray\+Insecticide}} ()
+\begin{DoxyCompactList}\small\item\em Applies insecticide according to the active \doxylink{class_care_strategy}{Care\+Strategy}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plant_aa9c8952f742956b06091159aea4adcd2}{add\+Water}} (int amount)
+\begin{DoxyCompactList}\small\item\em Increases or decreases moisture level, clamped between 0 and 100. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plant_a95b509569a648995cc386d0f394e505b}{add\+Health}} (int amount)
+\begin{DoxyCompactList}\small\item\em Increases or decreases health, clamped between 0 and 100. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plant_a548a71f5432c6bb0d58b14e4e008cc3a}{add\+Insecticide}} (int amount)
+\begin{DoxyCompactList}\small\item\em Increases or decreases insecticide level, clamped between 0 and 100. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_plant_a0a499fe51dce59203d8fc4cfaeffdc7a}{cost}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the total cost of this plant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plant_ad9e21e03eae8675842b64ce5942126ee}{set\+State}} (\mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Updates the plant’s current lifecycle state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_plant_a7677bdb64ae4bd0c4224a7e7d46dcc67}{id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the plant’s unique ID. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_plant_a1483c9f75ea4c57c070fc5e338e180b5}{sku}} ()
+\begin{DoxyCompactList}\small\item\em Returns the species SKU from the Flyweight. \end{DoxyCompactList}\item 
+\Hypertarget{class_plant_a3a0a4703457468f6f50a5db782bbb20b}\label{class_plant_a3a0a4703457468f6f50a5db782bbb20b} 
+std\+::string {\bfseries name} ()
+\begin{DoxyCompactList}\small\item\em Returns the species name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_plant_aaa98b3a03e0d78b52e9ec26b9eb27d02}{biome}} ()
+\begin{DoxyCompactList}\small\item\em Returns the species’ biome type. \end{DoxyCompactList}\item 
+\Hypertarget{class_plant_a157753ddcd219f50862c50d94a10155d}\label{class_plant_a157753ddcd219f50862c50d94a10155d} 
+std\+::string {\bfseries get\+Colour} ()
+\begin{DoxyCompactList}\small\item\em Returns the plant’s color. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_plant_a3bc0ee72d1db0ff1311f2cfdaf545367}{get\+Age\+Days}} ()
+\begin{DoxyCompactList}\small\item\em Returns the plant’s simulated age in days. \end{DoxyCompactList}\item 
+\Hypertarget{class_plant_a7255dd55840d79fb8970eac1ce6bc090}\label{class_plant_a7255dd55840d79fb8970eac1ce6bc090} 
+int {\bfseries get\+Moisture} ()
+\begin{DoxyCompactList}\small\item\em Returns the current moisture level. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_plant_a164b97c6762c1d2908088114f325374a}{get\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Returns the plant’s current health value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_plant_ac1507013602e85bc2fa009e1b5f172d6}{get\+Insecticide}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current insecticide level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_a96a861700724adaa67308d72274d2176}{get\+Species\+Fly}} ()
+\begin{DoxyCompactList}\small\item\em Returns the associated \doxylink{class_plant_flyweight}{Plant\+Flyweight} pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_a2b1b257dc14853abdeaf12c2dc5de172}{get\+Soil\+Mix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the associated \doxylink{class_soil_mix}{Soil\+Mix} pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_a0e6675fa90f902bfb49dbfab075a44eb}{get\+Pot}} ()
+\begin{DoxyCompactList}\small\item\em Returns the associated \doxylink{class_pot}{Pot} pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_care_strategy}{Care\+Strategy}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_a1962c6dc1bb26b57a1a437a02094fd26}{get\+Care\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Returns the associated \doxylink{class_care_strategy}{Care\+Strategy} pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_aa979ce6ecfc6c9e8bced9cdc4c18d9d0}{get\+Plant\+State}} ()
+\begin{DoxyCompactList}\small\item\em Returns the associated \doxylink{class_plant_state}{Plant\+State} pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant_a3e454c81c5a9120c4b321614b22621c1}{Plant}} (const \mbox{\hyperlink{class_plant}{Plant}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor (supports Prototype behavior). Performs a deep copy of owned resources (soil, pot). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_a07ef5f0ee000087cb57a40044d7883c3}{clone}} (std\+::string plant\+Id, std\+::string colour)
+\begin{DoxyCompactList}\small\item\em Creates a cloned copy of this plant with a new ID and color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}} \mbox{\hyperlink{class_plant_a1ad97a2ad6dbb5870acb2857adb04b06}{current\+Season}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current simulated season based on local time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single plant entity in the greenhouse system. 
+
+A \doxylink{class_plant}{Plant} instance combines shared intrinsic species data (via Flyweight) with its own extrinsic state (moisture, health, etc.). It reacts to external care actions using Strategy and updates its growth phase using the State pattern. The Prototype pattern supports efficient cloning of plant objects for reuse or replication. 
+
+\label{doc-constructors}
+\Hypertarget{class_plant_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_plant_a1f78e8fb9d7204346ce84c6c5571746e}\index{Plant@{Plant}!Plant@{Plant}}
+\index{Plant@{Plant}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{Plant()}{Plant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_plant_a1f78e8fb9d7204346ce84c6c5571746e} 
+Plant\+::\+Plant (\begin{DoxyParamCaption}\item[{std\+::string}]{id}{, }\item[{std\+::string}]{colour}{, }\item[{\mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} \texorpdfstring{$\ast$}{*}}]{species}{, }\item[{\mbox{\hyperlink{class_care_strategy}{Care\+Strategy}} \texorpdfstring{$\ast$}{*}}]{care}{, }\item[{\mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*}}]{state}{, }\item[{\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*}}]{soil}{, }\item[{\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*}}]{pot}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{class_plant}{Plant} instance. 
+
+Constructor\+: initializes all plant components and links shared data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Unique plant identifier. \\
+\hline
+{\em colour} & The color of the plant. \\
+\hline
+{\em species} & Pointer to the plant’s flyweight species object. \\
+\hline
+{\em care} & Pointer to the care strategy used for maintenance. \\
+\hline
+{\em state} & Pointer to the plant’s current lifecycle state. \\
+\hline
+{\em soil} & Pointer to the soil mix used. \\
+\hline
+{\em pot} & Pointer to the pot used. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_plant_ab0effb2b143e6da7b65ebd13a3b1fc29}\index{Plant@{Plant}!````~Plant@{\texorpdfstring{$\sim$}{\string~}Plant}}
+\index{````~Plant@{\texorpdfstring{$\sim$}{\string~}Plant}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Plant()}{\string~Plant()}}
+{\footnotesize\ttfamily \label{class_plant_ab0effb2b143e6da7b65ebd13a3b1fc29} 
+Plant\+::\texorpdfstring{$\sim$}{\string~}\+Plant (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor\+: cleans up owned resources (soil, pot). 
+
+Destructor\+: releases owned resources (soil, pot). \Hypertarget{class_plant_a3e454c81c5a9120c4b321614b22621c1}\index{Plant@{Plant}!Plant@{Plant}}
+\index{Plant@{Plant}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{Plant()}{Plant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_plant_a3e454c81c5a9120c4b321614b22621c1} 
+Plant\+::\+Plant (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_plant}{Plant}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor (supports Prototype behavior). Performs a deep copy of owned resources (soil, pot). 
+
+Copy constructor used by the Prototype pattern (deep copies soil and pot).
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The plant to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_plant_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_plant_a95b509569a648995cc386d0f394e505b}\index{Plant@{Plant}!addHealth@{addHealth}}
+\index{addHealth@{addHealth}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{addHealth()}{addHealth()}}
+{\footnotesize\ttfamily \label{class_plant_a95b509569a648995cc386d0f394e505b} 
+void Plant\+::add\+Health (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Increases or decreases health, clamped between 0 and 100. 
+
+Adjusts the plant’s health value within valid limits. \Hypertarget{class_plant_a548a71f5432c6bb0d58b14e4e008cc3a}\index{Plant@{Plant}!addInsecticide@{addInsecticide}}
+\index{addInsecticide@{addInsecticide}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{addInsecticide()}{addInsecticide()}}
+{\footnotesize\ttfamily \label{class_plant_a548a71f5432c6bb0d58b14e4e008cc3a} 
+void Plant\+::add\+Insecticide (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Increases or decreases insecticide level, clamped between 0 and 100. 
+
+Modifies the insecticide level, keeping insecticide within valid bounds. \Hypertarget{class_plant_aa9c8952f742956b06091159aea4adcd2}\index{Plant@{Plant}!addWater@{addWater}}
+\index{addWater@{addWater}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{addWater()}{addWater()}}
+{\footnotesize\ttfamily \label{class_plant_aa9c8952f742956b06091159aea4adcd2} 
+void Plant\+::add\+Water (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Increases or decreases moisture level, clamped between 0 and 100. 
+
+Adds water to the plant, keeping moisture within valid bounds. \Hypertarget{class_plant_aaa98b3a03e0d78b52e9ec26b9eb27d02}\index{Plant@{Plant}!biome@{biome}}
+\index{biome@{biome}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{biome()}{biome()}}
+{\footnotesize\ttfamily \label{class_plant_aaa98b3a03e0d78b52e9ec26b9eb27d02} 
+std\+::string Plant\+::biome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the species’ biome type. 
+
+Returns the species biome type. \Hypertarget{class_plant_a07ef5f0ee000087cb57a40044d7883c3}\index{Plant@{Plant}!clone@{clone}}
+\index{clone@{clone}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_plant_a07ef5f0ee000087cb57a40044d7883c3} 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} Plant\+::clone (\begin{DoxyParamCaption}\item[{std\+::string}]{plant\+Id}{, }\item[{std\+::string}]{colour}{}\end{DoxyParamCaption})}
+
+
+
+Creates a cloned copy of this plant with a new ID and color. 
+
+Clones the plant with a new ID and color for Prototype-\/based duplication.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant\+Id} & New plant identifier. \\
+\hline
+{\em colour} & New color variation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly cloned plant instance. 
+\end{DoxyReturn}
+\Hypertarget{class_plant_a0a499fe51dce59203d8fc4cfaeffdc7a}\index{Plant@{Plant}!cost@{cost}}
+\index{cost@{cost}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{cost()}{cost()}}
+{\footnotesize\ttfamily \label{class_plant_a0a499fe51dce59203d8fc4cfaeffdc7a} 
+int Plant\+::cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the total cost of this plant. 
+
+Computes the total cost of the plant based on its components.
+
+\begin{DoxyReturn}{Returns}
+The combined cost of species, soil, and pot. 
+\end{DoxyReturn}
+\Hypertarget{class_plant_a1ad97a2ad6dbb5870acb2857adb04b06}\index{Plant@{Plant}!currentSeason@{currentSeason}}
+\index{currentSeason@{currentSeason}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{currentSeason()}{currentSeason()}}
+{\footnotesize\ttfamily \label{class_plant_a1ad97a2ad6dbb5870acb2857adb04b06} 
+\mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}} Plant\+::current\+Season (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the current simulated season based on local time. 
+
+Determines the current simulated season based on the system’s local time.
+
+\begin{DoxyReturn}{Returns}
+The current \doxylink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season} enum value.
+\end{DoxyReturn}
+The mapping is simplified\+: months 3–5 represent Autumn, 6–8 Winter, 9–11 Spring, and remaining months default to Summer. Used for seasonal plant behavior logic.
+
+\begin{DoxyReturn}{Returns}
+The current \doxylink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season} value. 
+\end{DoxyReturn}
+\Hypertarget{class_plant_afe24eeadc576f5e361a3f2de3ea144c9}\index{Plant@{Plant}!fertilize@{fertilize}}
+\index{fertilize@{fertilize}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{fertilize()}{fertilize()}}
+{\footnotesize\ttfamily \label{class_plant_afe24eeadc576f5e361a3f2de3ea144c9} 
+void Plant\+::fertilize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Performs fertilization according to the active \doxylink{class_care_strategy}{Care\+Strategy}. 
+
+Fertilizes the plant using its \doxylink{class_care_strategy}{Care\+Strategy} and checks for state transitions. \Hypertarget{class_plant_a3bc0ee72d1db0ff1311f2cfdaf545367}\index{Plant@{Plant}!getAgeDays@{getAgeDays}}
+\index{getAgeDays@{getAgeDays}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{getAgeDays()}{getAgeDays()}}
+{\footnotesize\ttfamily \label{class_plant_a3bc0ee72d1db0ff1311f2cfdaf545367} 
+int Plant\+::get\+Age\+Days (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the plant’s simulated age in days. 
+
+Calculates the simulated age of the plant in days.
+
+The simulation advances time faster than real-\/world time; each simulated day corresponds to a fixed number of real seconds.
+
+\begin{DoxyReturn}{Returns}
+The plant’s age in simulated days. 
+\end{DoxyReturn}
+\Hypertarget{class_plant_a1962c6dc1bb26b57a1a437a02094fd26}\index{Plant@{Plant}!getCareStrategy@{getCareStrategy}}
+\index{getCareStrategy@{getCareStrategy}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{getCareStrategy()}{getCareStrategy()}}
+{\footnotesize\ttfamily \label{class_plant_a1962c6dc1bb26b57a1a437a02094fd26} 
+\mbox{\hyperlink{class_care_strategy}{Care\+Strategy}} \texorpdfstring{$\ast$}{*} Plant\+::get\+Care\+Strategy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the associated \doxylink{class_care_strategy}{Care\+Strategy} pointer. 
+
+Returns the care strategy pointer. \Hypertarget{class_plant_a164b97c6762c1d2908088114f325374a}\index{Plant@{Plant}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily \label{class_plant_a164b97c6762c1d2908088114f325374a} 
+int Plant\+::get\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the plant’s current health value. 
+
+Returns the plant’s health value. \Hypertarget{class_plant_ac1507013602e85bc2fa009e1b5f172d6}\index{Plant@{Plant}!getInsecticide@{getInsecticide}}
+\index{getInsecticide@{getInsecticide}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{getInsecticide()}{getInsecticide()}}
+{\footnotesize\ttfamily \label{class_plant_ac1507013602e85bc2fa009e1b5f172d6} 
+int Plant\+::get\+Insecticide (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current insecticide level. 
+
+Returns the insecticide level. \Hypertarget{class_plant_aa979ce6ecfc6c9e8bced9cdc4c18d9d0}\index{Plant@{Plant}!getPlantState@{getPlantState}}
+\index{getPlantState@{getPlantState}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{getPlantState()}{getPlantState()}}
+{\footnotesize\ttfamily \label{class_plant_aa979ce6ecfc6c9e8bced9cdc4c18d9d0} 
+\mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*} Plant\+::get\+Plant\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the associated \doxylink{class_plant_state}{Plant\+State} pointer. 
+
+Returns the plant state pointer. \Hypertarget{class_plant_a0e6675fa90f902bfb49dbfab075a44eb}\index{Plant@{Plant}!getPot@{getPot}}
+\index{getPot@{getPot}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{getPot()}{getPot()}}
+{\footnotesize\ttfamily \label{class_plant_a0e6675fa90f902bfb49dbfab075a44eb} 
+\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*} Plant\+::get\+Pot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the associated \doxylink{class_pot}{Pot} pointer. 
+
+Returns the pot pointer. \Hypertarget{class_plant_a2b1b257dc14853abdeaf12c2dc5de172}\index{Plant@{Plant}!getSoilMix@{getSoilMix}}
+\index{getSoilMix@{getSoilMix}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{getSoilMix()}{getSoilMix()}}
+{\footnotesize\ttfamily \label{class_plant_a2b1b257dc14853abdeaf12c2dc5de172} 
+\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} Plant\+::get\+Soil\+Mix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the associated \doxylink{class_soil_mix}{Soil\+Mix} pointer. 
+
+Returns the soil mix pointer. \Hypertarget{class_plant_a96a861700724adaa67308d72274d2176}\index{Plant@{Plant}!getSpeciesFly@{getSpeciesFly}}
+\index{getSpeciesFly@{getSpeciesFly}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{getSpeciesFly()}{getSpeciesFly()}}
+{\footnotesize\ttfamily \label{class_plant_a96a861700724adaa67308d72274d2176} 
+\mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} \texorpdfstring{$\ast$}{*} Plant\+::get\+Species\+Fly (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the associated \doxylink{class_plant_flyweight}{Plant\+Flyweight} pointer. 
+
+Returns the species flyweight pointer. \Hypertarget{class_plant_a7677bdb64ae4bd0c4224a7e7d46dcc67}\index{Plant@{Plant}!id@{id}}
+\index{id@{id}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_plant_a7677bdb64ae4bd0c4224a7e7d46dcc67} 
+std\+::string Plant\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the plant’s unique ID. 
+
+Returns the plant’s unique identifier. \Hypertarget{class_plant_ad9e21e03eae8675842b64ce5942126ee}\index{Plant@{Plant}!setState@{setState}}
+\index{setState@{setState}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily \label{class_plant_ad9e21e03eae8675842b64ce5942126ee} 
+void Plant\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Updates the plant’s current lifecycle state. 
+
+Updates the plant’s active liceycle state. \Hypertarget{class_plant_a1483c9f75ea4c57c070fc5e338e180b5}\index{Plant@{Plant}!sku@{sku}}
+\index{sku@{sku}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{sku()}{sku()}}
+{\footnotesize\ttfamily \label{class_plant_a1483c9f75ea4c57c070fc5e338e180b5} 
+std\+::string Plant\+::sku (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the species SKU from the Flyweight. 
+
+Returns the species SKU. \Hypertarget{class_plant_af821fb4a55080df7977e7309c9b4f29d}\index{Plant@{Plant}!sprayInsecticide@{sprayInsecticide}}
+\index{sprayInsecticide@{sprayInsecticide}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{sprayInsecticide()}{sprayInsecticide()}}
+{\footnotesize\ttfamily \label{class_plant_af821fb4a55080df7977e7309c9b4f29d} 
+void Plant\+::spray\+Insecticide (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Applies insecticide according to the active \doxylink{class_care_strategy}{Care\+Strategy}. 
+
+Applies insecticide using the \doxylink{class_care_strategy}{Care\+Strategy} and checks for state transitions. \Hypertarget{class_plant_af4552dd9ec01741c38eefd2f15ce2431}\index{Plant@{Plant}!water@{water}}
+\index{water@{water}!Plant@{Plant}}
+\doxysubsubsection{\texorpdfstring{water()}{water()}}
+{\footnotesize\ttfamily \label{class_plant_af4552dd9ec01741c38eefd2f15ce2431} 
+void Plant\+::water (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Performs watering according to the active \doxylink{class_care_strategy}{Care\+Strategy}. 
+
+Waters the plant using its \doxylink{class_care_strategy}{Care\+Strategy} and checks for state transitions. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_plant_8h}{Plant.\+h}}\item 
+\mbox{\hyperlink{_plant_8cpp}{Plant.\+cpp}}\end{DoxyCompactItemize}

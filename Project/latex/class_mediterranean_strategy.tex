@@ -1,0 +1,133 @@
+\doxysection{Mediterranean\+Strategy Class Reference}
+\hypertarget{class_mediterranean_strategy}{}\label{class_mediterranean_strategy}\index{MediterraneanStrategy@{MediterraneanStrategy}}
+
+
+Implements care strategy for Mediterranean climate plants.  
+
+
+
+
+{\ttfamily \#include $<$Mediterranean\+Strategy.\+h$>$}
+
+Inheritance diagram for Mediterranean\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mediterranean_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mediterranean_strategy_af144631ba51247d951651d8afb142fee}{water}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies moderate watering suitable for Mediterranean plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediterranean_strategy_a7ee2d65e66c86dda7aae4aa6aed398a3}{fertilize}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies balanced fertilization for Mediterranean plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediterranean_strategy_a97f023c99e8ffcb54b592805bbd6f35b}{spray\+Insecticide}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies insecticide spraying behavior for Mediterranean plants. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_care_strategy}{Care\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Care\+Strategy} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements care strategy for Mediterranean climate plants. 
+
+This strategy is designed for plants that thrive in Mediterranean climates characterized by hot, dry summers and mild, wet winters. These plants require moderate watering and balanced fertilization, adapting to seasonal variations.
+
+Typical plants using this strategy include lavender, rosemary, olive trees, and other herbs and shrubs native to Mediterranean regions. 
+
+\label{doc-func-members}
+\Hypertarget{class_mediterranean_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mediterranean_strategy_a7ee2d65e66c86dda7aae4aa6aed398a3}\index{MediterraneanStrategy@{MediterraneanStrategy}!fertilize@{fertilize}}
+\index{fertilize@{fertilize}!MediterraneanStrategy@{MediterraneanStrategy}}
+\doxysubsubsection{\texorpdfstring{fertilize()}{fertilize()}}
+{\footnotesize\ttfamily \label{class_mediterranean_strategy_a7ee2d65e66c86dda7aae4aa6aed398a3} 
+void Mediterranean\+Strategy\+::fertilize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies balanced fertilization for Mediterranean plants. 
+
+Applies fertilizer effects suitable for Mediterranean plant growth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the Mediterranean plant to be fertilized\\
+\hline
+\end{DoxyParams}
+Fertilization supports strong but steady growth, scaling with the species’ natural growth rate. Plants benefit most when their health is below optimal levels, encouraging gradual recovery and resilience.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the Mediterranean plant being fertilized. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a6a111bcef4bf87aeb972e4b19a3a2848}{Care\+Strategy}}.
+
+\Hypertarget{class_mediterranean_strategy_a97f023c99e8ffcb54b592805bbd6f35b}\index{MediterraneanStrategy@{MediterraneanStrategy}!sprayInsecticide@{sprayInsecticide}}
+\index{sprayInsecticide@{sprayInsecticide}!MediterraneanStrategy@{MediterraneanStrategy}}
+\doxysubsubsection{\texorpdfstring{sprayInsecticide()}{sprayInsecticide()}}
+{\footnotesize\ttfamily \label{class_mediterranean_strategy_a97f023c99e8ffcb54b592805bbd6f35b} 
+void Mediterranean\+Strategy\+::spray\+Insecticide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies insecticide spraying behavior for Mediterranean plants. 
+
+Applies insecticide treatment balanced for Mediterranean species.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the Mediterranean plant to be sprayed\\
+\hline
+\end{DoxyParams}
+Insecticide is applied moderately, taking into account each species’ tolerance to chemical treatment. Proper dosage enhances plant health, while overapplication decreases it to reflect environmental stress.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the Mediterranean plant being treated. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a1c4dabbd64721ac8a26d06c37527e2bf}{Care\+Strategy}}.
+
+\Hypertarget{class_mediterranean_strategy_af144631ba51247d951651d8afb142fee}\index{MediterraneanStrategy@{MediterraneanStrategy}!water@{water}}
+\index{water@{water}!MediterraneanStrategy@{MediterraneanStrategy}}
+\doxysubsubsection{\texorpdfstring{water()}{water()}}
+{\footnotesize\ttfamily \label{class_mediterranean_strategy_af144631ba51247d951651d8afb142fee} 
+void Mediterranean\+Strategy\+::water (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies moderate watering suitable for Mediterranean plants. 
+
+Applies watering behavior suitable for Mediterranean plants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the Mediterranean plant to be watered\\
+\hline
+\end{DoxyParams}
+Mediterranean species thrive under periodic but balanced watering. \doxylink{class_water}{Water} is added in moderate amounts, while overwatering reduces plant health to simulate sensitivity to excess soil moisture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the Mediterranean plant being watered. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a13feb221ff6226a2e4fb56836506e98f}{Care\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_mediterranean_strategy_8h}{Mediterranean\+Strategy.\+h}}\item 
+\mbox{\hyperlink{_mediterranean_strategy_8cpp}{Mediterranean\+Strategy.\+cpp}}\end{DoxyCompactItemize}

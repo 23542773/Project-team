@@ -1,0 +1,41 @@
+\doxysection{Message Struct Reference}
+\hypertarget{struct_message}{}\label{struct_message}\index{Message@{Message}}
+
+
+Data structure representing a message between colleagues.  
+
+
+
+
+{\ttfamily \#include $<$Message.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_message_a5883e8b2fa30ad34978871f392ba36c3}\label{struct_message_a5883e8b2fa30ad34978871f392ba36c3} 
+std\+::string {\bfseries id}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this message (sequence number). \end{DoxyCompactList}\item 
+\Hypertarget{struct_message_a867cf98d3982f16064f97f0d84f9cbe1}\label{struct_message_a867cf98d3982f16064f97f0d84f9cbe1} 
+std\+::string {\bfseries from\+User}
+\begin{DoxyCompactList}\small\item\em User ID of the message sender. \end{DoxyCompactList}\item 
+\Hypertarget{struct_message_a34e2b5dc24a19055179b84e48625d568}\label{struct_message_a34e2b5dc24a19055179b84e48625d568} 
+std\+::string {\bfseries to\+User}
+\begin{DoxyCompactList}\small\item\em User ID of the message recipient. \end{DoxyCompactList}\item 
+\Hypertarget{struct_message_a6643d6d90c0fdb11886b17d44a7a8183}\label{struct_message_a6643d6d90c0fdb11886b17d44a7a8183} 
+std\+::string {\bfseries text}
+\begin{DoxyCompactList}\small\item\em The text content of the message. \end{DoxyCompactList}\item 
+\Hypertarget{struct_message_a78b882ca696ae5b4387b829132ff21ab}\label{struct_message_a78b882ca696ae5b4387b829132ff21ab} 
+std\+::time\+\_\+t {\bfseries timestamp}
+\begin{DoxyCompactList}\small\item\em Timestamp when the message was sent (Unix time). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data structure representing a message between colleagues. 
+
+This structure encapsulates all information about a message sent through the mediator system. Messages are created by the \doxylink{class_chat_mediator}{Chat\+Mediator} and delivered to both sender and recipient for conversation history tracking.
+
+Each message has a unique ID, sender and recipient identifiers, the message content, and a timestamp for chronological ordering. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_message_8h}{Message.\+h}}\end{DoxyCompactItemize}

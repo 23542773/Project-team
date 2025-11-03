@@ -1,0 +1,239 @@
+\doxysection{Unshared\+Species\+Flyweight Class Reference}
+\hypertarget{class_unshared_species_flyweight}{}\label{class_unshared_species_flyweight}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+
+
+Unshared Flyweight class representing plant species with unique extrinsic state.  
+
+
+
+
+{\ttfamily \#include $<$Unshared\+Species\+Flyweight.\+h$>$}
+
+Inheritance diagram for Unshared\+Species\+Flyweight\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_unshared_species_flyweight}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unshared_species_flyweight_a456c314cd0e547581dae970c5dcc2668}{Unshared\+Species\+Flyweight}} (std\+::string sku, std\+::string name, std\+::string biome, int base\+Price)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_unshared_species_flyweight}{Unshared\+Species\+Flyweight} with basic properties. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_unshared_species_flyweight_aa06fb0bab33a4902efe8e39285a18c51}{get\+Sku}} () override
+\begin{DoxyCompactList}\small\item\em Gets the SKU identifier. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_unshared_species_flyweight_a226f1a9522796148030de39d78fa4d97}{get\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Gets the species name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_unshared_species_flyweight_a9b748b9cbd1c817f07bfe3441ba3e0a2}{get\+Biome}} () override
+\begin{DoxyCompactList}\small\item\em Gets the natural biome. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_unshared_species_flyweight_a2b99114921efadfb166a8fdc1bf51adf}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Gets the base price. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_unshared_species_flyweight_ac3219b33a8ac2ff3613dd8b57a862c58}{get\+Water\+Sensitivity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the water sensitivity value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_unshared_species_flyweight_ad349a68337391316438431b133a0ff28}{get\+Insecticide\+Tolerance}} () override
+\begin{DoxyCompactList}\small\item\em Gets the insecticide tolerance level. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_unshared_species_flyweight_aa2cc46c6bb94540657f618712a515166}{get\+Growth\+Rate}} () override
+\begin{DoxyCompactList}\small\item\em Gets the growth rate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}} \mbox{\hyperlink{class_unshared_species_flyweight_ad6ce96db3292a1a5707888531e883ade}{get\+Thriving\+Season}} () override
+\begin{DoxyCompactList}\small\item\em Gets the thriving season. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Plant\+Flyweight} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unshared Flyweight class representing plant species with unique extrinsic state. 
+
+This class represents an unshared flyweight in the Flyweight pattern. Unlike \doxylink{class_species_flyweight}{Species\+Flyweight} which shares intrinsic state, this class may contain unique extrinsic state that cannot be shared. Some member variables may be uninitialized or set dynamically, representing state that varies between instances. 
+
+\label{doc-constructors}
+\Hypertarget{class_unshared_species_flyweight_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_unshared_species_flyweight_a456c314cd0e547581dae970c5dcc2668}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{UnsharedSpeciesFlyweight()}{UnsharedSpeciesFlyweight()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_a456c314cd0e547581dae970c5dcc2668} 
+Unshared\+Species\+Flyweight\+::\+Unshared\+Species\+Flyweight (\begin{DoxyParamCaption}\item[{std\+::string}]{sku}{, }\item[{std\+::string}]{name}{, }\item[{std\+::string}]{biome}{, }\item[{int}]{base\+Price}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_unshared_species_flyweight}{Unshared\+Species\+Flyweight} with basic properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & Unique stock keeping unit identifier for the species \\
+\hline
+{\em name} & The species name \\
+\hline
+{\em biome} & The natural biome of the species \\
+\hline
+{\em base\+Price} & The base cost/price of the species\\
+\hline
+\end{DoxyParams}
+Note\+: This constructor only initializes core properties. Other properties (water\+Sensitivity, insecticide\+Tolerance, growth\+Rate, thriving\+Season) are not initialized and may contain default values.
+
+Initializes only the core member variables (sku, name, biome, base\+Price). Other properties (water\+Sensitivity, insecticide\+Tolerance, growth\+Rate, thriving\+Season) remain uninitialized and may contain default or garbage values. 
+
+\label{doc-func-members}
+\Hypertarget{class_unshared_species_flyweight_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_unshared_species_flyweight_a9b748b9cbd1c817f07bfe3441ba3e0a2}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!getBiome@{getBiome}}
+\index{getBiome@{getBiome}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{getBiome()}{getBiome()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_a9b748b9cbd1c817f07bfe3441ba3e0a2} 
+std\+::string Unshared\+Species\+Flyweight\+::get\+Biome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the natural biome. 
+
+Returns the natural biome.
+
+\begin{DoxyReturn}{Returns}
+String containing the biome information
+\end{DoxyReturn}
+Provides access to the biome where this species naturally occurs. 
+
+Implements \mbox{\hyperlink{class_plant_flyweight_ab20be5dcce7f95d42f04f6df1500a5bb}{Plant\+Flyweight}}.
+
+\Hypertarget{class_unshared_species_flyweight_a2b99114921efadfb166a8fdc1bf51adf}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!getCost@{getCost}}
+\index{getCost@{getCost}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_a2b99114921efadfb166a8fdc1bf51adf} 
+int Unshared\+Species\+Flyweight\+::get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the base price. 
+
+Returns the base price.
+
+\begin{DoxyReturn}{Returns}
+Integer representing the base cost
+\end{DoxyReturn}
+Provides access to the base cost of this species. 
+
+Implements \mbox{\hyperlink{class_plant_flyweight_a3e820d9eb8d9960917246fdca6ae7659}{Plant\+Flyweight}}.
+
+\Hypertarget{class_unshared_species_flyweight_aa2cc46c6bb94540657f618712a515166}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!getGrowthRate@{getGrowthRate}}
+\index{getGrowthRate@{getGrowthRate}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{getGrowthRate()}{getGrowthRate()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_aa2cc46c6bb94540657f618712a515166} 
+double Unshared\+Species\+Flyweight\+::get\+Growth\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the growth rate. 
+
+Returns the growth rate.
+
+\begin{DoxyReturn}{Returns}
+Double representing the growth rate (may be uninitialized)
+\end{DoxyReturn}
+Provides access to the growth rate value. Note that this value is not initialized in the constructor and may contain default/undefined values. 
+
+Implements \mbox{\hyperlink{class_plant_flyweight_ada4f2bec0a0525b91bae5e2e8cd5ad9a}{Plant\+Flyweight}}.
+
+\Hypertarget{class_unshared_species_flyweight_ad349a68337391316438431b133a0ff28}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!getInsecticideTolerance@{getInsecticideTolerance}}
+\index{getInsecticideTolerance@{getInsecticideTolerance}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{getInsecticideTolerance()}{getInsecticideTolerance()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_ad349a68337391316438431b133a0ff28} 
+double Unshared\+Species\+Flyweight\+::get\+Insecticide\+Tolerance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the insecticide tolerance level. 
+
+Returns the insecticide tolerance.
+
+\begin{DoxyReturn}{Returns}
+Double representing insecticide tolerance (may be uninitialized)
+\end{DoxyReturn}
+Provides access to the insecticide tolerance level. Note that this value is not initialized in the constructor and may contain default/undefined values. 
+
+Implements \mbox{\hyperlink{class_plant_flyweight_a3107f601da645bca55723d6579477027}{Plant\+Flyweight}}.
+
+\Hypertarget{class_unshared_species_flyweight_a226f1a9522796148030de39d78fa4d97}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!getName@{getName}}
+\index{getName@{getName}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_a226f1a9522796148030de39d78fa4d97} 
+std\+::string Unshared\+Species\+Flyweight\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the species name. 
+
+Returns the species name.
+
+\begin{DoxyReturn}{Returns}
+String containing the species name
+\end{DoxyReturn}
+Provides access to the name of this plant species. 
+
+Implements \mbox{\hyperlink{class_plant_flyweight_aa4afb085431b6736f4a74d0bae34fabb}{Plant\+Flyweight}}.
+
+\Hypertarget{class_unshared_species_flyweight_aa06fb0bab33a4902efe8e39285a18c51}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!getSku@{getSku}}
+\index{getSku@{getSku}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{getSku()}{getSku()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_aa06fb0bab33a4902efe8e39285a18c51} 
+std\+::string Unshared\+Species\+Flyweight\+::get\+Sku (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the SKU identifier. 
+
+Returns the SKU identifier.
+
+\begin{DoxyReturn}{Returns}
+String containing the unique SKU
+\end{DoxyReturn}
+Provides access to the unique stock keeping unit identifier for this species. 
+
+Implements \mbox{\hyperlink{class_plant_flyweight_a7a70f6f11fb0d886d46dc8f08499b0b2}{Plant\+Flyweight}}.
+
+\Hypertarget{class_unshared_species_flyweight_ad6ce96db3292a1a5707888531e883ade}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!getThrivingSeason@{getThrivingSeason}}
+\index{getThrivingSeason@{getThrivingSeason}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{getThrivingSeason()}{getThrivingSeason()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_ad6ce96db3292a1a5707888531e883ade} 
+\mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}} Unshared\+Species\+Flyweight\+::get\+Thriving\+Season (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the thriving season. 
+
+Returns the thriving season.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season} enum value (may be uninitialized)
+\end{DoxyReturn}
+Provides access to the thriving season value. Note that this value is not initialized in the constructor and may contain default/undefined values. 
+
+Implements \mbox{\hyperlink{class_plant_flyweight_aa31c9956b72949326c177b8969b6f946}{Plant\+Flyweight}}.
+
+\Hypertarget{class_unshared_species_flyweight_ac3219b33a8ac2ff3613dd8b57a862c58}\index{UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}!getWaterSensitivity@{getWaterSensitivity}}
+\index{getWaterSensitivity@{getWaterSensitivity}!UnsharedSpeciesFlyweight@{UnsharedSpeciesFlyweight}}
+\doxysubsubsection{\texorpdfstring{getWaterSensitivity()}{getWaterSensitivity()}}
+{\footnotesize\ttfamily \label{class_unshared_species_flyweight_ac3219b33a8ac2ff3613dd8b57a862c58} 
+double Unshared\+Species\+Flyweight\+::get\+Water\+Sensitivity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the water sensitivity value. 
+
+Returns the water sensitivity.
+
+\begin{DoxyReturn}{Returns}
+Double representing water sensitivity (may be uninitialized)
+\end{DoxyReturn}
+Provides access to the water sensitivity value. Note that this value is not initialized in the constructor and may contain default/undefined values. 
+
+Implements \mbox{\hyperlink{class_plant_flyweight_a4235738ae4db41eee7be18d76171d308}{Plant\+Flyweight}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_unshared_species_flyweight_8h}{Unshared\+Species\+Flyweight.\+h}}\item 
+\mbox{\hyperlink{_unshared_species_flyweight_8cpp}{Unshared\+Species\+Flyweight.\+cpp}}\end{DoxyCompactItemize}

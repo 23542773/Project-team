@@ -1,0 +1,70 @@
+\doxysection{Staff.\+h}
+\hypertarget{_staff_8h_source}{}\label{_staff_8h_source}\mbox{\hyperlink{_staff_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ STAFF\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ STAFF\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_colleague_8h}{Colleague.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_messaging_mediator_8h}{MessagingMediator.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_message_8h}{Message.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{StaffRole}}\ }
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa744e02c72c1277b4207fc67432cfdb56}{PlantCare}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{struct_inventory}{Inventory}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65}{Sales}}\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_staff_a0d636b3c11e3332998960d02ef44cfe8}{Staff}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_colleague_aa305940723cc96d25028ad779edf3bc9}{Colleague}}\ }
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::vector<Message>\ receivedMessages;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::vector<std::string>\ assignedOrders;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ available\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{StaffRole}}\ role;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_staff_a0d636b3c11e3332998960d02ef44cfe8}{Staff}}(\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ med,\ \textcolor{keyword}{const}\ std::string\&\ staffId,\ \textcolor{keyword}{const}\ std::string\&\ staffName,\ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{StaffRole}}\ staffRole\ =\ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65}{StaffRole::Sales}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_a17e81919666c309ee79749f0323841b3}{sendMessage}}(\textcolor{keyword}{const}\ std::string\&\ toUserId,\ \textcolor{keyword}{const}\ std::string\&\ text)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_ad1d642b168d35c8d743e50e6c575a067}{receiveMessage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_message}{Message}}\&\ msg)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00110\ \ \ \ \ std::vector<Message>\ \mbox{\hyperlink{class_staff_af00834f4380ebe457102243f43e5bc10}{getConversation}}(\textcolor{keyword}{const}\ std::string\&\ otherUserId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00116\ \ \ \ \ std::string\ \mbox{\hyperlink{class_staff_ac7974205b7317aaf17b5e1867cfd31a4}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{StaffRole}}\ \mbox{\hyperlink{class_staff_a1b1baa75174426588f62ec3583c47464}{getRole}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ \ \ \ \ std::string\ \mbox{\hyperlink{class_staff_a2d79cfde09261a2cebe7668a3cf36217}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ \mbox{\hyperlink{class_staff_a9e65c896d767f44c21252817dcce1e8f}{getAssignedOrders}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_staff_a5b6eddfefe4f1e9dc951740aa436cfde}{isAvailable}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_ae5ff508e6853a46fd90f2d0443f0e3a6}{addAssignedOrder}}(\textcolor{keyword}{const}\ std::string\&\ orderId);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_a63453c338d8595016c0152078d30a9cc}{removeAssignedOrder}}(\textcolor{keyword}{const}\ std::string\&\ orderId);}
+\DoxyCodeLine{00161\ \ \ \ \ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_a23f139d3d6aeede41fd45df18b0618e6}{setAvailable}}(\textcolor{keywordtype}{bool}\ avail);}
+\DoxyCodeLine{00167\ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

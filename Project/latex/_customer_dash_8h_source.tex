@@ -1,0 +1,30 @@
+\doxysection{Customer\+Dash.\+h}
+\hypertarget{_customer_dash_8h_source}{}\label{_customer_dash_8h_source}\mbox{\hyperlink{_customer_dash_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ CUSTOMERDASH\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ CUSTOMERDASH\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_nursery_observer_8h}{NurseryObserver.h}}"{}}\ \textcolor{comment}{//\ Inherits\ from\ the\ abstract\ Observer\ class}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_customer_dash}{CustomerDash}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_nursery_observer}{NurseryObserver}}\ }
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_dash_a3df12cdae8473a7c805f463e91181a3b}{onEvent}}(\mbox{\hyperlink{structevents_1_1_plant}{events::Plant}}\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<std::string>\&\ \mbox{\hyperlink{class_customer_dash_a91c4dd7f37953704ec17642c484cb12f}{getMatured}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_dash_a53af4e9f0fa363fc9d8bed39b1c5a86e}{clear}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ std::vector<std::string>\ maturedIds;}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CUSTOMERDASH\_H}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+
+\end{DoxyCode}

@@ -1,0 +1,114 @@
+\doxysection{Gift\+Wrap Class Reference}
+\hypertarget{class_gift_wrap}{}\label{class_gift_wrap}\index{GiftWrap@{GiftWrap}}
+
+
+Concrete Decorator adding gift wrapping service to sale items.  
+
+
+
+
+{\ttfamily \#include $<$Gift\+Wrap.\+h$>$}
+
+Inheritance diagram for Gift\+Wrap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_gift_wrap}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gift_wrap_a1a30d1c13db70027d3cc48a0d7ae360a}{Gift\+Wrap}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sale_item}{Sale\+Item}} $>$ inner)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_gift_wrap}{Gift\+Wrap} decorator around an existing \doxylink{class_sale_item}{Sale\+Item}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_gift_wrap_a5f8979fa8d224a12d48e7220cf96cb76}{cost}} () override
+\begin{DoxyCompactList}\small\item\em Calculates the total cost including the gift wrapping service. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_gift_wrap_aa3e215a0638ce482aaeec63e3652d9c3}{description}} () override
+\begin{DoxyCompactList}\small\item\em Generates description including the gift wrapping service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sale_decorator}{Sale\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sale_decorator_a8931649a3c583ec2e085d0e3cfd527ba}{Sale\+Decorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sale_item}{Sale\+Item}} $>$ inner)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_sale_decorator}{Sale\+Decorator} wrapping an existing \doxylink{class_sale_item}{Sale\+Item}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sale_item}{Sale\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_sale_item_a021804c996ec5473a37100bded129f7a}{\texorpdfstring{$\sim$}{\string~}\+Sale\+Item}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived concrete \doxylink{class_sale_item}{Sale\+Item} and Decorator classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sale_decorator}{Sale\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sale_item}{Sale\+Item}} \& \mbox{\hyperlink{class_sale_decorator_ac1029fddbd28af8386434b86460d28d3}{get\+Inner\+Comp}} ()
+\begin{DoxyCompactList}\small\item\em Provides access to the wrapped \doxylink{class_sale_item}{Sale\+Item}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Decorator adding gift wrapping service to sale items. 
+
+This decorator enhances a plant sale item by adding professional gift wrapping, making it suitable for presents and special occasions. The gift wrap includes decorative paper, ribbon, and presentation suitable for gifting.
+
+Adds a fixed service charge and updates the description to indicate gift wrapping. Commonly combined with \doxylink{class_message_card}{Message\+Card} decorator for complete gift presentation. 
+
+\label{doc-constructors}
+\Hypertarget{class_gift_wrap_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gift_wrap_a1a30d1c13db70027d3cc48a0d7ae360a}\index{GiftWrap@{GiftWrap}!GiftWrap@{GiftWrap}}
+\index{GiftWrap@{GiftWrap}!GiftWrap@{GiftWrap}}
+\doxysubsubsection{\texorpdfstring{GiftWrap()}{GiftWrap()}}
+{\footnotesize\ttfamily \label{class_gift_wrap_a1a30d1c13db70027d3cc48a0d7ae360a} 
+Gift\+Wrap\+::\+Gift\+Wrap (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sale_item}{Sale\+Item}} $>$}]{inner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_gift_wrap}{Gift\+Wrap} decorator around an existing \doxylink{class_sale_item}{Sale\+Item}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inner} & Unique pointer to the \doxylink{class_sale_item}{Sale\+Item} to be decorated\\
+\hline
+\end{DoxyParams}
+Wraps the given sale item and prepares to add gift wrapping features to its cost and description. 
+
+\label{doc-func-members}
+\Hypertarget{class_gift_wrap_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gift_wrap_a5f8979fa8d224a12d48e7220cf96cb76}\index{GiftWrap@{GiftWrap}!cost@{cost}}
+\index{cost@{cost}!GiftWrap@{GiftWrap}}
+\doxysubsubsection{\texorpdfstring{cost()}{cost()}}
+{\footnotesize\ttfamily \label{class_gift_wrap_a5f8979fa8d224a12d48e7220cf96cb76} 
+double Gift\+Wrap\+::cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the total cost including the gift wrapping service. 
+
+\begin{DoxyReturn}{Returns}
+Total cost as a double value (base cost + 25.\+0)
+\end{DoxyReturn}
+Retrieves the cost from the wrapped component and adds the service charge for professional gift wrapping. 
+
+Implements \mbox{\hyperlink{class_sale_item_a6dddf7100be6d2f5b1fd28f115a69a56}{Sale\+Item}}.
+
+\Hypertarget{class_gift_wrap_aa3e215a0638ce482aaeec63e3652d9c3}\index{GiftWrap@{GiftWrap}!description@{description}}
+\index{description@{description}!GiftWrap@{GiftWrap}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{class_gift_wrap_aa3e215a0638ce482aaeec63e3652d9c3} 
+std\+::string Gift\+Wrap\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates description including the gift wrapping service. 
+
+\begin{DoxyReturn}{Returns}
+String describing the item with "{} + Gift Wrap"{} appended
+\end{DoxyReturn}
+Delegates to the wrapped component for the base description and appends text indicating the gift wrapping service. 
+
+Implements \mbox{\hyperlink{class_sale_item_ac8d9e1668cfb0ff0e908a453008cc61e}{Sale\+Item}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_gift_wrap_8h}{Gift\+Wrap.\+h}}\item 
+Gift\+Wrap.\+cpp\end{DoxyCompactItemize}

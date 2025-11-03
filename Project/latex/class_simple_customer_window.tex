@@ -1,0 +1,115 @@
+\doxysection{Simple\+Customer\+Window Class Reference}
+\hypertarget{class_simple_customer_window}{}\label{class_simple_customer_window}\index{SimpleCustomerWindow@{SimpleCustomerWindow}}
+
+
+Main window interface for customers.  
+
+
+
+
+{\ttfamily \#include $<$Simple\+Customer\+Window.\+h$>$}
+
+Inheritance diagram for Simple\+Customer\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_customer_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_simple_customer_window_ab37c8d37604542b124ec9ad1620b90fc}\label{class_simple_customer_window_ab37c8d37604542b124ec9ad1620b90fc} 
+void {\bfseries logout\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Signal emitted when user requests logout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simple_customer_window_af264b898dff052b9c98193aac6b4a3a7}{Simple\+Customer\+Window}} (\mbox{\hyperlink{class_nursery_facade}{Nursery\+Facade}} \texorpdfstring{$\ast$}{*}facade, QString user\+Id, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, \mbox{\hyperlink{class_customer_dash}{Customer\+Dash}} \texorpdfstring{$\ast$}{*}dash\+Observer=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new customer window. \end{DoxyCompactList}\item 
+\Hypertarget{class_simple_customer_window_a20c2e0bf90b4e326e2d2ac0ff20ab388}\label{class_simple_customer_window_a20c2e0bf90b4e326e2d2ac0ff20ab388} 
+void {\bfseries populate\+Catalog} ()
+\begin{DoxyCompactList}\small\item\em Populate the catalog table with available plants. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_simple_customer_window_a04a5382bdb881519c85e1dd01cc3cc68}{find\+Cart\+Row}} (const QString \&plant\+Id) const
+\begin{DoxyCompactList}\small\item\em Find a cart row by plant ID. \end{DoxyCompactList}\item 
+\Hypertarget{class_simple_customer_window_a4eec50a14e5dd347e95d7ade00763d24}\label{class_simple_customer_window_a4eec50a14e5dd347e95d7ade00763d24} 
+void {\bfseries recalc\+Total} ()
+\begin{DoxyCompactList}\small\item\em Recalculate and update the order total. \end{DoxyCompactList}\item 
+\Hypertarget{class_simple_customer_window_a71a9ba1e437fdc5b549aa0a59d701e4b}\label{class_simple_customer_window_a71a9ba1e437fdc5b549aa0a59d701e4b} 
+void {\bfseries refresh\+My\+Orders} ()
+\begin{DoxyCompactList}\small\item\em Refresh the customer\textquotesingle{}s order history. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simple_customer_window_accfe9592ffd73176c68007e5855e1e6c}{filter\+Catalog}} (const QString \&term)
+\begin{DoxyCompactList}\small\item\em Filter the catalog by search term. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main window interface for customers. 
+
+Provides a tabbed interface for customers to browse plants, manage shopping cart, view recommendations, access plant encyclopedia, track orders, and send messages to staff. 
+
+\label{doc-constructors}
+\Hypertarget{class_simple_customer_window_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_simple_customer_window_af264b898dff052b9c98193aac6b4a3a7}\index{SimpleCustomerWindow@{SimpleCustomerWindow}!SimpleCustomerWindow@{SimpleCustomerWindow}}
+\index{SimpleCustomerWindow@{SimpleCustomerWindow}!SimpleCustomerWindow@{SimpleCustomerWindow}}
+\doxysubsubsection{\texorpdfstring{SimpleCustomerWindow()}{SimpleCustomerWindow()}}
+{\footnotesize\ttfamily \label{class_simple_customer_window_af264b898dff052b9c98193aac6b4a3a7} 
+Simple\+Customer\+Window\+::\+Simple\+Customer\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nursery_facade}{Nursery\+Facade}} \texorpdfstring{$\ast$}{*}}]{facade}{, }\item[{QString}]{user\+Id}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{class_customer_dash}{Customer\+Dash}} \texorpdfstring{$\ast$}{*}}]{dash\+Observer}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new customer window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em facade} & Pointer to the \doxylink{class_nursery_facade}{Nursery\+Facade} for operations \\
+\hline
+{\em user\+Id} & The customer\textquotesingle{}s user ID \\
+\hline
+{\em parent} & Parent widget (optional) \\
+\hline
+{\em dash\+Observer} & Observer for dashboard updates (optional) \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_simple_customer_window_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_simple_customer_window_accfe9592ffd73176c68007e5855e1e6c}\index{SimpleCustomerWindow@{SimpleCustomerWindow}!filterCatalog@{filterCatalog}}
+\index{filterCatalog@{filterCatalog}!SimpleCustomerWindow@{SimpleCustomerWindow}}
+\doxysubsubsection{\texorpdfstring{filterCatalog()}{filterCatalog()}}
+{\footnotesize\ttfamily \label{class_simple_customer_window_accfe9592ffd73176c68007e5855e1e6c} 
+void Simple\+Customer\+Window\+::filter\+Catalog (\begin{DoxyParamCaption}\item[{const QString \&}]{term}{}\end{DoxyParamCaption})}
+
+
+
+Filter the catalog by search term. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em term} & The search term (matches species name or SKU) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_simple_customer_window_a04a5382bdb881519c85e1dd01cc3cc68}\index{SimpleCustomerWindow@{SimpleCustomerWindow}!findCartRow@{findCartRow}}
+\index{findCartRow@{findCartRow}!SimpleCustomerWindow@{SimpleCustomerWindow}}
+\doxysubsubsection{\texorpdfstring{findCartRow()}{findCartRow()}}
+{\footnotesize\ttfamily \label{class_simple_customer_window_a04a5382bdb881519c85e1dd01cc3cc68} 
+int Simple\+Customer\+Window\+::find\+Cart\+Row (\begin{DoxyParamCaption}\item[{const QString \&}]{plant\+Id}{}\end{DoxyParamCaption}) const}
+
+
+
+Find a cart row by plant ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant\+Id} & The plant ID to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Row index if found, -\/1 otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_simple_customer_window_8h}{Simple\+Customer\+Window.\+h}}\end{DoxyCompactItemize}

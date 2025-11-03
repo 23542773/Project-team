@@ -1,0 +1,84 @@
+\doxysection{Ceramic\+Pot Class Reference}
+\hypertarget{class_ceramic_pot}{}\label{class_ceramic_pot}\index{CeramicPot@{CeramicPot}}
+
+
+Concrete \doxylink{class_pot}{Pot} representing a standard ceramic pot.  
+
+
+
+
+{\ttfamily \#include $<$Ceramic\+Pot.\+h$>$}
+
+Inheritance diagram for Ceramic\+Pot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ceramic_pot}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ceramic_pot_ac21d377891821225c1e426eeb8f46a99}\label{class_ceramic_pot_ac21d377891821225c1e426eeb8f46a99} 
+{\bfseries Ceramic\+Pot} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_ceramic_pot}{Ceramic\+Pot} with a predefined cost. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_ceramic_pot_af786e40d1456e64ac1d7017f1fece1fb}{name}} () override
+\begin{DoxyCompactList}\small\item\em Returns the name of this pot type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ceramic_pot_a1dce6ebfbf83c8291a00ea25d5dbe787}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Creates a cloned copy of this pot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_pot}{Pot}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pot_a53b006af064c3b6e4058ef1c96e9f8fb}{Pot}} (int c)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_pot}{Pot} with a specified cost. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Pot} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_pot_afa6c77a9abfd530ce070e7f69f32e217}{get\+Cost}} ()
+\begin{DoxyCompactList}\small\item\em Returns the cost of this pot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete \doxylink{class_pot}{Pot} representing a standard ceramic pot. 
+
+\label{doc-func-members}
+\Hypertarget{class_ceramic_pot_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ceramic_pot_a1dce6ebfbf83c8291a00ea25d5dbe787}\index{CeramicPot@{CeramicPot}!clone@{clone}}
+\index{clone@{clone}!CeramicPot@{CeramicPot}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_ceramic_pot_a1dce6ebfbf83c8291a00ea25d5dbe787} 
+\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*} Ceramic\+Pot\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a cloned copy of this pot. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the cloned \doxylink{class_ceramic_pot}{Ceramic\+Pot}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_pot_a4c3d4f20f3d7d3e82ceb530f7d4978b9}{Pot}}.
+
+\Hypertarget{class_ceramic_pot_af786e40d1456e64ac1d7017f1fece1fb}\index{CeramicPot@{CeramicPot}!name@{name}}
+\index{name@{name}!CeramicPot@{CeramicPot}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_ceramic_pot_af786e40d1456e64ac1d7017f1fece1fb} 
+std\+::string Ceramic\+Pot\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the name of this pot type. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Ceramic\+Pot"{} as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_pot_abb4139f478a51e1b15fab5aa5e342312}{Pot}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_ceramic_pot_8h}{Ceramic\+Pot.\+h}}\item 
+Ceramic\+Pot.\+cpp\end{DoxyCompactItemize}

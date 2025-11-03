@@ -1,0 +1,26 @@
+\doxysection{Service\+Subject.\+cpp File Reference}
+\hypertarget{_service_subject_8cpp}{}\label{_service_subject_8cpp}\index{ServiceSubject.cpp@{ServiceSubject.cpp}}
+
+
+Implementation of \doxylink{class_service_subject}{Service\+Subject} methods (Observer Pattern).  
+
+
+{\ttfamily \#include "{}Service\+Subject.\+h"{}}\newline
+{\ttfamily \#include "{}Events.\+h"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of \doxylink{class_service_subject}{Service\+Subject} methods (Observer Pattern). 
+
+\begin{DoxyAuthor}{Author}
+Damian Moustakis(\+Doxygen comments) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/11-\/01
+\end{DoxyDate}
+Implements the notification mechanisms for the Subject in the Observer pattern, allowing it to inform registered Nursery\+Observers of various events\+:
+\begin{DoxyItemize}
+\item \doxylink{class_plant}{Plant} Events\+: Lifecycle changes in plants
+\item Stock Events\+: \doxylink{struct_inventory}{Inventory} level changes
+\item \doxylink{struct_order}{Order} Events\+: \doxylink{struct_order}{Order} lifecycle changes 
+\end{DoxyItemize}

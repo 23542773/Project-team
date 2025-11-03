@@ -1,0 +1,88 @@
+\doxysection{Inventory Struct Reference}
+\hypertarget{struct_inventory}{}\label{struct_inventory}\index{Inventory@{Inventory}}
+
+
+A comprehensive structure containing records of all matured plants, tracking their status through their sales lifecycle (Available, Reserved, Sold, etc.).  
+
+
+
+
+{\ttfamily \#include $<$Inventory.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_inventory_1_1_plant_rec}{Plant\+Rec}}
+\begin{DoxyCompactList}\small\item\em A record structure holding the key details for a single plant in the inventory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884}{Status}} \{ \newline
+\mbox{\hyperlink{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a78945de8de090e90045d299651a68a9b}{Available}}
+, \mbox{\hyperlink{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a942d4e37dd5607ab68e54755540d4a47}{Reserved}}
+, \mbox{\hyperlink{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884ad85a8a381c36f6dde21d81542830e2b1}{Sold}}
+, \mbox{\hyperlink{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884ad698809f101f072d3f9ae874528b3d2b}{Wilted}}
+, \newline
+\mbox{\hyperlink{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a183b62c7f067711f9c5a54913c054617}{Dead}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the current disposition or state of a plant for sales purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_inventory_a29e0902e527bb9eb40b3fbe301fcb140}\label{struct_inventory_a29e0902e527bb9eb40b3fbe301fcb140} 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_inventory_1_1_plant_rec}{Plant\+Rec}} $>$ {\bfseries by\+Id}
+\begin{DoxyCompactList}\small\item\em Main map storing all plant records, keyed by the unique plant ID. \end{DoxyCompactList}\item 
+\Hypertarget{struct_inventory_a0d01f3905ab0baf5eddf160a8dee25cf}\label{struct_inventory_a0d01f3905ab0baf5eddf160a8dee25cf} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unordered\+\_\+set$<$ std\+::string $>$ $>$ {\bfseries avail\+By\+Sku}
+\begin{DoxyCompactList}\small\item\em Index mapping species SKU to a set of plant IDs that are currently available for sale. \end{DoxyCompactList}\item 
+\Hypertarget{struct_inventory_aaa151774fed4fac5983ce8a00c83ac46}\label{struct_inventory_aaa151774fed4fac5983ce8a00c83ac46} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unordered\+\_\+set$<$ std\+::string $>$ $>$ {\bfseries reserved\+By\+Sku}
+\begin{DoxyCompactList}\small\item\em Index mapping species SKU to a set of plant IDs that are currently reserved for pending orders. \end{DoxyCompactList}\item 
+\Hypertarget{struct_inventory_a06b6a979ab8e63b4d9065741a6db9778}\label{struct_inventory_a06b6a979ab8e63b4d9065741a6db9778} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unordered\+\_\+set$<$ std\+::string $>$ $>$ {\bfseries sold\+By\+Sku}
+\begin{DoxyCompactList}\small\item\em Index mapping species SKU to a set of plant IDs that have been sold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A comprehensive structure containing records of all matured plants, tracking their status through their sales lifecycle (Available, Reserved, Sold, etc.). 
+
+\label{doc-enum-members}
+\Hypertarget{struct_inventory_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884}\index{Inventory@{Inventory}!Status@{Status}}
+\index{Status@{Status}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884} 
+enum class \mbox{\hyperlink{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884}{Inventory\+::\+Status}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Represents the current disposition or state of a plant for sales purposes. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Available@{Available}!Inventory@{Inventory}}\index{Inventory@{Inventory}!Available@{Available}}}\Hypertarget{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a78945de8de090e90045d299651a68a9b}\label{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a78945de8de090e90045d299651a68a9b} 
+Available&The plant is ready and available for sale. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reserved@{Reserved}!Inventory@{Inventory}}\index{Inventory@{Inventory}!Reserved@{Reserved}}}\Hypertarget{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a942d4e37dd5607ab68e54755540d4a47}\label{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a942d4e37dd5607ab68e54755540d4a47} 
+Reserved&The plant has been allocated to an order but not yet sold. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sold@{Sold}!Inventory@{Inventory}}\index{Inventory@{Inventory}!Sold@{Sold}}}\Hypertarget{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884ad85a8a381c36f6dde21d81542830e2b1}\label{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884ad85a8a381c36f6dde21d81542830e2b1} 
+Sold&The plant has been sold and removed from inventory. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wilted@{Wilted}!Inventory@{Inventory}}\index{Inventory@{Inventory}!Wilted@{Wilted}}}\Hypertarget{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884ad698809f101f072d3f9ae874528b3d2b}\label{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884ad698809f101f072d3f9ae874528b3d2b} 
+Wilted&The plant is currently unhealthy or damaged and cannot be sold. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dead@{Dead}!Inventory@{Inventory}}\index{Inventory@{Inventory}!Dead@{Dead}}}\Hypertarget{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a183b62c7f067711f9c5a54913c054617}\label{struct_inventory_aa52048c93f0b79cb8516371e2a1ea884a183b62c7f067711f9c5a54913c054617} 
+Dead&The plant is dead and should be disposed of. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_inventory_8h}{Inventory.\+h}}\end{DoxyCompactItemize}

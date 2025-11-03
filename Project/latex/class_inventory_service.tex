@@ -1,0 +1,271 @@
+\doxysection{Inventory\+Service Class Reference}
+\hypertarget{class_inventory_service}{}\label{class_inventory_service}\index{InventoryService@{InventoryService}}
+
+
+Concrete Observer implementation for inventory management.  
+
+
+
+
+{\ttfamily \#include $<$Inventory\+Service.\+h$>$}
+
+Inheritance diagram for Inventory\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_inventory_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_inventory_service_acc09307e6ca068307eff185d239748ad}{Inventory\+Service}} (\mbox{\hyperlink{struct_inventory}{Inventory}} \&store, \mbox{\hyperlink{class_greenhouse}{Greenhouse}} \&gn)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_inventory_service}{Inventory\+Service}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_inventory_service_a257e99183325c11bc70294b9dbf31f7b}{add\+Plant}} (std\+::string plant\+Id, std\+::string species\+Sku)
+\begin{DoxyCompactList}\small\item\em Adds a new plant to the inventory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_inventory_service_ad0c789a9bbb76029de102f7c59e2ccc7}{reserve\+Plant}} (std\+::string plant\+Id)
+\begin{DoxyCompactList}\small\item\em Reserves a plant in the inventory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_inventory_service_abd436363e1dc44371434150dc8c111c9}{mark\+Sold}} (std\+::string plant\+Id)
+\begin{DoxyCompactList}\small\item\em Effectively Sells a plant from the inventory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_service_a76d31ecfd1556b204f7c0b85e004ac3e}{release\+Plant\+From\+Order}} (std\+::string plant\+Id)
+\begin{DoxyCompactList}\small\item\em Releases a plant from an order back to available inventory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_inventory_service_ad1cc8dcc73f4de458d0876e0ec8d2294}{available\+Count}} (std\+::string species\+Sku)
+\begin{DoxyCompactList}\small\item\em Finds the amount of available for purchase plants of a certain species. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_inventory_service_a2b21df9fb876d0cd4aa8eead8ef796b3}{reserved\+Count}} (std\+::string species\+Sku)
+\begin{DoxyCompactList}\small\item\em Finds the amount of available plants of a certain species that are reserved. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_inventory_service_a38f6ecf47c9e2c81ae743a45e6a52c2a}{sold\+Count}} (std\+::string species\+Sku)
+\begin{DoxyCompactList}\small\item\em Finds the amount of sold plants of a certain species. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_inventory_service_afd788ee89af21a8cc9e5d09b35963bf7}{list\+Available\+Plants}} ()
+\begin{DoxyCompactList}\small\item\em Lists all available plants in the inventory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_service_a5b9964c3b01cac16d31933f38f4be4a1}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}}) override
+\begin{DoxyCompactList}\small\item\em Reaction to a \doxylink{class_plant}{Plant} Event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_nursery_observer_a37bedacc372adb3e4afff4c5396aa05c}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}})
+\begin{DoxyCompactList}\small\item\em Reaction to a Stock Event. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_nursery_observer_a52d1753ad1cc7682f48fadd099824f3c}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&)
+\begin{DoxyCompactList}\small\item\em Reaction to an \doxylink{struct_order}{Order} Event. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_nursery_observer_aca691fab85a66d7513d5b10bcb26a443}{\texorpdfstring{$\sim$}{\string~}\+Nursery\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Observer implementation for inventory management. 
+
+Handles \doxylink{class_plant}{Plant} events to update the inventory based on plant lifecycle changes. 
+
+\label{doc-constructors}
+\Hypertarget{class_inventory_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_inventory_service_acc09307e6ca068307eff185d239748ad}\index{InventoryService@{InventoryService}!InventoryService@{InventoryService}}
+\index{InventoryService@{InventoryService}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{InventoryService()}{InventoryService()}}
+{\footnotesize\ttfamily \label{class_inventory_service_acc09307e6ca068307eff185d239748ad} 
+Inventory\+Service\+::\+Inventory\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_inventory}{Inventory}} \&}]{store}{, }\item[{\mbox{\hyperlink{class_greenhouse}{Greenhouse}} \&}]{gh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for \doxylink{class_inventory_service}{Inventory\+Service}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em store} & Reference to the \doxylink{struct_inventory}{Inventory} to manage \\
+\hline
+{\em gn} & Reference to the \doxylink{class_greenhouse}{Greenhouse} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_inventory_service}{Inventory\+Service} instance
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em store} & Reference to the \doxylink{struct_inventory}{Inventory} to manage \\
+\hline
+{\em gh} & Reference to the \doxylink{class_greenhouse}{Greenhouse} instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_inventory_service}{Inventory\+Service} instance 
+\end{DoxyReturn}
+
+
+\label{doc-func-members}
+\Hypertarget{class_inventory_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_inventory_service_a257e99183325c11bc70294b9dbf31f7b}\index{InventoryService@{InventoryService}!addPlant@{addPlant}}
+\index{addPlant@{addPlant}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{addPlant()}{addPlant()}}
+{\footnotesize\ttfamily \label{class_inventory_service_a257e99183325c11bc70294b9dbf31f7b} 
+bool Inventory\+Service\+::add\+Plant (\begin{DoxyParamCaption}\item[{std\+::string}]{plant\+Id}{, }\item[{std\+::string}]{species\+Sku}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new plant to the inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant\+Id} & The unique ID of the plant \\
+\hline
+{\em species\+Sku} & The species SKU of the plant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the plant was added successfully, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_inventory_service_ad1cc8dcc73f4de458d0876e0ec8d2294}\index{InventoryService@{InventoryService}!availableCount@{availableCount}}
+\index{availableCount@{availableCount}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{availableCount()}{availableCount()}}
+{\footnotesize\ttfamily \label{class_inventory_service_ad1cc8dcc73f4de458d0876e0ec8d2294} 
+int Inventory\+Service\+::available\+Count (\begin{DoxyParamCaption}\item[{std\+::string}]{species\+Sku}{}\end{DoxyParamCaption})}
+
+
+
+Finds the amount of available for purchase plants of a certain species. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em species\+Sku} & The species SKU to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The count of available plants for the specified species 
+\end{DoxyReturn}
+\Hypertarget{class_inventory_service_afd788ee89af21a8cc9e5d09b35963bf7}\index{InventoryService@{InventoryService}!listAvailablePlants@{listAvailablePlants}}
+\index{listAvailablePlants@{listAvailablePlants}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{listAvailablePlants()}{listAvailablePlants()}}
+{\footnotesize\ttfamily \label{class_inventory_service_afd788ee89af21a8cc9e5d09b35963bf7} 
+std\+::vector$<$ std\+::string $>$ Inventory\+Service\+::list\+Available\+Plants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Lists all available plants in the inventory. 
+
+\begin{DoxyReturn}{Returns}
+A vector of plant IDs that are available for purchase 
+\end{DoxyReturn}
+\Hypertarget{class_inventory_service_abd436363e1dc44371434150dc8c111c9}\index{InventoryService@{InventoryService}!markSold@{markSold}}
+\index{markSold@{markSold}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{markSold()}{markSold()}}
+{\footnotesize\ttfamily \label{class_inventory_service_abd436363e1dc44371434150dc8c111c9} 
+bool Inventory\+Service\+::mark\+Sold (\begin{DoxyParamCaption}\item[{std\+::string}]{plant\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Effectively Sells a plant from the inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant\+Id} & The unique ID of the plant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the plant was sold successfully, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_inventory_service_a5b9964c3b01cac16d31933f38f4be4a1}\index{InventoryService@{InventoryService}!onEvent@{onEvent}}
+\index{onEvent@{onEvent}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{onEvent()}{onEvent()}}
+{\footnotesize\ttfamily \label{class_inventory_service_a5b9964c3b01cac16d31933f38f4be4a1} 
+void Inventory\+Service\+::on\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reaction to a \doxylink{class_plant}{Plant} Event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{class_plant}{Plant} event to react to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{class_plant}{Plant} event to react to\\
+\hline
+\end{DoxyParams}
+Handles plant lifecycle events to update inventory status. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nursery_observer_ae955a43fae499dd88334863f27d6bbe4}{Nursery\+Observer}}.
+
+\Hypertarget{class_inventory_service_a76d31ecfd1556b204f7c0b85e004ac3e}\index{InventoryService@{InventoryService}!releasePlantFromOrder@{releasePlantFromOrder}}
+\index{releasePlantFromOrder@{releasePlantFromOrder}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{releasePlantFromOrder()}{releasePlantFromOrder()}}
+{\footnotesize\ttfamily \label{class_inventory_service_a76d31ecfd1556b204f7c0b85e004ac3e} 
+void Inventory\+Service\+::release\+Plant\+From\+Order (\begin{DoxyParamCaption}\item[{std\+::string}]{plant\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Releases a plant from an order back to available inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant\+Id} & The unique ID of the plant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_inventory_service_a2b21df9fb876d0cd4aa8eead8ef796b3}\index{InventoryService@{InventoryService}!reservedCount@{reservedCount}}
+\index{reservedCount@{reservedCount}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{reservedCount()}{reservedCount()}}
+{\footnotesize\ttfamily \label{class_inventory_service_a2b21df9fb876d0cd4aa8eead8ef796b3} 
+int Inventory\+Service\+::reserved\+Count (\begin{DoxyParamCaption}\item[{std\+::string}]{species\+Sku}{}\end{DoxyParamCaption})}
+
+
+
+Finds the amount of available plants of a certain species that are reserved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em species\+Sku} & The species SKU to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The count of reserved plants for the specified species 
+\end{DoxyReturn}
+\Hypertarget{class_inventory_service_ad0c789a9bbb76029de102f7c59e2ccc7}\index{InventoryService@{InventoryService}!reservePlant@{reservePlant}}
+\index{reservePlant@{reservePlant}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{reservePlant()}{reservePlant()}}
+{\footnotesize\ttfamily \label{class_inventory_service_ad0c789a9bbb76029de102f7c59e2ccc7} 
+bool Inventory\+Service\+::reserve\+Plant (\begin{DoxyParamCaption}\item[{std\+::string}]{plant\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Reserves a plant in the inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant\+Id} & The unique ID of the plant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the plant was reserved successfully, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_inventory_service_a38f6ecf47c9e2c81ae743a45e6a52c2a}\index{InventoryService@{InventoryService}!soldCount@{soldCount}}
+\index{soldCount@{soldCount}!InventoryService@{InventoryService}}
+\doxysubsubsection{\texorpdfstring{soldCount()}{soldCount()}}
+{\footnotesize\ttfamily \label{class_inventory_service_a38f6ecf47c9e2c81ae743a45e6a52c2a} 
+int Inventory\+Service\+::sold\+Count (\begin{DoxyParamCaption}\item[{std\+::string}]{species\+Sku}{}\end{DoxyParamCaption})}
+
+
+
+Finds the amount of sold plants of a certain species. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em species\+Sku} & The species SKU to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The count of sold plants for the specified species 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_inventory_service_8h}{Inventory\+Service.\+h}}\item 
+\mbox{\hyperlink{_inventory_service_8cpp}{Inventory\+Service.\+cpp}}\end{DoxyCompactItemize}

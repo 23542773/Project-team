@@ -1,0 +1,56 @@
+\doxysection{Species\+Flyweight.\+h}
+\hypertarget{_species_flyweight_8h_source}{}\label{_species_flyweight_8h_source}\mbox{\hyperlink{_species_flyweight_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SPECIESFLYWEIGHT\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SPECIESFLYWEIGHT\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_flyweight_8h}{PlantFlyweight.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_species_flyweight_a813de1811f266ea57025ed02a0bc97ef}{SpeciesFlyweight}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_plant_flyweight}{PlantFlyweight}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_species_flyweight_a813de1811f266ea57025ed02a0bc97ef}{SpeciesFlyweight}}(std::string\ sku,\ std::string\ name,\ std::string\ biome,\ \textcolor{keywordtype}{int}\ basePrice,\ \textcolor{keywordtype}{double}\ waterSensitivity,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ insecticideTolerance,\ \textcolor{keywordtype}{double}\ growthRate,\ \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}}\ thrivingSeason);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ \mbox{\hyperlink{class_species_flyweight_aada3f3cd9c1660c46138da35ac6fe9b5}{getSku}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{class_species_flyweight_a5313d30cd1f2a8ab158815c611e89b02}{getName}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \mbox{\hyperlink{class_species_flyweight_a2a38541d9863d1259e61fcf354546ba4}{getBiome}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_species_flyweight_a769c1b5710eb70c0c85e989201f6cfef}{getCost}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_species_flyweight_ab10483b824392735dcf364f1ed0487cf}{getWaterSensitivity}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_species_flyweight_a915ab911c67270733de097bb36701a31}{getInsecticideTolerance}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_species_flyweight_a14a65f37de513e30bbb46823fba4c5d9}{getGrowthRate}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}}\ \mbox{\hyperlink{class_species_flyweight_ad755919f36dc700ae1e298a41f503d47}{getThrivingSeason}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::string\ sku;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ std::string\ biome;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{int}\ basePrice;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{double}\ waterSensitivity;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{double}\ insecticideTolerance;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{double}\ growthRate;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}}\ thrivingSeason;}
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

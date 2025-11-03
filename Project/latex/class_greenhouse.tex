@@ -1,0 +1,271 @@
+\doxysection{Greenhouse Class Reference}
+\hypertarget{class_greenhouse}{}\label{class_greenhouse}\index{Greenhouse@{Greenhouse}}
+
+
+Manages the collection of all living \doxylink{class_plant}{Plant} objects, tracking them by ID and SKU.  
+
+
+
+
+{\ttfamily \#include $<$Greenhouse.\+h$>$}
+
+Inheritance diagram for Greenhouse\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_greenhouse}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_greenhouse_a4d597996c025d976fab5e23117e64fc5}{Greenhouse}} (\mbox{\hyperlink{class_plant_registry}{Plant\+Registry}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_greenhouse}{Greenhouse}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_greenhouse_a539208520cfc29690a631794f79c3b03}{receive\+Shipment}} (std\+::string species\+Sku, int batch)
+\begin{DoxyCompactList}\small\item\em Receives a batch of new plants for a given species SKU, generates unique IDs, and adds them to the greenhouse collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_greenhouse_afe254a15ed9a846c88e7b795d392b1f1}{add\+Plant}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_plant}{Plant}} $>$ plant)
+\begin{DoxyCompactList}\small\item\em Adds an already constructed \doxylink{class_plant}{Plant} instance to the greenhouse\textquotesingle{}s managed collection. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_greenhouse_a6d8301597741a333c8964d6e1389a1c3}{pick\+Colour}} (int index)
+\begin{DoxyCompactList}\small\item\em Picks a colour from a predefined palette based on an index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_greenhouse_aebde19280a2611962b16829ce6ea50db}{get\+Plant}} (const std\+::string \&plant\+Id)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a runtime \doxylink{class_plant}{Plant} instance for a given plant ID. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_greenhouse_ac0b00bd808ed8f7bfedf8878ba57857c}{count\+By\+Sku}} (const std\+::string \&sku)
+\begin{DoxyCompactList}\small\item\em Counts how many plants of a particular species SKU currently exist in the greenhouse. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_greenhouse_a5156beae97bce6a06411ac4459f80372}{remove\+Plant}} (const std\+::string \&plant\+Id)
+\begin{DoxyCompactList}\small\item\em Removes a plant from the greenhouse\textquotesingle{}s managed collection (e.\+g., after being sold or dying). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_greenhouse_ae99611fb6ed3e9d6240378b88ff3c0f8}{tick\+All}} ()
+\begin{DoxyCompactList}\small\item\em Advances the state/simulation time for all plants. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_iterator}{Iterator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_greenhouse_a7f66e4e6ff38173b1fc51398946cad42}{create\+Iterator}} () const
+\begin{DoxyCompactList}\small\item\em Factory method to create an \doxylink{class_iterator}{Iterator} that traverses all plants in the greenhouse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_iterator}{Iterator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_greenhouse_a842289023c56a94159e0b7c1d1ff79c7}{create\+State\+Iterator}} (const \mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*}state) const
+\begin{DoxyCompactList}\small\item\em Factory method to create an \doxylink{class_iterator}{Iterator} that traverses only plants in a specific state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_iterator}{Iterator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_greenhouse_aa8e8eb23b2474af33d2314c01eb6ba01}{create\+Sku\+Iterator}} (const std\+::string \&sku) const
+\begin{DoxyCompactList}\small\item\em Factory method to create an \doxylink{class_iterator}{Iterator} that traverses only plants of a specific SKU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_service_subject}{Service\+Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_service_subject_a70dee5374b9a16826db0252968c20f73}{\texorpdfstring{$\sim$}{\string~}\+Service\+Subject}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_ac4fbb20515b515d8a0b71b7512300e7e}{add\+Observer}} (\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*}obs)
+\begin{DoxyCompactList}\small\item\em Add an observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_ac560b745489d76e99d358c8515a83ee8}{set\+Observers}} (\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*}inv)
+\begin{DoxyCompactList}\small\item\em Alternate to registering Observer roles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_service_subject}{Service\+Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_service_subject_a40e7daef992161b0caed703f3bc488b1}{notify}} (\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}} e)
+\begin{DoxyCompactList}\small\item\em Notify all observers of a \doxylink{class_plant}{Plant} event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_a222dcae213b597b13242cffb5a91cb73}{notify}} (\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}} s)
+\begin{DoxyCompactList}\small\item\em Notify all observers of a Stock event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_af842cf58f846ec1255a2d73f00f75be2}{notify}} (\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&o)
+\begin{DoxyCompactList}\small\item\em Notify all observers of an \doxylink{struct_order}{Order} event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_service_subject}{Service\+Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_service_subject_a540e03adfacf9e6f8444b958b35b9764}{observers}}
+\begin{DoxyCompactList}\small\item\em List of observers "{}listening"{} to this subject. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the collection of all living \doxylink{class_plant}{Plant} objects, tracking them by ID and SKU. 
+
+This class is responsible for\+:
+\begin{DoxyEnumerate}
+\item Managing the lifecycle of plants (via {\ttfamily \doxylink{class_greenhouse_ae99611fb6ed3e9d6240378b88ff3c0f8}{tick\+All}}).
+\item Handling new plant shipments.
+\item Acting as the {\bfseries{Subject}} ({\ttfamily \doxylink{class_service_subject}{Service\+Subject}}) to notify observers of \doxylink{class_plant}{Plant} events (e.\+g., Matured).
+\item Providing {\bfseries{\doxylink{class_iterator}{Iterator}}} factory methods for structured traversal of plants. 
+\end{DoxyEnumerate}
+
+\label{doc-constructors}
+\Hypertarget{class_greenhouse_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_greenhouse_a4d597996c025d976fab5e23117e64fc5}\index{Greenhouse@{Greenhouse}!Greenhouse@{Greenhouse}}
+\index{Greenhouse@{Greenhouse}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{Greenhouse()}{Greenhouse()}}
+{\footnotesize\ttfamily \label{class_greenhouse_a4d597996c025d976fab5e23117e64fc5} 
+Greenhouse\+::\+Greenhouse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant_registry}{Plant\+Registry}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_greenhouse}{Greenhouse}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A pointer to the \doxylink{class_plant_registry}{Plant\+Registry} used for prototyping/cloning when new plants are received. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_greenhouse_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_greenhouse_afe254a15ed9a846c88e7b795d392b1f1}\index{Greenhouse@{Greenhouse}!addPlant@{addPlant}}
+\index{addPlant@{addPlant}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{addPlant()}{addPlant()}}
+{\footnotesize\ttfamily \label{class_greenhouse_afe254a15ed9a846c88e7b795d392b1f1} 
+void Greenhouse\+::add\+Plant (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_plant}{Plant}} $>$}]{plant}{}\end{DoxyParamCaption})}
+
+
+
+Adds an already constructed \doxylink{class_plant}{Plant} instance to the greenhouse\textquotesingle{}s managed collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & A unique pointer to the \doxylink{class_plant}{Plant} object to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_greenhouse_ac0b00bd808ed8f7bfedf8878ba57857c}\index{Greenhouse@{Greenhouse}!countBySku@{countBySku}}
+\index{countBySku@{countBySku}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{countBySku()}{countBySku()}}
+{\footnotesize\ttfamily \label{class_greenhouse_ac0b00bd808ed8f7bfedf8878ba57857c} 
+int Greenhouse\+::count\+By\+Sku (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sku}{}\end{DoxyParamCaption})}
+
+
+
+Counts how many plants of a particular species SKU currently exist in the greenhouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & The species Stock Keeping Unit (SKU) to count. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total number of plants matching the SKU. 
+\end{DoxyReturn}
+\Hypertarget{class_greenhouse_a7f66e4e6ff38173b1fc51398946cad42}\index{Greenhouse@{Greenhouse}!createIterator@{createIterator}}
+\index{createIterator@{createIterator}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{createIterator()}{createIterator()}}
+{\footnotesize\ttfamily \label{class_greenhouse_a7f66e4e6ff38173b1fc51398946cad42} 
+\mbox{\hyperlink{class_iterator}{Iterator}} \texorpdfstring{$\ast$}{*} Greenhouse\+::create\+Iterator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Factory method to create an \doxylink{class_iterator}{Iterator} that traverses all plants in the greenhouse. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to a newly created concrete \doxylink{class_iterator}{Iterator} object. 
+\end{DoxyReturn}
+\Hypertarget{class_greenhouse_aa8e8eb23b2474af33d2314c01eb6ba01}\index{Greenhouse@{Greenhouse}!createSkuIterator@{createSkuIterator}}
+\index{createSkuIterator@{createSkuIterator}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{createSkuIterator()}{createSkuIterator()}}
+{\footnotesize\ttfamily \label{class_greenhouse_aa8e8eb23b2474af33d2314c01eb6ba01} 
+\mbox{\hyperlink{class_iterator}{Iterator}} \texorpdfstring{$\ast$}{*} Greenhouse\+::create\+Sku\+Iterator (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sku}{}\end{DoxyParamCaption}) const}
+
+
+
+Factory method to create an \doxylink{class_iterator}{Iterator} that traverses only plants of a specific SKU. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & The Stock Keeping Unit (SKU) to filter the plants by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a newly created concrete \doxylink{class_iterator}{Iterator} object. 
+\end{DoxyReturn}
+\Hypertarget{class_greenhouse_a842289023c56a94159e0b7c1d1ff79c7}\index{Greenhouse@{Greenhouse}!createStateIterator@{createStateIterator}}
+\index{createStateIterator@{createStateIterator}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{createStateIterator()}{createStateIterator()}}
+{\footnotesize\ttfamily \label{class_greenhouse_a842289023c56a94159e0b7c1d1ff79c7} 
+\mbox{\hyperlink{class_iterator}{Iterator}} \texorpdfstring{$\ast$}{*} Greenhouse\+::create\+State\+Iterator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*}}]{state}{}\end{DoxyParamCaption}) const}
+
+
+
+Factory method to create an \doxylink{class_iterator}{Iterator} that traverses only plants in a specific state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & A pointer to the target \doxylink{class_plant_state}{Plant\+State} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a newly created concrete \doxylink{class_iterator}{Iterator} object. 
+\end{DoxyReturn}
+\Hypertarget{class_greenhouse_aebde19280a2611962b16829ce6ea50db}\index{Greenhouse@{Greenhouse}!getPlant@{getPlant}}
+\index{getPlant@{getPlant}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{getPlant()}{getPlant()}}
+{\footnotesize\ttfamily \label{class_greenhouse_aebde19280a2611962b16829ce6ea50db} 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} Greenhouse\+::get\+Plant (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{plant\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to a runtime \doxylink{class_plant}{Plant} instance for a given plant ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant\+Id} & The unique identifier of the plant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A raw pointer to the requested \doxylink{class_plant}{Plant} instance, or nullptr if not present. 
+\end{DoxyReturn}
+\Hypertarget{class_greenhouse_a6d8301597741a333c8964d6e1389a1c3}\index{Greenhouse@{Greenhouse}!pickColour@{pickColour}}
+\index{pickColour@{pickColour}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{pickColour()}{pickColour()}}
+{\footnotesize\ttfamily \label{class_greenhouse_a6d8301597741a333c8964d6e1389a1c3} 
+std\+::string Greenhouse\+::pick\+Colour (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Picks a colour from a predefined palette based on an index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index (0-\/based) into the colour palette. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the selected colour (e.\+g., a hex code). 
+\end{DoxyReturn}
+\Hypertarget{class_greenhouse_a539208520cfc29690a631794f79c3b03}\index{Greenhouse@{Greenhouse}!receiveShipment@{receiveShipment}}
+\index{receiveShipment@{receiveShipment}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{receiveShipment()}{receiveShipment()}}
+{\footnotesize\ttfamily \label{class_greenhouse_a539208520cfc29690a631794f79c3b03} 
+void Greenhouse\+::receive\+Shipment (\begin{DoxyParamCaption}\item[{std\+::string}]{species\+Sku}{, }\item[{int}]{batch}{}\end{DoxyParamCaption})}
+
+
+
+Receives a batch of new plants for a given species SKU, generates unique IDs, and adds them to the greenhouse collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em species\+Sku} & The SKU of the plant species being received. \\
+\hline
+{\em batch} & The number of new plants to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_greenhouse_a5156beae97bce6a06411ac4459f80372}\index{Greenhouse@{Greenhouse}!removePlant@{removePlant}}
+\index{removePlant@{removePlant}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{removePlant()}{removePlant()}}
+{\footnotesize\ttfamily \label{class_greenhouse_a5156beae97bce6a06411ac4459f80372} 
+bool Greenhouse\+::remove\+Plant (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{plant\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Removes a plant from the greenhouse\textquotesingle{}s managed collection (e.\+g., after being sold or dying). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant\+Id} & The unique identifier of the plant to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the plant was successfully found and removed, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_greenhouse_ae99611fb6ed3e9d6240378b88ff3c0f8}\index{Greenhouse@{Greenhouse}!tickAll@{tickAll}}
+\index{tickAll@{tickAll}!Greenhouse@{Greenhouse}}
+\doxysubsubsection{\texorpdfstring{tickAll()}{tickAll()}}
+{\footnotesize\ttfamily \label{class_greenhouse_ae99611fb6ed3e9d6240378b88ff3c0f8} 
+void Greenhouse\+::tick\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Advances the state/simulation time for all plants. 
+
+This method iterates over all managed plants and calls an update/tick method on them, potentially triggering state changes (e.\+g., from \doxylink{class_seedling_state}{Seedling\+State} to \doxylink{class_growing_state}{Growing\+State}). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_greenhouse_8h}{Greenhouse.\+h}}\item 
+Greenhouse.\+cpp\end{DoxyCompactItemize}

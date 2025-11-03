@@ -1,0 +1,126 @@
+\doxysection{Water Class Reference}
+\hypertarget{class_water}{}\label{class_water}\index{Water@{Water}}
+
+
+A concrete \doxylink{class_command}{Command} that encapsulates the request to water one or more \doxylink{class_plant}{Plant} objects.  
+
+
+
+
+{\ttfamily \#include $<$Water.\+h$>$}
+
+Inheritance diagram for Water\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_water}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_water_a802039eb1c711c40c3c6c9a27ace6a85}{Water}} (const std\+::vector$<$ \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_water}{Water} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_water_a981b091871dbfe8dee50c3267b8a08ff}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the watering action. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_water_abcc45b5f17248d9837ddccab98e611c8}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Undoes the watering action. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_water_a36d9c4bee92d3d15c1d0d038cdef9f4e}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Provides a descriptive string for the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived command classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a36038f02fb62fa35fa1768b68663be21}{set\+User\+Id}} (const std\+::string \&uid)
+\begin{DoxyCompactList}\small\item\em Sets the ID of the user who initiated this command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_a664ee1180c0f827b24dfab922a7a891d}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the user associated with this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a99a63432974070e812cb1d61025f631b}{set\+Action}} (const std\+::string \&act)
+\begin{DoxyCompactList}\small\item\em Sets a short, categorical name for the action (e.\+g., "{}\+RESTOCK"{}, "{}\+SALE"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_afd2cd82b59fc78a3cf6578ccecf32d0e}{get\+Action}} () const
+\begin{DoxyCompactList}\small\item\em Gets the short action name of this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a327a6ad6c84ea803b4df334e793f3d3b}{set\+Undoable}} (bool u)
+\begin{DoxyCompactList}\small\item\em Sets whether the command supports the undo operation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_command_a8bb6885054910a0c06de6e75ce0b4b5f}{is\+Undoable}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the command supports the undo operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete \doxylink{class_command}{Command} that encapsulates the request to water one or more \doxylink{class_plant}{Plant} objects. 
+
+This command supports undo functionality by storing the moisture level of the plants before the operation. 
+
+\label{doc-constructors}
+\Hypertarget{class_water_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_water_a802039eb1c711c40c3c6c9a27ace6a85}\index{Water@{Water}!Water@{Water}}
+\index{Water@{Water}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{Water()}{Water()}}
+{\footnotesize\ttfamily \label{class_water_a802039eb1c711c40c3c6c9a27ace6a85} 
+Water\+::\+Water (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} $>$ \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_water}{Water} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A constant reference to a vector of pointers to the \doxylink{class_plant}{Plant} objects to be watered. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_water_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_water_a981b091871dbfe8dee50c3267b8a08ff}\index{Water@{Water}!execute@{execute}}
+\index{execute@{execute}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_water_a981b091871dbfe8dee50c3267b8a08ff} 
+void Water\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the watering action. 
+
+The current moisture level of each plant is first stored for undo, and then the watering action (e.\+g., increasing moisture) is performed on each \doxylink{class_plant}{Plant}. 
+
+Implements \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+\Hypertarget{class_water_a36d9c4bee92d3d15c1d0d038cdef9f4e}\index{Water@{Water}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{class_water_a36d9c4bee92d3d15c1d0d038cdef9f4e} 
+std\+::string Water\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides a descriptive string for the command. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the watering action, including the number of plants affected. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a6467892048d1c917033c9f55a1804f67}{Command}}.
+
+\Hypertarget{class_water_abcc45b5f17248d9837ddccab98e611c8}\index{Water@{Water}!undo@{undo}}
+\index{undo@{undo}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_water_abcc45b5f17248d9837ddccab98e611c8} 
+void Water\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Undoes the watering action. 
+
+The moisture level of each plant is reverted to the value stored in {\ttfamily previous\+Moisture}. 
+
+Reimplemented from \mbox{\hyperlink{class_command_a9b21dadbb5a4c7a6e85636471a6f1fef}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_water_8h}{Water.\+h}}\item 
+Water.\+cpp\end{DoxyCompactItemize}

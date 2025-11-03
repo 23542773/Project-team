@@ -1,0 +1,101 @@
+\doxysection{Mediterranean\+Factory Class Reference}
+\hypertarget{class_mediterranean_factory}{}\label{class_mediterranean_factory}\index{MediterraneanFactory@{MediterraneanFactory}}
+
+
+Concrete factory for Mediterranean plant kits.  
+
+
+
+
+{\ttfamily \#include $<$Mediterranean\+Factory.\+h$>$}
+
+Inheritance diagram for Mediterranean\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mediterranean_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_care_strategy}{Care\+Strategy}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mediterranean_factory_a6d5bb1f12d7f1c9b952993791a3248b1}{care\+Strategy}} () override
+\begin{DoxyCompactList}\small\item\em Returns the Mediterranean-\/specific care strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_plant_kit_factory}{Plant\+Kit\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_kit_factory_a76671684c022010792013d0b0dfc871b}{create\+Plant}} (std\+::string id, std\+::string colour, \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} \texorpdfstring{$\ast$}{*}sf)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{class_plant}{Plant} object with the specified ID, color, and species flyweight. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mediterranean_factory_a7d236432b7fdff7cf6cc6842a35761d3}{create\+Pot}} () override
+\begin{DoxyCompactList}\small\item\em Creates a Mediterranean-\/appropriate pot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mediterranean_factory_a2b22ba2d7861457c726fda9833c55c55}{create\+Soil\+Mix}} () override
+\begin{DoxyCompactList}\small\item\em Creates a Mediterranean-\/appropriate soil mix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete factory for Mediterranean plant kits. 
+
+Implements the \doxylink{class_plant_kit_factory}{Plant\+Kit\+Factory} interface to create Mediterranean-\/specific pots and soil mixes, and provides a Mediterranean-\/adapted \doxylink{class_care_strategy}{Care\+Strategy}. 
+
+\label{doc-func-members}
+\Hypertarget{class_mediterranean_factory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mediterranean_factory_a6d5bb1f12d7f1c9b952993791a3248b1}\index{MediterraneanFactory@{MediterraneanFactory}!careStrategy@{careStrategy}}
+\index{careStrategy@{careStrategy}!MediterraneanFactory@{MediterraneanFactory}}
+\doxysubsubsection{\texorpdfstring{careStrategy()}{careStrategy()}}
+{\footnotesize\ttfamily \label{class_mediterranean_factory_a6d5bb1f12d7f1c9b952993791a3248b1} 
+\mbox{\hyperlink{class_care_strategy}{Care\+Strategy}} \texorpdfstring{$\ast$}{*} Mediterranean\+Factory\+::care\+Strategy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the Mediterranean-\/specific care strategy. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to a \doxylink{class_care_strategy}{Care\+Strategy} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_kit_factory_a461ef468dc44f7eb8b09c76dc4b63209}{Plant\+Kit\+Factory}}.
+
+\Hypertarget{class_mediterranean_factory_a7d236432b7fdff7cf6cc6842a35761d3}\index{MediterraneanFactory@{MediterraneanFactory}!createPot@{createPot}}
+\index{createPot@{createPot}!MediterraneanFactory@{MediterraneanFactory}}
+\doxysubsubsection{\texorpdfstring{createPot()}{createPot()}}
+{\footnotesize\ttfamily \label{class_mediterranean_factory_a7d236432b7fdff7cf6cc6842a35761d3} 
+\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*} Mediterranean\+Factory\+::create\+Pot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Creates a Mediterranean-\/appropriate pot. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to a \doxylink{class_pot}{Pot} instance (\doxylink{class_unglazed_clay_pot}{Unglazed\+Clay\+Pot}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_kit_factory_a9eb675ee0e228ad45d45a1c30ca29601}{Plant\+Kit\+Factory}}.
+
+\Hypertarget{class_mediterranean_factory_a2b22ba2d7861457c726fda9833c55c55}\index{MediterraneanFactory@{MediterraneanFactory}!createSoilMix@{createSoilMix}}
+\index{createSoilMix@{createSoilMix}!MediterraneanFactory@{MediterraneanFactory}}
+\doxysubsubsection{\texorpdfstring{createSoilMix()}{createSoilMix()}}
+{\footnotesize\ttfamily \label{class_mediterranean_factory_a2b22ba2d7861457c726fda9833c55c55} 
+\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} Mediterranean\+Factory\+::create\+Soil\+Mix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Creates a Mediterranean-\/appropriate soil mix. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to a \doxylink{class_soil_mix}{Soil\+Mix} instance (\doxylink{class_gritty_lime_soil_mix}{Gritty\+Lime\+Soil\+Mix}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_kit_factory_a8e4358a26157ff284e082723441f1639}{Plant\+Kit\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_mediterranean_factory_8h}{Mediterranean\+Factory.\+h}}\item 
+Mediterranean\+Factory.\+cpp\end{DoxyCompactItemize}

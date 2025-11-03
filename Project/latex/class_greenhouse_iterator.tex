@@ -1,0 +1,133 @@
+\doxysection{Greenhouse\+Iterator Class Reference}
+\hypertarget{class_greenhouse_iterator}{}\label{class_greenhouse_iterator}\index{GreenhouseIterator@{GreenhouseIterator}}
+
+
+A concrete iterator that traverses all plants stored within the \doxylink{class_greenhouse}{Greenhouse} collection.  
+
+
+
+
+{\ttfamily \#include $<$Greenhouse\+Iterator.\+h$>$}
+
+Inheritance diagram for Greenhouse\+Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_greenhouse_iterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_greenhouse_iterator_a9cc2c50a2e0d5c9130f088536b8dd2d6}{Greenhouse\+Iterator}} (const std\+::vector$<$ \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} $>$ \&plants)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_greenhouse_iterator}{Greenhouse\+Iterator}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_greenhouse_iterator_a94e9f2f1423da8c80edde9a933bf1477}{first}} () override
+\begin{DoxyCompactList}\small\item\em Resets the iterator to the beginning of the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_greenhouse_iterator_a4404205131182cd9184c39fab7db8d8c}{next}} () override
+\begin{DoxyCompactList}\small\item\em Advances the iterator to the next element in the collection. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_greenhouse_iterator_afbe521ad148307ccff4e83ab062317d0}{is\+Done}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the iterator has moved past the last element in the collection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_greenhouse_iterator_a794a1246cb502bb1433cd1cf9e7a47a5}{current\+Item}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the item (\doxylink{class_plant}{Plant} pointer) at the current position of the iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_iterator}{Iterator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Iterator} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived iterator classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete iterator that traverses all plants stored within the \doxylink{class_greenhouse}{Greenhouse} collection. 
+
+This iterator provides a way to access the elements of the underlying collection sequentially without exposing its internal representation. 
+
+\label{doc-constructors}
+\Hypertarget{class_greenhouse_iterator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_greenhouse_iterator_a9cc2c50a2e0d5c9130f088536b8dd2d6}\index{GreenhouseIterator@{GreenhouseIterator}!GreenhouseIterator@{GreenhouseIterator}}
+\index{GreenhouseIterator@{GreenhouseIterator}!GreenhouseIterator@{GreenhouseIterator}}
+\doxysubsubsection{\texorpdfstring{GreenhouseIterator()}{GreenhouseIterator()}}
+{\footnotesize\ttfamily \label{class_greenhouse_iterator_a9cc2c50a2e0d5c9130f088536b8dd2d6} 
+Greenhouse\+Iterator\+::\+Greenhouse\+Iterator (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} $>$ \&}]{plants}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for the \doxylink{class_greenhouse_iterator}{Greenhouse\+Iterator}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plants} & A constant reference to the vector of \doxylink{class_plant}{Plant} pointers to be iterated over. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_greenhouse_iterator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_greenhouse_iterator_a794a1246cb502bb1433cd1cf9e7a47a5}\index{GreenhouseIterator@{GreenhouseIterator}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!GreenhouseIterator@{GreenhouseIterator}}
+\doxysubsubsection{\texorpdfstring{currentItem()}{currentItem()}}
+{\footnotesize\ttfamily \label{class_greenhouse_iterator_a794a1246cb502bb1433cd1cf9e7a47a5} 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} Greenhouse\+Iterator\+::current\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the item (\doxylink{class_plant}{Plant} pointer) at the current position of the iterator. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the current \doxylink{class_plant}{Plant} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_iterator_a375cd2b97051c71b3e851bd45534a7c4}{Iterator}}.
+
+\Hypertarget{class_greenhouse_iterator_a94e9f2f1423da8c80edde9a933bf1477}\index{GreenhouseIterator@{GreenhouseIterator}!first@{first}}
+\index{first@{first}!GreenhouseIterator@{GreenhouseIterator}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily \label{class_greenhouse_iterator_a94e9f2f1423da8c80edde9a933bf1477} 
+void Greenhouse\+Iterator\+::first (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Resets the iterator to the beginning of the collection. 
+
+
+
+Implements \mbox{\hyperlink{class_iterator_aad56ef26673ea3c74b7ac964f24b8ef5}{Iterator}}.
+
+\Hypertarget{class_greenhouse_iterator_afbe521ad148307ccff4e83ab062317d0}\index{GreenhouseIterator@{GreenhouseIterator}!isDone@{isDone}}
+\index{isDone@{isDone}!GreenhouseIterator@{GreenhouseIterator}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily \label{class_greenhouse_iterator_afbe521ad148307ccff4e83ab062317d0} 
+bool Greenhouse\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the iterator has moved past the last element in the collection. 
+
+\begin{DoxyReturn}{Returns}
+true if iteration is complete, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_iterator_aaee909d23a98abaf18ed7aa2ee9bee6f}{Iterator}}.
+
+\Hypertarget{class_greenhouse_iterator_a4404205131182cd9184c39fab7db8d8c}\index{GreenhouseIterator@{GreenhouseIterator}!next@{next}}
+\index{next@{next}!GreenhouseIterator@{GreenhouseIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_greenhouse_iterator_a4404205131182cd9184c39fab7db8d8c} 
+void Greenhouse\+Iterator\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Advances the iterator to the next element in the collection. 
+
+
+
+Implements \mbox{\hyperlink{class_iterator_ac639e96c519e2e78cff17bee372ad750}{Iterator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_greenhouse_iterator_8h}{Greenhouse\+Iterator.\+h}}\item 
+Greenhouse\+Iterator.\+cpp\end{DoxyCompactItemize}

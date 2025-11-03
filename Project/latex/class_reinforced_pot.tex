@@ -1,0 +1,112 @@
+\doxysection{Reinforced\+Pot Class Reference}
+\hypertarget{class_reinforced_pot}{}\label{class_reinforced_pot}\index{ReinforcedPot@{ReinforcedPot}}
+
+
+Decorator that adds reinforcement to a \doxylink{class_pot}{Pot}.  
+
+
+
+
+{\ttfamily \#include $<$Reinforced\+Pot.\+h$>$}
+
+Inheritance diagram for Reinforced\+Pot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_reinforced_pot}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_reinforced_pot_a33ea2381ea05b891dbca7829c76b1fdb}{Reinforced\+Pot}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sale_item}{Sale\+Item}} $>$ inner)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_reinforced_pot}{Reinforced\+Pot} decorator around an existing \doxylink{class_sale_item}{Sale\+Item}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_reinforced_pot_a21e0a50084cfa3c0181646d328b925d4}{cost}} () override
+\begin{DoxyCompactList}\small\item\em Returns the modified cost of the reinforced pot. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_reinforced_pot_ac3527166577e214aabfeec99c39f73be}{description}} () override
+\begin{DoxyCompactList}\small\item\em Returns the modified description including reinforcement details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sale_decorator}{Sale\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sale_decorator_a8931649a3c583ec2e085d0e3cfd527ba}{Sale\+Decorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sale_item}{Sale\+Item}} $>$ inner)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_sale_decorator}{Sale\+Decorator} wrapping an existing \doxylink{class_sale_item}{Sale\+Item}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sale_item}{Sale\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_sale_item_a021804c996ec5473a37100bded129f7a}{\texorpdfstring{$\sim$}{\string~}\+Sale\+Item}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived concrete \doxylink{class_sale_item}{Sale\+Item} and Decorator classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sale_decorator}{Sale\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sale_item}{Sale\+Item}} \& \mbox{\hyperlink{class_sale_decorator_ac1029fddbd28af8386434b86460d28d3}{get\+Inner\+Comp}} ()
+\begin{DoxyCompactList}\small\item\em Provides access to the wrapped \doxylink{class_sale_item}{Sale\+Item}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Decorator that adds reinforcement to a \doxylink{class_pot}{Pot}. 
+
+Inherits from \doxylink{class_sale_decorator}{Sale\+Decorator} and wraps a \doxylink{class_sale_item}{Sale\+Item}, updating cost and description. 
+
+\label{doc-constructors}
+\Hypertarget{class_reinforced_pot_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_reinforced_pot_a33ea2381ea05b891dbca7829c76b1fdb}\index{ReinforcedPot@{ReinforcedPot}!ReinforcedPot@{ReinforcedPot}}
+\index{ReinforcedPot@{ReinforcedPot}!ReinforcedPot@{ReinforcedPot}}
+\doxysubsubsection{\texorpdfstring{ReinforcedPot()}{ReinforcedPot()}}
+{\footnotesize\ttfamily \label{class_reinforced_pot_a33ea2381ea05b891dbca7829c76b1fdb} 
+Reinforced\+Pot\+::\+Reinforced\+Pot (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sale_item}{Sale\+Item}} $>$}]{inner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_reinforced_pot}{Reinforced\+Pot} decorator around an existing \doxylink{class_sale_item}{Sale\+Item}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inner} & Unique pointer to the \doxylink{class_sale_item}{Sale\+Item} to decorate. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_reinforced_pot_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_reinforced_pot_a21e0a50084cfa3c0181646d328b925d4}\index{ReinforcedPot@{ReinforcedPot}!cost@{cost}}
+\index{cost@{cost}!ReinforcedPot@{ReinforcedPot}}
+\doxysubsubsection{\texorpdfstring{cost()}{cost()}}
+{\footnotesize\ttfamily \label{class_reinforced_pot_a21e0a50084cfa3c0181646d328b925d4} 
+double Reinforced\+Pot\+::cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the modified cost of the reinforced pot. 
+
+\begin{DoxyReturn}{Returns}
+Cost as a double. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_sale_item_a6dddf7100be6d2f5b1fd28f115a69a56}{Sale\+Item}}.
+
+\Hypertarget{class_reinforced_pot_ac3527166577e214aabfeec99c39f73be}\index{ReinforcedPot@{ReinforcedPot}!description@{description}}
+\index{description@{description}!ReinforcedPot@{ReinforcedPot}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{class_reinforced_pot_ac3527166577e214aabfeec99c39f73be} 
+std\+::string Reinforced\+Pot\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the modified description including reinforcement details. 
+
+\begin{DoxyReturn}{Returns}
+Description as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_sale_item_ac8d9e1668cfb0ff0e908a453008cc61e}{Sale\+Item}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_reinforced_pot_8h}{Reinforced\+Pot.\+h}}\item 
+Reinforced\+Pot.\+cpp\end{DoxyCompactItemize}

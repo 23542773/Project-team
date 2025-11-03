@@ -1,0 +1,132 @@
+\doxysection{Nursery\+Observer Class Reference}
+\hypertarget{class_nursery_observer}{}\label{class_nursery_observer}\index{NurseryObserver@{NurseryObserver}}
+
+
+Abstract Base class for all Observers in the Nursery system.  
+
+
+
+
+{\ttfamily \#include $<$Nursery\+Observer.\+h$>$}
+
+Inheritance diagram for Nursery\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_nursery_observer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_nursery_observer_ae955a43fae499dd88334863f27d6bbe4}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}})=0
+\begin{DoxyCompactList}\small\item\em Handle plant lifecycle events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_nursery_observer_a37bedacc372adb3e4afff4c5396aa05c}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}})
+\begin{DoxyCompactList}\small\item\em Reaction to a Stock Event. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_nursery_observer_a52d1753ad1cc7682f48fadd099824f3c}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&)
+\begin{DoxyCompactList}\small\item\em Reaction to an \doxylink{struct_order}{Order} Event. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_nursery_observer_aca691fab85a66d7513d5b10bcb26a443}{\texorpdfstring{$\sim$}{\string~}\+Nursery\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Base class for all Observers in the Nursery system. 
+
+Defines the interface for handling different event types\+:
+\begin{DoxyItemize}
+\item \doxylink{class_plant}{Plant} Events\+: Pure virtual method to enforce implementation in derived classes
+\item Stock Events\+: Default empty implementation, can be overridden
+\item \doxylink{struct_order}{Order} Events\+: Default empty implementation, can be overridden 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_nursery_observer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_nursery_observer_aca691fab85a66d7513d5b10bcb26a443}\index{NurseryObserver@{NurseryObserver}!````~NurseryObserver@{\texorpdfstring{$\sim$}{\string~}NurseryObserver}}
+\index{````~NurseryObserver@{\texorpdfstring{$\sim$}{\string~}NurseryObserver}!NurseryObserver@{NurseryObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NurseryObserver()}{\string~NurseryObserver()}}
+{\footnotesize\ttfamily \label{class_nursery_observer_aca691fab85a66d7513d5b10bcb26a443} 
+virtual Nursery\+Observer\+::\texorpdfstring{$\sim$}{\string~}\+Nursery\+Observer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\label{doc-func-members}
+\Hypertarget{class_nursery_observer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_nursery_observer_a52d1753ad1cc7682f48fadd099824f3c}\index{NurseryObserver@{NurseryObserver}!onEvent@{onEvent}}
+\index{onEvent@{onEvent}!NurseryObserver@{NurseryObserver}}
+\doxysubsubsection{\texorpdfstring{onEvent()}{onEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_nursery_observer_a52d1753ad1cc7682f48fadd099824f3c} 
+virtual void Nursery\+Observer\+::on\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reaction to an \doxylink{struct_order}{Order} Event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{struct_order}{Order} event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_staff_dash_a61d7c4049e018a6cfce7b685e1f41b06}{Staff\+Dash}}.
+
+\Hypertarget{class_nursery_observer_ae955a43fae499dd88334863f27d6bbe4}\index{NurseryObserver@{NurseryObserver}!onEvent@{onEvent}}
+\index{onEvent@{onEvent}!NurseryObserver@{NurseryObserver}}
+\doxysubsubsection{\texorpdfstring{onEvent()}{onEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_nursery_observer_ae955a43fae499dd88334863f27d6bbe4} 
+virtual void Nursery\+Observer\+::on\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handle plant lifecycle events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{class_plant}{Plant} event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_customer_dash_a3df12cdae8473a7c805f463e91181a3b}{Customer\+Dash}}, \mbox{\hyperlink{class_inventory_service_a5b9964c3b01cac16d31933f38f4be4a1}{Inventory\+Service}}, and \mbox{\hyperlink{class_staff_dash_aa4bf5d8f6c54f387e43a655a3371f090}{Staff\+Dash}}.
+
+\Hypertarget{class_nursery_observer_a37bedacc372adb3e4afff4c5396aa05c}\index{NurseryObserver@{NurseryObserver}!onEvent@{onEvent}}
+\index{onEvent@{onEvent}!NurseryObserver@{NurseryObserver}}
+\doxysubsubsection{\texorpdfstring{onEvent()}{onEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_nursery_observer_a37bedacc372adb3e4afff4c5396aa05c} 
+virtual void Nursery\+Observer\+::on\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reaction to a Stock Event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The Stock event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_staff_dash_a340cd1a0a937b36b20688120727fc284}{Staff\+Dash}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_nursery_observer_8h}{Nursery\+Observer.\+h}}\end{DoxyCompactItemize}

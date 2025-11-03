@@ -1,0 +1,27 @@
+\doxysection{Messaging\+Mediator.\+h}
+\hypertarget{_messaging_mediator_8h_source}{}\label{_messaging_mediator_8h_source}\mbox{\hyperlink{_messaging_mediator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MESSAGING\_MEDIATOR\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MESSAGING\_MEDIATOR\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_message_8h}{Message.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Forward\ declaration\ of\ the\ Colleague\ abstract\ class}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_colleague}{Colleague}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}\ }
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_messaging_mediator_a16b68089b2e456dc99615f226d601996}{\string~MessagingMediator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_messaging_mediator_aef228129906de6c360d85e0f1b8c8667}{sendMessageToId}}(\mbox{\hyperlink{class_colleague}{Colleague}}*\ from,\ \textcolor{keyword}{const}\ std::string\&\ toUserId,\ \textcolor{keyword}{const}\ std::string\&\ text)\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

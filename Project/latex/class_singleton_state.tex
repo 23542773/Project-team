@@ -1,0 +1,98 @@
+\doxysection{Singleton\+State\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_singleton_state}{}\label{class_singleton_state}\index{SingletonState$<$ T $>$@{SingletonState$<$ T $>$}}
+
+
+Template class implementing the Singleton pattern for \doxylink{class_plant_state}{Plant\+State} subclasses.  
+
+
+
+
+{\ttfamily \#include $<$Singleton\+State.\+h$>$}
+
+Inheritance diagram for Singleton\+State\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_singleton_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T \& \mbox{\hyperlink{class_singleton_state_ae879727a569dbe20df120d382ad4cc86}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8}\label{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8} 
+{\bfseries Singleton\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Protected default constructor to prevent direct instantiation. \end{DoxyCompactList}\item 
+\Hypertarget{class_singleton_state_a5ceb72b934a64d1b2041d5877cfcd0d4}\label{class_singleton_state_a5ceb72b934a64d1b2041d5877cfcd0d4} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Singleton\+State} () override=default
+\begin{DoxyCompactList}\small\item\em Protected virtual destructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_singleton_state_aa3d93f0115395f66be3e10577cb61631}\label{class_singleton_state_aa3d93f0115395f66be3e10577cb61631} 
+{\bfseries Singleton\+State} (const \mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor to prevent copying. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \& \mbox{\hyperlink{class_singleton_state_ab0a01ddd5bc76e8a923674a0a23375c0}{operator=}} (const \mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator to prevent copying. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_plant_state}{Plant\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Plant\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived state classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_plant_state_a1ac247dccb0cd665b55af8be3d8df900}{check\+Change}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant)=0
+\begin{DoxyCompactList}\small\item\em Checks and potentially changes the plant\textquotesingle{}s state based on current conditions. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_plant_state_a581917435f551e0036b53aaf011c5dd1}{name}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the name of the current state. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_plant_state_a3b5fe03dc59713475009ce594dddfd44}{is\+Mature}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the plant is in a mature state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Singleton\+State$<$ T $>$}
+Template class implementing the Singleton pattern for \doxylink{class_plant_state}{Plant\+State} subclasses. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The concrete state class type that should be a singleton\\
+\hline
+\end{DoxyTemplParams}
+This class ensures that only one instance of each plant state exists throughout the application lifecycle. It uses the Curiously Recurring Template Pattern (CRTP) to provide singleton functionality to derived state classes. This approach reduces memory overhead and ensures consistent state behavior across all plants. 
+
+\label{doc-func-members}
+\Hypertarget{class_singleton_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_singleton_state_ae879727a569dbe20df120d382ad4cc86}\index{SingletonState$<$ T $>$@{SingletonState$<$ T $>$}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!SingletonState$<$ T $>$@{SingletonState$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_singleton_state_ae879727a569dbe20df120d382ad4cc86} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{class_singleton_state}{Singleton\+State}}$<$ T $>$\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the singleton instance of the state. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the single instance of type T
+\end{DoxyReturn}
+Creates the instance on first call using lazy initialization. Thread-\/safe in C++11 and later due to guaranteed initialization of static local variables. \Hypertarget{class_singleton_state_ab0a01ddd5bc76e8a923674a0a23375c0}\index{SingletonState$<$ T $>$@{SingletonState$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!SingletonState$<$ T $>$@{SingletonState$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_singleton_state_ab0a01ddd5bc76e8a923674a0a23375c0} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \& \mbox{\hyperlink{class_singleton_state}{Singleton\+State}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_singleton_state}{Singleton\+State}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator to prevent copying. 
+
+\begin{DoxyReturn}{Returns}
+Reference to this object (deleted) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_singleton_state_8h}{Singleton\+State.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\doxysection{Simple\+Customer\+Window.\+h}
+\hypertarget{_simple_customer_window_8h_source}{}\label{_simple_customer_window_8h_source}\mbox{\hyperlink{_simple_customer_window_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QTableView>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QStandardItemModel>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../CustomerDash.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../NurseryFacade.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_simple_customer_window_af264b898dff052b9c98193aac6b4a3a7}{SimpleCustomerWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow\ }
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_simple_customer_window_af264b898dff052b9c98193aac6b4a3a7}{SimpleCustomerWindow}}(\mbox{\hyperlink{class_nursery_facade}{NurseryFacade}}*\ facade,\ QString\ userId,\ QWidget*\ parent\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{class_customer_dash}{CustomerDash}}*\ dashObserver\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_customer_window_a20c2e0bf90b4e326e2d2ac0ff20ab388}{populateCatalog}}();}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_simple_customer_window_a04a5382bdb881519c85e1dd01cc3cc68}{findCartRow}}(\textcolor{keyword}{const}\ QString\&\ plantId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_customer_window_a4eec50a14e5dd347e95d7ade00763d24}{recalcTotal}}();}
+\DoxyCodeLine{00055\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_customer_window_a71a9ba1e437fdc5b549aa0a59d701e4b}{refreshMyOrders}}();}
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_customer_window_accfe9592ffd73176c68007e5855e1e6c}{filterCatalog}}(\textcolor{keyword}{const}\ QString\&\ term);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ signals:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_customer_window_ab37c8d37604542b124ec9ad1620b90fc}{logoutRequested}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_nursery_facade}{NurseryFacade}}*\ facade;\ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ QString\ userId;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{class\ }QTabWidget*\ tabs\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ QWidget*\ tabCatalog\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ QWidget*\ tabRecommendations\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00079\ \ \ \ \ QWidget*\ tabEncyclopedia\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ QWidget*\ tabOrders\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ QWidget*\ tabMessages\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ QWidget*\ tabAlerts\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ QLineEdit*\ searchBox;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ QTableView*\ tblCatalog;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ QStandardItemModel*\ mCatalog;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ QTableView*\ tblCart;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ QStandardItemModel*\ mCart;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ QLabel*\ lblOrderId;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ QLabel*\ lblTotals;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ QPushButton*\ btnStartOrder;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ QPushButton*\ btnAddToCart;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ QPushButton*\ btnCustomize;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ QPushButton*\ btnRemoveFromCart;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ QPushButton*\ btnLogout;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{class\ }QTreeView*\ ordersTree\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00100\ \ \ \ \ QStandardItemModel*\ ordersModel\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ QTableView*\ tblRecommendations\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ QStandardItemModel*\ mRecommendations\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00104\ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ showPersonalizedRecommendations();}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ QTableView*\ tblEncyclopedia\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00111\ \ \ \ \ QStandardItemModel*\ mEncyclopedia\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00112\ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ populateEncyclopedia();}
+\DoxyCodeLine{00117\ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{class\ }QListWidget*\ messagesList\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{class\ }QLineEdit*\ messageInput\ =\ \textcolor{keyword}{nullptr};\ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ QPushButton*\ btnSendMessage\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{class\ }QComboBox*\ cmbRecipient\ =\ \textcolor{keyword}{nullptr};\ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ refreshRecipients();}
+\DoxyCodeLine{00127\ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ loadConversation(\textcolor{keyword}{const}\ QString\&\ peerId);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{class_customer_dash}{CustomerDash}}*\ customerDash\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{class\ }QListWidget*\ alertsList\ =\ \textcolor{keyword}{nullptr};\ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ refreshAlerts();}
+\DoxyCodeLine{00141\ \};}
+\DoxyCodeLine{00142\ }
+
+\end{DoxyCode}

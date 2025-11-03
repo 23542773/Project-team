@@ -1,0 +1,65 @@
+\doxysection{Staff\+Service.\+h}
+\hypertarget{_staff_service_8h_source}{}\label{_staff_service_8h_source}\mbox{\hyperlink{_staff_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ STAFFSERVICE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ STAFFSERVICE\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_staff_8h}{Staff.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Forward\ declaration\ of\ the\ mediator\ class}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_staff_service_a3d7d74bbf4c030ba456769963231e1b0}{StaffService}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::unordered\_map<std::string,\ std::shared\_ptr<Staff>>\ staffMap;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ mediator;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_staff_service_a3d7d74bbf4c030ba456769963231e1b0}{StaffService}}(\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ med);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_service_a622591ac1765d4ec52e1f9dff1039e53}{setMediator}}(\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ med);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_service_ad7018ca2f3e686eb9ea05892c41a4d9b}{addStaff}}(std::string\ staffId,\ std::string\ name,\ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{StaffRole}}\ role\ =\ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65}{StaffRole::Sales}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::string\ \mbox{\hyperlink{class_staff_service_a9f30a0659325fac153b5d153225949cf}{leastLoaded}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_service_ac6a1727f7087d5754928cfb0825e08e7}{assignOrder}}(std::string\ staffId,\ std::string\ orderId);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_service_a55f308db2697a4b3be2eb8d831bc04ce}{completeOrder}}(std::string\ orderId);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_staff_service_ab9326ba3f65b925ab007b07b596e2b5a}{isAvailable}}(std::string\ staffId);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_staff}{Staff}}*\ \mbox{\hyperlink{class_staff_service_a655743830b5ac3864ed53fda3fe8ab78}{getStaff}}(std::string\ staffId);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_staff_service_aeced5e33b39693eb1d4cb50736b685d5}{getOrdersForStaff}}(std::string\ staffId);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \ \ std::vector<Staff>\ \mbox{\hyperlink{class_staff_service_a37909e6835f3a90a5691662edd3e9317}{listStaff}}();}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

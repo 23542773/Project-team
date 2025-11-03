@@ -1,0 +1,151 @@
+\doxysection{Mature\+State Class Reference}
+\hypertarget{class_mature_state}{}\label{class_mature_state}\index{MatureState@{MatureState}}
+
+
+Concrete State class representing a fully grown plant.  
+
+
+
+
+{\ttfamily \#include $<$Mature\+State.\+h$>$}
+
+Inheritance diagram for Mature\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_mature_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mature_state_adc0666741555818d692838c69c3eb3b4}{check\+Change}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Evaluates plant conditions and manages state transitions. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_mature_state_aafd41238303b31f415fc4151bfae10dc}{name}} () override
+\begin{DoxyCompactList}\small\item\em Gets the name of this state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mature_state_a1a1d124684a79ed5be173f6ab375f495}{is\+Mature}} () override
+\begin{DoxyCompactList}\small\item\em Checks if the plant is in a mature state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_plant_state}{Plant\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Plant\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived state classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mature_state_a95a9f6760e98e2ab8e04eaee0445a70b}\label{class_mature_state_a95a9f6760e98e2ab8e04eaee0445a70b} 
+class \mbox{\hyperlink{class_mature_state_a95a9f6760e98e2ab8e04eaee0445a70b}{Singleton\+State$<$ Mature\+State $>$}}
+\begin{DoxyCompactList}\small\item\em Friend declaration to allow \doxylink{class_singleton_state}{Singleton\+State} access to constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_singleton_state}{Singleton\+State$<$ Mature\+State $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_mature_state}{Mature\+State}} \& \mbox{\hyperlink{class_singleton_state_ae879727a569dbe20df120d382ad4cc86}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_singleton_state}{Singleton\+State$<$ Mature\+State $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Singleton\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Protected default constructor to prevent direct instantiation. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Singleton\+State} () override=default
+\begin{DoxyCompactList}\small\item\em Protected virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \& \mbox{\hyperlink{class_singleton_state_ab0a01ddd5bc76e8a923674a0a23375c0}{operator=}} (const \mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator to prevent copying. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete State class representing a fully grown plant. 
+
+This state handles the logic for a mature plant with higher resource demands. It can transition to \doxylink{class_wilting_state}{Wilting\+State} or \doxylink{class_dead_state}{Dead\+State} if care is inadequate. 
+
+\label{doc-func-members}
+\Hypertarget{class_mature_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mature_state_adc0666741555818d692838c69c3eb3b4}\index{MatureState@{MatureState}!checkChange@{checkChange}}
+\index{checkChange@{checkChange}!MatureState@{MatureState}}
+\doxysubsubsection{\texorpdfstring{checkChange()}{checkChange()}}
+{\footnotesize\ttfamily \label{class_mature_state_adc0666741555818d692838c69c3eb3b4} 
+void Mature\+State\+::check\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates plant conditions and manages state transitions. 
+
+Implements state transition logic for mature plants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the \doxylink{class_plant}{Plant} object being evaluated\\
+\hline
+\end{DoxyParams}
+Decrements water and insecticide levels, adjusts health based on care conditions, and transitions to \doxylink{class_dead_state}{Dead\+State} or \doxylink{class_wilting_state}{Wilting\+State}.
+
+Resource consumption\+: -\/5 water, -\/5 insecticide per check (high demand)
+
+Health adjustments\+:
+\begin{DoxyItemize}
+\item Gains +4 health if moisture \texorpdfstring{$>$}{>}= 55 and insecticide \texorpdfstring{$>$}{>}= 55
+\item Loses -\/5 health if moisture \texorpdfstring{$<$}{<} 30
+\item Loses -\/4 health if insecticide \texorpdfstring{$<$}{<} 30
+\end{DoxyItemize}
+
+State transitions\+:
+\begin{DoxyItemize}
+\item To \doxylink{class_dead_state}{Dead\+State}\+: if health \texorpdfstring{$<$}{<}= 0
+\item To \doxylink{class_wilting_state}{Wilting\+State}\+: if health \texorpdfstring{$<$}{<}= 50 
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the \doxylink{class_plant}{Plant} object whose state is being checked \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{class_plant_state_a1ac247dccb0cd665b55af8be3d8df900}{Plant\+State}}.
+
+\Hypertarget{class_mature_state_a1a1d124684a79ed5be173f6ab375f495}\index{MatureState@{MatureState}!isMature@{isMature}}
+\index{isMature@{isMature}!MatureState@{MatureState}}
+\doxysubsubsection{\texorpdfstring{isMature()}{isMature()}}
+{\footnotesize\ttfamily \label{class_mature_state_a1a1d124684a79ed5be173f6ab375f495} 
+bool Mature\+State\+::is\+Mature (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the plant is in a mature state. 
+
+Indicates that this state is the mature state.
+
+\begin{DoxyReturn}{Returns}
+True, as this is the mature state
+
+True 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_plant_state_a3b5fe03dc59713475009ce594dddfd44}{Plant\+State}}.
+
+\Hypertarget{class_mature_state_aafd41238303b31f415fc4151bfae10dc}\index{MatureState@{MatureState}!name@{name}}
+\index{name@{name}!MatureState@{MatureState}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_mature_state_aafd41238303b31f415fc4151bfae10dc} 
+std\+::string Mature\+State\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of this state. 
+
+Returns the name identifier for this state.
+
+\begin{DoxyReturn}{Returns}
+String "{}\+Matured"{}
+
+The string "{}\+Matured"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_state_a581917435f551e0036b53aaf011c5dd1}{Plant\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_mature_state_8h}{Mature\+State.\+h}}\item 
+\mbox{\hyperlink{_mature_state_8cpp}{Mature\+State.\+cpp}}\end{DoxyCompactItemize}

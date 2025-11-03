@@ -1,0 +1,47 @@
+\doxysection{Action\+Log.\+h}
+\hypertarget{_action_log_8h_source}{}\label{_action_log_8h_source}\mbox{\hyperlink{_action_log_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ ACTION\_LOG\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ ACTION\_LOG\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_action_log_a802f75faff9789d58c633dfc88624896}{ActionLog}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ \ \ std::queue<std::unique\_ptr<Command>>\ commandQueue;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<std::unique\_ptr<Command>>\ restockHistory;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ appendLog(\textcolor{keyword}{const}\ std::string\&\ userId,\ \textcolor{keyword}{const}\ std::string\&\ action,\ \textcolor{keyword}{const}\ std::string\&\ description,\ \textcolor{keywordtype}{bool}\ success,\ \textcolor{keyword}{const}\ std::string\&\ extra\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_action_log_a802f75faff9789d58c633dfc88624896}{ActionLog}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_action_log_ac0d4d8f554228516670dfee822a588de}{\string~ActionLog}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_action_log_a3bcbbf85ad53fd2b7f1f3cacaf541a75}{enqueue}}(std::unique\_ptr<Command>\ cmd);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_action_log_afa450d3a0d97173fa27e20bdeda7e14a}{processNext}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_action_log_a4c5b23063129d5a2f086891795cc68d5}{processAll}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_action_log_a2371cd8b343eeb27d5e9318c7f07254a}{undoLastRestock}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_action_log_ab318cc6d2016d6ebecf102ff4ec6c1a0}{queueSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_action_log_ade51ef35c1a4e18fa375eb3d4c24925b}{restockHistorySize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

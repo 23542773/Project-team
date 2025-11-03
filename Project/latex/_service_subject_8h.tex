@@ -1,0 +1,32 @@
+\doxysection{Service\+Subject.\+h File Reference}
+\hypertarget{_service_subject_8h}{}\label{_service_subject_8h}\index{ServiceSubject.h@{ServiceSubject.h}}
+
+
+Base class for Subjects in the Observer pattern.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Nursery\+Observer.\+h"{}}\newline
+{\ttfamily \#include "{}Events.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_service_subject}{Service\+Subject}}
+\begin{DoxyCompactList}\small\item\em Base class for all Subjects in the Observer pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for Subjects in the Observer pattern. 
+
+\begin{DoxyAuthor}{Author}
+Damian Moustakis (Doxygen comments) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/11-\/01
+\end{DoxyDate}
+Defines the \doxylink{class_service_subject}{Service\+Subject} class which manages a list of Nursery\+Observers and notifies them of various events\+:
+\begin{DoxyItemize}
+\item \doxylink{class_plant}{Plant} Events\+: Lifecycle changes in plants
+\item Stock Events\+: \doxylink{struct_inventory}{Inventory} level changes
+\item \doxylink{struct_order}{Order} Events\+: \doxylink{struct_order}{Order} lifecycle changes 
+\end{DoxyItemize}

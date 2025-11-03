@@ -1,0 +1,205 @@
+\doxysection{Service\+Subject Class Reference}
+\hypertarget{class_service_subject}{}\label{class_service_subject}\index{ServiceSubject@{ServiceSubject}}
+
+
+Base class for all Subjects in the Observer pattern.  
+
+
+
+
+{\ttfamily \#include $<$Service\+Subject.\+h$>$}
+
+Inheritance diagram for Service\+Subject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_service_subject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_service_subject_a70dee5374b9a16826db0252968c20f73}{\texorpdfstring{$\sim$}{\string~}\+Service\+Subject}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_ac4fbb20515b515d8a0b71b7512300e7e}{add\+Observer}} (\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*}obs)
+\begin{DoxyCompactList}\small\item\em Add an observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_ac560b745489d76e99d358c8515a83ee8}{set\+Observers}} (\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*}inv)
+\begin{DoxyCompactList}\small\item\em Alternate to registering Observer roles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_service_subject_a40e7daef992161b0caed703f3bc488b1}{notify}} (\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}} e)
+\begin{DoxyCompactList}\small\item\em Notify all observers of a \doxylink{class_plant}{Plant} event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_a222dcae213b597b13242cffb5a91cb73}{notify}} (\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}} s)
+\begin{DoxyCompactList}\small\item\em Notify all observers of a Stock event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_af842cf58f846ec1255a2d73f00f75be2}{notify}} (\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&o)
+\begin{DoxyCompactList}\small\item\em Notify all observers of an \doxylink{struct_order}{Order} event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_service_subject_a540e03adfacf9e6f8444b958b35b9764}{observers}}
+\begin{DoxyCompactList}\small\item\em List of observers "{}listening"{} to this subject. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all Subjects in the Observer pattern. 
+
+\label{doc-constructors}
+\Hypertarget{class_service_subject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_service_subject_a70dee5374b9a16826db0252968c20f73}\index{ServiceSubject@{ServiceSubject}!````~ServiceSubject@{\texorpdfstring{$\sim$}{\string~}ServiceSubject}}
+\index{````~ServiceSubject@{\texorpdfstring{$\sim$}{\string~}ServiceSubject}!ServiceSubject@{ServiceSubject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ServiceSubject()}{\string~ServiceSubject()}}
+{\footnotesize\ttfamily \label{class_service_subject_a70dee5374b9a16826db0252968c20f73} 
+Service\+Subject\+::\texorpdfstring{$\sim$}{\string~}\+Service\+Subject (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\label{doc-func-members}
+\Hypertarget{class_service_subject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_service_subject_ac4fbb20515b515d8a0b71b7512300e7e}\index{ServiceSubject@{ServiceSubject}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!ServiceSubject@{ServiceSubject}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily \label{class_service_subject_ac4fbb20515b515d8a0b71b7512300e7e} 
+void Service\+Subject\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*}}]{obs}{}\end{DoxyParamCaption})}
+
+
+
+Add an observer. 
+
+Add an observer to the subject\textquotesingle{}s observer list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obs} & Pointer to the observer to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_service_subject_af842cf58f846ec1255a2d73f00f75be2}\index{ServiceSubject@{ServiceSubject}!notify@{notify}}
+\index{notify@{notify}!ServiceSubject@{ServiceSubject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_service_subject_af842cf58f846ec1255a2d73f00f75be2} 
+void Service\+Subject\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Notify all observers of an \doxylink{struct_order}{Order} event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The \doxylink{struct_order}{Order} event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The \doxylink{struct_order}{Order} event data, passed by reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_service_subject_a40e7daef992161b0caed703f3bc488b1}\index{ServiceSubject@{ServiceSubject}!notify@{notify}}
+\index{notify@{notify}!ServiceSubject@{ServiceSubject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_service_subject_a40e7daef992161b0caed703f3bc488b1} 
+void Service\+Subject\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Notify all observers of a \doxylink{class_plant}{Plant} event. 
+
+Notify all observers of a \doxylink{class_plant}{Plant} lifecycle event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The \doxylink{class_plant}{Plant} event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The \doxylink{class_plant}{Plant} event data (ID, SKU and event type) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_service_subject_a222dcae213b597b13242cffb5a91cb73}\index{ServiceSubject@{ServiceSubject}!notify@{notify}}
+\index{notify@{notify}!ServiceSubject@{ServiceSubject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_service_subject_a222dcae213b597b13242cffb5a91cb73} 
+void Service\+Subject\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Notify all observers of a Stock event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The Stock event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The Stock event data SKU and event type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_service_subject_ac560b745489d76e99d358c8515a83ee8}\index{ServiceSubject@{ServiceSubject}!setObservers@{setObservers}}
+\index{setObservers@{setObservers}!ServiceSubject@{ServiceSubject}}
+\doxysubsubsection{\texorpdfstring{setObservers()}{setObservers()}}
+{\footnotesize\ttfamily \label{class_service_subject_ac560b745489d76e99d358c8515a83ee8} 
+void Service\+Subject\+::set\+Observers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*}}]{inv}{}\end{DoxyParamCaption})}
+
+
+
+Alternate to registering Observer roles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Pointer to the observer to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_service_subject_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_service_subject_a540e03adfacf9e6f8444b958b35b9764}\index{ServiceSubject@{ServiceSubject}!observers@{observers}}
+\index{observers@{observers}!ServiceSubject@{ServiceSubject}}
+\doxysubsubsection{\texorpdfstring{observers}{observers}}
+{\footnotesize\ttfamily \label{class_service_subject_a540e03adfacf9e6f8444b958b35b9764} 
+std\+::vector$<$\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}}\texorpdfstring{$\ast$}{*}$>$ Service\+Subject\+::observers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+List of observers "{}listening"{} to this subject. 
+
+This vector holds pointers to all registered Nursery\+Observers that will be notified of events. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_service_subject_8h}{Service\+Subject.\+h}}\item 
+\mbox{\hyperlink{_service_subject_8cpp}{Service\+Subject.\+cpp}}\end{DoxyCompactItemize}

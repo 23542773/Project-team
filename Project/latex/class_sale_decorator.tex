@@ -1,0 +1,84 @@
+\doxysection{Sale\+Decorator Class Reference}
+\hypertarget{class_sale_decorator}{}\label{class_sale_decorator}\index{SaleDecorator@{SaleDecorator}}
+
+
+Abstract decorator for \doxylink{class_sale_item}{Sale\+Item} objects.  
+
+
+
+
+{\ttfamily \#include $<$Sale\+Decorator.\+h$>$}
+
+Inheritance diagram for Sale\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sale_decorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sale_decorator_a8931649a3c583ec2e085d0e3cfd527ba}{Sale\+Decorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sale_item}{Sale\+Item}} $>$ inner)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_sale_decorator}{Sale\+Decorator} wrapping an existing \doxylink{class_sale_item}{Sale\+Item}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sale_item}{Sale\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_sale_item_a021804c996ec5473a37100bded129f7a}{\texorpdfstring{$\sim$}{\string~}\+Sale\+Item}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived concrete \doxylink{class_sale_item}{Sale\+Item} and Decorator classes. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_sale_item_a6dddf7100be6d2f5b1fd28f115a69a56}{cost}} ()=0
+\begin{DoxyCompactList}\small\item\em Calculates the total cost of the sale item. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_sale_item_ac8d9e1668cfb0ff0e908a453008cc61e}{description}} ()=0
+\begin{DoxyCompactList}\small\item\em Generates a description of the sale item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sale_item}{Sale\+Item}} \& \mbox{\hyperlink{class_sale_decorator_ac1029fddbd28af8386434b86460d28d3}{get\+Inner\+Comp}} ()
+\begin{DoxyCompactList}\small\item\em Provides access to the wrapped \doxylink{class_sale_item}{Sale\+Item}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract decorator for \doxylink{class_sale_item}{Sale\+Item} objects. 
+
+Wraps a \doxylink{class_sale_item}{Sale\+Item} and allows derived classes to modify its behavior (e.\+g., cost, description). 
+
+\label{doc-constructors}
+\Hypertarget{class_sale_decorator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sale_decorator_a8931649a3c583ec2e085d0e3cfd527ba}\index{SaleDecorator@{SaleDecorator}!SaleDecorator@{SaleDecorator}}
+\index{SaleDecorator@{SaleDecorator}!SaleDecorator@{SaleDecorator}}
+\doxysubsubsection{\texorpdfstring{SaleDecorator()}{SaleDecorator()}}
+{\footnotesize\ttfamily \label{class_sale_decorator_a8931649a3c583ec2e085d0e3cfd527ba} 
+Sale\+Decorator\+::\+Sale\+Decorator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sale_item}{Sale\+Item}} $>$}]{inner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_sale_decorator}{Sale\+Decorator} wrapping an existing \doxylink{class_sale_item}{Sale\+Item}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inner} & Unique pointer to the \doxylink{class_sale_item}{Sale\+Item} to decorate. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_sale_decorator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sale_decorator_ac1029fddbd28af8386434b86460d28d3}\index{SaleDecorator@{SaleDecorator}!getInnerComp@{getInnerComp}}
+\index{getInnerComp@{getInnerComp}!SaleDecorator@{SaleDecorator}}
+\doxysubsubsection{\texorpdfstring{getInnerComp()}{getInnerComp()}}
+{\footnotesize\ttfamily \label{class_sale_decorator_ac1029fddbd28af8386434b86460d28d3} 
+\mbox{\hyperlink{class_sale_item}{Sale\+Item}} \& Sale\+Decorator\+::get\+Inner\+Comp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Provides access to the wrapped \doxylink{class_sale_item}{Sale\+Item}. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the inner \doxylink{class_sale_item}{Sale\+Item}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_sale_decorator_8h}{Sale\+Decorator.\+h}}\end{DoxyCompactItemize}

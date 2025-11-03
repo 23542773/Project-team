@@ -1,0 +1,103 @@
+\doxysection{Care\+Strategy Class Reference}
+\hypertarget{class_care_strategy}{}\label{class_care_strategy}\index{CareStrategy@{CareStrategy}}
+
+
+Abstract base class representing different plant care strategies.  
+
+
+
+
+{\ttfamily \#include $<$Care\+Strategy.\+h$>$}
+
+Inheritance diagram for Care\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.493333cm]{class_care_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_care_strategy_afd22cf474df880a7c5c67bdb10c8ad1c}\label{class_care_strategy_afd22cf474df880a7c5c67bdb10c8ad1c} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Care\+Strategy} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_care_strategy_a13feb221ff6226a2e4fb56836506e98f}{water}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant)=0
+\begin{DoxyCompactList}\small\item\em Applies strategy-\/specific watering behavior to a plant. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_care_strategy_a6a111bcef4bf87aeb972e4b19a3a2848}{fertilize}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant)=0
+\begin{DoxyCompactList}\small\item\em Applies strategy-\/specific fertilizing behavior to a plant. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_care_strategy_a1c4dabbd64721ac8a26d06c37527e2bf}{spray\+Insecticide}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant)=0
+\begin{DoxyCompactList}\small\item\em Applies strategy-\/specific insecticide spraying behavior to a plant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing different plant care strategies. 
+
+This class implements the Strategy pattern, allowing different care algorithms to be applied to plants based on their biome or environmental requirements. Each concrete strategy (Desert, Tropical, Mediterranean, Wetland, Indoor) implements this interface to define biome-\/specific watering and fertilizing behavior.
+
+The Strategy pattern enables runtime selection of care approaches, making it easy to adapt plant care to different environmental conditions without modifying the \doxylink{class_plant}{Plant} class. 
+
+\label{doc-func-members}
+\Hypertarget{class_care_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_care_strategy_a6a111bcef4bf87aeb972e4b19a3a2848}\index{CareStrategy@{CareStrategy}!fertilize@{fertilize}}
+\index{fertilize@{fertilize}!CareStrategy@{CareStrategy}}
+\doxysubsubsection{\texorpdfstring{fertilize()}{fertilize()}}
+{\footnotesize\ttfamily \label{class_care_strategy_a6a111bcef4bf87aeb972e4b19a3a2848} 
+virtual void Care\+Strategy\+::fertilize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies strategy-\/specific fertilizing behavior to a plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the plant to be fertilized \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_desert_strategy_abc51447d9bb5ba69a9cf93f30ebb7673}{Desert\+Strategy}}, \mbox{\hyperlink{class_indoor_strategy_af0962521875a53c517cb4dc38f72913c}{Indoor\+Strategy}}, \mbox{\hyperlink{class_mediterranean_strategy_a7ee2d65e66c86dda7aae4aa6aed398a3}{Mediterranean\+Strategy}}, \mbox{\hyperlink{class_tropical_strategy_ab9341618c51ac4123c4b14803e1caf90}{Tropical\+Strategy}}, and \mbox{\hyperlink{class_wetland_strategy_a3a20ff5d0886962c4f8427210d234408}{Wetland\+Strategy}}.
+
+\Hypertarget{class_care_strategy_a1c4dabbd64721ac8a26d06c37527e2bf}\index{CareStrategy@{CareStrategy}!sprayInsecticide@{sprayInsecticide}}
+\index{sprayInsecticide@{sprayInsecticide}!CareStrategy@{CareStrategy}}
+\doxysubsubsection{\texorpdfstring{sprayInsecticide()}{sprayInsecticide()}}
+{\footnotesize\ttfamily \label{class_care_strategy_a1c4dabbd64721ac8a26d06c37527e2bf} 
+virtual void Care\+Strategy\+::spray\+Insecticide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies strategy-\/specific insecticide spraying behavior to a plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the plant to be sprayed \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_desert_strategy_a70217c34ec409a10c95cde8dfb5da8bf}{Desert\+Strategy}}, \mbox{\hyperlink{class_indoor_strategy_af4558d5d5d0424e32ffbb537c13e6c83}{Indoor\+Strategy}}, \mbox{\hyperlink{class_mediterranean_strategy_a97f023c99e8ffcb54b592805bbd6f35b}{Mediterranean\+Strategy}}, \mbox{\hyperlink{class_tropical_strategy_a4148fc9c91015139231561621c3fa519}{Tropical\+Strategy}}, and \mbox{\hyperlink{class_wetland_strategy_a67517141d727e182c601f651682ed038}{Wetland\+Strategy}}.
+
+\Hypertarget{class_care_strategy_a13feb221ff6226a2e4fb56836506e98f}\index{CareStrategy@{CareStrategy}!water@{water}}
+\index{water@{water}!CareStrategy@{CareStrategy}}
+\doxysubsubsection{\texorpdfstring{water()}{water()}}
+{\footnotesize\ttfamily \label{class_care_strategy_a13feb221ff6226a2e4fb56836506e98f} 
+virtual void Care\+Strategy\+::water (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies strategy-\/specific watering behavior to a plant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the plant to be watered \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_desert_strategy_a0023f8465ac9da21c1c8475a8e9c07d5}{Desert\+Strategy}}, \mbox{\hyperlink{class_indoor_strategy_adb3e060225370e4dfb1ffa72a7371709}{Indoor\+Strategy}}, \mbox{\hyperlink{class_mediterranean_strategy_af144631ba51247d951651d8afb142fee}{Mediterranean\+Strategy}}, \mbox{\hyperlink{class_tropical_strategy_a0c7e0ffe205b0fe24157be6d69af4695}{Tropical\+Strategy}}, and \mbox{\hyperlink{class_wetland_strategy_a3cbc90649857652a19b174e7f38454da}{Wetland\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_care_strategy_8h}{Care\+Strategy.\+h}}\end{DoxyCompactItemize}

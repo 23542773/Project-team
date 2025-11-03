@@ -1,0 +1,53 @@
+\doxysection{Unshared\+Species\+Flyweight.\+h}
+\hypertarget{_unshared_species_flyweight_8h_source}{}\label{_unshared_species_flyweight_8h_source}\mbox{\hyperlink{_unshared_species_flyweight_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ UNSHAREDSPECIESFLYWEIGHT\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ UNSHAREDSPECIESFLYWEIGHT\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_flyweight_8h}{PlantFlyweight.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_unshared_species_flyweight_a456c314cd0e547581dae970c5dcc2668}{UnsharedSpeciesFlyweight}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_plant_flyweight}{PlantFlyweight}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_unshared_species_flyweight_a456c314cd0e547581dae970c5dcc2668}{UnsharedSpeciesFlyweight}}(std::string\ sku,\ std::string\ name,\ std::string\ biome,\ \textcolor{keywordtype}{int}\ basePrice);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{class_unshared_species_flyweight_aa06fb0bab33a4902efe8e39285a18c51}{getSku}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{class_unshared_species_flyweight_a226f1a9522796148030de39d78fa4d97}{getName}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ \mbox{\hyperlink{class_unshared_species_flyweight_a9b748b9cbd1c817f07bfe3441ba3e0a2}{getBiome}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unshared_species_flyweight_a2b99114921efadfb166a8fdc1bf51adf}{getCost}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_unshared_species_flyweight_ac3219b33a8ac2ff3613dd8b57a862c58}{getWaterSensitivity}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_unshared_species_flyweight_ad349a68337391316438431b133a0ff28}{getInsecticideTolerance}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_unshared_species_flyweight_aa2cc46c6bb94540657f618712a515166}{getGrowthRate}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}}\ \mbox{\hyperlink{class_unshared_species_flyweight_ad6ce96db3292a1a5707888531e883ade}{getThrivingSeason}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00089\ \ \ \ \ std::string\ sku;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ std::string\ biome;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ basePrice;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{double}\ waterSensitivity;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{double}\ insecticideTolerance;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{double}\ growthRate;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}}\ thrivingSeason;}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
