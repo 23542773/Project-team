@@ -81,3 +81,6 @@ Observer (Event notification)
 State (Plant lifecycle)
 Strategy (Biome care)
 Template Method (Plant assembly)
+
+# Report Link
+Download pdfhttps://docs.google.com/document/d/15M9gzv0YdE9mQNrjHZBuICDCUAzyehM9GLWgHt-QLUc/edit?usp=drivesdk
