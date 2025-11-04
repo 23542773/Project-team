@@ -69,13 +69,14 @@ if [ ${#PACKAGES_TO_INSTALL[@]} -gt 0 ]; then
     echo ""
 fi
 
-# Check for qmake (Qt) - optional
+# Check for qmake (Qt) 
 echo "Checking for qmake (Qt)..."
 if command -v qmake &> /dev/null; then
     echo "qmake found: $(qmake --version | head -n1)"
 else
-    echo "qmake not found (Qt is optional)"
-    echo "To install Qt: sudo apt-get install qt5-qmake qtbase5-dev"
+    echo "qmake not found - will install"
+    PACKAGES_TO_INSTALL+=("qt5-qmake" "qtbase5-dev")
+    
 fi
 echo ""
 echo ""
