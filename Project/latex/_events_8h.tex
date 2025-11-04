@@ -1,0 +1,79 @@
+\doxysection{Events.\+h File Reference}
+\hypertarget{_events_8h}{}\label{_events_8h}\index{Events.h@{Events.h}}
+
+
+Event data structures for Observer.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structevents_1_1_order_line}{events\+::\+Order\+Line}}
+\begin{DoxyCompactList}\small\item\em Represents a single line item in an order. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}}
+\begin{DoxyCompactList}\small\item\em Contains all info related to \doxylink{structevents_1_1_order}{Order} events. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}}
+\begin{DoxyCompactList}\small\item\em Contains all info related to \doxylink{structevents_1_1_stock}{Stock} events. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structevents_1_1_plant}{Plant} lifecycle info for \doxylink{structevents_1_1_plant}{Plant} events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceevents}{events}}
+\begin{DoxyCompactList}\small\item\em Contains all event types and data structures for the Observer pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespaceevents_a214a40cab3544ee7981834bbcf9bbba5}\label{namespaceevents_a214a40cab3544ee7981834bbcf9bbba5} 
+enum class \mbox{\hyperlink{namespaceevents_a214a40cab3544ee7981834bbcf9bbba5}{events\+::\+Order\+Type}} \{ {\bfseries Created}
+, {\bfseries Assigned}
+, {\bfseries Completed}
+, {\bfseries Cancelled}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the type of order event that occurred. \end{DoxyCompactList}\item 
+\Hypertarget{namespaceevents_a18fec9c035ff6f4afdf85db1a021b6a4}\label{namespaceevents_a18fec9c035ff6f4afdf85db1a021b6a4} 
+enum class \mbox{\hyperlink{namespaceevents_a18fec9c035ff6f4afdf85db1a021b6a4}{events\+::\+Stock\+Type}} \{ \newline
+{\bfseries Reserved}
+, {\bfseries Released}
+, {\bfseries Sold}
+, {\bfseries Low}
+, \newline
+{\bfseries Added}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents a type of stock event that occured. \end{DoxyCompactList}\item 
+\Hypertarget{namespaceevents_a58eb819943a1f5db2b4266c57a9f185f}\label{namespaceevents_a58eb819943a1f5db2b4266c57a9f185f} 
+enum class \mbox{\hyperlink{namespaceevents_a58eb819943a1f5db2b4266c57a9f185f}{events\+::\+Plant\+Type}} \{ {\bfseries Wilted}
+, {\bfseries Matured}
+, {\bfseries Died}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents a type of plant lifecycle event. \end{DoxyCompactList}\item 
+\Hypertarget{namespaceevents_aa640d68b941fcf80c862297b15735009}\label{namespaceevents_aa640d68b941fcf80c862297b15735009} 
+enum class \mbox{\hyperlink{namespaceevents_aa640d68b941fcf80c862297b15735009}{events\+::\+Order\+Status}} \{ \newline
+{\bfseries New}
+, {\bfseries Assigned}
+, {\bfseries In\+Progress}
+, {\bfseries Completed}
+, \newline
+{\bfseries Cancelled}
+ \}
+\begin{DoxyCompactList}\small\item\em Current status of an order in the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Event data structures for Observer. 
+
+\begin{DoxyAuthor}{Author}
+Damian Moustakis (Doxygen comments) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/11-\/01
+\end{DoxyDate}
+The system supports three main event categories\+:
+\begin{DoxyItemize}
+\item \doxylink{class_plant}{Plant} Events\+: Lifecycle changes in individual plants (wilted, matured, died)
+\item Stock Events\+: \doxylink{struct_inventory}{Inventory} level changes (reserved, released, sold, low)
+\item \doxylink{struct_order}{Order} Events\+: \doxylink{struct_order}{Order} lifecycle changes (created, assigned, completed, cancelled) 
+\end{DoxyItemize}

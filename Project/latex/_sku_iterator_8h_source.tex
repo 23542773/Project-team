@@ -1,0 +1,51 @@
+\doxysection{Sku\+Iterator.\+h}
+\hypertarget{_sku_iterator_8h_source}{}\label{_sku_iterator_8h_source}\mbox{\hyperlink{_sku_iterator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ SKU\_ITERATOR\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ SKU\_ITERATOR\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_iterator_8h}{Iterator.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_8h}{Plant.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sku_iterator_a740b35b0f8f0344c5f067bcd0320803b}{SkuIterator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_iterator}{Iterator}}\ }
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_sku_iterator_a740b35b0f8f0344c5f067bcd0320803b}{SkuIterator}}(\textcolor{keyword}{const}\ std::vector<Plant*>\&\ plants,\ \textcolor{keyword}{const}\ std::string\&\ sku);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sku_iterator_a92d8e044163d02968371c0b7485d00a6}{first}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sku_iterator_aabd111d26f01ccc7bf783da1dcf25b0f}{next}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sku_iterator_a37e6fe0bf6a92d6d39ada8fe9fc05626}{isDone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_plant}{Plant}}*\ \mbox{\hyperlink{class_sku_iterator_afbb0be8acd0fe350e4a183c75e4ab006}{currentItem}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ advanceToMatch();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ std::vector<Plant*>\ plants;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ std::string\ targetSku;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ current;}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,188 @@
+\doxysection{Command Class Reference}
+\hypertarget{class_command}{}\label{class_command}\index{Command@{Command}}
+
+
+An abstract class that declares an interface for executing an operation.  
+
+
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+Inheritance diagram for Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_command_aa545a53d35818f9efb936daf3fa16c61}\label{class_command_aa545a53d35818f9efb936daf3fa16c61} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived command classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the command\textquotesingle{}s core operation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_command_a9b21dadbb5a4c7a6e85636471a6f1fef}{undo}} ()
+\begin{DoxyCompactList}\small\item\em Undoes the effect of a previously executed command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_a6467892048d1c917033c9f55a1804f67}{get\+Description}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets a human-\/readable description of the command\textquotesingle{}s intent or action. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a36038f02fb62fa35fa1768b68663be21}{set\+User\+Id}} (const std\+::string \&uid)
+\begin{DoxyCompactList}\small\item\em Sets the ID of the user who initiated this command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_a664ee1180c0f827b24dfab922a7a891d}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the user associated with this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a99a63432974070e812cb1d61025f631b}{set\+Action}} (const std\+::string \&act)
+\begin{DoxyCompactList}\small\item\em Sets a short, categorical name for the action (e.\+g., "{}\+RESTOCK"{}, "{}\+SALE"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_afd2cd82b59fc78a3cf6578ccecf32d0e}{get\+Action}} () const
+\begin{DoxyCompactList}\small\item\em Gets the short action name of this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a327a6ad6c84ea803b4df334e793f3d3b}{set\+Undoable}} (bool u)
+\begin{DoxyCompactList}\small\item\em Sets whether the command supports the undo operation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_command_a8bb6885054910a0c06de6e75ce0b4b5f}{is\+Undoable}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the command supports the undo operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract class that declares an interface for executing an operation. 
+
+This class encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations. 
+
+\label{doc-func-members}
+\Hypertarget{class_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7} 
+virtual void Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Executes the command\textquotesingle{}s core operation. 
+
+This is a pure virtual function and must be implemented by concrete subclasses. 
+
+Implemented in \mbox{\hyperlink{class_fertilize_a252f33a49268ff1917ab4b5542b430e0}{Fertilize}}, \mbox{\hyperlink{class_macro_command_afc184db8e9ee5ea8703fde850e91f7e8}{Macro\+Command}}, \mbox{\hyperlink{class_restock_a0dba16922a2e7eb2d8bec4dcfff43a48}{Restock}}, \mbox{\hyperlink{class_spray_ac996e03f71433b5ca3c9f0d8e31d0a99}{Spray}}, and \mbox{\hyperlink{class_water_a981b091871dbfe8dee50c3267b8a08ff}{Water}}.
+
+\Hypertarget{class_command_afd2cd82b59fc78a3cf6578ccecf32d0e}\index{Command@{Command}!getAction@{getAction}}
+\index{getAction@{getAction}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getAction()}{getAction()}}
+{\footnotesize\ttfamily \label{class_command_afd2cd82b59fc78a3cf6578ccecf32d0e} 
+std\+::string Command\+::get\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the short action name of this command. 
+
+\begin{DoxyReturn}{Returns}
+The action string. 
+\end{DoxyReturn}
+\Hypertarget{class_command_a6467892048d1c917033c9f55a1804f67}\index{Command@{Command}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{class_command_a6467892048d1c917033c9f55a1804f67} 
+virtual std\+::string Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets a human-\/readable description of the command\textquotesingle{}s intent or action. 
+
+This is a pure virtual function and must be implemented by concrete subclasses.
+
+\begin{DoxyReturn}{Returns}
+A string describing the command (e.\+g., "{}\+Restock 5 units of product X"{}). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_fertilize_a41f1c1c1db5ad9e7884c8a3872c47132}{Fertilize}}, \mbox{\hyperlink{class_macro_command_acfd0d23c8bafe82fdd4f716020e7e7e1}{Macro\+Command}}, \mbox{\hyperlink{class_restock_a83ffbf06c249a0bdd6b5c77aeb30344d}{Restock}}, \mbox{\hyperlink{class_spray_a223e49b5f8e7f47c54399d554928ac6d}{Spray}}, and \mbox{\hyperlink{class_water_a36d9c4bee92d3d15c1d0d038cdef9f4e}{Water}}.
+
+\Hypertarget{class_command_a664ee1180c0f827b24dfab922a7a891d}\index{Command@{Command}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily \label{class_command_a664ee1180c0f827b24dfab922a7a891d} 
+std\+::string Command\+::get\+User\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the ID of the user associated with this command. 
+
+\begin{DoxyReturn}{Returns}
+The user ID string. 
+\end{DoxyReturn}
+\Hypertarget{class_command_a8bb6885054910a0c06de6e75ce0b4b5f}\index{Command@{Command}!isUndoable@{isUndoable}}
+\index{isUndoable@{isUndoable}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{isUndoable()}{isUndoable()}}
+{\footnotesize\ttfamily \label{class_command_a8bb6885054910a0c06de6e75ce0b4b5f} 
+bool Command\+::is\+Undoable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the command supports the undo operation. 
+
+\begin{DoxyReturn}{Returns}
+True if the command is marked as undoable, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_command_a99a63432974070e812cb1d61025f631b}\index{Command@{Command}!setAction@{setAction}}
+\index{setAction@{setAction}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setAction()}{setAction()}}
+{\footnotesize\ttfamily \label{class_command_a99a63432974070e812cb1d61025f631b} 
+void Command\+::set\+Action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{act}{}\end{DoxyParamCaption})}
+
+
+
+Sets a short, categorical name for the action (e.\+g., "{}\+RESTOCK"{}, "{}\+SALE"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em act} & The action string. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_command_a327a6ad6c84ea803b4df334e793f3d3b}\index{Command@{Command}!setUndoable@{setUndoable}}
+\index{setUndoable@{setUndoable}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setUndoable()}{setUndoable()}}
+{\footnotesize\ttfamily \label{class_command_a327a6ad6c84ea803b4df334e793f3d3b} 
+void Command\+::set\+Undoable (\begin{DoxyParamCaption}\item[{bool}]{u}{}\end{DoxyParamCaption})}
+
+
+
+Sets whether the command supports the undo operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & True if the command is undoable, false otherwise. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_command_a36038f02fb62fa35fa1768b68663be21}\index{Command@{Command}!setUserId@{setUserId}}
+\index{setUserId@{setUserId}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setUserId()}{setUserId()}}
+{\footnotesize\ttfamily \label{class_command_a36038f02fb62fa35fa1768b68663be21} 
+void Command\+::set\+User\+Id (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uid}{}\end{DoxyParamCaption})}
+
+
+
+Sets the ID of the user who initiated this command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uid} & The user ID string. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_command_a9b21dadbb5a4c7a6e85636471a6f1fef}\index{Command@{Command}!undo@{undo}}
+\index{undo@{undo}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_command_a9b21dadbb5a4c7a6e85636471a6f1fef} 
+virtual void Command\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Undoes the effect of a previously executed command. 
+
+This method provides a default empty implementation for commands that are not undoable. Concrete subclasses should override this if they support undo. 
+
+Reimplemented in \mbox{\hyperlink{class_fertilize_ad7dae86b8225522fc7f9e72e7c60c538}{Fertilize}}, \mbox{\hyperlink{class_macro_command_a235f81f1b1e6d26372957cf03c1a278e}{Macro\+Command}}, \mbox{\hyperlink{class_restock_a70a6d098a0b4270e54fed98d7f98c075}{Restock}}, \mbox{\hyperlink{class_spray_a7764ee382cfd9254fee05c87bdc7a760}{Spray}}, and \mbox{\hyperlink{class_water_abcc45b5f17248d9837ddccab98e611c8}{Water}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_command_8h}{Command.\+h}}\item 
+Command.\+cpp\end{DoxyCompactItemize}

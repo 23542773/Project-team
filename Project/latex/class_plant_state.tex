@@ -1,0 +1,97 @@
+\doxysection{Plant\+State Class Reference}
+\hypertarget{class_plant_state}{}\label{class_plant_state}\index{PlantState@{PlantState}}
+
+
+Abstract State class in the State pattern representing different plant growth states.  
+
+
+
+
+{\ttfamily \#include $<$Plant\+State.\+h$>$}
+
+Inheritance diagram for Plant\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.393035cm]{class_plant_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_plant_state_a9a5ce5b16d289b30690309bf4486a58f}\label{class_plant_state_a9a5ce5b16d289b30690309bf4486a58f} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Plant\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived state classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_plant_state_a1ac247dccb0cd665b55af8be3d8df900}{check\+Change}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant)=0
+\begin{DoxyCompactList}\small\item\em Checks and potentially changes the plant\textquotesingle{}s state based on current conditions. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_plant_state_a581917435f551e0036b53aaf011c5dd1}{name}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the name of the current state. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_plant_state_a3b5fe03dc59713475009ce594dddfd44}{is\+Mature}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the plant is in a mature state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract State class in the State pattern representing different plant growth states. 
+
+This class defines the interface for all concrete plant states. Each state encapsulates the behavior associated with a particular stage of a plant\textquotesingle{}s lifecycle and determines transitions to other states based on plant health, moisture, insecticide levels, and age. 
+
+\label{doc-func-members}
+\Hypertarget{class_plant_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_plant_state_a1ac247dccb0cd665b55af8be3d8df900}\index{PlantState@{PlantState}!checkChange@{checkChange}}
+\index{checkChange@{checkChange}!PlantState@{PlantState}}
+\doxysubsubsection{\texorpdfstring{checkChange()}{checkChange()}}
+{\footnotesize\ttfamily \label{class_plant_state_a1ac247dccb0cd665b55af8be3d8df900} 
+virtual void Plant\+State\+::check\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks and potentially changes the plant\textquotesingle{}s state based on current conditions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the \doxylink{class_plant}{Plant} object whose state is being managed\\
+\hline
+\end{DoxyParams}
+This method evaluates the plant\textquotesingle{}s current attributes (health, moisture, insecticide, age) and transitions to an appropriate state if conditions warrant a change. 
+
+Implemented in \mbox{\hyperlink{class_dead_state_aa9c5d2c8365ec17dd69df5cfbbef8894}{Dead\+State}}, \mbox{\hyperlink{class_growing_state_a7b8908791454ea4aded15d8cbfb6bbd3}{Growing\+State}}, \mbox{\hyperlink{class_mature_state_adc0666741555818d692838c69c3eb3b4}{Mature\+State}}, \mbox{\hyperlink{class_seedling_state_a8fcb6ede73bb6050b7d9a90e839c46f0}{Seedling\+State}}, and \mbox{\hyperlink{class_wilting_state_a1303281f57b300bf0e2795a77ae459bb}{Wilting\+State}}.
+
+\Hypertarget{class_plant_state_a3b5fe03dc59713475009ce594dddfd44}\index{PlantState@{PlantState}!isMature@{isMature}}
+\index{isMature@{isMature}!PlantState@{PlantState}}
+\doxysubsubsection{\texorpdfstring{isMature()}{isMature()}}
+{\footnotesize\ttfamily \label{class_plant_state_a3b5fe03dc59713475009ce594dddfd44} 
+virtual bool Plant\+State\+::is\+Mature (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the plant is in a mature state. 
+
+\begin{DoxyReturn}{Returns}
+True if the state represents maturity, false otherwise (default) 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_mature_state_a1a1d124684a79ed5be173f6ab375f495}{Mature\+State}}.
+
+\Hypertarget{class_plant_state_a581917435f551e0036b53aaf011c5dd1}\index{PlantState@{PlantState}!name@{name}}
+\index{name@{name}!PlantState@{PlantState}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_plant_state_a581917435f551e0036b53aaf011c5dd1} 
+virtual std\+::string Plant\+State\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+String representing the state name 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dead_state_a97b57961e06923797b20617aa83bed25}{Dead\+State}}, \mbox{\hyperlink{class_growing_state_a171e6ab46d8576fea32d512998fc64a3}{Growing\+State}}, \mbox{\hyperlink{class_mature_state_aafd41238303b31f415fc4151bfae10dc}{Mature\+State}}, \mbox{\hyperlink{class_seedling_state_a9ddbb56ad1ed10c18a70b952de543622}{Seedling\+State}}, and \mbox{\hyperlink{class_wilting_state_a2f3069c95a4c789b5fcb87db50f075cc}{Wilting\+State}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_plant_state_8h}{Plant\+State.\+h}}\end{DoxyCompactItemize}

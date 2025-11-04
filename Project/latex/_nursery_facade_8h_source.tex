@@ -1,0 +1,120 @@
+\doxysection{Nursery\+Facade.\+h}
+\hypertarget{_nursery_facade_8h_source}{}\label{_nursery_facade_8h_source}\mbox{\hyperlink{_nursery_facade_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ NURSERY\_FACADE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ NURSERY\_FACADE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_events_8h}{Events.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_flyweight_8h}{PlantFlyweight.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sales_service_8h}{SalesService.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_staff_service_8h}{StaffService.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_action_log_8h}{ActionLog.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_inventory_service}{InventoryService}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sales_service}{SalesService}};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_staff_service}{StaffService}};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_greenhouse}{Greenhouse}};}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_species_catalog}{SpeciesCatalog}};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant_registry}{PlantRegistry}};}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant}{Plant}};}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_customer_service}{CustomerService}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_staff}{Staff}};}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_customer}{Customer}};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_action_log}{ActionLog}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_nursery_facade_a8959c93d8530976dcae288b3bc214f51}{NurseryFacade}}\ }
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_nursery_facade_a8959c93d8530976dcae288b3bc214f51}{NurseryFacade}}(\mbox{\hyperlink{class_inventory_service}{InventoryService}}*\ inv,\ \mbox{\hyperlink{class_sales_service}{SalesService}}*\ sales,\ \mbox{\hyperlink{class_staff_service}{StaffService}}*\ staff,\ \mbox{\hyperlink{class_customer_service}{CustomerService}}*\ customers,\ \mbox{\hyperlink{class_greenhouse}{Greenhouse}}*\ greenhouse,}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_species_catalog}{SpeciesCatalog}}*\ catalog,\ \mbox{\hyperlink{class_action_log}{ActionLog}}*\ invoker);}
+\DoxyCodeLine{00057\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ std::vector<Plant*>\ \mbox{\hyperlink{class_nursery_facade_a0d8d9dfb2a81c0a37bb77d17c7d0fad9}{browseAvailable}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_receipt}{Receipt}}\ \mbox{\hyperlink{class_nursery_facade_a60c9081c4aa427fea39a4102fbb5d7ac}{checkout}}(std::string\ customerId,\ std::vector<events::OrderLine>\&\ lines,\ double\ amountPaid);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ std::vector<struct\ Receipt>\ \mbox{\hyperlink{class_nursery_facade_ac4dd3d1b8c969b3a3b94344bd86fa667}{getCustomerReceipts}}(std::string\ customerId);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_plant}{Plant}}*\ \mbox{\hyperlink{class_nursery_facade_ae0ced9eac6eb9adcf5e12dd2e9c998f5}{getPlant}}(std::string\ id);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::vector<events::Order>\ \mbox{\hyperlink{class_nursery_facade_ad2a4a6cd80e1703e8006a2e2e3535024}{getCustomerOrders}}(std::string\ customerId);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ std::vector<events::Order>\ \mbox{\hyperlink{class_nursery_facade_a352c193b3f00b64a08f7fca1667e5d38}{getStaffOrders}}(std::string\ staffId);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \ \ std::vector<Staff>\ \mbox{\hyperlink{class_nursery_facade_ad8cde57d44766a34cd45f03d8bdcbdfd}{listAllStaff}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \ \ std::vector<Customer>\ \mbox{\hyperlink{class_nursery_facade_a0c7f7ef1ec69e4bddf3266334d9f7262}{listAllCustomers}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ std::vector<std::shared\_ptr<PlantFlyweight>>\ \mbox{\hyperlink{class_nursery_facade_aac8ebbebed107e816fcd6aa2197cf06b}{listAllSpecies}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00124\ \ \ \ \ int\ \mbox{\hyperlink{class_nursery_facade_ab0c1bb2d50e95a3d721f35a7dda2446b}{getSpeciesQuantity}}(std::string\ sku);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \ \ \ \ std::vector<Plant*>\ \mbox{\hyperlink{class_nursery_facade_a3feacce3f2e7c1712d38fb61c0e4b47f}{listAllPlants}}();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_a07b818dc19724c94af9940d7035ba719}{waterPlants}}(std::vector<Plant*>\&\ plants);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00142\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_a04d47477c067af7df52b8a2b61f59533}{fertilizePlants}}(std::vector<Plant*>\&\ plants);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_a0d0f2e8e260091a662a04f091a97184c}{sprayInsecticide}}(std::vector<Plant*>\&\ plants);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00159\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_af596a6ad36b59a62b2eaa393e5338ebb}{tickAllPlants}}();}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00165\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_add0ed3a53b8d76bf7434f0ba3901b677}{runMorningRoutine}}(std::vector<Plant*>\&\ plants);}
+\DoxyCodeLine{00166\ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_a12bf010919477465b70cac0b03f5f0e0}{runNightRoutine}}(std::vector<Plant*>\&\ plants);}
+\DoxyCodeLine{00172\ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_af7588846c02a6c0cf56d5f128e8ae06a}{runUrgentCare}}();}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00185\ \ \ \ \ bool\ \mbox{\hyperlink{class_nursery_facade_a81ce6d49735626b3bebc20075afa8ac1}{isValidCustomer}}(std::string\ id);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ \ \ \ \ bool\ \mbox{\hyperlink{class_nursery_facade_aeade3f21f79ee458f56e366fc969e2b0}{isValidStaff}}(std::string\ id);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00199\ \ \ \ \ bool\ \mbox{\hyperlink{class_nursery_facade_a484e12ab45f6d66ccd9867fc2931db03}{completeOrder}}(std::string\ orderId);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00207\ \ \ \ \ std::vector<struct\ Message>\ \mbox{\hyperlink{class_nursery_facade_ab7a65b1b2cce348d10d6efca012388aa}{getConversation}}(const\ std::string\&\ userA,\ const\ std::string\&\ userB);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{class_customer}{Customer}}*\ \mbox{\hyperlink{class_nursery_facade_a8c5b66acf24c74fc42a3f4b18e566f85}{getCustomer}}(std::string\ id);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{class_staff}{Staff}}*\ \mbox{\hyperlink{class_nursery_facade_ac376825b8b1200474db43870e5b63338}{getStaff}}(std::string\ id);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00235\ \ \ \ \ std::vector<Plant*>\ \mbox{\hyperlink{class_nursery_facade_a03da3bd0d386dfb8e68bee44bc9857a5}{getPersonalizedRecommendations}}(const\ std::string\&\ customerId);}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00241\ \ \ \ \ int\ \mbox{\hyperlink{class_nursery_facade_af4baf7fd84dfccc99e91040e4795ac1c}{getQueueSize}}();}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00247\ \ \ \ \ int\ \mbox{\hyperlink{class_nursery_facade_a223cf343441442d3467820fd71a41877}{getRestockHistorySize}}();}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00253\ \ \ \ \ bool\ \mbox{\hyperlink{class_nursery_facade_ae50629479a600e8e439aaabc29203f0e}{processNextCommand}}();}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00259\ \ \ \ \ int\ \mbox{\hyperlink{class_nursery_facade_a0d9fb045c7d94fe824ed97bfea196a72}{processAllCommands}}();}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00265\ \ \ \ \ bool\ \mbox{\hyperlink{class_nursery_facade_a9600ab997a4606aeccd089559129432f}{undoLastRestock}}();}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00272\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_a017b96ee821d55f0b40c7a6297c9a508}{enqueueWater}}(std::vector<Plant*>\&\ plants,\ const\ std::string\&\ userId);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00279\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_ac4f49242572bb50a1bbaa2b3dc51268d}{enqueueFertilize}}(std::vector<Plant*>\&\ plants,\ const\ std::string\&\ userId);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00286\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_ac08617d6cf2bfd552be726f845ac2963}{enqueueSpray}}(std::vector<Plant*>\&\ plants,\ const\ std::string\&\ userId);}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00294\ \ \ \ \ void\ \mbox{\hyperlink{class_nursery_facade_afdaa0d0ed1e74ebd8299c12dd9c89075}{enqueueRestock}}(const\ std::vector<std::string>\&\ skus,\ int\ qty,\ const\ std::string\&\ userId);}
+\DoxyCodeLine{00295\ \ \ \ \ }
+\DoxyCodeLine{00296\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00299\ \ \ \ \ \mbox{\hyperlink{class_inventory_service}{InventoryService}}*\ inv\ =\ nullptr;}
+\DoxyCodeLine{00301\ \ \ \ \ \mbox{\hyperlink{class_sales_service}{SalesService}}*\ sales\ =\ nullptr;}
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{class_staff_service}{StaffService}}*\ staff\ =\ nullptr;}
+\DoxyCodeLine{00305\ \ \ \ \ \mbox{\hyperlink{class_greenhouse}{Greenhouse}}*\ greenhouse\ =\ nullptr;}
+\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{class_species_catalog}{SpeciesCatalog}}*\ catalog\ =\ nullptr;}
+\DoxyCodeLine{00309\ \ \ \ \ \mbox{\hyperlink{class_plant_registry}{PlantRegistry}}*\ protos\ =\ nullptr;}
+\DoxyCodeLine{00311\ \ \ \ \ \mbox{\hyperlink{class_customer_service}{CustomerService}}*\ customerService\ =\ nullptr;}
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{class_action_log}{ActionLog}}*\ invoker\ =\ nullptr;}
+\DoxyCodeLine{00314\ \};}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

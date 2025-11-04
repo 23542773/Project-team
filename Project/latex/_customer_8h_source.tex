@@ -1,0 +1,47 @@
+\doxysection{Customer.\+h}
+\hypertarget{_customer_8h_source}{}\label{_customer_8h_source}\mbox{\hyperlink{_customer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CUSTOMER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CUSTOMER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_colleague_8h}{Colleague.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_messaging_mediator_8h}{MessagingMediator.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_message_8h}{Message.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_customer_a01a40cb7b0c422c980804f97133f2aed}{Customer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_colleague_aa305940723cc96d25028ad779edf3bc9}{Colleague}}\ }
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<Message>\ receivedMessages;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::vector<std::string>\ activeOrders;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_customer_a01a40cb7b0c422c980804f97133f2aed}{Customer}}(\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ med,\ \textcolor{keyword}{const}\ std::string\&\ customerId,\ \textcolor{keyword}{const}\ std::string\&\ customerName);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_acc8d59edcbead9706e6c780acea05295}{sendMessage}}(\textcolor{keyword}{const}\ std::string\&\ toUserId,\ \textcolor{keyword}{const}\ std::string\&\ text)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_a9488508d3d16d947c222a8fa7c45e7ad}{receiveMessage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_message}{Message}}\&\ msg)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00083\ \ \ \ \ std::vector<Message>\ \mbox{\hyperlink{class_customer_ac6046b0650f79074952f353a44aee754}{getConversation}}(\textcolor{keyword}{const}\ std::string\&\ otherUserId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ std::string\ \mbox{\hyperlink{class_customer_a6268f1d7d0aaa804aa2113e2cac7df47}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \ \ \ \ std::string\ \mbox{\hyperlink{class_customer_a54d175538cebde1559e82c644eba9f64}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ \mbox{\hyperlink{class_customer_a3e22085896e52a1325be1f6a14d47775}{getActiveOrders}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_a4cac0239615a7309e2f7fec7dcf1a0e4}{addActiveOrder}}(\textcolor{keyword}{const}\ std::string\&\ orderId);}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

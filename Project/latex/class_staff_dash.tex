@@ -1,0 +1,172 @@
+\doxysection{Staff\+Dash Class Reference}
+\hypertarget{class_staff_dash}{}\label{class_staff_dash}\index{StaffDash@{StaffDash}}
+
+
+Concrete Observer implementation for staff dashboard updates.  
+
+
+
+
+{\ttfamily \#include $<$Staff\+Dash.\+h$>$}
+
+Inheritance diagram for Staff\+Dash\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_staff_dash}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_staff_dash_aa4bf5d8f6c54f387e43a655a3371f090}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}} e) override
+\begin{DoxyCompactList}\small\item\em Reaction method for \doxylink{class_plant}{Plant} events (e.\+g., Matured, Wilted, Died). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_staff_dash_a340cd1a0a937b36b20688120727fc284}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}} s) override
+\begin{DoxyCompactList}\small\item\em Handle Stock events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_staff_dash_a61d7c4049e018a6cfce7b685e1f41b06}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&o) override
+\begin{DoxyCompactList}\small\item\em Handle \doxylink{struct_order}{Order} events/alerts currently assigned to staff. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{class_staff_dash_a020cce8cf8af2c10631cf01961249e6c}{get\+Alerts}} ()
+\begin{DoxyCompactList}\small\item\em Get the current alerts for the staff dashboard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_staff_dash_ab68298555939bb208589947e7c13e5c8}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear all alerts from the staff dashboard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_nursery_observer_aca691fab85a66d7513d5b10bcb26a443}{\texorpdfstring{$\sim$}{\string~}\+Nursery\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Observer implementation for staff dashboard updates. 
+
+Handles \doxylink{class_plant}{Plant}, Stock, and \doxylink{struct_order}{Order} events to generate alerts for staff. 
+
+\label{doc-func-members}
+\Hypertarget{class_staff_dash_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_staff_dash_ab68298555939bb208589947e7c13e5c8}\index{StaffDash@{StaffDash}!clear@{clear}}
+\index{clear@{clear}!StaffDash@{StaffDash}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_staff_dash_ab68298555939bb208589947e7c13e5c8} 
+void Staff\+Dash\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clear all alerts from the staff dashboard. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_staff_dash_a020cce8cf8af2c10631cf01961249e6c}\index{StaffDash@{StaffDash}!getAlerts@{getAlerts}}
+\index{getAlerts@{getAlerts}!StaffDash@{StaffDash}}
+\doxysubsubsection{\texorpdfstring{getAlerts()}{getAlerts()}}
+{\footnotesize\ttfamily \label{class_staff_dash_a020cce8cf8af2c10631cf01961249e6c} 
+std\+::vector$<$ std\+::string $>$ \& Staff\+Dash\+::get\+Alerts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the current alerts for the staff dashboard. 
+
+\begin{DoxyReturn}{Returns}
+A vector of alert messages (non-\/const reference for test/read/write)
+
+A vector of alert messages 
+\end{DoxyReturn}
+\Hypertarget{class_staff_dash_a61d7c4049e018a6cfce7b685e1f41b06}\index{StaffDash@{StaffDash}!onEvent@{onEvent}}
+\index{onEvent@{onEvent}!StaffDash@{StaffDash}}
+\doxysubsubsection{\texorpdfstring{onEvent()}{onEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_staff_dash_a61d7c4049e018a6cfce7b685e1f41b06} 
+void Staff\+Dash\+::on\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle \doxylink{struct_order}{Order} events/alerts currently assigned to staff. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The \doxylink{struct_order}{Order} event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_nursery_observer_a52d1753ad1cc7682f48fadd099824f3c}{Nursery\+Observer}}.
+
+\Hypertarget{class_staff_dash_aa4bf5d8f6c54f387e43a655a3371f090}\index{StaffDash@{StaffDash}!onEvent@{onEvent}}
+\index{onEvent@{onEvent}!StaffDash@{StaffDash}}
+\doxysubsubsection{\texorpdfstring{onEvent()}{onEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_staff_dash_aa4bf5d8f6c54f387e43a655a3371f090} 
+void Staff\+Dash\+::on\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reaction method for \doxylink{class_plant}{Plant} events (e.\+g., Matured, Wilted, Died). 
+
+Handle \doxylink{class_plant}{Plant} lifecycle events.
+
+Processes the event and generates an alert for staff based on the plant\textquotesingle{}s status change.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The \doxylink{class_plant}{Plant} event data structure.\\
+\hline
+\end{DoxyParams}
+Handle \doxylink{class_plant}{Plant} lifecycle events 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \doxylink{class_plant}{Plant} event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The \doxylink{class_plant}{Plant} event data ID, SKU and event type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nursery_observer_ae955a43fae499dd88334863f27d6bbe4}{Nursery\+Observer}}.
+
+\Hypertarget{class_staff_dash_a340cd1a0a937b36b20688120727fc284}\index{StaffDash@{StaffDash}!onEvent@{onEvent}}
+\index{onEvent@{onEvent}!StaffDash@{StaffDash}}
+\doxysubsubsection{\texorpdfstring{onEvent()}{onEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_staff_dash_a340cd1a0a937b36b20688120727fc284} 
+void Staff\+Dash\+::on\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle Stock events. 
+
+Handle Stock event changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The Stock event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The Stock event data SKU and event type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_nursery_observer_a37bedacc372adb3e4afff4c5396aa05c}{Nursery\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_staff_dash_8h}{Staff\+Dash.\+h}}\item 
+\mbox{\hyperlink{_staff_dash_8cpp}{Staff\+Dash.\+cpp}}\end{DoxyCompactItemize}

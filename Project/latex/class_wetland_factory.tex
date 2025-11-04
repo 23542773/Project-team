@@ -1,0 +1,101 @@
+\doxysection{Wetland\+Factory Class Reference}
+\hypertarget{class_wetland_factory}{}\label{class_wetland_factory}\index{WetlandFactory@{WetlandFactory}}
+
+
+Concrete factory for wetland plant kits.  
+
+
+
+
+{\ttfamily \#include $<$Wetland\+Factory.\+h$>$}
+
+Inheritance diagram for Wetland\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wetland_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_care_strategy}{Care\+Strategy}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wetland_factory_a50283d3dadde20b5ccd61976f5df8f22}{care\+Strategy}} () override
+\begin{DoxyCompactList}\small\item\em Returns the wetland-\/specific care strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_plant_kit_factory}{Plant\+Kit\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_kit_factory_a76671684c022010792013d0b0dfc871b}{create\+Plant}} (std\+::string id, std\+::string colour, \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} \texorpdfstring{$\ast$}{*}sf)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{class_plant}{Plant} object with the specified ID, color, and species flyweight. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wetland_factory_af0cbd87163e6761a3d1d1b2f80daa155}{create\+Pot}} () override
+\begin{DoxyCompactList}\small\item\em Creates a wetland-\/appropriate pot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wetland_factory_a1614cbdaceb8ef85fa39ddbba68d1552}{create\+Soil\+Mix}} () override
+\begin{DoxyCompactList}\small\item\em Creates a wetland-\/appropriate soil mix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete factory for wetland plant kits. 
+
+Implements the \doxylink{class_plant_kit_factory}{Plant\+Kit\+Factory} interface to create wetland-\/specific pots and soil mixes, and provides a wetland-\/adapted \doxylink{class_care_strategy}{Care\+Strategy}. 
+
+\label{doc-func-members}
+\Hypertarget{class_wetland_factory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wetland_factory_a50283d3dadde20b5ccd61976f5df8f22}\index{WetlandFactory@{WetlandFactory}!careStrategy@{careStrategy}}
+\index{careStrategy@{careStrategy}!WetlandFactory@{WetlandFactory}}
+\doxysubsubsection{\texorpdfstring{careStrategy()}{careStrategy()}}
+{\footnotesize\ttfamily \label{class_wetland_factory_a50283d3dadde20b5ccd61976f5df8f22} 
+\mbox{\hyperlink{class_care_strategy}{Care\+Strategy}} \texorpdfstring{$\ast$}{*} Wetland\+Factory\+::care\+Strategy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the wetland-\/specific care strategy. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to a \doxylink{class_care_strategy}{Care\+Strategy} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_kit_factory_a461ef468dc44f7eb8b09c76dc4b63209}{Plant\+Kit\+Factory}}.
+
+\Hypertarget{class_wetland_factory_af0cbd87163e6761a3d1d1b2f80daa155}\index{WetlandFactory@{WetlandFactory}!createPot@{createPot}}
+\index{createPot@{createPot}!WetlandFactory@{WetlandFactory}}
+\doxysubsubsection{\texorpdfstring{createPot()}{createPot()}}
+{\footnotesize\ttfamily \label{class_wetland_factory_af0cbd87163e6761a3d1d1b2f80daa155} 
+\mbox{\hyperlink{class_pot}{Pot}} \texorpdfstring{$\ast$}{*} Wetland\+Factory\+::create\+Pot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Creates a wetland-\/appropriate pot. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to a \doxylink{class_pot}{Pot} instance (\doxylink{class_aquatic_basket_pot}{Aquatic\+Basket\+Pot}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_kit_factory_a9eb675ee0e228ad45d45a1c30ca29601}{Plant\+Kit\+Factory}}.
+
+\Hypertarget{class_wetland_factory_a1614cbdaceb8ef85fa39ddbba68d1552}\index{WetlandFactory@{WetlandFactory}!createSoilMix@{createSoilMix}}
+\index{createSoilMix@{createSoilMix}!WetlandFactory@{WetlandFactory}}
+\doxysubsubsection{\texorpdfstring{createSoilMix()}{createSoilMix()}}
+{\footnotesize\ttfamily \label{class_wetland_factory_a1614cbdaceb8ef85fa39ddbba68d1552} 
+\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} Wetland\+Factory\+::create\+Soil\+Mix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Creates a wetland-\/appropriate soil mix. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to a \doxylink{class_soil_mix}{Soil\+Mix} instance (\doxylink{class_aquatic_soil_mix}{Aquatic\+Soil\+Mix}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_kit_factory_a8e4358a26157ff284e082723441f1639}{Plant\+Kit\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_wetland_factory_8h}{Wetland\+Factory.\+h}}\item 
+Wetland\+Factory.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,97 @@
+\doxysection{Plant\+Registry Class Reference}
+\hypertarget{class_plant_registry}{}\label{class_plant_registry}\index{PlantRegistry@{PlantRegistry}}
+
+
+Manages a collection of unique prototype \doxylink{class_plant}{Plant} objects, keyed by their SKU.  
+
+
+
+
+{\ttfamily \#include $<$Plant\+Registry.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_plant_registry_a7a7bc35264a74ca34e44334a401fd5e5}{register\+Seedling}} (std\+::string sku, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_plant}{Plant}} $>$ p)
+\begin{DoxyCompactList}\small\item\em Registers a prototype \doxylink{class_plant}{Plant} object under a specific Species SKU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_plant_registry_aad891a9eb4d52e69993f29fa50a9273f}{clone}} (std\+::string sku, std\+::string new\+Id, std\+::string colour)
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{class_plant}{Plant} instance by cloning the registered prototype for the given SKU. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_plant_registry_a9788e8dbeaad66d2de75591dcc6d878b}{has}} (std\+::string sku)
+\begin{DoxyCompactList}\small\item\em Checks if a prototype \doxylink{class_plant}{Plant} is registered under the given SKU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a collection of unique prototype \doxylink{class_plant}{Plant} objects, keyed by their SKU. 
+
+This class serves as the {\bfseries{Prototype Registry}}, allowing clients (like the \doxylink{class_greenhouse}{Greenhouse}) to retrieve and clone new \doxylink{class_plant}{Plant} instances without needing to know the complex creation logic of the concrete \doxylink{class_plant}{Plant} classes. 
+
+\label{doc-func-members}
+\Hypertarget{class_plant_registry_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_plant_registry_aad891a9eb4d52e69993f29fa50a9273f}\index{PlantRegistry@{PlantRegistry}!clone@{clone}}
+\index{clone@{clone}!PlantRegistry@{PlantRegistry}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_plant_registry_aad891a9eb4d52e69993f29fa50a9273f} 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} Plant\+Registry\+::clone (\begin{DoxyParamCaption}\item[{std\+::string}]{sku}{, }\item[{std\+::string}]{new\+Id}{, }\item[{std\+::string}]{colour}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new \doxylink{class_plant}{Plant} instance by cloning the registered prototype for the given SKU. 
+
+The new instance is initialized with a unique ID and a color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & The Stock Keeping Unit of the prototype to clone. \\
+\hline
+{\em new\+Id} & The unique identifier to assign to the new cloned \doxylink{class_plant}{Plant} instance. \\
+\hline
+{\em colour} & The color string to assign to the new cloned \doxylink{class_plant}{Plant} instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A raw pointer to the newly created and initialized \doxylink{class_plant}{Plant} instance, or nullptr if the SKU is not registered. 
+\end{DoxyReturn}
+\Hypertarget{class_plant_registry_a9788e8dbeaad66d2de75591dcc6d878b}\index{PlantRegistry@{PlantRegistry}!has@{has}}
+\index{has@{has}!PlantRegistry@{PlantRegistry}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}}
+{\footnotesize\ttfamily \label{class_plant_registry_a9788e8dbeaad66d2de75591dcc6d878b} 
+bool Plant\+Registry\+::has (\begin{DoxyParamCaption}\item[{std\+::string}]{sku}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a prototype \doxylink{class_plant}{Plant} is registered under the given SKU. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & The Stock Keeping Unit to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a prototype exists for the SKU, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_plant_registry_a7a7bc35264a74ca34e44334a401fd5e5}\index{PlantRegistry@{PlantRegistry}!registerSeedling@{registerSeedling}}
+\index{registerSeedling@{registerSeedling}!PlantRegistry@{PlantRegistry}}
+\doxysubsubsection{\texorpdfstring{registerSeedling()}{registerSeedling()}}
+{\footnotesize\ttfamily \label{class_plant_registry_a7a7bc35264a74ca34e44334a401fd5e5} 
+void Plant\+Registry\+::register\+Seedling (\begin{DoxyParamCaption}\item[{std\+::string}]{sku}{, }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_plant}{Plant}} $>$}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Registers a prototype \doxylink{class_plant}{Plant} object under a specific Species SKU. 
+
+The registry takes ownership of the provided unique pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & The Stock Keeping Unit to use as the key for the prototype. \\
+\hline
+{\em p} & A unique pointer to the \doxylink{class_plant}{Plant} object (the prototype) to be stored. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_plant_registry_8h}{Plant\+Registry.\+h}}\item 
+Plant\+Registry.\+cpp\end{DoxyCompactItemize}

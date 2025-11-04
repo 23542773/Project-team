@@ -1,0 +1,38 @@
+\doxysection{Fertilize.\+h}
+\hypertarget{_fertilize_8h_source}{}\label{_fertilize_8h_source}\mbox{\hyperlink{_fertilize_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ FERTILIZE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ FERTILIZE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_8h}{Command.h}}"{}}\ \textcolor{comment}{//\ Inherits\ from\ the\ Command\ abstract\ base\ class}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Forward\ declaration\ of\ the\ Plant\ class,\ which\ is\ the\ command's\ receiver}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant}{Plant}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_fertilize_ad4f32784e581cc2982670ad66557f478}{Fertilize}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<Plant*>\ plants;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<int>\ previousHealth;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_fertilize_ad4f32784e581cc2982670ad66557f478}{Fertilize}}(\textcolor{keyword}{const}\ std::vector<Plant*>\&\ p);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_fertilize_a252f33a49268ff1917ab4b5542b430e0}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_fertilize_ad7dae86b8225522fc7f9e72e7c60c538}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ std::string\ \mbox{\hyperlink{class_fertilize_a41f1c1c1db5ad9e7884c8a3872c47132}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\doxysection{Restock.\+h}
+\hypertarget{_restock_8h_source}{}\label{_restock_8h_source}\mbox{\hyperlink{_restock_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ RESTOCK\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ RESTOCK\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_greenhouse}{Greenhouse}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_restock_a5ef7551740a3e24c15ec61140bee8f7d}{Restock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ }
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_greenhouse}{Greenhouse}}\&\ greenhouse;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::string\ speciesSku;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ batchSize;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<std::string>\ addedPlantIds;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_restock_a5ef7551740a3e24c15ec61140bee8f7d}{Restock}}(\mbox{\hyperlink{class_greenhouse}{Greenhouse}}\&\ gh,\ \textcolor{keyword}{const}\ std::string\&\ sku,\ \textcolor{keywordtype}{int}\ batch);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restock_a0dba16922a2e7eb2d8bec4dcfff43a48}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restock_a70a6d098a0b4270e54fed98d7f98c075}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ std::string\ \mbox{\hyperlink{class_restock_a83ffbf06c249a0bdd6b5c77aeb30344d}{getDescription}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

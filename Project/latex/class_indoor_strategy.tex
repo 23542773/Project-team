@@ -1,0 +1,133 @@
+\doxysection{Indoor\+Strategy Class Reference}
+\hypertarget{class_indoor_strategy}{}\label{class_indoor_strategy}\index{IndoorStrategy@{IndoorStrategy}}
+
+
+Implements care strategy for indoor/houseplants.  
+
+
+
+
+{\ttfamily \#include $<$Indoor\+Strategy.\+h$>$}
+
+Inheritance diagram for Indoor\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_indoor_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_indoor_strategy_adb3e060225370e4dfb1ffa72a7371709}{water}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies moderate watering suitable for indoor plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_indoor_strategy_af0962521875a53c517cb4dc38f72913c}{fertilize}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies light fertilization suitable for indoor plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_indoor_strategy_af4558d5d5d0424e32ffbb537c13e6c83}{spray\+Insecticide}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies insecticide spraying behavior suitable for indoor plants. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_care_strategy}{Care\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Care\+Strategy} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements care strategy for indoor/houseplants. 
+
+This strategy is designed for plants grown in controlled indoor environments with limited natural light and air circulation. Indoor plants require moderate, consistent watering and regular but light fertilization to adapt to the relatively stable indoor conditions.
+
+Typical plants using this strategy include pothos, snake plants, peace lilies, and other common houseplants that thrive in indoor settings. 
+
+\label{doc-func-members}
+\Hypertarget{class_indoor_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_indoor_strategy_af0962521875a53c517cb4dc38f72913c}\index{IndoorStrategy@{IndoorStrategy}!fertilize@{fertilize}}
+\index{fertilize@{fertilize}!IndoorStrategy@{IndoorStrategy}}
+\doxysubsubsection{\texorpdfstring{fertilize()}{fertilize()}}
+{\footnotesize\ttfamily \label{class_indoor_strategy_af0962521875a53c517cb4dc38f72913c} 
+void Indoor\+Strategy\+::fertilize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies light fertilization suitable for indoor plants. 
+
+Applies fertilizer effects optimized for indoor growth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the indoor plant to be fertilized\\
+\hline
+\end{DoxyParams}
+Fertilization supports gradual health recovery and growth, scaled by the species’ natural growth rate. It benefits plants most when overall health is below an ideal threshold.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the indoor plant being fertilized. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a6a111bcef4bf87aeb972e4b19a3a2848}{Care\+Strategy}}.
+
+\Hypertarget{class_indoor_strategy_af4558d5d5d0424e32ffbb537c13e6c83}\index{IndoorStrategy@{IndoorStrategy}!sprayInsecticide@{sprayInsecticide}}
+\index{sprayInsecticide@{sprayInsecticide}!IndoorStrategy@{IndoorStrategy}}
+\doxysubsubsection{\texorpdfstring{sprayInsecticide()}{sprayInsecticide()}}
+{\footnotesize\ttfamily \label{class_indoor_strategy_af4558d5d5d0424e32ffbb537c13e6c83} 
+void Indoor\+Strategy\+::spray\+Insecticide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies insecticide spraying behavior suitable for indoor plants. 
+
+Applies insecticide treatment suitable for indoor environments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the indoor plant to be sprayed\\
+\hline
+\end{DoxyParams}
+Insecticide application balances pest control with plant health, adjusted according to the species’ tolerance level. Proper use improves health, while excessive application reduces it to reflect chemical stress.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the indoor plant being treated. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a1c4dabbd64721ac8a26d06c37527e2bf}{Care\+Strategy}}.
+
+\Hypertarget{class_indoor_strategy_adb3e060225370e4dfb1ffa72a7371709}\index{IndoorStrategy@{IndoorStrategy}!water@{water}}
+\index{water@{water}!IndoorStrategy@{IndoorStrategy}}
+\doxysubsubsection{\texorpdfstring{water()}{water()}}
+{\footnotesize\ttfamily \label{class_indoor_strategy_adb3e060225370e4dfb1ffa72a7371709} 
+void Indoor\+Strategy\+::water (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies moderate watering suitable for indoor plants. 
+
+Applies watering behavior suitable for indoor plants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the indoor plant to be watered\\
+\hline
+\end{DoxyParams}
+Indoor species require consistent but moderate watering to maintain stable moisture levels. Overwatering reduces health, simulating the effects of root saturation in confined environments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the indoor plant being watered. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a13feb221ff6226a2e4fb56836506e98f}{Care\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_indoor_strategy_8h}{Indoor\+Strategy.\+h}}\item 
+\mbox{\hyperlink{_indoor_strategy_8cpp}{Indoor\+Strategy.\+cpp}}\end{DoxyCompactItemize}

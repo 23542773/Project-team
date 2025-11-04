@@ -1,0 +1,35 @@
+\doxysection{Species\+Catalog.\+h}
+\hypertarget{_species_catalog_8h_source}{}\label{_species_catalog_8h_source}\mbox{\hyperlink{_species_catalog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SPECIESCATALOG\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SPECIESCATALOG\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_flyweight_8h}{PlantFlyweight.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_species_catalog}{SpeciesCatalog}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_species_catalog_a5bbf8929cd3b5b7f4eb70bfaf946cb09}{add}}(std::shared\_ptr<PlantFlyweight>\ fw);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::shared\_ptr<PlantFlyweight>\ \mbox{\hyperlink{class_species_catalog_af2632fe240e8397d31a5ae111a73b5ff}{get}}(std::string\ sku);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_species_catalog_a0f75967e8b10ba6b28c48a95c4d11bfa}{has}}(std::string\ sku);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_species_catalog_aca96be5a1fbbd5a9e0ee4c4732266707}{remove}}(std::string\ sku);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ std::vector<std::shared\_ptr<PlantFlyweight>>\ \mbox{\hyperlink{class_species_catalog_ab6dc98e1acc4b999c064dcd8393637f5}{getAll}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ std::unordered\_map<std::string,\ std::shared\_ptr<PlantFlyweight>>\ bySku;}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

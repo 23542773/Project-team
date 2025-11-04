@@ -1,0 +1,79 @@
+\doxysection{Simple\+Staff\+Window Class Reference}
+\hypertarget{class_simple_staff_window}{}\label{class_simple_staff_window}\index{SimpleStaffWindow@{SimpleStaffWindow}}
+
+
+Main window interface for staff members.  
+
+
+
+
+{\ttfamily \#include $<$Simple\+Staff\+Window.\+h$>$}
+
+Inheritance diagram for Simple\+Staff\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_staff_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_simple_staff_window_abed96029a48ff12ae09106e989658509}\label{class_simple_staff_window_abed96029a48ff12ae09106e989658509} 
+void {\bfseries logout\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Signal emitted when user requests logout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simple_staff_window_aab84ca985b5027d403ffa6424d7cd8e1}{Simple\+Staff\+Window}} (\mbox{\hyperlink{class_nursery_facade}{Nursery\+Facade}} \texorpdfstring{$\ast$}{*}facade, QString user\+Id, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr, \mbox{\hyperlink{class_staff_dash}{Staff\+Dash}} \texorpdfstring{$\ast$}{*}dash\+Observer=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new staff window. \end{DoxyCompactList}\item 
+\Hypertarget{class_simple_staff_window_ad2c47cd3fc38eb442cf680356fc4efcf}\label{class_simple_staff_window_ad2c47cd3fc38eb442cf680356fc4efcf} 
+void {\bfseries refresh\+Greenhouse} ()
+\begin{DoxyCompactList}\small\item\em Refresh the greenhouse plant table. \end{DoxyCompactList}\item 
+\Hypertarget{class_simple_staff_window_a7b5351d93d4fe0aa761526f97359fc7a}\label{class_simple_staff_window_a7b5351d93d4fe0aa761526f97359fc7a} 
+void {\bfseries refresh\+Stock} ()
+\begin{DoxyCompactList}\small\item\em Refresh the stock/inventory table. \end{DoxyCompactList}\item 
+\Hypertarget{class_simple_staff_window_af7cbc43086b9c62dc872fd9e547959b9}\label{class_simple_staff_window_af7cbc43086b9c62dc872fd9e547959b9} 
+void {\bfseries refresh\+Staff} ()
+\begin{DoxyCompactList}\small\item\em Refresh the staff member list. \end{DoxyCompactList}\item 
+\Hypertarget{class_simple_staff_window_af0c2a757f3eab4e2f68f3471fbaac9ab}\label{class_simple_staff_window_af0c2a757f3eab4e2f68f3471fbaac9ab} 
+void {\bfseries refresh\+My\+Orders} ()
+\begin{DoxyCompactList}\small\item\em Refresh assigned orders for this staff member. \end{DoxyCompactList}\item 
+\Hypertarget{class_simple_staff_window_ad00411bf00e3795a9dba6182ab4d4df6}\label{class_simple_staff_window_ad00411bf00e3795a9dba6182ab4d4df6} 
+void {\bfseries refresh\+Command\+Log} ()
+\begin{DoxyCompactList}\small\item\em Refresh the command log display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main window interface for staff members. 
+
+Provides tabbed interface for staff to manage plants, inventory, orders, messages, and view command logs and alerts. Features include plant care operations, restocking, order fulfillment, and command queue management. 
+
+\label{doc-constructors}
+\Hypertarget{class_simple_staff_window_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_simple_staff_window_aab84ca985b5027d403ffa6424d7cd8e1}\index{SimpleStaffWindow@{SimpleStaffWindow}!SimpleStaffWindow@{SimpleStaffWindow}}
+\index{SimpleStaffWindow@{SimpleStaffWindow}!SimpleStaffWindow@{SimpleStaffWindow}}
+\doxysubsubsection{\texorpdfstring{SimpleStaffWindow()}{SimpleStaffWindow()}}
+{\footnotesize\ttfamily \label{class_simple_staff_window_aab84ca985b5027d403ffa6424d7cd8e1} 
+Simple\+Staff\+Window\+::\+Simple\+Staff\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nursery_facade}{Nursery\+Facade}} \texorpdfstring{$\ast$}{*}}]{facade}{, }\item[{QString}]{user\+Id}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{class_staff_dash}{Staff\+Dash}} \texorpdfstring{$\ast$}{*}}]{dash\+Observer}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new staff window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em facade} & Pointer to the \doxylink{class_nursery_facade}{Nursery\+Facade} for operations \\
+\hline
+{\em user\+Id} & The staff member\textquotesingle{}s user ID \\
+\hline
+{\em parent} & Parent widget (optional) \\
+\hline
+{\em dash\+Observer} & Observer for dashboard updates (optional) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_simple_staff_window_8h}{Simple\+Staff\+Window.\+h}}\end{DoxyCompactItemize}

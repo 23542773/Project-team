@@ -1,0 +1,27 @@
+\doxysection{Message\+Card.\+h}
+\hypertarget{_message_card_8h_source}{}\label{_message_card_8h_source}\mbox{\hyperlink{_message_card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MESSAGECARD\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MESSAGECARD\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sale_decorator_8h}{SaleDecorator.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_message_card_adf83a77c165991cdf3e9fd491de30e1b}{MessageCard}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sale_decorator_a8931649a3c583ec2e085d0e3cfd527ba}{SaleDecorator}}\ }
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_message_card_adf83a77c165991cdf3e9fd491de30e1b}{MessageCard}}(std::unique\_ptr<SaleItem>\ inner,\ std::string\ msg);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_message_card_afd9123fe30928581f11d4bfa663ac157}{cost}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \mbox{\hyperlink{class_message_card_a5d33da5b5d1edcca282b168928864946}{description}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ std::string\ msg;}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

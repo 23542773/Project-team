@@ -1,0 +1,25 @@
+\doxysection{Reinforced\+Pot.\+h}
+\hypertarget{_reinforced_pot_8h_source}{}\label{_reinforced_pot_8h_source}\mbox{\hyperlink{_reinforced_pot_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ REINFORCEDPOT\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ REINFORCEDPOT\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sale_decorator_8h}{SaleDecorator.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_reinforced_pot_a33ea2381ea05b891dbca7829c76b1fdb}{ReinforcedPot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sale_decorator_a8931649a3c583ec2e085d0e3cfd527ba}{SaleDecorator}}\ }
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_reinforced_pot_a33ea2381ea05b891dbca7829c76b1fdb}{ReinforcedPot}}(std::unique\_ptr<SaleItem>\ inner);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_reinforced_pot_a21e0a50084cfa3c0181646d328b925d4}{cost}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ \mbox{\hyperlink{class_reinforced_pot_ac3527166577e214aabfeec99c39f73be}{description}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

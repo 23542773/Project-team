@@ -1,0 +1,39 @@
+\doxysection{Singleton\+State.\+h}
+\hypertarget{_singleton_state_8h_source}{}\label{_singleton_state_8h_source}\mbox{\hyperlink{_singleton_state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ SINGLETONSTATE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SINGLETONSTATE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_state_8h}{PlantState.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8}{SingletonState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_plant_state}{PlantState}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ T\&\ \mbox{\hyperlink{class_singleton_state_ae879727a569dbe20df120d382ad4cc86}{getInstance}}()}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ T\ instance;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8}{SingletonState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_singleton_state_a5ceb72b934a64d1b2041d5877cfcd0d4}{\string~SingletonState}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_singleton_state_aa3d93f0115395f66be3e10577cb61631}{SingletonState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8}{SingletonState}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8}{SingletonState}}\&\ \mbox{\hyperlink{class_singleton_state_ab0a01ddd5bc76e8a923674a0a23375c0}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8}{SingletonState}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

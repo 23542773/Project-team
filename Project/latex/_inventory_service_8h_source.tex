@@ -1,0 +1,50 @@
+\doxysection{Inventory\+Service.\+h}
+\hypertarget{_inventory_service_8h_source}{}\label{_inventory_service_8h_source}\mbox{\hyperlink{_inventory_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ INVENTORYSERVICE\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ INVENTORYSERVICE\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_inventory_8h}{Inventory.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_nursery_observer_8h}{NurseryObserver.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_greenhouse_8h}{Greenhouse.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_events_8h}{Events.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_inventory_service_acc09307e6ca068307eff185d239748ad}{InventoryService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_nursery_observer}{NurseryObserver}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_inventory}{Inventory}}\&\ inv;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_greenhouse}{Greenhouse}}\&\ gh;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_inventory_service_acc09307e6ca068307eff185d239748ad}{InventoryService}}(\mbox{\hyperlink{struct_inventory}{Inventory}}\&\ store,\ \mbox{\hyperlink{class_greenhouse}{Greenhouse}}\&\ gn);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_inventory_service_a257e99183325c11bc70294b9dbf31f7b}{addPlant}}(std::string\ plantId,\ std::string\ speciesSku);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_inventory_service_ad0c789a9bbb76029de102f7c59e2ccc7}{reservePlant}}(std::string\ plantId);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_inventory_service_abd436363e1dc44371434150dc8c111c9}{markSold}}(std::string\ plantId);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inventory_service_a76d31ecfd1556b204f7c0b85e004ac3e}{releasePlantFromOrder}}(std::string\ plantId);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_inventory_service_ad1cc8dcc73f4de458d0876e0ec8d2294}{availableCount}}(std::string\ speciesSku);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_inventory_service_a2b21df9fb876d0cd4aa8eead8ef796b3}{reservedCount}}(std::string\ speciesSku);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_inventory_service_a38f6ecf47c9e2c81ae743a45e6a52c2a}{soldCount}}(std::string\ speciesSku);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_inventory_service_afd788ee89af21a8cc9e5d09b35963bf7}{listAvailablePlants}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inventory_service_a5b9964c3b01cac16d31933f38f4be4a1}{onEvent}}(\mbox{\hyperlink{structevents_1_1_plant}{events::Plant}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INVENTORYSERVICE\_H}}
+
+\end{DoxyCode}

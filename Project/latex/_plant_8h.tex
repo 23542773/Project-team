@@ -1,0 +1,40 @@
+\doxysection{Plant.\+h File Reference}
+\hypertarget{_plant_8h}{}\label{_plant_8h}\index{Plant.h@{Plant.h}}
+
+
+Declares the \doxylink{class_plant}{Plant} class, representing an individual plant instance within the greenhouse system.  
+
+
+{\ttfamily \#include "{}Soil\+Mix.\+h"{}}\newline
+{\ttfamily \#include "{}Pot.\+h"{}}\newline
+{\ttfamily \#include "{}Care\+Strategy.\+h"{}}\newline
+{\ttfamily \#include "{}Plant\+State.\+h"{}}\newline
+{\ttfamily \#include "{}Plant\+Flyweight.\+h"{}}\newline
+{\ttfamily \#include "{}Dead\+State.\+h"{}}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_plant}{Plant}}
+\begin{DoxyCompactList}\small\item\em Represents a single plant entity in the greenhouse system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares the \doxylink{class_plant}{Plant} class, representing an individual plant instance within the greenhouse system. 
+
+The \doxylink{class_plant}{Plant} class composes multiple pattern-\/based components including\+:
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Flyweight (\doxylink{class_plant_flyweight}{Plant\+Flyweight})\+: Shares intrinsic species data.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Strategy (\doxylink{class_care_strategy}{Care\+Strategy})\+: Encapsulates biome-\/specific care behavior (e.\+g., watering, fertilizing).
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+State (\doxylink{class_plant_state}{Plant\+State})\+: Tracks and transitions between growth stages.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Prototype\+: Enables efficient cloning of existing plants.
+\end{DoxyItemize}
+
+Each plant maintains its own mutable attributes such as moisture, health, and insecticide levels, while delegating fixed species data to shared flyweights. Time-\/based simulation enables plants to age dynamically and respond to environmental care routines.
+
+\begin{DoxyDate}{Date}
+2025-\/10-\/31 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Project Teams 
+\end{DoxyAuthor}

@@ -1,0 +1,132 @@
+\doxysection{Colleague Class Reference}
+\hypertarget{class_colleague}{}\label{class_colleague}\index{Colleague@{Colleague}}
+
+
+Abstract \doxylink{class_colleague}{Colleague} class in the Mediator pattern representing communicating entities.  
+
+
+
+
+{\ttfamily \#include $<$Colleague.\+h$>$}
+
+Inheritance diagram for Colleague\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_colleague}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_colleague_aa305940723cc96d25028ad779edf3bc9}{Colleague}} (\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}med, const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_colleague}{Colleague} with a mediator and user ID. \end{DoxyCompactList}\item 
+\Hypertarget{class_colleague_a9f60f1ec88562b8e7201897d6e8cef2f}\label{class_colleague_a9f60f1ec88562b8e7201897d6e8cef2f} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Colleague} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_colleague_ac9b38a3c75b0153418c3723335ed26b5}{send\+Message}} (const std\+::string \&to\+User\+Id, const std\+::string \&text)=0
+\begin{DoxyCompactList}\small\item\em Sends a message to another colleague by user ID. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_colleague_a165035acb0d45a5fda8ee1390a9a6721}{receive\+Message}} (const \mbox{\hyperlink{struct_message}{Message}} \&msg)=0
+\begin{DoxyCompactList}\small\item\em Receives a message from the mediator. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_colleague_adcc4b821a5ee4f8e367a5133261ed7bc}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the unique user ID of this colleague. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_colleague_a3a26c175ffaa0c53a448d3a8af83c4dd}\label{class_colleague_a3a26c175ffaa0c53a448d3a8af83c4dd} 
+\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*} {\bfseries mediator}
+\begin{DoxyCompactList}\small\item\em Pointer to the mediator that handles message routing. \end{DoxyCompactList}\item 
+\Hypertarget{class_colleague_a00c7aef0cc4f1c957075703aa0dc1e8d}\label{class_colleague_a00c7aef0cc4f1c957075703aa0dc1e8d} 
+std\+::string {\bfseries user\+Id}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this colleague. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract \doxylink{class_colleague}{Colleague} class in the Mediator pattern representing communicating entities. 
+
+This class defines the interface for all colleagues that communicate through a mediator in the nursery system. Colleagues do not communicate directly with each other; instead, they send messages through the \doxylink{class_messaging_mediator}{Messaging\+Mediator}.
+
+This design promotes loose coupling by preventing colleagues from referencing each other explicitly, making it easier to modify communication rules and add new colleague types. 
+
+\label{doc-constructors}
+\Hypertarget{class_colleague_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_colleague_aa305940723cc96d25028ad779edf3bc9}\index{Colleague@{Colleague}!Colleague@{Colleague}}
+\index{Colleague@{Colleague}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{Colleague()}{Colleague()}}
+{\footnotesize\ttfamily \label{class_colleague_aa305940723cc96d25028ad779edf3bc9} 
+Colleague\+::\+Colleague (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}}]{med}{, }\item[{const std\+::string \&}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_colleague}{Colleague} with a mediator and user ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em med} & Pointer to the \doxylink{class_messaging_mediator}{Messaging\+Mediator} for communication \\
+\hline
+{\em id} & Unique identifier for this colleague\\
+\hline
+\end{DoxyParams}
+Initializes the colleague with access to the mediator through which all communication will be routed. 
+
+\label{doc-func-members}
+\Hypertarget{class_colleague_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_colleague_adcc4b821a5ee4f8e367a5133261ed7bc}\index{Colleague@{Colleague}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily \label{class_colleague_adcc4b821a5ee4f8e367a5133261ed7bc} 
+std\+::string Colleague\+::get\+User\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the unique user ID of this colleague. 
+
+\begin{DoxyReturn}{Returns}
+String containing the user ID 
+\end{DoxyReturn}
+\Hypertarget{class_colleague_a165035acb0d45a5fda8ee1390a9a6721}\index{Colleague@{Colleague}!receiveMessage@{receiveMessage}}
+\index{receiveMessage@{receiveMessage}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{receiveMessage()}{receiveMessage()}}
+{\footnotesize\ttfamily \label{class_colleague_a165035acb0d45a5fda8ee1390a9a6721} 
+virtual void Colleague\+::receive\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_message}{Message}} \&}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Receives a message from the mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \doxylink{struct_message}{Message} object containing message details\\
+\hline
+\end{DoxyParams}
+Called by the mediator when a message is being delivered to this colleague. Concrete colleagues implement this to store or process received messages. 
+
+Implemented in \mbox{\hyperlink{class_customer_a9488508d3d16d947c222a8fa7c45e7ad}{Customer}}, and \mbox{\hyperlink{class_staff_ad1d642b168d35c8d743e50e6c575a067}{Staff}}.
+
+\Hypertarget{class_colleague_ac9b38a3c75b0153418c3723335ed26b5}\index{Colleague@{Colleague}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily \label{class_colleague_ac9b38a3c75b0153418c3723335ed26b5} 
+virtual void Colleague\+::send\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{to\+User\+Id}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sends a message to another colleague by user ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+User\+Id} & String ID of the recipient colleague \\
+\hline
+{\em text} & The message content to send\\
+\hline
+\end{DoxyParams}
+Delegates to the mediator to route the message, allowing the mediator to enforce communication rules and business logic. 
+
+Implemented in \mbox{\hyperlink{class_customer_acc8d59edcbead9706e6c780acea05295}{Customer}}, and \mbox{\hyperlink{class_staff_a17e81919666c309ee79749f0323841b3}{Staff}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_colleague_8h}{Colleague.\+h}}\end{DoxyCompactItemize}

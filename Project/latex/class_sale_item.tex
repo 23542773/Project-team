@@ -1,0 +1,92 @@
+\doxysection{Sale\+Item Class Reference}
+\hypertarget{class_sale_item}{}\label{class_sale_item}\index{SaleItem@{SaleItem}}
+
+
+Abstract Component class in the Decorator pattern representing items for sale.  
+
+
+
+
+{\ttfamily \#include $<$Sale\+Item.\+h$>$}
+
+Inheritance diagram for Sale\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sale_item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_sale_item_a021804c996ec5473a37100bded129f7a}{\texorpdfstring{$\sim$}{\string~}\+Sale\+Item}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived concrete \doxylink{class_sale_item}{Sale\+Item} and Decorator classes. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_sale_item_a6dddf7100be6d2f5b1fd28f115a69a56}{cost}} ()=0
+\begin{DoxyCompactList}\small\item\em Calculates the total cost of the sale item. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_sale_item_ac8d9e1668cfb0ff0e908a453008cc61e}{description}} ()=0
+\begin{DoxyCompactList}\small\item\em Generates a description of the sale item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Component class in the Decorator pattern representing items for sale. 
+
+This class defines the interface for all sale items in the nursery system. It serves as the base component that can be decorated with additional features such as reinforced pots, gift wrapping, and message cards.
+
+The Decorator pattern allows dynamic addition of responsibilities to sale items without modifying the core \doxylink{class_sale_item}{Sale\+Item} interface or its concrete implementations. 
+
+\label{doc-constructors}
+\Hypertarget{class_sale_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sale_item_a021804c996ec5473a37100bded129f7a}\index{SaleItem@{SaleItem}!````~SaleItem@{\texorpdfstring{$\sim$}{\string~}SaleItem}}
+\index{````~SaleItem@{\texorpdfstring{$\sim$}{\string~}SaleItem}!SaleItem@{SaleItem}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SaleItem()}{\string~SaleItem()}}
+{\footnotesize\ttfamily \label{class_sale_item_a021804c996ec5473a37100bded129f7a} 
+virtual Sale\+Item\+::\texorpdfstring{$\sim$}{\string~}\+Sale\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor to ensure proper cleanup of derived concrete \doxylink{class_sale_item}{Sale\+Item} and Decorator classes. 
+
+Virtual destructor for proper cleanup of derived classes 
+
+\label{doc-func-members}
+\Hypertarget{class_sale_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sale_item_a6dddf7100be6d2f5b1fd28f115a69a56}\index{SaleItem@{SaleItem}!cost@{cost}}
+\index{cost@{cost}!SaleItem@{SaleItem}}
+\doxysubsubsection{\texorpdfstring{cost()}{cost()}}
+{\footnotesize\ttfamily \label{class_sale_item_a6dddf7100be6d2f5b1fd28f115a69a56} 
+virtual double Sale\+Item\+::cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates the total cost of the sale item. 
+
+\begin{DoxyReturn}{Returns}
+The cost as a double value
+\end{DoxyReturn}
+This method returns the base cost for concrete components or the decorated cost for decorator classes that add additional charges. 
+
+Implemented in \mbox{\hyperlink{class_gift_wrap_a5f8979fa8d224a12d48e7220cf96cb76}{Gift\+Wrap}}, \mbox{\hyperlink{class_message_card_afd9123fe30928581f11d4bfa663ac157}{Message\+Card}}, \mbox{\hyperlink{class_plant_item_af549a844d09339562eacfc8997f45ae7}{Plant\+Item}}, and \mbox{\hyperlink{class_reinforced_pot_a21e0a50084cfa3c0181646d328b925d4}{Reinforced\+Pot}}.
+
+\Hypertarget{class_sale_item_ac8d9e1668cfb0ff0e908a453008cc61e}\index{SaleItem@{SaleItem}!description@{description}}
+\index{description@{description}!SaleItem@{SaleItem}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{class_sale_item_ac8d9e1668cfb0ff0e908a453008cc61e} 
+virtual std\+::string Sale\+Item\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Generates a description of the sale item. 
+
+\begin{DoxyReturn}{Returns}
+String describing the item and any decorations applied
+\end{DoxyReturn}
+This method returns a textual description that includes the base item and any additional features added through decorators. 
+
+Implemented in \mbox{\hyperlink{class_gift_wrap_aa3e215a0638ce482aaeec63e3652d9c3}{Gift\+Wrap}}, \mbox{\hyperlink{class_message_card_a5d33da5b5d1edcca282b168928864946}{Message\+Card}}, \mbox{\hyperlink{class_plant_item_aea3ef4a2f4367e0a2c38f64f9742a3ad}{Plant\+Item}}, and \mbox{\hyperlink{class_reinforced_pot_ac3527166577e214aabfeec99c39f73be}{Reinforced\+Pot}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_sale_item_8h}{Sale\+Item.\+h}}\end{DoxyCompactItemize}

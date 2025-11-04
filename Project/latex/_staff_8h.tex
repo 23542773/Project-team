@@ -1,0 +1,71 @@
+\doxysection{Staff.\+h File Reference}
+\hypertarget{_staff_8h}{}\label{_staff_8h}\index{Staff.h@{Staff.h}}
+
+
+Defines the \doxylink{class_staff}{Staff} concrete colleague class and \doxylink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{Staff\+Role} enumeration.  
+
+
+{\ttfamily \#include "{}Colleague.\+h"{}}\newline
+{\ttfamily \#include "{}Messaging\+Mediator.\+h"{}}\newline
+{\ttfamily \#include "{}Message.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_staff}{Staff}}
+\begin{DoxyCompactList}\small\item\em Concrete \doxylink{class_colleague}{Colleague} representing a nursery staff member. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{Staff\+Role}} \{ \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa744e02c72c1277b4207fc67432cfdb56}{Plant\+Care}}
+, \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa4d604dd8f008145471dc845683399189}{Inventory}}
+, \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65}{Sales}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration defining different roles for staff members. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{class_staff}{Staff} concrete colleague class and \doxylink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{Staff\+Role} enumeration. 
+
+\begin{DoxyDate}{Date}
+2025-\/10-\/31 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Project Teams 
+\end{DoxyAuthor}
+
+
+\label{doc-enum-members}
+\Hypertarget{_staff_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}\index{Staff.h@{Staff.h}!StaffRole@{StaffRole}}
+\index{StaffRole@{StaffRole}!Staff.h@{Staff.h}}
+\doxysubsubsection{\texorpdfstring{StaffRole}{StaffRole}}
+{\footnotesize\ttfamily \label{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a} 
+enum class \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{Staff\+Role}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration defining different roles for staff members. 
+
+\doxylink{class_staff}{Staff} roles determine communication permissions enforced by the \doxylink{class_chat_mediator}{Chat\+Mediator}\+:
+\begin{DoxyItemize}
+\item Plant\+Care\+: Can communicate with \doxylink{struct_inventory}{Inventory} staff
+\item \doxylink{struct_inventory}{Inventory}\+: Can communicate with Plant\+Care and Sales staff
+\item Sales\+: Can communicate with Customers, other Sales staff, and \doxylink{struct_inventory}{Inventory} staff 
+\end{DoxyItemize}\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlantCare@{PlantCare}!Staff.h@{Staff.h}}\index{Staff.h@{Staff.h}!PlantCare@{PlantCare}}}\Hypertarget{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa744e02c72c1277b4207fc67432cfdb56}\label{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa744e02c72c1277b4207fc67432cfdb56} 
+Plant\+Care&\doxylink{class_staff}{Staff} responsible for plant maintenance and care. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Inventory@{Inventory}!Staff.h@{Staff.h}}\index{Staff.h@{Staff.h}!Inventory@{Inventory}}}\Hypertarget{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa4d604dd8f008145471dc845683399189}\label{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa4d604dd8f008145471dc845683399189} 
+Inventory&\doxylink{class_staff}{Staff} managing stock and inventory operations. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sales@{Sales}!Staff.h@{Staff.h}}\index{Staff.h@{Staff.h}!Sales@{Sales}}}\Hypertarget{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65}\label{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65} 
+Sales&\doxylink{class_staff}{Staff} handling customer interactions and sales. \\
+\hline
+
+\end{DoxyEnumFields}

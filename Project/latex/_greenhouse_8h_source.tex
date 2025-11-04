@@ -1,0 +1,88 @@
+\doxysection{Greenhouse.\+h}
+\hypertarget{_greenhouse_8h_source}{}\label{_greenhouse_8h_source}\mbox{\hyperlink{_greenhouse_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ GREENHOUSE\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ GREENHOUSE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_service_subject_8h}{ServiceSubject.h}}"{}}\ \ \ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_events_8h}{Events.h}}"{}}\ \ \ \ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_registry_8h}{PlantRegistry.h}}"{}}\ \ \ \ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mature_state_8h}{MatureState.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dead_state_8h}{DeadState.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_wilting_state_8h}{WiltingState.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_seedling_state_8h}{SeedlingState.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_growing_state_8h}{GrowingState.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_8h}{Plant.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_species_catalog_8h}{SpeciesCatalog.h}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Forward\ declarations\ for\ external\ dependencies}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_iterator}{Iterator}};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant_state}{PlantState}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_greenhouse_a4d597996c025d976fab5e23117e64fc5}{Greenhouse}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_service_subject}{ServiceSubject}}\ }
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_greenhouse_a4d597996c025d976fab5e23117e64fc5}{Greenhouse}}(\mbox{\hyperlink{class_plant_registry}{PlantRegistry}}*\ p);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_greenhouse_a539208520cfc29690a631794f79c3b03}{receiveShipment}}(std::string\ speciesSku,\ \textcolor{keywordtype}{int}\ batch);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_greenhouse_afe254a15ed9a846c88e7b795d392b1f1}{addPlant}}(std::unique\_ptr<Plant>\ plant);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ std::string\ \mbox{\hyperlink{class_greenhouse_a6d8301597741a333c8964d6e1389a1c3}{pickColour}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_plant}{Plant}}*\ \mbox{\hyperlink{class_greenhouse_aebde19280a2611962b16829ce6ea50db}{getPlant}}(\textcolor{keyword}{const}\ std::string\&\ plantId);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_greenhouse_ac0b00bd808ed8f7bfedf8878ba57857c}{countBySku}}(\textcolor{keyword}{const}\ std::string\&\ sku);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_greenhouse_a5156beae97bce6a06411ac4459f80372}{removePlant}}(\textcolor{keyword}{const}\ std::string\&\ plantId);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_greenhouse_ae99611fb6ed3e9d6240378b88ff3c0f8}{tickAll}}();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_iterator}{Iterator}}*\ \mbox{\hyperlink{class_greenhouse_a7f66e4e6ff38173b1fc51398946cad42}{createIterator}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ \ \ \ \ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_iterator}{Iterator}}*\ \mbox{\hyperlink{class_greenhouse_a842289023c56a94159e0b7c1d1ff79c7}{createStateIterator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_plant_state}{PlantState}}*\ state)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ \ \ \ \ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{class_iterator}{Iterator}}*\ \mbox{\hyperlink{class_greenhouse_aa8e8eb23b2474af33d2314c01eb6ba01}{createSkuIterator}}(\textcolor{keyword}{const}\ std::string\&\ sku)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ std::unordered\_map<std::string,\ std::string>\ plantToSku;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ std::unordered\_map<std::string,\ std::unique\_ptr<Plant>>\ plantInstances;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ std::unordered\_map<std::string,\ int>\ seqBySku;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ std::string\ nextIdFor(std::string\ speciesSku);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{class_plant_registry}{PlantRegistry}}*\ proto;}
+\DoxyCodeLine{00168\ \};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

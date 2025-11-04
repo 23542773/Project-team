@@ -1,0 +1,29 @@
+\doxysection{Iterator.\+h}
+\hypertarget{_iterator_8h_source}{}\label{_iterator_8h_source}\mbox{\hyperlink{_iterator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ ITERATOR\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ ITERATOR\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Forward\ declaration\ of\ the\ item\ type\ being\ iterated\ over}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant}{Plant}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_iterator}{Iterator}}\ }
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_iterator_a4c28388b53ec9c8a502aeccf13295899}{\string~Iterator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_iterator_aad56ef26673ea3c74b7ac964f24b8ef5}{first}}()\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_iterator_ac639e96c519e2e78cff17bee372ad750}{next}}()\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_iterator_aaee909d23a98abaf18ed7aa2ee9bee6f}{isDone}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_plant}{Plant}}*\ \mbox{\hyperlink{class_iterator_a375cd2b97051c71b3e851bd45534a7c4}{currentItem}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

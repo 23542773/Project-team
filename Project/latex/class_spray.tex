@@ -1,0 +1,126 @@
+\doxysection{Spray Class Reference}
+\hypertarget{class_spray}{}\label{class_spray}\index{Spray@{Spray}}
+
+
+\doxylink{class_command}{Command} for applying insecticide to a group of plants.  
+
+
+
+
+{\ttfamily \#include $<$Spray.\+h$>$}
+
+Inheritance diagram for Spray\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spray}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spray_af66d27d920e7e201014bac81ebde3136}{Spray}} (const std\+::vector$<$ \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_spray}{Spray} command for a list of plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spray_ac996e03f71433b5ca3c9f0d8e31d0a99}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the spray action on all plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spray_a7764ee382cfd9254fee05c87bdc7a760}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Undoes the spray action, restoring previous insecticide levels. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_spray_a223e49b5f8e7f47c54399d554928ac6d}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a textual description of this command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived command classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a36038f02fb62fa35fa1768b68663be21}{set\+User\+Id}} (const std\+::string \&uid)
+\begin{DoxyCompactList}\small\item\em Sets the ID of the user who initiated this command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_a664ee1180c0f827b24dfab922a7a891d}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the user associated with this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a99a63432974070e812cb1d61025f631b}{set\+Action}} (const std\+::string \&act)
+\begin{DoxyCompactList}\small\item\em Sets a short, categorical name for the action (e.\+g., "{}\+RESTOCK"{}, "{}\+SALE"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_afd2cd82b59fc78a3cf6578ccecf32d0e}{get\+Action}} () const
+\begin{DoxyCompactList}\small\item\em Gets the short action name of this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a327a6ad6c84ea803b4df334e793f3d3b}{set\+Undoable}} (bool u)
+\begin{DoxyCompactList}\small\item\em Sets whether the command supports the undo operation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_command_a8bb6885054910a0c06de6e75ce0b4b5f}{is\+Undoable}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the command supports the undo operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_command}{Command} for applying insecticide to a group of plants. 
+
+Stores a list of target plants and their previous insecticide levels to allow undoing the action. 
+
+\label{doc-constructors}
+\Hypertarget{class_spray_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_spray_af66d27d920e7e201014bac81ebde3136}\index{Spray@{Spray}!Spray@{Spray}}
+\index{Spray@{Spray}!Spray@{Spray}}
+\doxysubsubsection{\texorpdfstring{Spray()}{Spray()}}
+{\footnotesize\ttfamily \label{class_spray_af66d27d920e7e201014bac81ebde3136} 
+Spray\+::\+Spray (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} $>$ \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_spray}{Spray} command for a list of plants. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Vector of \doxylink{class_plant}{Plant} pointers to be sprayed. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_spray_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_spray_ac996e03f71433b5ca3c9f0d8e31d0a99}\index{Spray@{Spray}!execute@{execute}}
+\index{execute@{execute}!Spray@{Spray}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_spray_ac996e03f71433b5ca3c9f0d8e31d0a99} 
+void Spray\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the spray action on all plants. 
+
+
+
+Implements \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+\Hypertarget{class_spray_a223e49b5f8e7f47c54399d554928ac6d}\index{Spray@{Spray}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!Spray@{Spray}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{class_spray_a223e49b5f8e7f47c54399d554928ac6d} 
+std\+::string Spray\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a textual description of this command. 
+
+\begin{DoxyReturn}{Returns}
+Description string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a6467892048d1c917033c9f55a1804f67}{Command}}.
+
+\Hypertarget{class_spray_a7764ee382cfd9254fee05c87bdc7a760}\index{Spray@{Spray}!undo@{undo}}
+\index{undo@{undo}!Spray@{Spray}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_spray_a7764ee382cfd9254fee05c87bdc7a760} 
+void Spray\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Undoes the spray action, restoring previous insecticide levels. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_command_a9b21dadbb5a4c7a6e85636471a6f1fef}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_spray_8h}{Spray.\+h}}\item 
+Spray.\+cpp\end{DoxyCompactItemize}

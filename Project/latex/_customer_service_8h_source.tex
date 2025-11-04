@@ -1,0 +1,48 @@
+\doxysection{Customer\+Service.\+h}
+\hypertarget{_customer_service_8h_source}{}\label{_customer_service_8h_source}\mbox{\hyperlink{_customer_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CUSTOMERSERVICE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CUSTOMERSERVICE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <memory>}\ \textcolor{comment}{//\ Required\ for\ std::shared\_ptr}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_customer_8h}{Customer.h}}"{}}\ \textcolor{comment}{//\ Dependent\ on\ the\ Customer\ class}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Forward\ declaration\ of\ the\ mediator\ class}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_customer_service_a6e1a922eba45ac3c1f6ba7c4843e39ee}{CustomerService}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::unordered\_map<std::string,\ std::shared\_ptr<Customer>>\ customers;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ std::unordered\_map<std::string,\ std::string>\ orderToCustomer;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ mediator;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_customer_service_a6e1a922eba45ac3c1f6ba7c4843e39ee}{CustomerService}}(\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ med);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_service_aced60bb32821f5503d32a71e60cdebae}{setMediator}}(\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ med);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_service_a203c25d8d2b3e4ce06e94a29c261c933}{addCustomer}}(std::string\ \textcolor{keywordtype}{id},\ std::string\ name);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_customer}{Customer}}*\ \mbox{\hyperlink{class_customer_service_a4dc79a9e01b7112ec35ca5b2a38ec5a5}{getCustomer}}(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_service_abb9e1bdc5002d71dcc0b584a8229635c}{assignOrderToCustomer}}(std::string\ orderId,\ std::string\ customerId);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ std::string\ \mbox{\hyperlink{class_customer_service_ac2a258ab3b1dd9532b9c3944c96873a5}{getCustomerIdByOrder}}(std::string\ orderId);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::vector<Customer>\ \mbox{\hyperlink{class_customer_service_a26bab31400be810a2f64745195e82729}{getAllCustomers}}();}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

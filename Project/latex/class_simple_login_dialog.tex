@@ -1,0 +1,89 @@
+\doxysection{Simple\+Login\+Dialog Class Reference}
+\hypertarget{class_simple_login_dialog}{}\label{class_simple_login_dialog}\index{SimpleLoginDialog@{SimpleLoginDialog}}
+
+
+Dialog for user authentication and role selection.  
+
+
+
+
+{\ttfamily \#include $<$Simple\+Login\+Dialog.\+h$>$}
+
+Inheritance diagram for Simple\+Login\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_login_dialog}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simple_login_dialog_a586898f4757dd7250009f88e68ae5b63}{Simple\+Login\+Dialog}} (\mbox{\hyperlink{class_nursery_facade}{Nursery\+Facade}} \texorpdfstring{$\ast$}{*}facade, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new login dialog. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_simple_login_dialog_a0cf7e008d73399c0f8a9f7273d0d4d74}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Get the entered user ID. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_simple_login_dialog_a63e0baba84a9f5c245e0333722521b3a}{get\+Role}} () const
+\begin{DoxyCompactList}\small\item\em Get the selected role. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dialog for user authentication and role selection. 
+
+Provides a simple login interface where users enter their ID and select their role (\doxylink{class_customer}{Customer} or \doxylink{class_staff}{Staff}). The dialog validates credentials through the \doxylink{class_nursery_facade}{Nursery\+Facade} before allowing access. 
+
+\label{doc-constructors}
+\Hypertarget{class_simple_login_dialog_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_simple_login_dialog_a586898f4757dd7250009f88e68ae5b63}\index{SimpleLoginDialog@{SimpleLoginDialog}!SimpleLoginDialog@{SimpleLoginDialog}}
+\index{SimpleLoginDialog@{SimpleLoginDialog}!SimpleLoginDialog@{SimpleLoginDialog}}
+\doxysubsubsection{\texorpdfstring{SimpleLoginDialog()}{SimpleLoginDialog()}}
+{\footnotesize\ttfamily \label{class_simple_login_dialog_a586898f4757dd7250009f88e68ae5b63} 
+Simple\+Login\+Dialog\+::\+Simple\+Login\+Dialog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nursery_facade}{Nursery\+Facade}} \texorpdfstring{$\ast$}{*}}]{facade}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new login dialog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em facade} & Pointer to the \doxylink{class_nursery_facade}{Nursery\+Facade} for authentication \\
+\hline
+{\em parent} & Parent widget (optional) \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_simple_login_dialog_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_simple_login_dialog_a63e0baba84a9f5c245e0333722521b3a}\index{SimpleLoginDialog@{SimpleLoginDialog}!getRole@{getRole}}
+\index{getRole@{getRole}!SimpleLoginDialog@{SimpleLoginDialog}}
+\doxysubsubsection{\texorpdfstring{getRole()}{getRole()}}
+{\footnotesize\ttfamily \label{class_simple_login_dialog_a63e0baba84a9f5c245e0333722521b3a} 
+QString Simple\+Login\+Dialog\+::get\+Role (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the selected role. 
+
+\begin{DoxyReturn}{Returns}
+QString The role selected ("{}\+Customer"{} or "{}\+Staff"{}) 
+\end{DoxyReturn}
+\Hypertarget{class_simple_login_dialog_a0cf7e008d73399c0f8a9f7273d0d4d74}\index{SimpleLoginDialog@{SimpleLoginDialog}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!SimpleLoginDialog@{SimpleLoginDialog}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily \label{class_simple_login_dialog_a0cf7e008d73399c0f8a9f7273d0d4d74} 
+QString Simple\+Login\+Dialog\+::get\+User\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the entered user ID. 
+
+\begin{DoxyReturn}{Returns}
+QString The user ID entered in the dialog 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_simple_login_dialog_8h}{Simple\+Login\+Dialog.\+h}}\end{DoxyCompactItemize}
