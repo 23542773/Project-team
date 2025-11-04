@@ -1,0 +1,86 @@
+\doxysection{Gritty\+Lime\+Soil\+Mix Class Reference}
+\hypertarget{class_gritty_lime_soil_mix}{}\label{class_gritty_lime_soil_mix}\index{GrittyLimeSoilMix@{GrittyLimeSoilMix}}
+
+
+A concrete implementation of the \doxylink{class_soil_mix}{Soil\+Mix} abstract class, representing a specific type of soil.  
+
+
+
+
+{\ttfamily \#include $<$Gritty\+Lime\+Soil\+Mix.\+h$>$}
+
+Inheritance diagram for Gritty\+Lime\+Soil\+Mix\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gritty_lime_soil_mix}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gritty_lime_soil_mix_a5be16446424b6b3ad43c9366c8d0d55f}\label{class_gritty_lime_soil_mix_a5be16446424b6b3ad43c9366c8d0d55f} 
+{\bfseries Gritty\+Lime\+Soil\+Mix} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_gritty_lime_soil_mix}{Gritty\+Lime\+Soil\+Mix}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_gritty_lime_soil_mix_ab3e0b2ffdca01ed10df65a18d4fcedd9}{name}} () override
+\begin{DoxyCompactList}\small\item\em Provides the human-\/readable name of this specific soil mix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_gritty_lime_soil_mix_a9f313b062490e4b3793a18113d752160}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Implements the clone operation required by the Prototype pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_soil_mix}{Soil\+Mix}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_soil_mix_a60fab97bed3a029cb2f843da99be8904}{Soil\+Mix}} (int c)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_soil_mix}{Soil\+Mix} with a specified cost. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Soil\+Mix} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soil_mix_aab3ad614c77a37ca1a4aa6639d48bd3a}{get\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Returns the cost of this soil mix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \doxylink{class_soil_mix}{Soil\+Mix} abstract class, representing a specific type of soil. 
+
+This class is designed to function as a {\bfseries{Prototype}} within a registry, allowing new instances of this soil type to be created via cloning without knowing the details of its construction. 
+
+\label{doc-func-members}
+\Hypertarget{class_gritty_lime_soil_mix_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gritty_lime_soil_mix_a9f313b062490e4b3793a18113d752160}\index{GrittyLimeSoilMix@{GrittyLimeSoilMix}!clone@{clone}}
+\index{clone@{clone}!GrittyLimeSoilMix@{GrittyLimeSoilMix}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_gritty_lime_soil_mix_a9f313b062490e4b3793a18113d752160} 
+\mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} Gritty\+Lime\+Soil\+Mix\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements the clone operation required by the Prototype pattern. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to a newly created, deep copy of the current \doxylink{class_gritty_lime_soil_mix}{Gritty\+Lime\+Soil\+Mix} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_soil_mix_a9842288bc066939291e303b953629f6f}{Soil\+Mix}}.
+
+\Hypertarget{class_gritty_lime_soil_mix_ab3e0b2ffdca01ed10df65a18d4fcedd9}\index{GrittyLimeSoilMix@{GrittyLimeSoilMix}!name@{name}}
+\index{name@{name}!GrittyLimeSoilMix@{GrittyLimeSoilMix}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_gritty_lime_soil_mix_ab3e0b2ffdca01ed10df65a18d4fcedd9} 
+std\+::string Gritty\+Lime\+Soil\+Mix\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides the human-\/readable name of this specific soil mix. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the name (e.\+g., "{}\+Gritty Lime Soil Mix"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_soil_mix_a44457847765adeecfd086a7ea1d41fda}{Soil\+Mix}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_gritty_lime_soil_mix_8h}{Gritty\+Lime\+Soil\+Mix.\+h}}\item 
+Gritty\+Lime\+Soil\+Mix.\+cpp\end{DoxyCompactItemize}

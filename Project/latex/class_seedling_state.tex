@@ -1,0 +1,130 @@
+\doxysection{Seedling\+State Class Reference}
+\hypertarget{class_seedling_state}{}\label{class_seedling_state}\index{SeedlingState@{SeedlingState}}
+
+
+Concrete State class representing a young plant in its early growth stage.  
+
+
+
+
+{\ttfamily \#include $<$Seedling\+State.\+h$>$}
+
+Inheritance diagram for Seedling\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_seedling_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_seedling_state_a8fcb6ede73bb6050b7d9a90e839c46f0}{check\+Change}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Evaluates plant conditions and manages state transitions. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_seedling_state_a9ddbb56ad1ed10c18a70b952de543622}{name}} () override
+\begin{DoxyCompactList}\small\item\em Gets the name of this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_plant_state}{Plant\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Plant\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived state classes. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_plant_state_a3b5fe03dc59713475009ce594dddfd44}{is\+Mature}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the plant is in a mature state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_seedling_state_aa4980d31d30806cd56edd14be411383b}\label{class_seedling_state_aa4980d31d30806cd56edd14be411383b} 
+class \mbox{\hyperlink{class_seedling_state_aa4980d31d30806cd56edd14be411383b}{Singleton\+State$<$ Seedling\+State $>$}}
+\begin{DoxyCompactList}\small\item\em Friend declaration to allow \doxylink{class_singleton_state}{Singleton\+State} access to constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_singleton_state}{Singleton\+State$<$ Seedling\+State $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_seedling_state}{Seedling\+State}} \& \mbox{\hyperlink{class_singleton_state_ae879727a569dbe20df120d382ad4cc86}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_singleton_state}{Singleton\+State$<$ Seedling\+State $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Singleton\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Protected default constructor to prevent direct instantiation. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Singleton\+State} () override=default
+\begin{DoxyCompactList}\small\item\em Protected virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \& \mbox{\hyperlink{class_singleton_state_ab0a01ddd5bc76e8a923674a0a23375c0}{operator=}} (const \mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator to prevent copying. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete State class representing a young plant in its early growth stage. 
+
+This state represents the initial viable growth stage of a plant after germination. Seedlings have moderate resource consumption and are vulnerable to poor conditions. Can transition to \doxylink{class_growing_state}{Growing\+State} when age and health thresholds are met, or to \doxylink{class_dead_state}{Dead\+State} if health drops to zero. 
+
+\label{doc-func-members}
+\Hypertarget{class_seedling_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_seedling_state_a8fcb6ede73bb6050b7d9a90e839c46f0}\index{SeedlingState@{SeedlingState}!checkChange@{checkChange}}
+\index{checkChange@{checkChange}!SeedlingState@{SeedlingState}}
+\doxysubsubsection{\texorpdfstring{checkChange()}{checkChange()}}
+{\footnotesize\ttfamily \label{class_seedling_state_a8fcb6ede73bb6050b7d9a90e839c46f0} 
+void Seedling\+State\+::check\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates plant conditions and manages state transitions. 
+
+Implements state transition logic for seedling plants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the \doxylink{class_plant}{Plant} object being evaluated\\
+\hline
+\end{DoxyParams}
+Decrements water and insecticide levels, adjusts health based on care conditions, and transitions to \doxylink{class_growing_state}{Growing\+State} or \doxylink{class_dead_state}{Dead\+State} based on age, health, and species characteristics.
+
+Resource consumption\+: -\/1 water, -\/1 insecticide per check
+
+Health adjustments\+:
+\begin{DoxyItemize}
+\item Gains +2 health if moisture \texorpdfstring{$>$}{>}= 40 and insecticide \texorpdfstring{$>$}{>}= 40
+\item Loses -\/3 health if moisture \texorpdfstring{$<$}{<} 30
+\item Loses -\/2 health if insecticide \texorpdfstring{$<$}{<} 30
+\end{DoxyItemize}
+
+State transitions\+:
+\begin{DoxyItemize}
+\item To \doxylink{class_dead_state}{Dead\+State}\+: if health \texorpdfstring{$<$}{<}= 0
+\item To \doxylink{class_growing_state}{Growing\+State}\+: if age \texorpdfstring{$>$}{>} adjusted threshold and health \texorpdfstring{$>$}{>} 40 (threshold = 5.\+0 \texorpdfstring{$\ast$}{*} growth rate \texorpdfstring{$\ast$}{*} season factor) (season factor = 0.\+8 in thriving season, 1.\+2 otherwise) 
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the \doxylink{class_plant}{Plant} object whose state is being checked \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{class_plant_state_a1ac247dccb0cd665b55af8be3d8df900}{Plant\+State}}.
+
+\Hypertarget{class_seedling_state_a9ddbb56ad1ed10c18a70b952de543622}\index{SeedlingState@{SeedlingState}!name@{name}}
+\index{name@{name}!SeedlingState@{SeedlingState}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_seedling_state_a9ddbb56ad1ed10c18a70b952de543622} 
+std\+::string Seedling\+State\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of this state. 
+
+Returns the name identifier for this state.
+
+\begin{DoxyReturn}{Returns}
+String "{}\+Seedling"{}
+
+The string "{}\+Seedling"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_state_a581917435f551e0036b53aaf011c5dd1}{Plant\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_seedling_state_8h}{Seedling\+State.\+h}}\item 
+\mbox{\hyperlink{_seedling_state_8cpp}{Seedling\+State.\+cpp}}\end{DoxyCompactItemize}

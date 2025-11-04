@@ -1,0 +1,130 @@
+\doxysection{Wilting\+State Class Reference}
+\hypertarget{class_wilting_state}{}\label{class_wilting_state}\index{WiltingState@{WiltingState}}
+
+
+Concrete State class representing a stressed plant in decline.  
+
+
+
+
+{\ttfamily \#include $<$Wilting\+State.\+h$>$}
+
+Inheritance diagram for Wilting\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_wilting_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_wilting_state_a1303281f57b300bf0e2795a77ae459bb}{check\+Change}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Evaluates plant conditions and manages state transitions. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_wilting_state_a2f3069c95a4c789b5fcb87db50f075cc}{name}} () override
+\begin{DoxyCompactList}\small\item\em Gets the name of this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_plant_state}{Plant\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Plant\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived state classes. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_plant_state_a3b5fe03dc59713475009ce594dddfd44}{is\+Mature}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the plant is in a mature state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_wilting_state_a57fe6561b345cbae7fc2b5de06ea2f58}\label{class_wilting_state_a57fe6561b345cbae7fc2b5de06ea2f58} 
+class \mbox{\hyperlink{class_wilting_state_a57fe6561b345cbae7fc2b5de06ea2f58}{Singleton\+State$<$ Wilting\+State $>$}}
+\begin{DoxyCompactList}\small\item\em Friend declaration to allow \doxylink{class_singleton_state}{Singleton\+State} access to constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_singleton_state}{Singleton\+State$<$ Wilting\+State $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_wilting_state}{Wilting\+State}} \& \mbox{\hyperlink{class_singleton_state_ae879727a569dbe20df120d382ad4cc86}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_singleton_state}{Singleton\+State$<$ Wilting\+State $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Singleton\+State} ()=default
+\begin{DoxyCompactList}\small\item\em Protected default constructor to prevent direct instantiation. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Singleton\+State} () override=default
+\begin{DoxyCompactList}\small\item\em Protected virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \& \mbox{\hyperlink{class_singleton_state_ab0a01ddd5bc76e8a923674a0a23375c0}{operator=}} (const \mbox{\hyperlink{class_singleton_state}{Singleton\+State}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator to prevent copying. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete State class representing a stressed plant in decline. 
+
+This state typically results from inadequate moisture or insecticide levels, causing a drop in health. The plant requires significantly improved conditions to recover, otherwise it will transition to the \doxylink{class_dead_state}{Dead\+State}. 
+
+\label{doc-func-members}
+\Hypertarget{class_wilting_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wilting_state_a1303281f57b300bf0e2795a77ae459bb}\index{WiltingState@{WiltingState}!checkChange@{checkChange}}
+\index{checkChange@{checkChange}!WiltingState@{WiltingState}}
+\doxysubsubsection{\texorpdfstring{checkChange()}{checkChange()}}
+{\footnotesize\ttfamily \label{class_wilting_state_a1303281f57b300bf0e2795a77ae459bb} 
+void Wilting\+State\+::check\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates plant conditions and manages state transitions. 
+
+Implements state transition logic for wilting plants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the \doxylink{class_plant}{Plant} object being evaluated\\
+\hline
+\end{DoxyParams}
+Decrements water and insecticide levels (high consumption), adjusts health based on care conditions, and transitions back to \doxylink{class_mature_state}{Mature\+State} (if recovered) or to \doxylink{class_dead_state}{Dead\+State}.
+
+Resource consumption\+: -\/3 water, -\/3 insecticide per check (high consumption)
+
+Health adjustments\+:
+\begin{DoxyItemize}
+\item Gains +5 health if moisture \texorpdfstring{$>$}{>} 60 and insecticide \texorpdfstring{$>$}{>} 60 (strong recovery)
+\item Loses -\/3 health for poor moisture (\texorpdfstring{$<$}{<} 40)
+\item Loses -\/3 health for poor insecticide levels (\texorpdfstring{$<$}{<} 40)
+\end{DoxyItemize}
+
+State transitions\+:
+\begin{DoxyItemize}
+\item To \doxylink{class_mature_state}{Mature\+State}\+: if health \texorpdfstring{$>$}{>} 60 AND moisture \texorpdfstring{$>$}{>} 40 AND insecticide \texorpdfstring{$>$}{>} 40 (recovery)
+\item To \doxylink{class_dead_state}{Dead\+State}\+: if health \texorpdfstring{$<$}{<}= 0 
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the \doxylink{class_plant}{Plant} object whose state is being checked \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{class_plant_state_a1ac247dccb0cd665b55af8be3d8df900}{Plant\+State}}.
+
+\Hypertarget{class_wilting_state_a2f3069c95a4c789b5fcb87db50f075cc}\index{WiltingState@{WiltingState}!name@{name}}
+\index{name@{name}!WiltingState@{WiltingState}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_wilting_state_a2f3069c95a4c789b5fcb87db50f075cc} 
+std\+::string Wilting\+State\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the name of this state. 
+
+Returns the name identifier for this state.
+
+\begin{DoxyReturn}{Returns}
+String "{}\+Wilting"{}
+
+The string "{}\+Wilting"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_plant_state_a581917435f551e0036b53aaf011c5dd1}{Plant\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_wilting_state_8h}{Wilting\+State.\+h}}\item 
+\mbox{\hyperlink{_wilting_state_8cpp}{Wilting\+State.\+cpp}}\end{DoxyCompactItemize}

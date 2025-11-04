@@ -1,0 +1,132 @@
+\doxysection{Action\+Log Class Reference}
+\hypertarget{class_action_log}{}\label{class_action_log}\index{ActionLog@{ActionLog}}
+
+
+Manages a queue of commands and a history of executed restock commands.  
+
+
+
+
+{\ttfamily \#include $<$Action\+Log.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_action_log_a802f75faff9789d58c633dfc88624896}\label{class_action_log_a802f75faff9789d58c633dfc88624896} 
+{\bfseries Action\+Log} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_action_log}{Action\+Log}. \end{DoxyCompactList}\item 
+\Hypertarget{class_action_log_ac0d4d8f554228516670dfee822a588de}\label{class_action_log_ac0d4d8f554228516670dfee822a588de} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Action\+Log} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \doxylink{class_action_log}{Action\+Log}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_action_log_a3bcbbf85ad53fd2b7f1f3cacaf541a75}{enqueue}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ cmd)
+\begin{DoxyCompactList}\small\item\em Adds a command to the back of the processing queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_action_log_afa450d3a0d97173fa27e20bdeda7e14a}{process\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Processes the next command at the front of the queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_action_log_a4c5b23063129d5a2f086891795cc68d5}{process\+All}} ()
+\begin{DoxyCompactList}\small\item\em Processes all commands currently in the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_action_log_a2371cd8b343eeb27d5e9318c7f07254a}{undo\+Last\+Restock}} ()
+\begin{DoxyCompactList}\small\item\em Undoes the effect of the last successfully executed restock command. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_action_log_ab318cc6d2016d6ebecf102ff4ec6c1a0}{queue\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current size of the command queue. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_action_log_ade51ef35c1a4e18fa375eb3d4c24925b}{restock\+History\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current size of the restock history vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a queue of commands and a history of executed restock commands. 
+
+This class uses the \doxylink{class_command}{Command} design pattern to queue up actions, process them sequentially, and maintain a history for a specific type of command (restock) to allow for an undo operation. 
+
+\label{doc-func-members}
+\Hypertarget{class_action_log_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_action_log_a3bcbbf85ad53fd2b7f1f3cacaf541a75}\index{ActionLog@{ActionLog}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!ActionLog@{ActionLog}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily \label{class_action_log_a3bcbbf85ad53fd2b7f1f3cacaf541a75} 
+void Action\+Log\+::enqueue (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$}]{cmd}{}\end{DoxyParamCaption})}
+
+
+
+Adds a command to the back of the processing queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A unique pointer to the \doxylink{class_command}{Command} object to be queued. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_action_log_a4c5b23063129d5a2f086891795cc68d5}\index{ActionLog@{ActionLog}!processAll@{processAll}}
+\index{processAll@{processAll}!ActionLog@{ActionLog}}
+\doxysubsubsection{\texorpdfstring{processAll()}{processAll()}}
+{\footnotesize\ttfamily \label{class_action_log_a4c5b23063129d5a2f086891795cc68d5} 
+int Action\+Log\+::process\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Processes all commands currently in the queue. 
+
+\begin{DoxyReturn}{Returns}
+The number of commands that were successfully processed (executed). 
+\end{DoxyReturn}
+\Hypertarget{class_action_log_afa450d3a0d97173fa27e20bdeda7e14a}\index{ActionLog@{ActionLog}!processNext@{processNext}}
+\index{processNext@{processNext}!ActionLog@{ActionLog}}
+\doxysubsubsection{\texorpdfstring{processNext()}{processNext()}}
+{\footnotesize\ttfamily \label{class_action_log_afa450d3a0d97173fa27e20bdeda7e14a} 
+bool Action\+Log\+::process\+Next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Processes the next command at the front of the queue. 
+
+If successful, the command is executed. If the command is a restock command, it is moved to the restock history for potential undo.
+
+\begin{DoxyReturn}{Returns}
+true if a command was successfully processed (executed), false if the queue was empty or execution failed. 
+\end{DoxyReturn}
+\Hypertarget{class_action_log_ab318cc6d2016d6ebecf102ff4ec6c1a0}\index{ActionLog@{ActionLog}!queueSize@{queueSize}}
+\index{queueSize@{queueSize}!ActionLog@{ActionLog}}
+\doxysubsubsection{\texorpdfstring{queueSize()}{queueSize()}}
+{\footnotesize\ttfamily \label{class_action_log_ab318cc6d2016d6ebecf102ff4ec6c1a0} 
+size\+\_\+t Action\+Log\+::queue\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the current size of the command queue. 
+
+\begin{DoxyReturn}{Returns}
+The number of commands waiting to be processed. 
+\end{DoxyReturn}
+\Hypertarget{class_action_log_ade51ef35c1a4e18fa375eb3d4c24925b}\index{ActionLog@{ActionLog}!restockHistorySize@{restockHistorySize}}
+\index{restockHistorySize@{restockHistorySize}!ActionLog@{ActionLog}}
+\doxysubsubsection{\texorpdfstring{restockHistorySize()}{restockHistorySize()}}
+{\footnotesize\ttfamily \label{class_action_log_ade51ef35c1a4e18fa375eb3d4c24925b} 
+size\+\_\+t Action\+Log\+::restock\+History\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the current size of the restock history vector. 
+
+\begin{DoxyReturn}{Returns}
+The number of restock commands in the history. 
+\end{DoxyReturn}
+\Hypertarget{class_action_log_a2371cd8b343eeb27d5e9318c7f07254a}\index{ActionLog@{ActionLog}!undoLastRestock@{undoLastRestock}}
+\index{undoLastRestock@{undoLastRestock}!ActionLog@{ActionLog}}
+\doxysubsubsection{\texorpdfstring{undoLastRestock()}{undoLastRestock()}}
+{\footnotesize\ttfamily \label{class_action_log_a2371cd8b343eeb27d5e9318c7f07254a} 
+bool Action\+Log\+::undo\+Last\+Restock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Undoes the effect of the last successfully executed restock command. 
+
+This requires the \doxylink{class_command}{Command} object to implement an {\ttfamily undo()} method.
+
+\begin{DoxyReturn}{Returns}
+true if an undo operation was performed, false if the history is empty or undo failed. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_action_log_8h}{Action\+Log.\+h}}\item 
+Action\+Log.\+cpp\end{DoxyCompactItemize}

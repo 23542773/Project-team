@@ -1,0 +1,101 @@
+\doxysection{Plant\+Item Class Reference}
+\hypertarget{class_plant_item}{}\label{class_plant_item}\index{PlantItem@{PlantItem}}
+
+
+Concrete \doxylink{class_sale_item}{Sale\+Item} representing a \doxylink{class_plant}{Plant}.  
+
+
+
+
+{\ttfamily \#include $<$Plant\+Item.\+h$>$}
+
+Inheritance diagram for Plant\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_plant_item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plant_item_acd7a0c1c4ce64de9ee39b48eb11024b9}{Plant\+Item}} (\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_plant_item}{Plant\+Item} wrapping a \doxylink{class_plant}{Plant} pointer. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_plant_item_af549a844d09339562eacfc8997f45ae7}{cost}} () override
+\begin{DoxyCompactList}\small\item\em Returns the cost of the plant. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_plant_item_aea3ef4a2f4367e0a2c38f64f9742a3ad}{description}} () override
+\begin{DoxyCompactList}\small\item\em Returns the description of the plant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sale_item}{Sale\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_sale_item_a021804c996ec5473a37100bded129f7a}{\texorpdfstring{$\sim$}{\string~}\+Sale\+Item}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived concrete \doxylink{class_sale_item}{Sale\+Item} and Decorator classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete \doxylink{class_sale_item}{Sale\+Item} representing a \doxylink{class_plant}{Plant}. 
+
+Provides the cost and description of a \doxylink{class_plant}{Plant} for sale. 
+
+\label{doc-constructors}
+\Hypertarget{class_plant_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_plant_item_acd7a0c1c4ce64de9ee39b48eb11024b9}\index{PlantItem@{PlantItem}!PlantItem@{PlantItem}}
+\index{PlantItem@{PlantItem}!PlantItem@{PlantItem}}
+\doxysubsubsection{\texorpdfstring{PlantItem()}{PlantItem()}}
+{\footnotesize\ttfamily \label{class_plant_item_acd7a0c1c4ce64de9ee39b48eb11024b9} 
+Plant\+Item\+::\+Plant\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_plant_item}{Plant\+Item} wrapping a \doxylink{class_plant}{Plant} pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the \doxylink{class_plant}{Plant} object. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_plant_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_plant_item_af549a844d09339562eacfc8997f45ae7}\index{PlantItem@{PlantItem}!cost@{cost}}
+\index{cost@{cost}!PlantItem@{PlantItem}}
+\doxysubsubsection{\texorpdfstring{cost()}{cost()}}
+{\footnotesize\ttfamily \label{class_plant_item_af549a844d09339562eacfc8997f45ae7} 
+double Plant\+Item\+::cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the cost of the plant. 
+
+\begin{DoxyReturn}{Returns}
+Cost as a double. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_sale_item_a6dddf7100be6d2f5b1fd28f115a69a56}{Sale\+Item}}.
+
+\Hypertarget{class_plant_item_aea3ef4a2f4367e0a2c38f64f9742a3ad}\index{PlantItem@{PlantItem}!description@{description}}
+\index{description@{description}!PlantItem@{PlantItem}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{class_plant_item_aea3ef4a2f4367e0a2c38f64f9742a3ad} 
+std\+::string Plant\+Item\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the description of the plant. 
+
+\begin{DoxyReturn}{Returns}
+Description string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_sale_item_ac8d9e1668cfb0ff0e908a453008cc61e}{Sale\+Item}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_plant_item_8h}{Plant\+Item.\+h}}\item 
+Plant\+Item.\+cpp\end{DoxyCompactItemize}

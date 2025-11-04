@@ -1,0 +1,38 @@
+\doxysection{Colleague.\+h}
+\hypertarget{_colleague_8h_source}{}\label{_colleague_8h_source}\mbox{\hyperlink{_colleague_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ COLLEAGUE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ COLLEAGUE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Forward\ declarations\ to\ minimize\ dependencies}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_message}{Message}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_colleague_aa305940723cc96d25028ad779edf3bc9}{Colleague}}\ }
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ \mbox{\hyperlink{class_colleague_a3a26c175ffaa0c53a448d3a8af83c4dd}{mediator}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ \mbox{\hyperlink{class_colleague_a00c7aef0cc4f1c957075703aa0dc1e8d}{userId}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_colleague_aa305940723cc96d25028ad779edf3bc9}{Colleague}}(\mbox{\hyperlink{class_messaging_mediator}{MessagingMediator}}*\ med,\ \textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{id})\ :\ \mbox{\hyperlink{class_colleague_a3a26c175ffaa0c53a448d3a8af83c4dd}{mediator}}(med),\ \mbox{\hyperlink{class_colleague_a00c7aef0cc4f1c957075703aa0dc1e8d}{userId}}(id)\ \{\}}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_colleague_a9f60f1ec88562b8e7201897d6e8cef2f}{\string~Colleague}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colleague_ac9b38a3c75b0153418c3723335ed26b5}{sendMessage}}(\textcolor{keyword}{const}\ std::string\&\ toUserId,\ \textcolor{keyword}{const}\ std::string\&\ text)\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colleague_a165035acb0d45a5fda8ee1390a9a6721}{receiveMessage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_message}{Message}}\&\ msg)\ =\ 0;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ std::string\ \mbox{\hyperlink{class_colleague_adcc4b821a5ee4f8e367a5133261ed7bc}{getUserId}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_colleague_a00c7aef0cc4f1c957075703aa0dc1e8d}{userId}};\ \}}
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

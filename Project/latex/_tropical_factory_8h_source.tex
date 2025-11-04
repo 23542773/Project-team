@@ -1,0 +1,32 @@
+\doxysection{Tropical\+Factory.\+h}
+\hypertarget{_tropical_factory_8h_source}{}\label{_tropical_factory_8h_source}\mbox{\hyperlink{_tropical_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ TROPICALFACTORY\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ TROPICALFACTORY\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_kit_factory_8h}{PlantKitFactory.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_glazed_ceramic_pot_8h}{GlazedCeramicPot.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_peat_soil_mix_8h}{PeatSoilMix.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_care_strategy_8h}{CareStrategy.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tropical_strategy_8h}{TropicalStrategy.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tropical_factory}{TropicalFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_plant_kit_factory}{PlantKitFactory}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_tropical_strategy}{TropicalStrategy}}\ s;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_care_strategy}{CareStrategy}}*\ \mbox{\hyperlink{class_tropical_factory_acc5820dc8e2911f6b4d8bd0e1ede08b6}{careStrategy}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_pot}{Pot}}*\ \mbox{\hyperlink{class_tropical_factory_a62e33a77012cddbc09d72ef872d98d2f}{createPot}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_soil_mix}{SoilMix}}*\ \mbox{\hyperlink{class_tropical_factory_a1ce7798eb8ed2bddde8d3ba8d9cab266}{createSoilMix}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

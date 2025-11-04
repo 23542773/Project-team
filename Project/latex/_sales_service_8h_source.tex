@@ -1,0 +1,64 @@
+\doxysection{Sales\+Service.\+h}
+\hypertarget{_sales_service_8h_source}{}\label{_sales_service_8h_source}\mbox{\hyperlink{_sales_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ SALESSERVICE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SALESSERVICE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_service_subject_8h}{ServiceSubject.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_events_8h}{Events.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_receipt}{Receipt}}\ }
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_receipt_a046571f76478faba069582e83143f191}{success}};}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_receipt_a107d5da9069422c8da4abac9e09a2842}{orderId}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_receipt_a3032ee4d063fa694e788bd6f6c91dd9b}{totalCost}};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_receipt_afad6aad432504a7fe6baa9d87e9eb558}{amountPaid}};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_receipt_a5d9773623d54da02bb37557212dbe4a0}{change}};}
+\DoxyCodeLine{00038\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_receipt_ae1d8a4fd6f784a05db428830e729d362}{message}};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sales_service}{SalesService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_service_subject}{ServiceSubject}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ std::string\ \mbox{\hyperlink{class_sales_service_aaea6374fdba4a221afebf5885dc9cc06}{createOrder}}(std::string\ customerId,\ std::vector<events::OrderLine>\&\ lines);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sales_service_aea050e217de85d3d0f8a7e6aa5631529}{assign}}(std::string\ orderId,\ std::string\ staffId);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sales_service_a059fbd1c02d89e9481c4790be0a40ac1}{updateStatus}}(std::string\ orderId,\ \mbox{\hyperlink{namespaceevents_aa640d68b941fcf80c862297b15735009}{events::OrderStatus}}\ newStatus);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::optional<events::Order>\ \mbox{\hyperlink{class_sales_service_a53e046f516eb7465c42dccb42c2ea5b0}{get}}(std::string\ orderId);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ std::vector<events::Order>\ \mbox{\hyperlink{class_sales_service_a8c7da44f95f83f46bcb0c66d81e2043b}{listByStaff}}(std::string\ staffId);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ std::vector<events::Order>\ \mbox{\hyperlink{class_sales_service_a15a4acf5b6c8dc960cc9be7ef1b83a92}{getOrdersByCustomer}}(std::string\ customerId);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00100\ \ \ \ \ std::vector<events::Order>\ \mbox{\hyperlink{class_sales_service_a3f46fbb4f034a6f9891f873544697308}{getOrdersByStaff}}(std::string\ staffId);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00113\ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{struct_receipt}{Receipt}}\ \mbox{\hyperlink{class_sales_service_af8c27d173ae202954977a34d47280de1}{checkout}}(std::string\ customerId,\ std::vector<events::OrderLine>\&\ lines,\ \textcolor{keywordtype}{double}\ amountPaid);}
+\DoxyCodeLine{00122\ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ Receipt\ managment}}
+\DoxyCodeLine{00129\ \ \ \ \ std::optional<Receipt>\ \mbox{\hyperlink{class_sales_service_a7daa3b95de40eb661e39f60ac84ed889}{getReceipt}}(std::string\ orderId);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ std::vector<Receipt>\ \mbox{\hyperlink{class_sales_service_a378bd8603d59ce76837c62dd96ac8fce}{getCustomerReceipts}}(std::string\ customerId);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00150\ \ \ \ \ std::string\ nextOrderId();}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00158\ \ \ \ \ std::unordered\_map<std::string,\ events::Order>\ orders;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ seq\ =\ 1;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \ \ \ \ std::unordered\_map<std::string,\ Receipt>\ receipts;}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SALESSERVICE\_H}}
+
+\end{DoxyCode}

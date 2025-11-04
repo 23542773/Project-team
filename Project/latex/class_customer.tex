@@ -1,0 +1,169 @@
+\doxysection{Customer Class Reference}
+\hypertarget{class_customer}{}\label{class_customer}\index{Customer@{Customer}}
+
+
+Concrete \doxylink{class_colleague}{Colleague} representing a nursery customer.  
+
+
+
+
+{\ttfamily \#include $<$Customer.\+h$>$}
+
+Inheritance diagram for Customer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_customer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_customer_a01a40cb7b0c422c980804f97133f2aed}{Customer}} (\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}med, const std\+::string \&customer\+Id, const std\+::string \&customer\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_customer}{Customer} colleague. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_acc8d59edcbead9706e6c780acea05295}{send\+Message}} (const std\+::string \&to\+User\+Id, const std\+::string \&text) override
+\begin{DoxyCompactList}\small\item\em Sends a message to a colleague by user ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_a9488508d3d16d947c222a8fa7c45e7ad}{receive\+Message}} (const \mbox{\hyperlink{struct_message}{Message}} \&msg) override
+\begin{DoxyCompactList}\small\item\em Receives a message from the mediator. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_message}{Message}} $>$ \mbox{\hyperlink{class_customer_ac6046b0650f79074952f353a44aee754}{get\+Conversation}} (const std\+::string \&other\+User\+Id) const
+\begin{DoxyCompactList}\small\item\em Retrieves conversation history with another user. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_customer_a6268f1d7d0aaa804aa2113e2cac7df47}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the customer\textquotesingle{}s unique ID. \end{DoxyCompactList}\item 
+\Hypertarget{class_customer_a54d175538cebde1559e82c644eba9f64}\label{class_customer_a54d175538cebde1559e82c644eba9f64} 
+std\+::string {\bfseries get\+Name} () const
+\begin{DoxyCompactList}\small\item\em Gets the customer\textquotesingle{}s display name. \end{DoxyCompactList}\item 
+\Hypertarget{class_customer_a3e22085896e52a1325be1f6a14d47775}\label{class_customer_a3e22085896e52a1325be1f6a14d47775} 
+const std\+::vector$<$ std\+::string $>$ \& {\bfseries get\+Active\+Orders} () const
+\begin{DoxyCompactList}\small\item\em Get active orders for this customer. \end{DoxyCompactList}\item 
+\Hypertarget{class_customer_a4cac0239615a7309e2f7fec7dcf1a0e4}\label{class_customer_a4cac0239615a7309e2f7fec7dcf1a0e4} 
+void {\bfseries add\+Active\+Order} (const std\+::string \&order\+Id)
+\begin{DoxyCompactList}\small\item\em Add an active order ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_colleague}{Colleague}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_colleague_aa305940723cc96d25028ad779edf3bc9}{Colleague}} (\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}med, const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_colleague}{Colleague} with a mediator and user ID. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Colleague} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_colleague_adcc4b821a5ee4f8e367a5133261ed7bc}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the unique user ID of this colleague. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_colleague}{Colleague}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*} {\bfseries mediator}
+\begin{DoxyCompactList}\small\item\em Pointer to the mediator that handles message routing. \end{DoxyCompactList}\item 
+std\+::string {\bfseries user\+Id}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this colleague. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete \doxylink{class_colleague}{Colleague} representing a nursery customer. 
+
+This class represents customers in the nursery system who can communicate with staff members through the mediator. Customers can only send messages to Sales \doxylink{class_staff}{Staff} due to business rules enforced by the \doxylink{class_chat_mediator}{Chat\+Mediator}.
+
+Customers maintain their own message history and track their active orders. All communication is routed through the mediator to maintain loose coupling and enforce organizational communication policies. 
+
+\label{doc-constructors}
+\Hypertarget{class_customer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_customer_a01a40cb7b0c422c980804f97133f2aed}\index{Customer@{Customer}!Customer@{Customer}}
+\index{Customer@{Customer}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{Customer()}{Customer()}}
+{\footnotesize\ttfamily \label{class_customer_a01a40cb7b0c422c980804f97133f2aed} 
+Customer\+::\+Customer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}}]{med}{, }\item[{const std\+::string \&}]{customer\+Id}{, }\item[{const std\+::string \&}]{customer\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_customer}{Customer} colleague. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em med} & Pointer to the \doxylink{class_messaging_mediator}{Messaging\+Mediator} for communication \\
+\hline
+{\em customer\+Id} & Unique identifier for this customer \\
+\hline
+{\em customer\+Name} & Display name for this customer\\
+\hline
+\end{DoxyParams}
+Creates a customer who can communicate through the mediator and maintains their own message history and order list. 
+
+\label{doc-func-members}
+\Hypertarget{class_customer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_customer_ac6046b0650f79074952f353a44aee754}\index{Customer@{Customer}!getConversation@{getConversation}}
+\index{getConversation@{getConversation}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getConversation()}{getConversation()}}
+{\footnotesize\ttfamily \label{class_customer_ac6046b0650f79074952f353a44aee754} 
+std\+::vector$<$ \mbox{\hyperlink{struct_message}{Message}} $>$ Customer\+::get\+Conversation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{other\+User\+Id}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves conversation history with another user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other\+User\+Id} & User ID of the other party in the conversation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of \doxylink{struct_message}{Message} objects representing the conversation
+\end{DoxyReturn}
+Filters the customer\textquotesingle{}s message history to return only messages sent to or received from the specified user. \Hypertarget{class_customer_a6268f1d7d0aaa804aa2113e2cac7df47}\index{Customer@{Customer}!getId@{getId}}
+\index{getId@{getId}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_customer_a6268f1d7d0aaa804aa2113e2cac7df47} 
+std\+::string Customer\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the customer\textquotesingle{}s unique ID. 
+
+\begin{DoxyReturn}{Returns}
+String containing the customer ID 
+\end{DoxyReturn}
+\Hypertarget{class_customer_a9488508d3d16d947c222a8fa7c45e7ad}\index{Customer@{Customer}!receiveMessage@{receiveMessage}}
+\index{receiveMessage@{receiveMessage}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{receiveMessage()}{receiveMessage()}}
+{\footnotesize\ttfamily \label{class_customer_a9488508d3d16d947c222a8fa7c45e7ad} 
+void Customer\+::receive\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_message}{Message}} \&}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Receives a message from the mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \doxylink{struct_message}{Message} object to receive\\
+\hline
+\end{DoxyParams}
+Stores the received message in the customer\textquotesingle{}s message history for later retrieval and display in conversations. 
+
+Implements \mbox{\hyperlink{class_colleague_a165035acb0d45a5fda8ee1390a9a6721}{Colleague}}.
+
+\Hypertarget{class_customer_acc8d59edcbead9706e6c780acea05295}\index{Customer@{Customer}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily \label{class_customer_acc8d59edcbead9706e6c780acea05295} 
+void Customer\+::send\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{to\+User\+Id}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sends a message to a colleague by user ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+User\+Id} & The recipient colleague\textquotesingle{}s user ID \\
+\hline
+{\em text} & The message content to send\\
+\hline
+\end{DoxyParams}
+Routes the message through the mediator. The mediator will enforce rules restricting customers to only message Sales \doxylink{class_staff}{Staff}. 
+
+Implements \mbox{\hyperlink{class_colleague_ac9b38a3c75b0153418c3723335ed26b5}{Colleague}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_customer_8h}{Customer.\+h}}\item 
+Customer.\+cpp\end{DoxyCompactItemize}

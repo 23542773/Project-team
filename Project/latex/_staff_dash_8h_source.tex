@@ -1,0 +1,31 @@
+\doxysection{Staff\+Dash.\+h}
+\hypertarget{_staff_dash_8h_source}{}\label{_staff_dash_8h_source}\mbox{\hyperlink{_staff_dash_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ STAFFDASH\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ STAFFDASH\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_nursery_observer_8h}{NurseryObserver.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_staff_dash}{StaffDash}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_nursery_observer}{NurseryObserver}}\ }
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_dash_aa4bf5d8f6c54f387e43a655a3371f090}{onEvent}}(\mbox{\hyperlink{structevents_1_1_plant}{events::Plant}}\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_dash_aa4bf5d8f6c54f387e43a655a3371f090}{onEvent}}(\mbox{\hyperlink{structevents_1_1_stock}{events::Stock}}\ s)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_dash_aa4bf5d8f6c54f387e43a655a3371f090}{onEvent}}(\mbox{\hyperlink{structevents_1_1_order}{events::Order}}\&\ o)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ std::vector<std::string>\&\ \mbox{\hyperlink{class_staff_dash_a020cce8cf8af2c10631cf01961249e6c}{getAlerts}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_staff_dash_ab68298555939bb208589947e7c13e5c8}{clear}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::vector<std::string>\ alerts;}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STAFFDASH\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,318 @@
+\doxysection{Sales\+Service Class Reference}
+\hypertarget{class_sales_service}{}\label{class_sales_service}\index{SalesService@{SalesService}}
+
+
+Concrete Subject implementation for sales management.  
+
+
+
+
+{\ttfamily \#include $<$Sales\+Service.\+h$>$}
+
+Inheritance diagram for Sales\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sales_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_sales_service_aaea6374fdba4a221afebf5885dc9cc06}{create\+Order}} (std\+::string customer\+Id, std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order_line}{events\+::\+Order\+Line}} $>$ \&lines)
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{struct_order}{Order}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sales_service_aea050e217de85d3d0f8a7e6aa5631529}{assign}} (std\+::string order\+Id, std\+::string staff\+Id)
+\begin{DoxyCompactList}\small\item\em Assigns an \doxylink{struct_order}{Order} to a staff member. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sales_service_a059fbd1c02d89e9481c4790be0a40ac1}{update\+Status}} (std\+::string order\+Id, \mbox{\hyperlink{namespaceevents_aa640d68b941fcf80c862297b15735009}{events\+::\+Order\+Status}} new\+Status)
+\begin{DoxyCompactList}\small\item\em Updates the status of an \doxylink{struct_order}{Order}. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} $>$ \mbox{\hyperlink{class_sales_service_a53e046f516eb7465c42dccb42c2ea5b0}{get}} (std\+::string order\+Id)
+\begin{DoxyCompactList}\small\item\em Gets an \doxylink{struct_order}{Order} by its ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} $>$ \mbox{\hyperlink{class_sales_service_a8c7da44f95f83f46bcb0c66d81e2043b}{list\+By\+Staff}} (std\+::string staff\+Id)
+\begin{DoxyCompactList}\small\item\em Gets the Orders of a staff member. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} $>$ \mbox{\hyperlink{class_sales_service_a15a4acf5b6c8dc960cc9be7ef1b83a92}{get\+Orders\+By\+Customer}} (std\+::string customer\+Id)
+\begin{DoxyCompactList}\small\item\em Gets the Orders of a customer. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} $>$ \mbox{\hyperlink{class_sales_service_a3f46fbb4f034a6f9891f873544697308}{get\+Orders\+By\+Staff}} (std\+::string staff\+Id)
+\begin{DoxyCompactList}\small\item\em Gets the Orders assigned to a staff member. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_receipt}{Receipt}} \mbox{\hyperlink{class_sales_service_af8c27d173ae202954977a34d47280de1}{checkout}} (std\+::string customer\+Id, std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order_line}{events\+::\+Order\+Line}} $>$ \&lines, double amount\+Paid)
+\begin{DoxyCompactList}\small\item\em Processes a sales transaction, including order creation, calculating cost, and processing payment. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{struct_receipt}{Receipt}} $>$ \mbox{\hyperlink{class_sales_service_a7daa3b95de40eb661e39f60ac84ed889}{get\+Receipt}} (std\+::string order\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves a receipt by order ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_receipt}{Receipt}} $>$ \mbox{\hyperlink{class_sales_service_a378bd8603d59ce76837c62dd96ac8fce}{get\+Customer\+Receipts}} (std\+::string customer\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves a list of all receipts for a specific customer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_service_subject}{Service\+Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_service_subject_a70dee5374b9a16826db0252968c20f73}{\texorpdfstring{$\sim$}{\string~}\+Service\+Subject}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_ac4fbb20515b515d8a0b71b7512300e7e}{add\+Observer}} (\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*}obs)
+\begin{DoxyCompactList}\small\item\em Add an observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_ac560b745489d76e99d358c8515a83ee8}{set\+Observers}} (\mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*}inv)
+\begin{DoxyCompactList}\small\item\em Alternate to registering Observer roles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_service_subject}{Service\+Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_service_subject_a40e7daef992161b0caed703f3bc488b1}{notify}} (\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}} e)
+\begin{DoxyCompactList}\small\item\em Notify all observers of a \doxylink{class_plant}{Plant} event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_a222dcae213b597b13242cffb5a91cb73}{notify}} (\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}} s)
+\begin{DoxyCompactList}\small\item\em Notify all observers of a Stock event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_service_subject_af842cf58f846ec1255a2d73f00f75be2}{notify}} (\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&o)
+\begin{DoxyCompactList}\small\item\em Notify all observers of an \doxylink{struct_order}{Order} event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_service_subject}{Service\+Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_service_subject_a540e03adfacf9e6f8444b958b35b9764}{observers}}
+\begin{DoxyCompactList}\small\item\em List of observers "{}listening"{} to this subject. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Subject implementation for sales management. 
+
+Manages orders and notifies observers of order-\/related events. 
+
+\label{doc-func-members}
+\Hypertarget{class_sales_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sales_service_aea050e217de85d3d0f8a7e6aa5631529}\index{SalesService@{SalesService}!assign@{assign}}
+\index{assign@{assign}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}}
+{\footnotesize\ttfamily \label{class_sales_service_aea050e217de85d3d0f8a7e6aa5631529} 
+bool Sales\+Service\+::assign (\begin{DoxyParamCaption}\item[{std\+::string}]{order\+Id}{, }\item[{std\+::string}]{staff\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Assigns an \doxylink{struct_order}{Order} to a staff member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique ID of the order \\
+\hline
+{\em staff\+Id} & The ID of the staff member to assign \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the assignment was successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_af8c27d173ae202954977a34d47280de1}\index{SalesService@{SalesService}!checkout@{checkout}}
+\index{checkout@{checkout}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{checkout()}{checkout()}}
+{\footnotesize\ttfamily \label{class_sales_service_af8c27d173ae202954977a34d47280de1} 
+\mbox{\hyperlink{struct_receipt}{Receipt}} Sales\+Service\+::checkout (\begin{DoxyParamCaption}\item[{std\+::string}]{customer\+Id}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order_line}{events\+::\+Order\+Line}} $>$ \&}]{lines}{, }\item[{double}]{amount\+Paid}{}\end{DoxyParamCaption})}
+
+
+
+Processes a sales transaction, including order creation, calculating cost, and processing payment. 
+
+Processes checkout for an order.
+
+This method creates an order, calculates the total cost based on the lines, processes the payment, stores a receipt, and notifies observers of the outcome.
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & The ID of the customer making the purchase. \\
+\hline
+{\em lines} & A vector of \doxylink{struct_order_line}{Order\+Line} structures detailing the items being purchased. \\
+\hline
+{\em amount\+Paid} & The monetary amount provided by the customer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_receipt}{Receipt} structure detailing the outcome of the transaction.
+\end{DoxyReturn}
+Processes checkout for an order 
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & The ID of the customer \\
+\hline
+{\em lines} & The line items in the order \\
+\hline
+{\em amount\+Paid} & The amount paid by the customer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_receipt}{Receipt} containing details of the transaction
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & The ID of the customer \\
+\hline
+{\em lines} & The line items in the order \\
+\hline
+{\em amount\+Paid} & The amount paid by the customer\\
+\hline
+\end{DoxyParams}
+Calculates total cost, verifies payment, creates order, and generates receipt. \begin{DoxyReturn}{Returns}
+A \doxylink{struct_receipt}{Receipt} containing details of the transaction 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_aaea6374fdba4a221afebf5885dc9cc06}\index{SalesService@{SalesService}!createOrder@{createOrder}}
+\index{createOrder@{createOrder}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{createOrder()}{createOrder()}}
+{\footnotesize\ttfamily \label{class_sales_service_aaea6374fdba4a221afebf5885dc9cc06} 
+std\+::string Sales\+Service\+::create\+Order (\begin{DoxyParamCaption}\item[{std\+::string}]{customer\+Id}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order_line}{events\+::\+Order\+Line}} $>$ \&}]{lines}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new \doxylink{struct_order}{Order}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & The ID of the customer placing the order \\
+\hline
+{\em lines} & The line items in the order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unique ID of the created order 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_a53e046f516eb7465c42dccb42c2ea5b0}\index{SalesService@{SalesService}!get@{get}}
+\index{get@{get}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{class_sales_service_a53e046f516eb7465c42dccb42c2ea5b0} 
+std\+::optional$<$ \mbox{\hyperlink{struct_order}{Order}} $>$ Sales\+Service\+::get (\begin{DoxyParamCaption}\item[{std\+::string}]{order\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Gets an \doxylink{struct_order}{Order} by its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique ID of the order\\
+\hline
+{\em order\+Id} & The unique ID of the order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+optional$<$\+Order$>$ if \doxylink{struct_order}{Order} is found, null otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_a378bd8603d59ce76837c62dd96ac8fce}\index{SalesService@{SalesService}!getCustomerReceipts@{getCustomerReceipts}}
+\index{getCustomerReceipts@{getCustomerReceipts}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{getCustomerReceipts()}{getCustomerReceipts()}}
+{\footnotesize\ttfamily \label{class_sales_service_a378bd8603d59ce76837c62dd96ac8fce} 
+std\+::vector$<$ \mbox{\hyperlink{struct_receipt}{Receipt}} $>$ Sales\+Service\+::get\+Customer\+Receipts (\begin{DoxyParamCaption}\item[{std\+::string}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a list of all receipts for a specific customer. 
+
+Retrieves all receipts for a customer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & The ID of the customer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{struct_receipt}{Receipt} structures associated with the customer.
+\end{DoxyReturn}
+Retrieves all receipts for a customer 
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & The ID of the customer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of Receipts associated with the specified customer
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & The ID of the customer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of Receipts associated with the specified customer 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_a15a4acf5b6c8dc960cc9be7ef1b83a92}\index{SalesService@{SalesService}!getOrdersByCustomer@{getOrdersByCustomer}}
+\index{getOrdersByCustomer@{getOrdersByCustomer}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{getOrdersByCustomer()}{getOrdersByCustomer()}}
+{\footnotesize\ttfamily \label{class_sales_service_a15a4acf5b6c8dc960cc9be7ef1b83a92} 
+std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} $>$ Sales\+Service\+::get\+Orders\+By\+Customer (\begin{DoxyParamCaption}\item[{std\+::string}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Gets the Orders of a customer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & The ID of the customer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of Orders associated with the specified customer 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_a3f46fbb4f034a6f9891f873544697308}\index{SalesService@{SalesService}!getOrdersByStaff@{getOrdersByStaff}}
+\index{getOrdersByStaff@{getOrdersByStaff}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{getOrdersByStaff()}{getOrdersByStaff()}}
+{\footnotesize\ttfamily \label{class_sales_service_a3f46fbb4f034a6f9891f873544697308} 
+std\+::vector$<$ \mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} $>$ Sales\+Service\+::get\+Orders\+By\+Staff (\begin{DoxyParamCaption}\item[{std\+::string}]{staff\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Gets the Orders assigned to a staff member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff\+Id} & The ID of the staff member \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of Orders assigned to the specified staff member 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_a7daa3b95de40eb661e39f60ac84ed889}\index{SalesService@{SalesService}!getReceipt@{getReceipt}}
+\index{getReceipt@{getReceipt}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{getReceipt()}{getReceipt()}}
+{\footnotesize\ttfamily \label{class_sales_service_a7daa3b95de40eb661e39f60ac84ed889} 
+std\+::optional$<$ \mbox{\hyperlink{struct_receipt}{Receipt}} $>$ Sales\+Service\+::get\+Receipt (\begin{DoxyParamCaption}\item[{std\+::string}]{order\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a receipt by order ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique ID of the order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An optional \doxylink{struct_receipt}{Receipt} if found, empty otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_a8c7da44f95f83f46bcb0c66d81e2043b}\index{SalesService@{SalesService}!listByStaff@{listByStaff}}
+\index{listByStaff@{listByStaff}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{listByStaff()}{listByStaff()}}
+{\footnotesize\ttfamily \label{class_sales_service_a8c7da44f95f83f46bcb0c66d81e2043b} 
+std\+::vector$<$ \mbox{\hyperlink{struct_order}{Order}} $>$ Sales\+Service\+::list\+By\+Staff (\begin{DoxyParamCaption}\item[{std\+::string}]{staff\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Gets the Orders of a staff member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff\+Id} & The ID of the staff member \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of Orders assigned to the specified staff member 
+\end{DoxyReturn}
+\Hypertarget{class_sales_service_a059fbd1c02d89e9481c4790be0a40ac1}\index{SalesService@{SalesService}!updateStatus@{updateStatus}}
+\index{updateStatus@{updateStatus}!SalesService@{SalesService}}
+\doxysubsubsection{\texorpdfstring{updateStatus()}{updateStatus()}}
+{\footnotesize\ttfamily \label{class_sales_service_a059fbd1c02d89e9481c4790be0a40ac1} 
+bool Sales\+Service\+::update\+Status (\begin{DoxyParamCaption}\item[{std\+::string}]{order\+Id}{, }\item[{\mbox{\hyperlink{namespaceevents_aa640d68b941fcf80c862297b15735009}{events\+::\+Order\+Status}}}]{new\+Status}{}\end{DoxyParamCaption})}
+
+
+
+Updates the status of an \doxylink{struct_order}{Order}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique ID of the order \\
+\hline
+{\em new\+Status} & The new status to set for the order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the status update was successful, false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_sales_service_8h}{Sales\+Service.\+h}}\item 
+\mbox{\hyperlink{_sales_service_8cpp}{Sales\+Service.\+cpp}}\end{DoxyCompactItemize}

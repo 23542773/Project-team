@@ -1,0 +1,216 @@
+\doxysection{Staff\+Service Class Reference}
+\hypertarget{class_staff_service}{}\label{class_staff_service}\index{StaffService@{StaffService}}
+
+
+Manages all staff members, tracking their assignments and facilitating load balancing.  
+
+
+
+
+{\ttfamily \#include $<$Staff\+Service.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_staff_service_a3d7d74bbf4c030ba456769963231e1b0}{Staff\+Service}} (\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}med)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_staff_service}{Staff\+Service}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_staff_service_a622591ac1765d4ec52e1f9dff1039e53}{set\+Mediator}} (\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}med)
+\begin{DoxyCompactList}\small\item\em Sets or updates the \doxylink{class_messaging_mediator}{Messaging\+Mediator} used by this service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_staff_service_ad7018ca2f3e686eb9ea05892c41a4d9b}{add\+Staff}} (std\+::string staff\+Id, std\+::string name, \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{Staff\+Role}} role=\mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65}{Staff\+Role\+::\+Sales}})
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{class_staff}{Staff} object, registers it in the service, and sets its role. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_staff_service_a9f30a0659325fac153b5d153225949cf}{least\+Loaded}} ()
+\begin{DoxyCompactList}\small\item\em Finds the ID of the staff member with the fewest currently assigned orders. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_staff_service_ac6a1727f7087d5754928cfb0825e08e7}{assign\+Order}} (std\+::string staff\+Id, std\+::string order\+Id)
+\begin{DoxyCompactList}\small\item\em Assigns a new order ID to a specific staff member\textquotesingle{}s workload. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_staff_service_a55f308db2697a4b3be2eb8d831bc04ce}{complete\+Order}} (std\+::string order\+Id)
+\begin{DoxyCompactList}\small\item\em Removes a completed order from a staff member\textquotesingle{}s list of assigned orders. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_staff_service_ab9326ba3f65b925ab007b07b596e2b5a}{is\+Available}} (std\+::string staff\+Id)
+\begin{DoxyCompactList}\small\item\em Checks if a specific staff member is marked as available. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_staff}{Staff}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_staff_service_a655743830b5ac3864ed53fda3fe8ab78}{get\+Staff}} (std\+::string staff\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves a specific \doxylink{class_staff}{Staff} object by their unique ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_staff_service_aeced5e33b39693eb1d4cb50736b685d5}{get\+Orders\+For\+Staff}} (std\+::string staff\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves the list of order IDs currently assigned to a staff member. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_staff}{Staff}} $>$ \mbox{\hyperlink{class_staff_service_a37909e6835f3a90a5691662edd3e9317}{list\+Staff}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a vector containing copies of all managed \doxylink{class_staff}{Staff} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages all staff members, tracking their assignments and facilitating load balancing. 
+
+This class provides a centralized mechanism for staff-\/related operations, including adding staff, finding the least busy staff member, and managing order assignments. It also holds a reference to the \doxylink{class_messaging_mediator}{Messaging\+Mediator} for staff communication setup. 
+
+\label{doc-constructors}
+\Hypertarget{class_staff_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_staff_service_a3d7d74bbf4c030ba456769963231e1b0}\index{StaffService@{StaffService}!StaffService@{StaffService}}
+\index{StaffService@{StaffService}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{StaffService()}{StaffService()}}
+{\footnotesize\ttfamily \label{class_staff_service_a3d7d74bbf4c030ba456769963231e1b0} 
+Staff\+Service\+::\+Staff\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}}]{med}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_staff_service}{Staff\+Service}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em med} & A pointer to the \doxylink{class_messaging_mediator}{Messaging\+Mediator} to be used by the service. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_staff_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_staff_service_ad7018ca2f3e686eb9ea05892c41a4d9b}\index{StaffService@{StaffService}!addStaff@{addStaff}}
+\index{addStaff@{addStaff}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{addStaff()}{addStaff()}}
+{\footnotesize\ttfamily \label{class_staff_service_ad7018ca2f3e686eb9ea05892c41a4d9b} 
+void Staff\+Service\+::add\+Staff (\begin{DoxyParamCaption}\item[{std\+::string}]{staff\+Id}{, }\item[{std\+::string}]{name}{, }\item[{\mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1a}{Staff\+Role}}}]{role}{ = {\ttfamily \mbox{\hyperlink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65}{Staff\+Role\+::\+Sales}}}}\end{DoxyParamCaption})}
+
+
+
+Creates a new \doxylink{class_staff}{Staff} object, registers it in the service, and sets its role. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff\+Id} & The unique identifier for the new staff member. \\
+\hline
+{\em name} & The full name of the new staff member. \\
+\hline
+{\em role} & The functional role of the staff member. Defaults to \doxylink{_staff_8h_aaa5cb5c28fe319250ecc0082eed6ba1aa11ff9f68afb6b8b5b8eda218d7c83a65}{Staff\+Role\+::\+Sales}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_staff_service_ac6a1727f7087d5754928cfb0825e08e7}\index{StaffService@{StaffService}!assignOrder@{assignOrder}}
+\index{assignOrder@{assignOrder}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{assignOrder()}{assignOrder()}}
+{\footnotesize\ttfamily \label{class_staff_service_ac6a1727f7087d5754928cfb0825e08e7} 
+void Staff\+Service\+::assign\+Order (\begin{DoxyParamCaption}\item[{std\+::string}]{staff\+Id}{, }\item[{std\+::string}]{order\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Assigns a new order ID to a specific staff member\textquotesingle{}s workload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff\+Id} & The ID of the staff member receiving the assignment. \\
+\hline
+{\em order\+Id} & The unique ID of the order being assigned. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_staff_service_a55f308db2697a4b3be2eb8d831bc04ce}\index{StaffService@{StaffService}!completeOrder@{completeOrder}}
+\index{completeOrder@{completeOrder}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{completeOrder()}{completeOrder()}}
+{\footnotesize\ttfamily \label{class_staff_service_a55f308db2697a4b3be2eb8d831bc04ce} 
+void Staff\+Service\+::complete\+Order (\begin{DoxyParamCaption}\item[{std\+::string}]{order\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Removes a completed order from a staff member\textquotesingle{}s list of assigned orders. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique ID of the order being completed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_staff_service_aeced5e33b39693eb1d4cb50736b685d5}\index{StaffService@{StaffService}!getOrdersForStaff@{getOrdersForStaff}}
+\index{getOrdersForStaff@{getOrdersForStaff}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{getOrdersForStaff()}{getOrdersForStaff()}}
+{\footnotesize\ttfamily \label{class_staff_service_aeced5e33b39693eb1d4cb50736b685d5} 
+std\+::vector$<$ std\+::string $>$ Staff\+Service\+::get\+Orders\+For\+Staff (\begin{DoxyParamCaption}\item[{std\+::string}]{staff\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the list of order IDs currently assigned to a staff member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff\+Id} & The ID of the staff member. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of order ID strings. 
+\end{DoxyReturn}
+\Hypertarget{class_staff_service_a655743830b5ac3864ed53fda3fe8ab78}\index{StaffService@{StaffService}!getStaff@{getStaff}}
+\index{getStaff@{getStaff}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{getStaff()}{getStaff()}}
+{\footnotesize\ttfamily \label{class_staff_service_a655743830b5ac3864ed53fda3fe8ab78} 
+\mbox{\hyperlink{class_staff}{Staff}} \texorpdfstring{$\ast$}{*} Staff\+Service\+::get\+Staff (\begin{DoxyParamCaption}\item[{std\+::string}]{staff\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a specific \doxylink{class_staff}{Staff} object by their unique ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff\+Id} & The unique identifier of the staff member to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A raw pointer to the requested \doxylink{class_staff}{Staff} object, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_staff_service_ab9326ba3f65b925ab007b07b596e2b5a}\index{StaffService@{StaffService}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily \label{class_staff_service_ab9326ba3f65b925ab007b07b596e2b5a} 
+bool Staff\+Service\+::is\+Available (\begin{DoxyParamCaption}\item[{std\+::string}]{staff\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a specific staff member is marked as available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff\+Id} & The ID of the staff member to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the staff member is available, false otherwise or if the staff member doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+\Hypertarget{class_staff_service_a9f30a0659325fac153b5d153225949cf}\index{StaffService@{StaffService}!leastLoaded@{leastLoaded}}
+\index{leastLoaded@{leastLoaded}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{leastLoaded()}{leastLoaded()}}
+{\footnotesize\ttfamily \label{class_staff_service_a9f30a0659325fac153b5d153225949cf} 
+std\+::string Staff\+Service\+::least\+Loaded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Finds the ID of the staff member with the fewest currently assigned orders. 
+
+\begin{DoxyReturn}{Returns}
+The unique ID of the least loaded staff member, or an empty string if no staff exist. 
+\end{DoxyReturn}
+\Hypertarget{class_staff_service_a37909e6835f3a90a5691662edd3e9317}\index{StaffService@{StaffService}!listStaff@{listStaff}}
+\index{listStaff@{listStaff}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{listStaff()}{listStaff()}}
+{\footnotesize\ttfamily \label{class_staff_service_a37909e6835f3a90a5691662edd3e9317} 
+std\+::vector$<$ \mbox{\hyperlink{class_staff}{Staff}} $>$ Staff\+Service\+::list\+Staff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a vector containing copies of all managed \doxylink{class_staff}{Staff} objects. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_staff}{Staff} objects. 
+\end{DoxyReturn}
+\Hypertarget{class_staff_service_a622591ac1765d4ec52e1f9dff1039e53}\index{StaffService@{StaffService}!setMediator@{setMediator}}
+\index{setMediator@{setMediator}!StaffService@{StaffService}}
+\doxysubsubsection{\texorpdfstring{setMediator()}{setMediator()}}
+{\footnotesize\ttfamily \label{class_staff_service_a622591ac1765d4ec52e1f9dff1039e53} 
+void Staff\+Service\+::set\+Mediator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}}]{med}{}\end{DoxyParamCaption})}
+
+
+
+Sets or updates the \doxylink{class_messaging_mediator}{Messaging\+Mediator} used by this service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em med} & A pointer to the new \doxylink{class_messaging_mediator}{Messaging\+Mediator}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_staff_service_8h}{Staff\+Service.\+h}}\item 
+Staff\+Service.\+cpp\end{DoxyCompactItemize}

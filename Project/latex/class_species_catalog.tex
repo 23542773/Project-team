@@ -1,0 +1,121 @@
+\doxysection{Species\+Catalog Class Reference}
+\hypertarget{class_species_catalog}{}\label{class_species_catalog}\index{SpeciesCatalog@{SpeciesCatalog}}
+
+
+Flyweight Factory that manages and provides access to \doxylink{class_plant_flyweight}{Plant\+Flyweight} objects.  
+
+
+
+
+{\ttfamily \#include $<$Species\+Catalog.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_species_catalog_a5bbf8929cd3b5b7f4eb70bfaf946cb09}{add}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} $>$ fw)
+\begin{DoxyCompactList}\small\item\em Adds a flyweight to the catalog. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} $>$ \mbox{\hyperlink{class_species_catalog_af2632fe240e8397d31a5ae111a73b5ff}{get}} (std\+::string sku)
+\begin{DoxyCompactList}\small\item\em Retrieves a flyweight from the catalog by SKU. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_species_catalog_a0f75967e8b10ba6b28c48a95c4d11bfa}{has}} (std\+::string sku)
+\begin{DoxyCompactList}\small\item\em Checks if a flyweight with the given SKU exists in the catalog. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_species_catalog_aca96be5a1fbbd5a9e0ee4c4732266707}{remove}} (std\+::string sku)
+\begin{DoxyCompactList}\small\item\em Removes a flyweight from the catalog. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} $>$ $>$ \mbox{\hyperlink{class_species_catalog_ab6dc98e1acc4b999c064dcd8393637f5}{get\+All}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves all flyweights stored in the catalog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Flyweight Factory that manages and provides access to \doxylink{class_plant_flyweight}{Plant\+Flyweight} objects. 
+
+This class implements the Flyweight Factory pattern, maintaining a pool of shared flyweight objects to minimize memory usage. It ensures that flyweights are shared properly by managing their lifecycle and providing access through unique SKU identifiers. 
+
+\label{doc-func-members}
+\Hypertarget{class_species_catalog_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_species_catalog_a5bbf8929cd3b5b7f4eb70bfaf946cb09}\index{SpeciesCatalog@{SpeciesCatalog}!add@{add}}
+\index{add@{add}!SpeciesCatalog@{SpeciesCatalog}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \label{class_species_catalog_a5bbf8929cd3b5b7f4eb70bfaf946cb09} 
+void Species\+Catalog\+::add (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} $>$}]{fw}{}\end{DoxyParamCaption})}
+
+
+
+Adds a flyweight to the catalog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fw} & Shared pointer to the \doxylink{class_plant_flyweight}{Plant\+Flyweight} object to add\\
+\hline
+\end{DoxyParams}
+If the flyweight pointer is valid, it will be stored in the catalog indexed by its SKU identifier.
+
+This method stores the flyweight in the internal map if it\textquotesingle{}s valid. The flyweight is indexed by its SKU for efficient retrieval. \Hypertarget{class_species_catalog_af2632fe240e8397d31a5ae111a73b5ff}\index{SpeciesCatalog@{SpeciesCatalog}!get@{get}}
+\index{get@{get}!SpeciesCatalog@{SpeciesCatalog}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{class_species_catalog_af2632fe240e8397d31a5ae111a73b5ff} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} $>$ Species\+Catalog\+::get (\begin{DoxyParamCaption}\item[{std\+::string}]{sku}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a flyweight from the catalog by SKU. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & The SKU identifier of the plant species to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shared pointer to the \doxylink{class_plant_flyweight}{Plant\+Flyweight} if found, nullptr otherwise
+\end{DoxyReturn}
+Searches the catalog for a flyweight with the specified SKU. Returns nullptr if no matching flyweight is found. \Hypertarget{class_species_catalog_ab6dc98e1acc4b999c064dcd8393637f5}\index{SpeciesCatalog@{SpeciesCatalog}!getAll@{getAll}}
+\index{getAll@{getAll}!SpeciesCatalog@{SpeciesCatalog}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily \label{class_species_catalog_ab6dc98e1acc4b999c064dcd8393637f5} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_plant_flyweight}{Plant\+Flyweight}} $>$ $>$ Species\+Catalog\+::get\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves all flyweights stored in the catalog. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing shared pointers to all \doxylink{class_plant_flyweight}{Plant\+Flyweight} objects
+\end{DoxyReturn}
+Creates and returns a vector containing all flyweights currently stored in the catalog. The vector is pre-\/allocated for efficiency. \Hypertarget{class_species_catalog_a0f75967e8b10ba6b28c48a95c4d11bfa}\index{SpeciesCatalog@{SpeciesCatalog}!has@{has}}
+\index{has@{has}!SpeciesCatalog@{SpeciesCatalog}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}}
+{\footnotesize\ttfamily \label{class_species_catalog_a0f75967e8b10ba6b28c48a95c4d11bfa} 
+bool Species\+Catalog\+::has (\begin{DoxyParamCaption}\item[{std\+::string}]{sku}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a flyweight with the given SKU exists in the catalog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & The SKU identifier to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the flyweight exists, false otherwise
+\end{DoxyReturn}
+Performs a lookup to determine if the catalog contains a flyweight with the specified SKU identifier. \Hypertarget{class_species_catalog_aca96be5a1fbbd5a9e0ee4c4732266707}\index{SpeciesCatalog@{SpeciesCatalog}!remove@{remove}}
+\index{remove@{remove}!SpeciesCatalog@{SpeciesCatalog}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \label{class_species_catalog_aca96be5a1fbbd5a9e0ee4c4732266707} 
+void Species\+Catalog\+::remove (\begin{DoxyParamCaption}\item[{std\+::string}]{sku}{}\end{DoxyParamCaption})}
+
+
+
+Removes a flyweight from the catalog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sku} & The SKU identifier of the plant species to remove\\
+\hline
+\end{DoxyParams}
+Erases the flyweight with the specified SKU from the catalog. If the SKU doesn\textquotesingle{}t exist, this operation has no effect. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_species_catalog_8h}{Species\+Catalog.\+h}}\item 
+\mbox{\hyperlink{_species_catalog_8cpp}{Species\+Catalog.\+cpp}}\end{DoxyCompactItemize}

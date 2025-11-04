@@ -1,0 +1,53 @@
+\doxysection{Events.\+h}
+\hypertarget{_events_8h_source}{}\label{_events_8h_source}\mbox{\hyperlink{_events_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ EVENTS\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ EVENTS\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceevents}{events}}\ }
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceevents_a214a40cab3544ee7981834bbcf9bbba5}{OrderType}}\ \{\ Created,\ Assigned,\ Completed,\ Cancelled\ \};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceevents_a18fec9c035ff6f4afdf85db1a021b6a4}{StockType}}\ \{\ Reserved,\ Released,\ Sold,\ Low,\ Added\ \};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceevents_a58eb819943a1f5db2b4266c57a9f185f}{PlantType}}\ \{\ Wilted,\ Matured,\ Died\};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceevents_aa640d68b941fcf80c862297b15735009}{OrderStatus}}\ \{\ New,\ Assigned,\ InProgress,\ Completed,\ Cancelled\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structevents_1_1_order_line}{OrderLine}}}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structevents_1_1_order_line_a677b1c5c760ed61df07d9f4ff050e0d4}{plantId}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structevents_1_1_order_line_ac5862a8e11c05558a71ed190ee01f843}{speciesSku}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structevents_1_1_order_line_a110d55cd6c2520651f147be70cefe9b1}{description}};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structevents_1_1_order_line_ab2840f49c0a5507c577b3f25d4aef6cc}{finalCost}}\ =\ 0.0;}
+\DoxyCodeLine{00061\ \ \ \ \ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structevents_1_1_order}{Order}}\ }
+\DoxyCodeLine{00068\ \ \ \ \ \{\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ std::string\ orderId;\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::string\ customerId;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::vector<OrderLine>\ \mbox{\hyperlink{structevents_1_1_order_ae67ac117d5a8290d112d80855bf7cc64}{lines}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::optional<std::string>\ \mbox{\hyperlink{structevents_1_1_order_abf3bebcc531f8a4392584e4537c30eb8}{staffId}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceevents_a214a40cab3544ee7981834bbcf9bbba5}{OrderType}}\ \mbox{\hyperlink{structevents_1_1_order_ab8cec73d96da3c0b570645ff66616309}{type}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceevents_aa640d68b941fcf80c862297b15735009}{OrderStatus}}\ \mbox{\hyperlink{structevents_1_1_order_a529616e7a62951c33aff94d4a83aa883}{status}}\ =\ OrderStatus::New;}
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structevents_1_1_stock}{Stock}}\ }
+\DoxyCodeLine{00086\ \ \ \ \ \{\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::string\ key;\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceevents_a18fec9c035ff6f4afdf85db1a021b6a4}{StockType}}\ type;\ }
+\DoxyCodeLine{00089\ \ \ \ \ \};\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structevents_1_1_plant}{Plant}}\ }
+\DoxyCodeLine{00096\ \ \ \ \ \{\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::string\ plantId;\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::string\ sku;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceevents_a58eb819943a1f5db2b4266c57a9f185f}{PlantType}}\ \mbox{\hyperlink{structevents_1_1_plant_af7eeefd17dce1a567c59762f591d85ba}{type}};}
+\DoxyCodeLine{00101\ \ \ \ \ \};}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EVENTS\_H}}
+
+\end{DoxyCode}

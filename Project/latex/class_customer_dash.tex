@@ -1,0 +1,107 @@
+\doxysection{Customer\+Dash Class Reference}
+\hypertarget{class_customer_dash}{}\label{class_customer_dash}\index{CustomerDash@{CustomerDash}}
+
+
+Concrete Observer implementation for customer dashboard updates.  
+
+
+
+
+{\ttfamily \#include $<$Customer\+Dash.\+h$>$}
+
+Inheritance diagram for Customer\+Dash\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_customer_dash}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_customer_dash_a3df12cdae8473a7c805f463e91181a3b}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}} e) override
+\begin{DoxyCompactList}\small\item\em Handle \doxylink{class_plant}{Plant} lifecycle events. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{class_customer_dash_a91c4dd7f37953704ec17642c484cb12f}{get\+Matured}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of matured plant IDs for the customer dashboard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_dash_a53af4e9f0fa363fc9d8bed39b1c5a86e}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the list of matured plant IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_nursery_observer}{Nursery\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_nursery_observer_a37bedacc372adb3e4afff4c5396aa05c}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_stock}{events\+::\+Stock}})
+\begin{DoxyCompactList}\small\item\em Reaction to a Stock Event. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_nursery_observer_a52d1753ad1cc7682f48fadd099824f3c}{on\+Event}} (\mbox{\hyperlink{structevents_1_1_order}{events\+::\+Order}} \&)
+\begin{DoxyCompactList}\small\item\em Reaction to an \doxylink{struct_order}{Order} Event. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_nursery_observer_aca691fab85a66d7513d5b10bcb26a443}{\texorpdfstring{$\sim$}{\string~}\+Nursery\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Observer implementation for customer dashboard updates. 
+
+Handles \doxylink{class_plant}{Plant} events to notify customers of matured plants. 
+
+\label{doc-func-members}
+\Hypertarget{class_customer_dash_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_customer_dash_a53af4e9f0fa363fc9d8bed39b1c5a86e}\index{CustomerDash@{CustomerDash}!clear@{clear}}
+\index{clear@{clear}!CustomerDash@{CustomerDash}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_customer_dash_a53af4e9f0fa363fc9d8bed39b1c5a86e} 
+void Customer\+Dash\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clear the list of matured plant IDs. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_customer_dash_a91c4dd7f37953704ec17642c484cb12f}\index{CustomerDash@{CustomerDash}!getMatured@{getMatured}}
+\index{getMatured@{getMatured}!CustomerDash@{CustomerDash}}
+\doxysubsubsection{\texorpdfstring{getMatured()}{getMatured()}}
+{\footnotesize\ttfamily \label{class_customer_dash_a91c4dd7f37953704ec17642c484cb12f} 
+std\+::vector$<$ std\+::string $>$ \& Customer\+Dash\+::get\+Matured (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the list of matured plant IDs for the customer dashboard. 
+
+\begin{DoxyReturn}{Returns}
+A vector of matured plant IDs 
+\end{DoxyReturn}
+\Hypertarget{class_customer_dash_a3df12cdae8473a7c805f463e91181a3b}\index{CustomerDash@{CustomerDash}!onEvent@{onEvent}}
+\index{onEvent@{onEvent}!CustomerDash@{CustomerDash}}
+\doxysubsubsection{\texorpdfstring{onEvent()}{onEvent()}}
+{\footnotesize\ttfamily \label{class_customer_dash_a3df12cdae8473a7c805f463e91181a3b} 
+void Customer\+Dash\+::on\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevents_1_1_plant}{events\+::\+Plant}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle \doxylink{class_plant}{Plant} lifecycle events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The \doxylink{class_plant}{Plant} event data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The \doxylink{class_plant}{Plant} event data ID, SKU and event type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nursery_observer_ae955a43fae499dd88334863f27d6bbe4}{Nursery\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_customer_dash_8h}{Customer\+Dash.\+h}}\item 
+\mbox{\hyperlink{_customer_dash_8cpp}{Customer\+Dash.\+cpp}}\end{DoxyCompactItemize}

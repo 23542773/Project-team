@@ -1,0 +1,65 @@
+\doxysection{Messaging\+Mediator Class Reference}
+\hypertarget{class_messaging_mediator}{}\label{class_messaging_mediator}\index{MessagingMediator@{MessagingMediator}}
+
+
+Abstract Mediator class in the Mediator pattern for inter-\/colleague communication.  
+
+
+
+
+{\ttfamily \#include $<$Messaging\+Mediator.\+h$>$}
+
+Inheritance diagram for Messaging\+Mediator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_messaging_mediator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_messaging_mediator_a16b68089b2e456dc99615f226d601996}\label{class_messaging_mediator_a16b68089b2e456dc99615f226d601996} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Messaging\+Mediator} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_messaging_mediator_aef228129906de6c360d85e0f1b8c8667}{send\+Message\+To\+Id}} (\mbox{\hyperlink{class_colleague}{Colleague}} \texorpdfstring{$\ast$}{*}from, const std\+::string \&to\+User\+Id, const std\+::string \&text)=0
+\begin{DoxyCompactList}\small\item\em Sends a message from one colleague to another identified by user ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Mediator class in the Mediator pattern for inter-\/colleague communication. 
+
+This class defines the interface for mediating communication between \doxylink{class_colleague}{Colleague} objects in the nursery system. It implements the Mediator pattern by providing a centralized point of communication that decouples colleagues from each other.
+
+The mediator encapsulates how colleagues interact, allowing communication logic and business rules to be centralized rather than distributed across colleague objects. 
+
+\label{doc-func-members}
+\Hypertarget{class_messaging_mediator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_messaging_mediator_aef228129906de6c360d85e0f1b8c8667}\index{MessagingMediator@{MessagingMediator}!sendMessageToId@{sendMessageToId}}
+\index{sendMessageToId@{sendMessageToId}!MessagingMediator@{MessagingMediator}}
+\doxysubsubsection{\texorpdfstring{sendMessageToId()}{sendMessageToId()}}
+{\footnotesize\ttfamily \label{class_messaging_mediator_aef228129906de6c360d85e0f1b8c8667} 
+virtual void Messaging\+Mediator\+::send\+Message\+To\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_colleague}{Colleague}} \texorpdfstring{$\ast$}{*}}]{from}{, }\item[{const std\+::string \&}]{to\+User\+Id}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sends a message from one colleague to another identified by user ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Pointer to the \doxylink{class_colleague}{Colleague} sending the message \\
+\hline
+{\em to\+User\+Id} & String ID of the recipient colleague \\
+\hline
+{\em text} & The message content to send\\
+\hline
+\end{DoxyParams}
+This method routes messages between colleagues without requiring them to know about each other directly, maintaining loose coupling in the system. 
+
+Implemented in \mbox{\hyperlink{class_chat_mediator_acb00b734154c0bf1f7bb2815323b3c41}{Chat\+Mediator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_messaging_mediator_8h}{Messaging\+Mediator.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,190 @@
+\doxysection{Plant\+Flyweight Class Reference}
+\hypertarget{class_plant_flyweight}{}\label{class_plant_flyweight}\index{PlantFlyweight@{PlantFlyweight}}
+
+
+Abstract base class representing the Flyweight interface in the Flyweight design pattern.  
+
+
+
+
+{\ttfamily \#include $<$Plant\+Flyweight.\+h$>$}
+
+Inheritance diagram for Plant\+Flyweight\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_plant_flyweight}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_plant_flyweight_a1ee3edac7f4ef520553b7b09a9e21528}\label{class_plant_flyweight_a1ee3edac7f4ef520553b7b09a9e21528} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Plant\+Flyweight} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_plant_flyweight_a7a70f6f11fb0d886d46dc8f08499b0b2}{get\+Sku}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the SKU (Stock Keeping Unit) identifier for the plant species. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_plant_flyweight_aa4afb085431b6736f4a74d0bae34fabb}{get\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the name of the plant species. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_plant_flyweight_ab20be5dcce7f95d42f04f6df1500a5bb}{get\+Biome}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the biome where the plant species naturally occurs. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_plant_flyweight_a3e820d9eb8d9960917246fdca6ae7659}{get\+Cost}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the base cost/price of the plant species. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_plant_flyweight_a4235738ae4db41eee7be18d76171d308}{get\+Water\+Sensitivity}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the water sensitivity of the plant species. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_plant_flyweight_a3107f601da645bca55723d6579477027}{get\+Insecticide\+Tolerance}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the insecticide tolerance level of the plant species. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_plant_flyweight_ada4f2bec0a0525b91bae5e2e8cd5ad9a}{get\+Growth\+Rate}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the growth rate of the plant species. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}} \mbox{\hyperlink{class_plant_flyweight_aa31c9956b72949326c177b8969b6f946}{get\+Thriving\+Season}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the season in which the plant species thrives best. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing the Flyweight interface in the Flyweight design pattern. 
+
+This class defines the interface that all concrete flyweights must implement. It contains methods to access intrinsic state (shared data) that is common across multiple plant instances of the same species. 
+
+\label{doc-func-members}
+\Hypertarget{class_plant_flyweight_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_plant_flyweight_ab20be5dcce7f95d42f04f6df1500a5bb}\index{PlantFlyweight@{PlantFlyweight}!getBiome@{getBiome}}
+\index{getBiome@{getBiome}!PlantFlyweight@{PlantFlyweight}}
+\doxysubsubsection{\texorpdfstring{getBiome()}{getBiome()}}
+{\footnotesize\ttfamily \label{class_plant_flyweight_ab20be5dcce7f95d42f04f6df1500a5bb} 
+virtual std\+::string Plant\+Flyweight\+::get\+Biome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the biome where the plant species naturally occurs. 
+
+\begin{DoxyReturn}{Returns}
+String containing the biome information 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_species_flyweight_a2a38541d9863d1259e61fcf354546ba4}{Species\+Flyweight}}, and \mbox{\hyperlink{class_unshared_species_flyweight_a9b748b9cbd1c817f07bfe3441ba3e0a2}{Unshared\+Species\+Flyweight}}.
+
+\Hypertarget{class_plant_flyweight_a3e820d9eb8d9960917246fdca6ae7659}\index{PlantFlyweight@{PlantFlyweight}!getCost@{getCost}}
+\index{getCost@{getCost}!PlantFlyweight@{PlantFlyweight}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily \label{class_plant_flyweight_a3e820d9eb8d9960917246fdca6ae7659} 
+virtual int Plant\+Flyweight\+::get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the base cost/price of the plant species. 
+
+\begin{DoxyReturn}{Returns}
+Integer representing the cost in appropriate currency units 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_species_flyweight_a769c1b5710eb70c0c85e989201f6cfef}{Species\+Flyweight}}, and \mbox{\hyperlink{class_unshared_species_flyweight_a2b99114921efadfb166a8fdc1bf51adf}{Unshared\+Species\+Flyweight}}.
+
+\Hypertarget{class_plant_flyweight_ada4f2bec0a0525b91bae5e2e8cd5ad9a}\index{PlantFlyweight@{PlantFlyweight}!getGrowthRate@{getGrowthRate}}
+\index{getGrowthRate@{getGrowthRate}!PlantFlyweight@{PlantFlyweight}}
+\doxysubsubsection{\texorpdfstring{getGrowthRate()}{getGrowthRate()}}
+{\footnotesize\ttfamily \label{class_plant_flyweight_ada4f2bec0a0525b91bae5e2e8cd5ad9a} 
+virtual double Plant\+Flyweight\+::get\+Growth\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the growth rate of the plant species. 
+
+\begin{DoxyReturn}{Returns}
+Double value representing the rate at which the plant grows 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_species_flyweight_a14a65f37de513e30bbb46823fba4c5d9}{Species\+Flyweight}}, and \mbox{\hyperlink{class_unshared_species_flyweight_aa2cc46c6bb94540657f618712a515166}{Unshared\+Species\+Flyweight}}.
+
+\Hypertarget{class_plant_flyweight_a3107f601da645bca55723d6579477027}\index{PlantFlyweight@{PlantFlyweight}!getInsecticideTolerance@{getInsecticideTolerance}}
+\index{getInsecticideTolerance@{getInsecticideTolerance}!PlantFlyweight@{PlantFlyweight}}
+\doxysubsubsection{\texorpdfstring{getInsecticideTolerance()}{getInsecticideTolerance()}}
+{\footnotesize\ttfamily \label{class_plant_flyweight_a3107f601da645bca55723d6579477027} 
+virtual double Plant\+Flyweight\+::get\+Insecticide\+Tolerance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the insecticide tolerance level of the plant species. 
+
+\begin{DoxyReturn}{Returns}
+Double value representing the plant\textquotesingle{}s tolerance to insecticides 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_species_flyweight_a915ab911c67270733de097bb36701a31}{Species\+Flyweight}}, and \mbox{\hyperlink{class_unshared_species_flyweight_ad349a68337391316438431b133a0ff28}{Unshared\+Species\+Flyweight}}.
+
+\Hypertarget{class_plant_flyweight_aa4afb085431b6736f4a74d0bae34fabb}\index{PlantFlyweight@{PlantFlyweight}!getName@{getName}}
+\index{getName@{getName}!PlantFlyweight@{PlantFlyweight}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_plant_flyweight_aa4afb085431b6736f4a74d0bae34fabb} 
+virtual std\+::string Plant\+Flyweight\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the name of the plant species. 
+
+\begin{DoxyReturn}{Returns}
+String containing the species name 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_species_flyweight_a5313d30cd1f2a8ab158815c611e89b02}{Species\+Flyweight}}, and \mbox{\hyperlink{class_unshared_species_flyweight_a226f1a9522796148030de39d78fa4d97}{Unshared\+Species\+Flyweight}}.
+
+\Hypertarget{class_plant_flyweight_a7a70f6f11fb0d886d46dc8f08499b0b2}\index{PlantFlyweight@{PlantFlyweight}!getSku@{getSku}}
+\index{getSku@{getSku}!PlantFlyweight@{PlantFlyweight}}
+\doxysubsubsection{\texorpdfstring{getSku()}{getSku()}}
+{\footnotesize\ttfamily \label{class_plant_flyweight_a7a70f6f11fb0d886d46dc8f08499b0b2} 
+virtual std\+::string Plant\+Flyweight\+::get\+Sku (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the SKU (Stock Keeping Unit) identifier for the plant species. 
+
+\begin{DoxyReturn}{Returns}
+String containing the unique SKU identifier 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_species_flyweight_aada3f3cd9c1660c46138da35ac6fe9b5}{Species\+Flyweight}}, and \mbox{\hyperlink{class_unshared_species_flyweight_aa06fb0bab33a4902efe8e39285a18c51}{Unshared\+Species\+Flyweight}}.
+
+\Hypertarget{class_plant_flyweight_aa31c9956b72949326c177b8969b6f946}\index{PlantFlyweight@{PlantFlyweight}!getThrivingSeason@{getThrivingSeason}}
+\index{getThrivingSeason@{getThrivingSeason}!PlantFlyweight@{PlantFlyweight}}
+\doxysubsubsection{\texorpdfstring{getThrivingSeason()}{getThrivingSeason()}}
+{\footnotesize\ttfamily \label{class_plant_flyweight_aa31c9956b72949326c177b8969b6f946} 
+virtual \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}} Plant\+Flyweight\+::get\+Thriving\+Season (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the season in which the plant species thrives best. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season} enum value indicating the optimal growing season 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_species_flyweight_ad755919f36dc700ae1e298a41f503d47}{Species\+Flyweight}}, and \mbox{\hyperlink{class_unshared_species_flyweight_ad6ce96db3292a1a5707888531e883ade}{Unshared\+Species\+Flyweight}}.
+
+\Hypertarget{class_plant_flyweight_a4235738ae4db41eee7be18d76171d308}\index{PlantFlyweight@{PlantFlyweight}!getWaterSensitivity@{getWaterSensitivity}}
+\index{getWaterSensitivity@{getWaterSensitivity}!PlantFlyweight@{PlantFlyweight}}
+\doxysubsubsection{\texorpdfstring{getWaterSensitivity()}{getWaterSensitivity()}}
+{\footnotesize\ttfamily \label{class_plant_flyweight_a4235738ae4db41eee7be18d76171d308} 
+virtual double Plant\+Flyweight\+::get\+Water\+Sensitivity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the water sensitivity of the plant species. 
+
+\begin{DoxyReturn}{Returns}
+Double value representing how sensitive the plant is to water conditions 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_species_flyweight_ab10483b824392735dcf364f1ed0487cf}{Species\+Flyweight}}, and \mbox{\hyperlink{class_unshared_species_flyweight_ac3219b33a8ac2ff3613dd8b57a862c58}{Unshared\+Species\+Flyweight}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_plant_flyweight_8h}{Plant\+Flyweight.\+h}}\end{DoxyCompactItemize}

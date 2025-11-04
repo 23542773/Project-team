@@ -1,0 +1,130 @@
+\doxysection{Restock Class Reference}
+\hypertarget{class_restock}{}\label{class_restock}\index{Restock@{Restock}}
+
+
+A concrete \doxylink{class_command}{Command} that encapsulates the request to receive a shipment (restock) of new plants into the \doxylink{class_greenhouse}{Greenhouse}.  
+
+
+
+
+{\ttfamily \#include $<$Restock.\+h$>$}
+
+Inheritance diagram for Restock\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_restock}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_restock_a5ef7551740a3e24c15ec61140bee8f7d}{Restock}} (\mbox{\hyperlink{class_greenhouse}{Greenhouse}} \&gh, const std\+::string \&sku, int batch)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_restock}{Restock} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_restock_a0dba16922a2e7eb2d8bec4dcfff43a48}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the restock command by calling the appropriate method on the \doxylink{class_greenhouse}{Greenhouse}. The IDs of the newly added plants are stored in {\ttfamily added\+Plant\+Ids}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_restock_a70a6d098a0b4270e54fed98d7f98c075}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Undoes the restock command. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_restock_a83ffbf06c249a0bdd6b5c77aeb30344d}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Provides a descriptive string for the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived command classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a36038f02fb62fa35fa1768b68663be21}{set\+User\+Id}} (const std\+::string \&uid)
+\begin{DoxyCompactList}\small\item\em Sets the ID of the user who initiated this command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_a664ee1180c0f827b24dfab922a7a891d}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the user associated with this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a99a63432974070e812cb1d61025f631b}{set\+Action}} (const std\+::string \&act)
+\begin{DoxyCompactList}\small\item\em Sets a short, categorical name for the action (e.\+g., "{}\+RESTOCK"{}, "{}\+SALE"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_afd2cd82b59fc78a3cf6578ccecf32d0e}{get\+Action}} () const
+\begin{DoxyCompactList}\small\item\em Gets the short action name of this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a327a6ad6c84ea803b4df334e793f3d3b}{set\+Undoable}} (bool u)
+\begin{DoxyCompactList}\small\item\em Sets whether the command supports the undo operation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_command_a8bb6885054910a0c06de6e75ce0b4b5f}{is\+Undoable}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the command supports the undo operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete \doxylink{class_command}{Command} that encapsulates the request to receive a shipment (restock) of new plants into the \doxylink{class_greenhouse}{Greenhouse}. 
+
+This command supports undo functionality by tracking the unique IDs of the plants that were added during execution. 
+
+\label{doc-constructors}
+\Hypertarget{class_restock_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_restock_a5ef7551740a3e24c15ec61140bee8f7d}\index{Restock@{Restock}!Restock@{Restock}}
+\index{Restock@{Restock}!Restock@{Restock}}
+\doxysubsubsection{\texorpdfstring{Restock()}{Restock()}}
+{\footnotesize\ttfamily \label{class_restock_a5ef7551740a3e24c15ec61140bee8f7d} 
+Restock\+::\+Restock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_greenhouse}{Greenhouse}} \&}]{gh}{, }\item[{const std\+::string \&}]{sku}{, }\item[{int}]{batch}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_restock}{Restock} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gh} & A reference to the \doxylink{class_greenhouse}{Greenhouse} object that will process the restock. \\
+\hline
+{\em sku} & The SKU of the species being restocked. \\
+\hline
+{\em batch} & The number of plants in the shipment batch. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_restock_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_restock_a0dba16922a2e7eb2d8bec4dcfff43a48}\index{Restock@{Restock}!execute@{execute}}
+\index{execute@{execute}!Restock@{Restock}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_restock_a0dba16922a2e7eb2d8bec4dcfff43a48} 
+void Restock\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the restock command by calling the appropriate method on the \doxylink{class_greenhouse}{Greenhouse}. The IDs of the newly added plants are stored in {\ttfamily added\+Plant\+Ids}. 
+
+
+
+Implements \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+\Hypertarget{class_restock_a83ffbf06c249a0bdd6b5c77aeb30344d}\index{Restock@{Restock}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!Restock@{Restock}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{class_restock_a83ffbf06c249a0bdd6b5c77aeb30344d} 
+std\+::string Restock\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides a descriptive string for the command. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the restock action (e.\+g., "{}\+Restock 10 units of ROSE-\/\+STD"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a6467892048d1c917033c9f55a1804f67}{Command}}.
+
+\Hypertarget{class_restock_a70a6d098a0b4270e54fed98d7f98c075}\index{Restock@{Restock}!undo@{undo}}
+\index{undo@{undo}!Restock@{Restock}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_restock_a70a6d098a0b4270e54fed98d7f98c075} 
+void Restock\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Undoes the restock command. 
+
+This iterates through {\ttfamily added\+Plant\+Ids} and removes each corresponding plant from the \doxylink{class_greenhouse}{Greenhouse}. 
+
+Reimplemented from \mbox{\hyperlink{class_command_a9b21dadbb5a4c7a6e85636471a6f1fef}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_restock_8h}{Restock.\+h}}\item 
+Restock.\+cpp\end{DoxyCompactItemize}

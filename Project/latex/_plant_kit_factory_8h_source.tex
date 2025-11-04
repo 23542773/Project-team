@@ -1,0 +1,35 @@
+\doxysection{Plant\+Kit\+Factory.\+h}
+\hypertarget{_plant_kit_factory_8h_source}{}\label{_plant_kit_factory_8h_source}\mbox{\hyperlink{_plant_kit_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ PLANTKITFACTORY\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ PLANTKITFACTORY\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pot_8h}{Pot.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_soil_mix_8h}{SoilMix.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_8h}{Plant.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_state_8h}{PlantState.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_seedling_state_8h}{SeedlingState.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_flyweight_8h}{PlantFlyweight.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_care_strategy_8h}{CareStrategy.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant_kit_factory}{PlantKitFactory}}\ }
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_plant}{Plant}}*\ \mbox{\hyperlink{class_plant_kit_factory_a76671684c022010792013d0b0dfc871b}{createPlant}}(std::string\ \textcolor{keywordtype}{id},\ std::string\ colour,\ \mbox{\hyperlink{class_plant_flyweight}{PlantFlyweight}}*\ sf);}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_care_strategy}{CareStrategy}}*\ \mbox{\hyperlink{class_plant_kit_factory_a461ef468dc44f7eb8b09c76dc4b63209}{careStrategy}}()\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_pot}{Pot}}*\ \mbox{\hyperlink{class_plant_kit_factory_a9eb675ee0e228ad45d45a1c30ca29601}{createPot}}()\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_soil_mix}{SoilMix}}*\ \mbox{\hyperlink{class_plant_kit_factory_a8e4358a26157ff284e082723441f1639}{createSoilMix}}()\ =\ 0;}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

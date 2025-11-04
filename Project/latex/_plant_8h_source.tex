@@ -1,0 +1,112 @@
+\doxysection{Plant.\+h}
+\hypertarget{_plant_8h_source}{}\label{_plant_8h_source}\mbox{\hyperlink{_plant_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ PLANT\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ PLANT\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_soil_mix_8h}{SoilMix.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pot_8h}{Pot.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_care_strategy_8h}{CareStrategy.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_state_8h}{PlantState.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_flyweight_8h}{PlantFlyweight.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dead_state_8h}{DeadState.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant_state}{PlantState}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_care_strategy}{CareStrategy}};}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant_flyweight}{PlantFlyweight}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant_a1f78e8fb9d7204346ce84c6c5571746e}{Plant}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ plantId;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ std::string\ colour;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_plant_flyweight}{PlantFlyweight}}*\ species;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_care_strategy}{CareStrategy}}*\ care;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_plant_state}{PlantState}}*\ state;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_soil_mix}{SoilMix}}*\ soil;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_pot}{Pot}}*\ pot;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ ageInDays\ =\ 0;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ moistureLevel\ =\ 0;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ health\ =\ 100;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ insecticideLevel\ =\ 100;\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ std::chrono::system\_clock::time\_point\ createdAt\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ check(\textcolor{keywordtype}{int}\ change,\ \textcolor{keywordtype}{int}\ low,\ \textcolor{keywordtype}{int}\ high);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_plant_a1f78e8fb9d7204346ce84c6c5571746e}{Plant}}(std::string\ \textcolor{keywordtype}{id},\ std::string\ colour,\ \mbox{\hyperlink{class_plant_flyweight}{PlantFlyweight}}*\ species,\ \mbox{\hyperlink{class_care_strategy}{CareStrategy}}*\ care,\ \mbox{\hyperlink{class_plant_state}{PlantState}}*\ state,\ \mbox{\hyperlink{class_soil_mix}{SoilMix}}*\ soil,\ \mbox{\hyperlink{class_pot}{Pot}}*\ pot);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_plant_ab0effb2b143e6da7b65ebd13a3b1fc29}{\string~Plant}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plant_af4552dd9ec01741c38eefd2f15ce2431}{water}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plant_afe24eeadc576f5e361a3f2de3ea144c9}{fertilize}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plant_af821fb4a55080df7977e7309c9b4f29d}{sprayInsecticide}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plant_aa9c8952f742956b06091159aea4adcd2}{addWater}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plant_a95b509569a648995cc386d0f394e505b}{addHealth}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plant_a548a71f5432c6bb0d58b14e4e008cc3a}{addInsecticide}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_plant_a0a499fe51dce59203d8fc4cfaeffdc7a}{cost}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_plant_ad9e21e03eae8675842b64ce5942126ee}{setState}}(\mbox{\hyperlink{class_plant_state}{PlantState}}*\ s);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \ \ \ \ std::string\ \mbox{\hyperlink{class_plant_a7677bdb64ae4bd0c4224a7e7d46dcc67}{id}}();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ std::string\ \mbox{\hyperlink{class_plant_a1483c9f75ea4c57c070fc5e338e180b5}{sku}}();}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \ \ std::string\ \mbox{\hyperlink{class_plant_a3a0a4703457468f6f50a5db782bbb20b}{name}}();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \ \ \ \ std::string\ \mbox{\hyperlink{class_plant_aaa98b3a03e0d78b52e9ec26b9eb27d02}{biome}}();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \ \ \ \ std::string\ \mbox{\hyperlink{class_plant_a157753ddcd219f50862c50d94a10155d}{getColour}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_plant_a3bc0ee72d1db0ff1311f2cfdaf545367}{getAgeDays}}();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_plant_a7255dd55840d79fb8970eac1ce6bc090}{getMoisture}}();}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_plant_a164b97c6762c1d2908088114f325374a}{getHealth}}();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_plant_ac1507013602e85bc2fa009e1b5f172d6}{getInsecticide}}();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{class_plant_flyweight}{PlantFlyweight}}*\ \mbox{\hyperlink{class_plant_a96a861700724adaa67308d72274d2176}{getSpeciesFly}}();}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{class_soil_mix}{SoilMix}}*\ \mbox{\hyperlink{class_plant_a2b1b257dc14853abdeaf12c2dc5de172}{getSoilMix}}();}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{class_pot}{Pot}}*\ \mbox{\hyperlink{class_plant_a0e6675fa90f902bfb49dbfab075a44eb}{getPot}}();}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{class_care_strategy}{CareStrategy}}*\ \mbox{\hyperlink{class_plant_a1962c6dc1bb26b57a1a437a02094fd26}{getCareStrategy}}();}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{class_plant_state}{PlantState}}*\ \mbox{\hyperlink{class_plant_aa979ce6ecfc6c9e8bced9cdc4c18d9d0}{getPlantState}}();}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{_plant_flyweight_8h_ace3a72289effba7c41de4a566bd3c300}{Season}}\ \mbox{\hyperlink{class_plant_a1ad97a2ad6dbb5870acb2857adb04b06}{currentSeason}}();}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{class_plant_a1f78e8fb9d7204346ce84c6c5571746e}{Plant}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_plant_a1f78e8fb9d7204346ce84c6c5571746e}{Plant}}\&\ other);\ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{class_plant_a1f78e8fb9d7204346ce84c6c5571746e}{Plant}}*\ \mbox{\hyperlink{class_plant_a07ef5f0ee000087cb57a40044d7883c3}{clone}}(std::string\ plantId,\ std::string\ colour);}
+\DoxyCodeLine{00202\ \};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

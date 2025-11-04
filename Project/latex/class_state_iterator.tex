@@ -1,0 +1,135 @@
+\doxysection{State\+Iterator Class Reference}
+\hypertarget{class_state_iterator}{}\label{class_state_iterator}\index{StateIterator@{StateIterator}}
+
+
+A concrete iterator designed to skip over elements and only yield \doxylink{class_plant}{Plant} objects whose internal state pointer matches a predefined target \doxylink{class_plant_state}{Plant\+State}.  
+
+
+
+
+{\ttfamily \#include $<$State\+Iterator.\+h$>$}
+
+Inheritance diagram for State\+Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_state_iterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_state_iterator_a63bd97c05175107b5324f2208d9436f2}{State\+Iterator}} (const std\+::vector$<$ \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} $>$ \&plants, const \mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_state_iterator}{State\+Iterator}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_iterator_a4da478a6e00a16ee00581063057dd8cb}{first}} () override
+\begin{DoxyCompactList}\small\item\em Resets the iterator to the beginning of the collection and advances to the first matching plant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_iterator_ab738f9b4cf0fea087a266fd7cca07b45}{next}} () override
+\begin{DoxyCompactList}\small\item\em Advances the iterator past the current plant to the next plant that matches the target state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_state_iterator_ae0c287e537a5bb38e840303c6fcf51af}{is\+Done}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the iterator has moved past the last matching element in the collection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_iterator_ab3d87165f750ebacf465079fd62d94e7}{current\+Item}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the item (\doxylink{class_plant}{Plant} pointer) at the current, matching position of the iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_iterator}{Iterator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Iterator} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived iterator classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete iterator designed to skip over elements and only yield \doxylink{class_plant}{Plant} objects whose internal state pointer matches a predefined target \doxylink{class_plant_state}{Plant\+State}. 
+
+This iterator provides a filtered view of the \doxylink{class_greenhouse}{Greenhouse} collection, focused on plants sharing a specific lifecycle state (e.\+g., only "{}\+Mature\+State"{} plants). 
+
+\label{doc-constructors}
+\Hypertarget{class_state_iterator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_state_iterator_a63bd97c05175107b5324f2208d9436f2}\index{StateIterator@{StateIterator}!StateIterator@{StateIterator}}
+\index{StateIterator@{StateIterator}!StateIterator@{StateIterator}}
+\doxysubsubsection{\texorpdfstring{StateIterator()}{StateIterator()}}
+{\footnotesize\ttfamily \label{class_state_iterator_a63bd97c05175107b5324f2208d9436f2} 
+State\+Iterator\+::\+State\+Iterator (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} $>$ \&}]{plants}{, }\item[{const \mbox{\hyperlink{class_plant_state}{Plant\+State}} \texorpdfstring{$\ast$}{*}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_state_iterator}{State\+Iterator}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plants} & A constant reference to the vector of \doxylink{class_plant}{Plant} pointers to be iterated over. \\
+\hline
+{\em state} & A pointer to the target \doxylink{class_plant_state}{Plant\+State} object to filter the plants by. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_state_iterator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_state_iterator_ab3d87165f750ebacf465079fd62d94e7}\index{StateIterator@{StateIterator}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!StateIterator@{StateIterator}}
+\doxysubsubsection{\texorpdfstring{currentItem()}{currentItem()}}
+{\footnotesize\ttfamily \label{class_state_iterator_ab3d87165f750ebacf465079fd62d94e7} 
+\mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} State\+Iterator\+::current\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the item (\doxylink{class_plant}{Plant} pointer) at the current, matching position of the iterator. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the current \doxylink{class_plant}{Plant} object, or nullptr if {\ttfamily \doxylink{class_state_iterator_ae0c287e537a5bb38e840303c6fcf51af}{is\+Done()}} is true. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_iterator_a375cd2b97051c71b3e851bd45534a7c4}{Iterator}}.
+
+\Hypertarget{class_state_iterator_a4da478a6e00a16ee00581063057dd8cb}\index{StateIterator@{StateIterator}!first@{first}}
+\index{first@{first}!StateIterator@{StateIterator}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily \label{class_state_iterator_a4da478a6e00a16ee00581063057dd8cb} 
+void State\+Iterator\+::first (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Resets the iterator to the beginning of the collection and advances to the first matching plant. 
+
+
+
+Implements \mbox{\hyperlink{class_iterator_aad56ef26673ea3c74b7ac964f24b8ef5}{Iterator}}.
+
+\Hypertarget{class_state_iterator_ae0c287e537a5bb38e840303c6fcf51af}\index{StateIterator@{StateIterator}!isDone@{isDone}}
+\index{isDone@{isDone}!StateIterator@{StateIterator}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily \label{class_state_iterator_ae0c287e537a5bb38e840303c6fcf51af} 
+bool State\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the iterator has moved past the last matching element in the collection. 
+
+\begin{DoxyReturn}{Returns}
+true if iteration is complete, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_iterator_aaee909d23a98abaf18ed7aa2ee9bee6f}{Iterator}}.
+
+\Hypertarget{class_state_iterator_ab738f9b4cf0fea087a266fd7cca07b45}\index{StateIterator@{StateIterator}!next@{next}}
+\index{next@{next}!StateIterator@{StateIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_state_iterator_ab738f9b4cf0fea087a266fd7cca07b45} 
+void State\+Iterator\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Advances the iterator past the current plant to the next plant that matches the target state. 
+
+
+
+Implements \mbox{\hyperlink{class_iterator_ac639e96c519e2e78cff17bee372ad750}{Iterator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_state_iterator_8h}{State\+Iterator.\+h}}\item 
+State\+Iterator.\+cpp\end{DoxyCompactItemize}

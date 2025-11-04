@@ -1,0 +1,108 @@
+\doxysection{Iterator Class Reference}
+\hypertarget{class_iterator}{}\label{class_iterator}\index{Iterator@{Iterator}}
+
+
+Abstract interface that declares the operations required for traversing a collection of \doxylink{class_plant}{Plant} objects.  
+
+
+
+
+{\ttfamily \#include $<$Iterator.\+h$>$}
+
+Inheritance diagram for Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_iterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_iterator_a4c28388b53ec9c8a502aeccf13295899}\label{class_iterator_a4c28388b53ec9c8a502aeccf13295899} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Iterator} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived iterator classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_iterator_aad56ef26673ea3c74b7ac964f24b8ef5}{first}} ()=0
+\begin{DoxyCompactList}\small\item\em Resets the iterator\textquotesingle{}s position to the very first element in the collection. This is a pure virtual function and must be implemented by concrete iterators. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_iterator_ac639e96c519e2e78cff17bee372ad750}{next}} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the iterator to the next element in the collection. This is a pure virtual function and must be implemented by concrete iterators. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_iterator_aaee909d23a98abaf18ed7aa2ee9bee6f}{is\+Done}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks if the iterator has completed its traversal (i.\+e., moved past the last element). This is a pure virtual function and must be implemented by concrete iterators. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_iterator_a375cd2b97051c71b3e851bd45534a7c4}{current\+Item}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the element (\doxylink{class_plant}{Plant} pointer) at the current position of the iterator. This is a pure virtual function and must be implemented by concrete iterators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface that declares the operations required for traversing a collection of \doxylink{class_plant}{Plant} objects. 
+
+This interface provides a uniform way to access elements of an aggregate object sequentially without exposing its underlying representation. 
+
+\label{doc-func-members}
+\Hypertarget{class_iterator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_iterator_a375cd2b97051c71b3e851bd45534a7c4}\index{Iterator@{Iterator}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{currentItem()}{currentItem()}}
+{\footnotesize\ttfamily \label{class_iterator_a375cd2b97051c71b3e851bd45534a7c4} 
+virtual \mbox{\hyperlink{class_plant}{Plant}} \texorpdfstring{$\ast$}{*} Iterator\+::current\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the element (\doxylink{class_plant}{Plant} pointer) at the current position of the iterator. This is a pure virtual function and must be implemented by concrete iterators. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the current \doxylink{class_plant}{Plant} object, or nullptr if {\ttfamily \doxylink{class_iterator_aaee909d23a98abaf18ed7aa2ee9bee6f}{is\+Done()}} is true. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_greenhouse_iterator_a794a1246cb502bb1433cd1cf9e7a47a5}{Greenhouse\+Iterator}}, \mbox{\hyperlink{class_sku_iterator_afbb0be8acd0fe350e4a183c75e4ab006}{Sku\+Iterator}}, and \mbox{\hyperlink{class_state_iterator_ab3d87165f750ebacf465079fd62d94e7}{State\+Iterator}}.
+
+\Hypertarget{class_iterator_aad56ef26673ea3c74b7ac964f24b8ef5}\index{Iterator@{Iterator}!first@{first}}
+\index{first@{first}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily \label{class_iterator_aad56ef26673ea3c74b7ac964f24b8ef5} 
+virtual void Iterator\+::first (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Resets the iterator\textquotesingle{}s position to the very first element in the collection. This is a pure virtual function and must be implemented by concrete iterators. 
+
+
+
+Implemented in \mbox{\hyperlink{class_greenhouse_iterator_a94e9f2f1423da8c80edde9a933bf1477}{Greenhouse\+Iterator}}, \mbox{\hyperlink{class_sku_iterator_a92d8e044163d02968371c0b7485d00a6}{Sku\+Iterator}}, and \mbox{\hyperlink{class_state_iterator_a4da478a6e00a16ee00581063057dd8cb}{State\+Iterator}}.
+
+\Hypertarget{class_iterator_aaee909d23a98abaf18ed7aa2ee9bee6f}\index{Iterator@{Iterator}!isDone@{isDone}}
+\index{isDone@{isDone}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily \label{class_iterator_aaee909d23a98abaf18ed7aa2ee9bee6f} 
+virtual bool Iterator\+::is\+Done (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the iterator has completed its traversal (i.\+e., moved past the last element). This is a pure virtual function and must be implemented by concrete iterators. 
+
+\begin{DoxyReturn}{Returns}
+true if there are no more elements, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_greenhouse_iterator_afbe521ad148307ccff4e83ab062317d0}{Greenhouse\+Iterator}}, \mbox{\hyperlink{class_sku_iterator_a37e6fe0bf6a92d6d39ada8fe9fc05626}{Sku\+Iterator}}, and \mbox{\hyperlink{class_state_iterator_ae0c287e537a5bb38e840303c6fcf51af}{State\+Iterator}}.
+
+\Hypertarget{class_iterator_ac639e96c519e2e78cff17bee372ad750}\index{Iterator@{Iterator}!next@{next}}
+\index{next@{next}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_iterator_ac639e96c519e2e78cff17bee372ad750} 
+virtual void Iterator\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the iterator to the next element in the collection. This is a pure virtual function and must be implemented by concrete iterators. 
+
+
+
+Implemented in \mbox{\hyperlink{class_greenhouse_iterator_a4404205131182cd9184c39fab7db8d8c}{Greenhouse\+Iterator}}, \mbox{\hyperlink{class_sku_iterator_aabd111d26f01ccc7bf783da1dcf25b0f}{Sku\+Iterator}}, and \mbox{\hyperlink{class_state_iterator_ab738f9b4cf0fea087a266fd7cca07b45}{State\+Iterator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_iterator_8h}{Iterator.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,32 @@
+\doxysection{Indoor\+Factory.\+h}
+\hypertarget{_indoor_factory_8h_source}{}\label{_indoor_factory_8h_source}\mbox{\hyperlink{_indoor_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ INDOORFACTORY\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ INDOORFACTORY\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_kit_factory_8h}{PlantKitFactory.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ceramic_pot_8h}{CeramicPot.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_light_airy_soil_mix_8h}{LightAirySoilMix.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_care_strategy_8h}{CareStrategy.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_indoor_strategy_8h}{IndoorStrategy.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_indoor_factory}{IndoorFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_plant_kit_factory}{PlantKitFactory}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_indoor_strategy}{IndoorStrategy}}\ s;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_care_strategy}{CareStrategy}}*\ \mbox{\hyperlink{class_indoor_factory_a137d0bd9af06594a3df3c2b1eb33b1c0}{careStrategy}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_pot}{Pot}}*\ \mbox{\hyperlink{class_indoor_factory_a580791786f545b664bcfae0a3a0375c4}{createPot}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_soil_mix}{SoilMix}}*\ \mbox{\hyperlink{class_indoor_factory_adba085cfdff66e97fb7bd6c0a82e57c7}{createSoilMix}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

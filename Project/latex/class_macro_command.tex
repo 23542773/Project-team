@@ -1,0 +1,158 @@
+\doxysection{Macro\+Command Class Reference}
+\hypertarget{class_macro_command}{}\label{class_macro_command}\index{MacroCommand@{MacroCommand}}
+
+
+A composite \doxylink{class_command}{Command} that can execute a list of contained \doxylink{class_command}{Command} objects sequentially.  
+
+
+
+
+{\ttfamily \#include $<$Macro\+Command.\+h$>$}
+
+Inheritance diagram for Macro\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_macro_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_macro_command_a85a078bfa2e42c0cb4ff14f17c336ffc}{Macro\+Command}} (const std\+::string \&macro\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_macro_command}{Macro\+Command}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_macro_command_a7e90b6e3993837dce5c22ead3a908481}{add\+Command}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ cmd)
+\begin{DoxyCompactList}\small\item\em Adds a new \doxylink{class_command}{Command} to the sequence of commands to be executed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_macro_command_afc184db8e9ee5ea8703fde850e91f7e8}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes all commands in the {\ttfamily commands} list sequentially. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_macro_command_a235f81f1b1e6d26372957cf03c1a278e}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Undoes the execution of all commands that were successfully executed during the last {\ttfamily \doxylink{class_macro_command_afc184db8e9ee5ea8703fde850e91f7e8}{execute()}} call, typically in reverse order of execution. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_macro_command_acfd0d23c8bafe82fdd4f716020e7e7e1}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Provides a descriptive string for the macro command. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_macro_command_a58facb5905c9022f547ac0cd48a97677}{size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of sub-\/commands contained within this macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived command classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a36038f02fb62fa35fa1768b68663be21}{set\+User\+Id}} (const std\+::string \&uid)
+\begin{DoxyCompactList}\small\item\em Sets the ID of the user who initiated this command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_a664ee1180c0f827b24dfab922a7a891d}{get\+User\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the user associated with this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a99a63432974070e812cb1d61025f631b}{set\+Action}} (const std\+::string \&act)
+\begin{DoxyCompactList}\small\item\em Sets a short, categorical name for the action (e.\+g., "{}\+RESTOCK"{}, "{}\+SALE"{}). \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_afd2cd82b59fc78a3cf6578ccecf32d0e}{get\+Action}} () const
+\begin{DoxyCompactList}\small\item\em Gets the short action name of this command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_a327a6ad6c84ea803b4df334e793f3d3b}{set\+Undoable}} (bool u)
+\begin{DoxyCompactList}\small\item\em Sets whether the command supports the undo operation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_command_a8bb6885054910a0c06de6e75ce0b4b5f}{is\+Undoable}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the command supports the undo operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A composite \doxylink{class_command}{Command} that can execute a list of contained \doxylink{class_command}{Command} objects sequentially. 
+
+This pattern allows clients to treat individual Commands and collections of Commands uniformly. It ensures that execution and undo operations are applied correctly to all sub-\/commands. 
+
+\label{doc-constructors}
+\Hypertarget{class_macro_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_macro_command_a85a078bfa2e42c0cb4ff14f17c336ffc}\index{MacroCommand@{MacroCommand}!MacroCommand@{MacroCommand}}
+\index{MacroCommand@{MacroCommand}!MacroCommand@{MacroCommand}}
+\doxysubsubsection{\texorpdfstring{MacroCommand()}{MacroCommand()}}
+{\footnotesize\ttfamily \label{class_macro_command_a85a078bfa2e42c0cb4ff14f17c336ffc} 
+Macro\+Command\+::\+Macro\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{macro\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for the \doxylink{class_macro_command}{Macro\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em macro\+Name} & The human-\/readable name for this composite command. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_macro_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_macro_command_a7e90b6e3993837dce5c22ead3a908481}\index{MacroCommand@{MacroCommand}!addCommand@{addCommand}}
+\index{addCommand@{addCommand}!MacroCommand@{MacroCommand}}
+\doxysubsubsection{\texorpdfstring{addCommand()}{addCommand()}}
+{\footnotesize\ttfamily \label{class_macro_command_a7e90b6e3993837dce5c22ead3a908481} 
+void Macro\+Command\+::add\+Command (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$}]{cmd}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new \doxylink{class_command}{Command} to the sequence of commands to be executed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A unique pointer to the \doxylink{class_command}{Command} object to add. The macro takes ownership of the command. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_macro_command_afc184db8e9ee5ea8703fde850e91f7e8}\index{MacroCommand@{MacroCommand}!execute@{execute}}
+\index{execute@{execute}!MacroCommand@{MacroCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_macro_command_afc184db8e9ee5ea8703fde850e91f7e8} 
+void Macro\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes all commands in the {\ttfamily commands} list sequentially. 
+
+Execution stops if any sub-\/command fails or throws an exception, and {\ttfamily executed\+Count} is updated. 
+
+Implements \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+\Hypertarget{class_macro_command_acfd0d23c8bafe82fdd4f716020e7e7e1}\index{MacroCommand@{MacroCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!MacroCommand@{MacroCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{class_macro_command_acfd0d23c8bafe82fdd4f716020e7e7e1} 
+std\+::string Macro\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides a descriptive string for the macro command. 
+
+\begin{DoxyReturn}{Returns}
+A string combining the macro name and details about the sub-\/commands. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a6467892048d1c917033c9f55a1804f67}{Command}}.
+
+\Hypertarget{class_macro_command_a58facb5905c9022f547ac0cd48a97677}\index{MacroCommand@{MacroCommand}!size@{size}}
+\index{size@{size}!MacroCommand@{MacroCommand}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_macro_command_a58facb5905c9022f547ac0cd48a97677} 
+size\+\_\+t Macro\+Command\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of sub-\/commands contained within this macro. 
+
+\begin{DoxyReturn}{Returns}
+The number of commands in the sequence. 
+\end{DoxyReturn}
+\Hypertarget{class_macro_command_a235f81f1b1e6d26372957cf03c1a278e}\index{MacroCommand@{MacroCommand}!undo@{undo}}
+\index{undo@{undo}!MacroCommand@{MacroCommand}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_macro_command_a235f81f1b1e6d26372957cf03c1a278e} 
+void Macro\+Command\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Undoes the execution of all commands that were successfully executed during the last {\ttfamily \doxylink{class_macro_command_afc184db8e9ee5ea8703fde850e91f7e8}{execute()}} call, typically in reverse order of execution. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_command_a9b21dadbb5a4c7a6e85636471a6f1fef}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_macro_command_8h}{Macro\+Command.\+h}}\item 
+Macro\+Command.\+cpp\end{DoxyCompactItemize}

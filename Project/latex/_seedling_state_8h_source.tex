@@ -1,0 +1,25 @@
+\doxysection{Seedling\+State.\+h}
+\hypertarget{_seedling_state_8h_source}{}\label{_seedling_state_8h_source}\mbox{\hyperlink{_seedling_state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SEEDLINGSTATE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SEEDLINGSTATE\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_state_8h}{PlantState.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_singleton_state_8h}{SingletonState.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }SeedlingState\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8}{SingletonState}}<SeedlingState>}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_seedling_state_a8fcb6ede73bb6050b7d9a90e839c46f0}{checkChange}}(\mbox{\hyperlink{class_plant}{Plant}}\&\ plant)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ \mbox{\hyperlink{class_seedling_state_a9ddbb56ad1ed10c18a70b952de543622}{name}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_singleton_state_a13177cc9a18941a2e310fdb8bd161cb8}{SingletonState}}<SeedlingState>;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ SeedlingState()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

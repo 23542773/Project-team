@@ -1,0 +1,114 @@
+\doxysection{Simple\+Staff\+Window.\+h}
+\hypertarget{_simple_staff_window_8h_source}{}\label{_simple_staff_window_8h_source}\mbox{\hyperlink{_simple_staff_window_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QTableView>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QStandardItemModel>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QTabWidget>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../NurseryFacade.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../StaffDash.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_simple_staff_window_aab84ca985b5027d403ffa6424d7cd8e1}{SimpleStaffWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow\ }
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_simple_staff_window_aab84ca985b5027d403ffa6424d7cd8e1}{SimpleStaffWindow}}(\mbox{\hyperlink{class_nursery_facade}{NurseryFacade}}*\ facade,\ QString\ userId,\ QWidget*\ parent\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{class_staff_dash}{StaffDash}}*\ dashObserver\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_staff_window_ad2c47cd3fc38eb442cf680356fc4efcf}{refreshGreenhouse}}();}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_staff_window_a7b5351d93d4fe0aa761526f97359fc7a}{refreshStock}}();}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_staff_window_af7cbc43086b9c62dc872fd9e547959b9}{refreshStaff}}();}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_staff_window_af0c2a757f3eab4e2f68f3471fbaac9ab}{refreshMyOrders}}();}
+\DoxyCodeLine{00057\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_staff_window_ad00411bf00e3795a9dba6182ab4d4df6}{refreshCommandLog}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ signals:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_staff_window_abed96029a48ff12ae09106e989658509}{logoutRequested}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ onMorningRoutine();}
+\DoxyCodeLine{00074\ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ onNightRoutine();}
+\DoxyCodeLine{00079\ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ onQueueWater();}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ onUrgentCare();}
+\DoxyCodeLine{00089\ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ onQueueFertilize();}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ onQueueSpray();}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ onRunNextGreenhouse();}
+\DoxyCodeLine{00104\ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ onRestock();}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ onCompleteOrder();}
+\DoxyCodeLine{00114\ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ onUndoLastRestock();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{class_nursery_facade}{NurseryFacade}}*\ facade;\ \ }
+\DoxyCodeLine{00122\ \ \ \ \ QString\ userId;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ QTabWidget*\ tabs\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ QWidget*\ tabGreenhouse\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ QWidget*\ tabStock\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ QWidget*\ tabStaff\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ QWidget*\ tabOrders\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ QWidget*\ tabMessages\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ QWidget*\ tabCommandLog\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ QWidget*\ tabAlerts\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ QTableView*\ plantTable;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ QStandardItemModel*\ plantModel;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ QPushButton*\ btnMorningRoutine;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ QPushButton*\ btnNightRoutine;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ QPushButton*\ btnQueueWater\ =\ \textcolor{keyword}{nullptr};\ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ QPushButton*\ btnUrgentCare\ =\ \textcolor{keyword}{nullptr};\ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ QPushButton*\ btnQueueFertilize\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00140\ \ \ \ \ QPushButton*\ btnQueueSpray\ =\ \textcolor{keyword}{nullptr};\ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ QPushButton*\ btnRunNextCare\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00142\ \ \ \ \ QPushButton*\ btnLogout;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00143\ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ QTableView*\ stockTable\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ QStandardItemModel*\ stockModel\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{class\ }QLineEdit*\ txtQty\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ QPushButton*\ btnRestock\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \ \ QPushButton*\ btnUndoRestock\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00149\ \ \ \ \ QPushButton*\ btnRunQueue\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ QTableView*\ staffTable\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ QStandardItemModel*\ staffModel\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00153\ \ \ \ \ QPushButton*\ btnRefreshStaff\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00154\ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{class\ }QTreeView*\ ordersTree\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00156\ \ \ \ \ QStandardItemModel*\ ordersModel\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00157\ \ \ \ \ QPushButton*\ btnCompleteOrder\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00158\ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{class\ }QListWidget*\ messagesList\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{class\ }QLineEdit*\ messageInput\ =\ \textcolor{keyword}{nullptr};\ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ QPushButton*\ btnSendMessage\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{class\ }QComboBox*\ cmbRecipient\ =\ \textcolor{keyword}{nullptr};\ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ refreshRecipients();}
+\DoxyCodeLine{00168\ \ \ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ loadConversation(\textcolor{keyword}{const}\ QString\&\ peerId);}
+\DoxyCodeLine{00174\ \ \ \ \ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{class\ }QTextEdit*\ txtCommandLog\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00176\ \ \ \ \ QPushButton*\ btnRefreshLog\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ }
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{class_staff_dash}{StaffDash}}*\ staffDash\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{class\ }QListWidget*\ alertsList\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00180\ \ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ refreshAlerts();}
+\DoxyCodeLine{00185\ \};}
+\DoxyCodeLine{00186\ }
+
+\end{DoxyCode}

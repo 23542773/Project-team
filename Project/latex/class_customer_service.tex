@@ -1,0 +1,162 @@
+\doxysection{Customer\+Service Class Reference}
+\hypertarget{class_customer_service}{}\label{class_customer_service}\index{CustomerService@{CustomerService}}
+
+
+Manages a collection of \doxylink{class_customer}{Customer} objects and tracks their associated orders.  
+
+
+
+
+{\ttfamily \#include $<$Customer\+Service.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_customer_service_a6e1a922eba45ac3c1f6ba7c4843e39ee}{Customer\+Service}} (\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}med)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_customer_service}{Customer\+Service}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_service_aced60bb32821f5503d32a71e60cdebae}{set\+Mediator}} (\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}med)
+\begin{DoxyCompactList}\small\item\em Sets or updates the \doxylink{class_messaging_mediator}{Messaging\+Mediator} used by this service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_service_a203c25d8d2b3e4ce06e94a29c261c933}{add\+Customer}} (std\+::string id, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{class_customer}{Customer} object and adds it to the service\textquotesingle{}s collection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_customer_service_a4dc79a9e01b7112ec35ca5b2a38ec5a5}{get\+Customer}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em Retrieves a customer object by their unique ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_service_abb9e1bdc5002d71dcc0b584a8229635c}{assign\+Order\+To\+Customer}} (std\+::string order\+Id, std\+::string customer\+Id)
+\begin{DoxyCompactList}\small\item\em Establishes a link between a specific order ID and a customer ID. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_customer_service_ac2a258ab3b1dd9532b9c3944c96873a5}{get\+Customer\+Id\+By\+Order}} (std\+::string order\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves the customer ID associated with a given order ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_customer}{Customer}} $>$ \mbox{\hyperlink{class_customer_service_a26bab31400be810a2f64745195e82729}{get\+All\+Customers}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a vector containing copies of all managed \doxylink{class_customer}{Customer} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a collection of \doxylink{class_customer}{Customer} objects and tracks their associated orders. 
+
+This class acts as a service layer for customer data and utilizes a \doxylink{class_messaging_mediator}{Messaging\+Mediator} to handle communications related to customers (e.\+g., chat functionality). 
+
+\label{doc-constructors}
+\Hypertarget{class_customer_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_customer_service_a6e1a922eba45ac3c1f6ba7c4843e39ee}\index{CustomerService@{CustomerService}!CustomerService@{CustomerService}}
+\index{CustomerService@{CustomerService}!CustomerService@{CustomerService}}
+\doxysubsubsection{\texorpdfstring{CustomerService()}{CustomerService()}}
+{\footnotesize\ttfamily \label{class_customer_service_a6e1a922eba45ac3c1f6ba7c4843e39ee} 
+Customer\+Service\+::\+Customer\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}}]{med}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_customer_service}{Customer\+Service}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em med} & A pointer to the \doxylink{class_messaging_mediator}{Messaging\+Mediator} to be used by the service. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_customer_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_customer_service_a203c25d8d2b3e4ce06e94a29c261c933}\index{CustomerService@{CustomerService}!addCustomer@{addCustomer}}
+\index{addCustomer@{addCustomer}!CustomerService@{CustomerService}}
+\doxysubsubsection{\texorpdfstring{addCustomer()}{addCustomer()}}
+{\footnotesize\ttfamily \label{class_customer_service_a203c25d8d2b3e4ce06e94a29c261c933} 
+void Customer\+Service\+::add\+Customer (\begin{DoxyParamCaption}\item[{std\+::string}]{id}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new \doxylink{class_customer}{Customer} object and adds it to the service\textquotesingle{}s collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier for the new customer. \\
+\hline
+{\em name} & The full name of the new customer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_customer_service_abb9e1bdc5002d71dcc0b584a8229635c}\index{CustomerService@{CustomerService}!assignOrderToCustomer@{assignOrderToCustomer}}
+\index{assignOrderToCustomer@{assignOrderToCustomer}!CustomerService@{CustomerService}}
+\doxysubsubsection{\texorpdfstring{assignOrderToCustomer()}{assignOrderToCustomer()}}
+{\footnotesize\ttfamily \label{class_customer_service_abb9e1bdc5002d71dcc0b584a8229635c} 
+void Customer\+Service\+::assign\+Order\+To\+Customer (\begin{DoxyParamCaption}\item[{std\+::string}]{order\+Id}{, }\item[{std\+::string}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Establishes a link between a specific order ID and a customer ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique identifier of the order. \\
+\hline
+{\em customer\+Id} & The unique identifier of the customer who placed the order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_customer_service_a26bab31400be810a2f64745195e82729}\index{CustomerService@{CustomerService}!getAllCustomers@{getAllCustomers}}
+\index{getAllCustomers@{getAllCustomers}!CustomerService@{CustomerService}}
+\doxysubsubsection{\texorpdfstring{getAllCustomers()}{getAllCustomers()}}
+{\footnotesize\ttfamily \label{class_customer_service_a26bab31400be810a2f64745195e82729} 
+std\+::vector$<$ \mbox{\hyperlink{class_customer}{Customer}} $>$ Customer\+Service\+::get\+All\+Customers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a vector containing copies of all managed \doxylink{class_customer}{Customer} objects. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_customer}{Customer} objects. 
+\end{DoxyReturn}
+\Hypertarget{class_customer_service_a4dc79a9e01b7112ec35ca5b2a38ec5a5}\index{CustomerService@{CustomerService}!getCustomer@{getCustomer}}
+\index{getCustomer@{getCustomer}!CustomerService@{CustomerService}}
+\doxysubsubsection{\texorpdfstring{getCustomer()}{getCustomer()}}
+{\footnotesize\ttfamily \label{class_customer_service_a4dc79a9e01b7112ec35ca5b2a38ec5a5} 
+\mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*} Customer\+Service\+::get\+Customer (\begin{DoxyParamCaption}\item[{std\+::string}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a customer object by their unique ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the customer to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A raw pointer to the requested \doxylink{class_customer}{Customer} object, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_customer_service_ac2a258ab3b1dd9532b9c3944c96873a5}\index{CustomerService@{CustomerService}!getCustomerIdByOrder@{getCustomerIdByOrder}}
+\index{getCustomerIdByOrder@{getCustomerIdByOrder}!CustomerService@{CustomerService}}
+\doxysubsubsection{\texorpdfstring{getCustomerIdByOrder()}{getCustomerIdByOrder()}}
+{\footnotesize\ttfamily \label{class_customer_service_ac2a258ab3b1dd9532b9c3944c96873a5} 
+std\+::string Customer\+Service\+::get\+Customer\+Id\+By\+Order (\begin{DoxyParamCaption}\item[{std\+::string}]{order\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the customer ID associated with a given order ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique identifier of the order. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unique identifier of the customer, or an empty string if the order is not found. 
+\end{DoxyReturn}
+\Hypertarget{class_customer_service_aced60bb32821f5503d32a71e60cdebae}\index{CustomerService@{CustomerService}!setMediator@{setMediator}}
+\index{setMediator@{setMediator}!CustomerService@{CustomerService}}
+\doxysubsubsection{\texorpdfstring{setMediator()}{setMediator()}}
+{\footnotesize\ttfamily \label{class_customer_service_aced60bb32821f5503d32a71e60cdebae} 
+void Customer\+Service\+::set\+Mediator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}} \texorpdfstring{$\ast$}{*}}]{med}{}\end{DoxyParamCaption})}
+
+
+
+Sets or updates the \doxylink{class_messaging_mediator}{Messaging\+Mediator} used by this service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em med} & A pointer to the new \doxylink{class_messaging_mediator}{Messaging\+Mediator}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_customer_service_8h}{Customer\+Service.\+h}}\item 
+Customer\+Service.\+cpp\end{DoxyCompactItemize}

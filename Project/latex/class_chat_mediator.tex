@@ -1,0 +1,127 @@
+\doxysection{Chat\+Mediator Class Reference}
+\hypertarget{class_chat_mediator}{}\label{class_chat_mediator}\index{ChatMediator@{ChatMediator}}
+
+
+Concrete Mediator implementing communication rules between \doxylink{class_staff}{Staff} and Customers.  
+
+
+
+
+{\ttfamily \#include $<$Chat\+Mediator.\+h$>$}
+
+Inheritance diagram for Chat\+Mediator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_chat_mediator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chat_mediator_a8fd2ca451be4334cfde3e204d4bff2de}{Chat\+Mediator}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_chat_mediator}{Chat\+Mediator} with empty colleague registry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chat_mediator_acb00b734154c0bf1f7bb2815323b3c41}{send\+Message\+To\+Id}} (\mbox{\hyperlink{class_colleague}{Colleague}} \texorpdfstring{$\ast$}{*}from, const std\+::string \&to\+User\+Id, const std\+::string \&text) override
+\begin{DoxyCompactList}\small\item\em Sends a message from one colleague to another by user ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chat_mediator_ae1c9259582e4f6023d034e3a08c84fcf}{register\+Colleague}} (\mbox{\hyperlink{class_colleague}{Colleague}} \texorpdfstring{$\ast$}{*}colleague)
+\begin{DoxyCompactList}\small\item\em Registers a colleague with the mediator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chat_mediator_afd74785252c25418a74759b2643b6c1c}{unregister\+Colleague}} (\mbox{\hyperlink{class_colleague}{Colleague}} \texorpdfstring{$\ast$}{*}colleague)
+\begin{DoxyCompactList}\small\item\em Unregisters a colleague from the mediator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_messaging_mediator}{Messaging\+Mediator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Messaging\+Mediator} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Mediator implementing communication rules between \doxylink{class_staff}{Staff} and Customers. 
+
+This class implements the Mediator pattern by managing all messaging between colleagues in the nursery system. It enforces business rules about who can communicate with whom based on staff roles and user types.
+
+Communication Rules\+:
+\begin{DoxyItemize}
+\item Customers can only message Sales \doxylink{class_staff}{Staff}
+\item Sales \doxylink{class_staff}{Staff} can message Customers, other Sales \doxylink{class_staff}{Staff}, and \doxylink{struct_inventory}{Inventory} \doxylink{class_staff}{Staff}
+\item \doxylink{class_plant}{Plant} Care \doxylink{class_staff}{Staff} can message \doxylink{struct_inventory}{Inventory} \doxylink{class_staff}{Staff}
+\item \doxylink{struct_inventory}{Inventory} \doxylink{class_staff}{Staff} can message \doxylink{class_plant}{Plant} Care and Sales \doxylink{class_staff}{Staff}
+\end{DoxyItemize}
+
+The mediator maintains a registry of all colleagues and routes messages between them while enforcing these constraints, preventing unauthorized communication. 
+
+\label{doc-constructors}
+\Hypertarget{class_chat_mediator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_chat_mediator_a8fd2ca451be4334cfde3e204d4bff2de}\index{ChatMediator@{ChatMediator}!ChatMediator@{ChatMediator}}
+\index{ChatMediator@{ChatMediator}!ChatMediator@{ChatMediator}}
+\doxysubsubsection{\texorpdfstring{ChatMediator()}{ChatMediator()}}
+{\footnotesize\ttfamily \label{class_chat_mediator_a8fd2ca451be4334cfde3e204d4bff2de} 
+Chat\+Mediator\+::\+Chat\+Mediator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_chat_mediator}{Chat\+Mediator} with empty colleague registry. 
+
+Initializes the mediator with no registered colleagues and a message sequence counter starting at 1. 
+
+\label{doc-func-members}
+\Hypertarget{class_chat_mediator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_chat_mediator_ae1c9259582e4f6023d034e3a08c84fcf}\index{ChatMediator@{ChatMediator}!registerColleague@{registerColleague}}
+\index{registerColleague@{registerColleague}!ChatMediator@{ChatMediator}}
+\doxysubsubsection{\texorpdfstring{registerColleague()}{registerColleague()}}
+{\footnotesize\ttfamily \label{class_chat_mediator_ae1c9259582e4f6023d034e3a08c84fcf} 
+void Chat\+Mediator\+::register\+Colleague (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_colleague}{Colleague}} \texorpdfstring{$\ast$}{*}}]{colleague}{}\end{DoxyParamCaption})}
+
+
+
+Registers a colleague with the mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colleague} & Pointer to the \doxylink{class_colleague}{Colleague} to register\\
+\hline
+\end{DoxyParams}
+Adds the colleague to the mediator\textquotesingle{}s registry, enabling it to send and receive messages through the mediator. \Hypertarget{class_chat_mediator_acb00b734154c0bf1f7bb2815323b3c41}\index{ChatMediator@{ChatMediator}!sendMessageToId@{sendMessageToId}}
+\index{sendMessageToId@{sendMessageToId}!ChatMediator@{ChatMediator}}
+\doxysubsubsection{\texorpdfstring{sendMessageToId()}{sendMessageToId()}}
+{\footnotesize\ttfamily \label{class_chat_mediator_acb00b734154c0bf1f7bb2815323b3c41} 
+void Chat\+Mediator\+::send\+Message\+To\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_colleague}{Colleague}} \texorpdfstring{$\ast$}{*}}]{from}{, }\item[{const std\+::string \&}]{to\+User\+Id}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sends a message from one colleague to another by user ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Pointer to the \doxylink{class_colleague}{Colleague} sending the message \\
+\hline
+{\em to\+User\+Id} & String ID of the recipient colleague \\
+\hline
+{\em text} & The message content to send\\
+\hline
+\end{DoxyParams}
+Routes the message through the mediator, applying business rules to determine if the communication is allowed before delivery. 
+
+Implements \mbox{\hyperlink{class_messaging_mediator_aef228129906de6c360d85e0f1b8c8667}{Messaging\+Mediator}}.
+
+\Hypertarget{class_chat_mediator_afd74785252c25418a74759b2643b6c1c}\index{ChatMediator@{ChatMediator}!unregisterColleague@{unregisterColleague}}
+\index{unregisterColleague@{unregisterColleague}!ChatMediator@{ChatMediator}}
+\doxysubsubsection{\texorpdfstring{unregisterColleague()}{unregisterColleague()}}
+{\footnotesize\ttfamily \label{class_chat_mediator_afd74785252c25418a74759b2643b6c1c} 
+void Chat\+Mediator\+::unregister\+Colleague (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_colleague}{Colleague}} \texorpdfstring{$\ast$}{*}}]{colleague}{}\end{DoxyParamCaption})}
+
+
+
+Unregisters a colleague from the mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colleague} & Pointer to the \doxylink{class_colleague}{Colleague} to unregister\\
+\hline
+\end{DoxyParams}
+Removes the colleague from the mediator\textquotesingle{}s registry, preventing further message routing to or from this colleague. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_chat_mediator_8h}{Chat\+Mediator.\+h}}\item 
+Chat\+Mediator.\+cpp\end{DoxyCompactItemize}

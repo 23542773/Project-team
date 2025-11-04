@@ -1,0 +1,133 @@
+\doxysection{Wetland\+Strategy Class Reference}
+\hypertarget{class_wetland_strategy}{}\label{class_wetland_strategy}\index{WetlandStrategy@{WetlandStrategy}}
+
+
+Implements care strategy for wetland/bog plants.  
+
+
+
+
+{\ttfamily \#include $<$Wetland\+Strategy.\+h$>$}
+
+Inheritance diagram for Wetland\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wetland_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_wetland_strategy_a3cbc90649857652a19b174e7f38454da}{water}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies heavy watering suitable for wetland plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wetland_strategy_a3a20ff5d0886962c4f8427210d234408}{fertilize}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies moderate fertilization suitable for wetland plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wetland_strategy_a67517141d727e182c601f651682ed038}{spray\+Insecticide}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies insecticide spraying suitable for wetland plants. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_care_strategy}{Care\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Care\+Strategy} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements care strategy for wetland/bog plants. 
+
+This strategy is designed for plants that thrive in wetland environments with consistently high moisture levels. Wetland plants require very frequent watering to maintain saturated soil conditions and moderate fertilization to support growth in nutrient-\/rich aquatic environments.
+
+Typical plants using this strategy include water lilies, cattails, sedges, and other aquatic or semi-\/aquatic species. 
+
+\label{doc-func-members}
+\Hypertarget{class_wetland_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wetland_strategy_a3a20ff5d0886962c4f8427210d234408}\index{WetlandStrategy@{WetlandStrategy}!fertilize@{fertilize}}
+\index{fertilize@{fertilize}!WetlandStrategy@{WetlandStrategy}}
+\doxysubsubsection{\texorpdfstring{fertilize()}{fertilize()}}
+{\footnotesize\ttfamily \label{class_wetland_strategy_a3a20ff5d0886962c4f8427210d234408} 
+void Wetland\+Strategy\+::fertilize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies moderate fertilization suitable for wetland plants. 
+
+Applies fertilizer effects suited for wetland species.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the wetland plant to be fertilized\\
+\hline
+\end{DoxyParams}
+Fertilization boosts growth and recovery in nutrient-\/rich environments. The benefit scales with the plant’s growth rate and is most effective when overall health is below an optimal range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the wetland plant being fertilized. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a6a111bcef4bf87aeb972e4b19a3a2848}{Care\+Strategy}}.
+
+\Hypertarget{class_wetland_strategy_a67517141d727e182c601f651682ed038}\index{WetlandStrategy@{WetlandStrategy}!sprayInsecticide@{sprayInsecticide}}
+\index{sprayInsecticide@{sprayInsecticide}!WetlandStrategy@{WetlandStrategy}}
+\doxysubsubsection{\texorpdfstring{sprayInsecticide()}{sprayInsecticide()}}
+{\footnotesize\ttfamily \label{class_wetland_strategy_a67517141d727e182c601f651682ed038} 
+void Wetland\+Strategy\+::spray\+Insecticide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies insecticide spraying suitable for wetland plants. 
+
+Applies insecticide treatment tuned for wetland environments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the wetland plant to be sprayed\\
+\hline
+\end{DoxyParams}
+Wetland plants generally require moderate pest control. Insecticide application considers the species’ tolerance, providing slight health improvement when used appropriately and penalizing overuse to reflect chemical or ecological stress.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the wetland plant being treated. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a1c4dabbd64721ac8a26d06c37527e2bf}{Care\+Strategy}}.
+
+\Hypertarget{class_wetland_strategy_a3cbc90649857652a19b174e7f38454da}\index{WetlandStrategy@{WetlandStrategy}!water@{water}}
+\index{water@{water}!WetlandStrategy@{WetlandStrategy}}
+\doxysubsubsection{\texorpdfstring{water()}{water()}}
+{\footnotesize\ttfamily \label{class_wetland_strategy_a3cbc90649857652a19b174e7f38454da} 
+void Wetland\+Strategy\+::water (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies heavy watering suitable for wetland plants. 
+
+Applies watering behavior appropriate for wetland plants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the wetland plant to be watered\\
+\hline
+\end{DoxyParams}
+Wetland species thrive in highly moist environments and receive generous watering to maintain saturated conditions. Overwatering still reduces health to simulate stagnation or oxygen deprivation effects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the wetland plant being watered. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a13feb221ff6226a2e4fb56836506e98f}{Care\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_wetland_strategy_8h}{Wetland\+Strategy.\+h}}\item 
+\mbox{\hyperlink{_wetland_strategy_8cpp}{Wetland\+Strategy.\+cpp}}\end{DoxyCompactItemize}

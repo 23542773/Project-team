@@ -1,0 +1,114 @@
+\doxysection{Soil\+Mix Class Reference}
+\hypertarget{class_soil_mix}{}\label{class_soil_mix}\index{SoilMix@{SoilMix}}
+
+
+Abstract base class for soil types.  
+
+
+
+
+{\ttfamily \#include $<$Soil\+Mix.\+h$>$}
+
+Inheritance diagram for Soil\+Mix\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.914530cm]{class_soil_mix}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_soil_mix_a60fab97bed3a029cb2f843da99be8904}{Soil\+Mix}} (int c)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_soil_mix}{Soil\+Mix} with a specified cost. \end{DoxyCompactList}\item 
+\Hypertarget{class_soil_mix_a62c43cb43b7071880f56c447d860d6ab}\label{class_soil_mix_a62c43cb43b7071880f56c447d860d6ab} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Soil\+Mix} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_soil_mix_a44457847765adeecfd086a7ea1d41fda}{name}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the name of the soil type. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soil_mix_aab3ad614c77a37ca1a4aa6639d48bd3a}{get\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Returns the cost of this soil mix. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_soil_mix_a9842288bc066939291e303b953629f6f}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Creates a cloned copy of this soil mix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for soil types. 
+
+Stores the cost of the soil and defines pure virtual functions for retrieving the soil name and cloning the object (Prototype pattern support). 
+
+\label{doc-constructors}
+\Hypertarget{class_soil_mix_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_soil_mix_a60fab97bed3a029cb2f843da99be8904}\index{SoilMix@{SoilMix}!SoilMix@{SoilMix}}
+\index{SoilMix@{SoilMix}!SoilMix@{SoilMix}}
+\doxysubsubsection{\texorpdfstring{SoilMix()}{SoilMix()}}
+{\footnotesize\ttfamily \label{class_soil_mix_a60fab97bed3a029cb2f843da99be8904} 
+Soil\+Mix\+::\+Soil\+Mix (\begin{DoxyParamCaption}\item[{int}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_soil_mix}{Soil\+Mix} with a specified cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Cost of the soil mix. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_soil_mix_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_soil_mix_a9842288bc066939291e303b953629f6f}\index{SoilMix@{SoilMix}!clone@{clone}}
+\index{clone@{clone}!SoilMix@{SoilMix}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_soil_mix_a9842288bc066939291e303b953629f6f} 
+virtual \mbox{\hyperlink{class_soil_mix}{Soil\+Mix}} \texorpdfstring{$\ast$}{*} Soil\+Mix\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a cloned copy of this soil mix. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the cloned \doxylink{class_soil_mix}{Soil\+Mix}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_aquatic_soil_mix_a33edfa5630beafcd858e623bf2f3c443}{Aquatic\+Soil\+Mix}}, \mbox{\hyperlink{class_gritty_lime_soil_mix_a9f313b062490e4b3793a18113d752160}{Gritty\+Lime\+Soil\+Mix}}, \mbox{\hyperlink{class_light_airy_soil_mix_a63f4743199e95531cfc5804136b2fbf4}{Light\+Airy\+Soil\+Mix}}, \mbox{\hyperlink{class_peat_soil_mix_a86130f1f8cfa890c3a9f27ebdf8ba616}{Peat\+Soil\+Mix}}, and \mbox{\hyperlink{class_sandy_soil_mix_aaa06493ce18bbce18ca0c1644242410c}{Sandy\+Soil\+Mix}}.
+
+\Hypertarget{class_soil_mix_aab3ad614c77a37ca1a4aa6639d48bd3a}\index{SoilMix@{SoilMix}!getCost@{getCost}}
+\index{getCost@{getCost}!SoilMix@{SoilMix}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily \label{class_soil_mix_aab3ad614c77a37ca1a4aa6639d48bd3a} 
+int Soil\+Mix\+::get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the cost of this soil mix. 
+
+\begin{DoxyReturn}{Returns}
+Cost as an integer. 
+\end{DoxyReturn}
+\Hypertarget{class_soil_mix_a44457847765adeecfd086a7ea1d41fda}\index{SoilMix@{SoilMix}!name@{name}}
+\index{name@{name}!SoilMix@{SoilMix}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_soil_mix_a44457847765adeecfd086a7ea1d41fda} 
+virtual std\+::string Soil\+Mix\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the name of the soil type. 
+
+\begin{DoxyReturn}{Returns}
+Soil type name as a string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_aquatic_soil_mix_a4cf6dbcc5e35baef36bfe3c71e911123}{Aquatic\+Soil\+Mix}}, \mbox{\hyperlink{class_gritty_lime_soil_mix_ab3e0b2ffdca01ed10df65a18d4fcedd9}{Gritty\+Lime\+Soil\+Mix}}, \mbox{\hyperlink{class_light_airy_soil_mix_a6e7ef70fd07c5425811929ee40b6cc76}{Light\+Airy\+Soil\+Mix}}, \mbox{\hyperlink{class_peat_soil_mix_a35c18de3ff5594d70416a5b6342d9887}{Peat\+Soil\+Mix}}, and \mbox{\hyperlink{class_sandy_soil_mix_a839fd07ba1181b156bdb3171acca9238}{Sandy\+Soil\+Mix}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_soil_mix_8h}{Soil\+Mix.\+h}}\item 
+Soil\+Mix.\+cpp\end{DoxyCompactItemize}

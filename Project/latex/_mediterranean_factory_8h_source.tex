@@ -1,0 +1,32 @@
+\doxysection{Mediterranean\+Factory.\+h}
+\hypertarget{_mediterranean_factory_8h_source}{}\label{_mediterranean_factory_8h_source}\mbox{\hyperlink{_mediterranean_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ MEDITERRANEANFACTORY\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ MEDITERRANEANFACTORY\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plant_kit_factory_8h}{PlantKitFactory.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_unglazed_clay_pot_8h}{UnglazedClayPot.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gritty_lime_soil_mix_8h}{GrittyLimeSoilMix.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_care_strategy_8h}{CareStrategy.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mediterranean_strategy_8h}{MediterraneanStrategy.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mediterranean_factory}{MediterraneanFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_plant_kit_factory}{PlantKitFactory}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_mediterranean_strategy}{MediterraneanStrategy}}\ s;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_care_strategy}{CareStrategy}}*\ \mbox{\hyperlink{class_mediterranean_factory_a6d5bb1f12d7f1c9b952993791a3248b1}{careStrategy}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_pot}{Pot}}*\ \mbox{\hyperlink{class_mediterranean_factory_a7d236432b7fdff7cf6cc6842a35761d3}{createPot}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_soil_mix}{SoilMix}}*\ \mbox{\hyperlink{class_mediterranean_factory_a2b22ba2d7861457c726fda9833c55c55}{createSoilMix}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

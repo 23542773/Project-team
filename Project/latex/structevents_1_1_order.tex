@@ -1,0 +1,40 @@
+\doxysection{events\+::Order Struct Reference}
+\hypertarget{structevents_1_1_order}{}\label{structevents_1_1_order}\index{events::Order@{events::Order}}
+
+
+Contains all info related to \doxylink{structevents_1_1_order}{Order} events.  
+
+
+
+
+{\ttfamily \#include $<$Events.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structevents_1_1_order_adeff0b33463decd57dd3d5deb844f107}\label{structevents_1_1_order_adeff0b33463decd57dd3d5deb844f107} 
+std\+::string {\bfseries order\+Id}
+\item 
+\Hypertarget{structevents_1_1_order_aead7e5b81b23cfdf47a58f54288a98de}\label{structevents_1_1_order_aead7e5b81b23cfdf47a58f54288a98de} 
+std\+::string {\bfseries customer\+Id}
+\item 
+\Hypertarget{structevents_1_1_order_ae67ac117d5a8290d112d80855bf7cc64}\label{structevents_1_1_order_ae67ac117d5a8290d112d80855bf7cc64} 
+std\+::vector$<$ \mbox{\hyperlink{struct_order_line}{Order\+Line}} $>$ {\bfseries lines}
+\begin{DoxyCompactList}\small\item\em A list of all line items included in the order. \end{DoxyCompactList}\item 
+\Hypertarget{structevents_1_1_order_abf3bebcc531f8a4392584e4537c30eb8}\label{structevents_1_1_order_abf3bebcc531f8a4392584e4537c30eb8} 
+std\+::optional$<$ std\+::string $>$ {\bfseries staff\+Id}
+\begin{DoxyCompactList}\small\item\em Optional ID of the staff member currently assigned to the order. \end{DoxyCompactList}\item 
+\Hypertarget{structevents_1_1_order_ab8cec73d96da3c0b570645ff66616309}\label{structevents_1_1_order_ab8cec73d96da3c0b570645ff66616309} 
+\mbox{\hyperlink{namespaceevents_a214a40cab3544ee7981834bbcf9bbba5}{Order\+Type}} {\bfseries type}
+\begin{DoxyCompactList}\small\item\em The type of order action/event being reported. \end{DoxyCompactList}\item 
+\Hypertarget{structevents_1_1_order_a529616e7a62951c33aff94d4a83aa883}\label{structevents_1_1_order_a529616e7a62951c33aff94d4a83aa883} 
+\mbox{\hyperlink{namespaceevents_aa640d68b941fcf80c862297b15735009}{Order\+Status}} {\bfseries status} = Order\+Status\+::\+New
+\begin{DoxyCompactList}\small\item\em The current status of the order. Defaults to New. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains all info related to \doxylink{structevents_1_1_order}{Order} events. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_events_8h}{Events.\+h}}\end{DoxyCompactItemize}

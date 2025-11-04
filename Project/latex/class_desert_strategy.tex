@@ -1,0 +1,133 @@
+\doxysection{Desert\+Strategy Class Reference}
+\hypertarget{class_desert_strategy}{}\label{class_desert_strategy}\index{DesertStrategy@{DesertStrategy}}
+
+
+Implements care strategy for desert/arid climate plants.  
+
+
+
+
+{\ttfamily \#include $<$Desert\+Strategy.\+h$>$}
+
+Inheritance diagram for Desert\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_desert_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_desert_strategy_a0023f8465ac9da21c1c8475a8e9c07d5}{water}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies minimal watering suitable for desert plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_desert_strategy_abc51447d9bb5ba69a9cf93f30ebb7673}{fertilize}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies conservative fertilization suitable for desert plants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_desert_strategy_a70217c34ec409a10c95cde8dfb5da8bf}{spray\+Insecticide}} (\mbox{\hyperlink{class_plant}{Plant}} \&plant) override
+\begin{DoxyCompactList}\small\item\em Applies insecticide spraying behavior suitable for desert plants. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_care_strategy}{Care\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Care\+Strategy} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements care strategy for desert/arid climate plants. 
+
+This strategy is designed for plants that thrive in dry, arid conditions. Desert plants require minimal watering and conservative fertilization to avoid overwatering and nutrient buildup, which can harm them.
+
+Typical plants using this strategy include cacti, succulents, and other drought-\/resistant species. 
+
+\label{doc-func-members}
+\Hypertarget{class_desert_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_desert_strategy_abc51447d9bb5ba69a9cf93f30ebb7673}\index{DesertStrategy@{DesertStrategy}!fertilize@{fertilize}}
+\index{fertilize@{fertilize}!DesertStrategy@{DesertStrategy}}
+\doxysubsubsection{\texorpdfstring{fertilize()}{fertilize()}}
+{\footnotesize\ttfamily \label{class_desert_strategy_abc51447d9bb5ba69a9cf93f30ebb7673} 
+void Desert\+Strategy\+::fertilize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies conservative fertilization suitable for desert plants. 
+
+Applies fertilizer effects suitable for desert plant growth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the desert plant to be fertilized\\
+\hline
+\end{DoxyParams}
+Fertilization provides a small health boost depending on the plant’s growth rate and current condition. Desert species benefit most when health is below an optimal threshold.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the desert plant being fertilized. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a6a111bcef4bf87aeb972e4b19a3a2848}{Care\+Strategy}}.
+
+\Hypertarget{class_desert_strategy_a70217c34ec409a10c95cde8dfb5da8bf}\index{DesertStrategy@{DesertStrategy}!sprayInsecticide@{sprayInsecticide}}
+\index{sprayInsecticide@{sprayInsecticide}!DesertStrategy@{DesertStrategy}}
+\doxysubsubsection{\texorpdfstring{sprayInsecticide()}{sprayInsecticide()}}
+{\footnotesize\ttfamily \label{class_desert_strategy_a70217c34ec409a10c95cde8dfb5da8bf} 
+void Desert\+Strategy\+::spray\+Insecticide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies insecticide spraying behavior suitable for desert plants. 
+
+Applies insecticide treatment tuned for desert plant tolerance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the desert plant to be sprayed\\
+\hline
+\end{DoxyParams}
+Adds a moderate amount of insecticide based on the plant’s species tolerance. Excessive spraying negatively impacts health to simulate chemical stress or toxicity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the desert plant being treated. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a1c4dabbd64721ac8a26d06c37527e2bf}{Care\+Strategy}}.
+
+\Hypertarget{class_desert_strategy_a0023f8465ac9da21c1c8475a8e9c07d5}\index{DesertStrategy@{DesertStrategy}!water@{water}}
+\index{water@{water}!DesertStrategy@{DesertStrategy}}
+\doxysubsubsection{\texorpdfstring{water()}{water()}}
+{\footnotesize\ttfamily \label{class_desert_strategy_a0023f8465ac9da21c1c8475a8e9c07d5} 
+void Desert\+Strategy\+::water (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_plant}{Plant}} \&}]{plant}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies minimal watering suitable for desert plants. 
+
+Applies watering behavior appropriate for desert plants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the desert plant to be watered\\
+\hline
+\end{DoxyParams}
+Desert species are drought-\/tolerant and receive water only when moisture levels are critically low. Excess watering can reduce health, simulating root damage from oversaturation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & Reference to the desert plant being watered. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_care_strategy_a13feb221ff6226a2e4fb56836506e98f}{Care\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_desert_strategy_8h}{Desert\+Strategy.\+h}}\item 
+\mbox{\hyperlink{_desert_strategy_8cpp}{Desert\+Strategy.\+cpp}}\end{DoxyCompactItemize}
